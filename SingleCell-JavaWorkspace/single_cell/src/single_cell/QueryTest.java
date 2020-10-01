@@ -5,7 +5,7 @@ import org.apache.jena.query.*;
 public class QueryTest {
 
 	public static void main(String[] args) {
-		String inputFileName = "files/out_repositorie.owl";
+		String inputFileName = "../../SingleCell-Files/out_repositorie2.owl";
 
 		String NS = "http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#";
 		String rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";

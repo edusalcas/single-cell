@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.ModelFactory"/>
+    <fullyQualifiedTypeName name="org.apache.jena.ontology.OntModelSpec"/>
+    <fullyQualifiedTypeName name="org.apache.jena.util.FileManager"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="org.apache.jena.util.iterator.ExtendedIterator"/>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Statement"/>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.ResourceFactory"/>
+    <fullyQualifiedTypeName name="org.apache.jena.vocabulary.RDF"/>
+    <fullyQualifiedTypeName name="java.io.OutputStream"/>
+    <fullyQualifiedTypeName name="org.apache.logging.log4j.core.appender.OutputStreamManager"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.nio.file.Files"/>
+    <fullyQualifiedTypeName name="java.nio.file.Path"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="single_cell.Individual"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="org.apache.jena.ontology.OntModel"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="single_cell.MyModel"/>
+    <fullyQualifiedTypeName name="java.util.Hashtable"/>
+    <fullyQualifiedTypeName name="org.apache.jena.ontology.OntClass"/>
+    <fullyQualifiedTypeName name="org.apache.jena.ontology.Individual"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Property"/>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.RDFNode"/>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Resource"/>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Literal"/>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Model"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="org.json.JSONObject"/>
+    <fullyQualifiedTypeName name="org.json.JSONArray"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+</qualifiedTypeNameHistroy>

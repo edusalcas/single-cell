@@ -1,0 +1,2287 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#10Xv2sequencing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#10xv3sequencing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AcousticNeuroma"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AcquiredAneurysmalSubarachnoidHemorrhage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AcuteKidneyTubularNecrosis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdiposeTissue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdrenalCortexAdenoma"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Animals"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AnophelesGambiae"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AnxietyDisorder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArabidopsisThaliana"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Arthritis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AsymptomaticDengue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BenignProstaticHyperplasia(disease)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bladder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Blastocyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Blood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BoneMarrow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BoneMarrowHematopoieticCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BoneTissue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Brain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CAFs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CD11b+CD11c+DC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CD11b+Macrophages/monocytes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CD11c+DC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CD31+Endothelial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CD34-positive_CD38-negative_HematopoieticStemCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CD4+TCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CD45-"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CD8-positive_Alpha-betaTcell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CELSeq2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CITESeq"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CaenorhabditisElegans"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CallithrixJacchus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CardiacArrest"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cataract(disease)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CaudateLobe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CellLine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CellType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChanZuckerbergBiohub"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Colitis(disease)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Collection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Colon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CordBloodHematopoieticStemCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cortex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CortexOfKidney"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Covid-19"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CryopreservationInLiquidNitrogen(deadTissue)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CryopreservationOfLiveCellsInLiquidNitrogen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CryopreservationOther"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DanioRerio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Decidua"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DefinitiveEndoderm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DendriticCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DepressiveDisorder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DevelopmentalStage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diaphragm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Disease"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diverticulitis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Donors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Downloads"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DroNcSeq"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DropSeq"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DrosophilaMelanogaster"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EffectorMemoryCD8-positive_Alpha-betaTCell_TerminallyDifferentiated"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Embryo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmbryonicFibroblast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EndStageRenalFailure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Endoderm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EndodermalCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EndothelialCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnterococcusFaecalisInfection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnvironmentalStress"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Epcam+"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EpithelialCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EpithelialCellOfEsophagus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Esophagus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EsophagusMucosa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EssentialHypertension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExperimentalFactors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Eye"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#False"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fibroblast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Format"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FoveaCentralis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fresh"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fungi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GallusGallus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GastroesophagealRefluxDisease"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Genotype"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GrowthCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HLAG+"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Heart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HematopoieticSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HemolyticUremicSyndrome"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HereditaryHemochromatosis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HiatusHernia(disease)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HomoSapiens"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanCellAtlas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hyperlipidemia(disease)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hypertension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HypothermicPreservationMediaAt2-8C"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IlluminaHiSeq2000"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IlluminaHiSeq2500"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IlluminaHiSeq4000"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IlluminaHiSeqX"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IlluminaHiseq2500"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IlluminaNextSeq500"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IlluminaNovaSeq6000"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImmuneSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InhibitoryInterneuron"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InnateLymphoidCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Instrument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IrritableBowelSyndrome"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IsletOfLangerhans"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Kidney"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KidneyCancer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#KidneyCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Kingdom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LaminaPropriaOfMucosaOfColon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LargeIntestine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeftLateralBasalBronchopulmonarySegment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Leukocyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Library"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Live"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Liver"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowerLobeOfLeftLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowerLobeOfRightLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LungParenchyma"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LymeDisease"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LymphNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MalariaCellAtlas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MammaryGland"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediastinalLymphNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediastinalLymphNode2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Melanoma(disease)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Metadata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Method"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Monocyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MononuclearCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MusMusculus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Muscle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MyeloidCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MyofibroblastCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NaturalKillerCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NeuralCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Neuron"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonAlcoholicFattyLiverDisease"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Normal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NormalisedFilteredCountMatrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObstructiveSleepApneaSyndrome"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrganPart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrganismPart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrofaciodigitalSyndromeVIII"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OsteoarthritisHip"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PairedEnd"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pancreas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PancreaticPPCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParietalEndoderm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PericardialEffusion(disease)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PeripheralBloodMononuclearCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PeripheralBloodMononuclearCell2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Phenotype"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Placenta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Plants"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlasmaCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlasmodiumBerghei"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlasmodiumFalciparum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Preservation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PresumptiveGut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProstateCancer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Protists"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Protocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PureAutonomicFailure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RattusNorvegicus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RawFilteredCountMatrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RenalMedulla"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RenalPelvis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Replicate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResponseToTreatment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Retina"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RetinalNeuralLayer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReversibleCerebralVasoconstrictionSyndrome"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SaccharomycesCerevisiae"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SchistosomaMansoni"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SeqWell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Size"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SkinEpidermis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SkinOfBody"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartSeq"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartSeq2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Spleen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Splenocyte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stimulus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StrokeDisorder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StromalCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SyndromicDyslipidemia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thymus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Time"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tissue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tongue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trachea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#True"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tumor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Type"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Type2DiabetesMellitus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UlcerativeColitis(disease)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UmbilicalCordBlood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Unspecified"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ureter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VenousBlood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VentricularTachycardia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisceralEndoderm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#YolkSacEndoderm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bai"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#csv"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#csv.gz"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#docx"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fastq"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fastq.gz"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#inDrop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#matrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#npy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#npz"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#optimus_v1.3.1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#optimus_v1.3.2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#optimus_v1.3.3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#optimus_v1.3.5"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pdf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#results"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sciRNASeq"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smartseq2_v2.3.0"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smartseq2_v2.4.0"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#txt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#unknown"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongsToKingdom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInstrumentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLibraryOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreservationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProtocolOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOfCollection"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOfOrgan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOfTissue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAgeOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBiologicalSexOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCellsCountsOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDonorsCountsOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFileSizeOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLoadDateOf"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#10Xv2sequencing"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#10xv3sequencing"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AcousticNeuroma"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AcquiredAneurysmalSubarachnoidHemorrhage"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AcuteKidneyTubularNecrosis"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdiposeTissue"/>
+        <Class IRI="#Tissue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdrenalCortexAdenoma"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animals"/>
+        <Class IRI="#Kingdom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnophelesGambiae"/>
+        <Class IRI="#Animals"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnxietyDisorder"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArabidopsisThaliana"/>
+        <Class IRI="#Plants"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arthritis"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsymptomaticDengue"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BenignProstaticHyperplasia(disease)"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bladder"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Blastocyst"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Blood"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BoneMarrow"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BoneMarrowHematopoieticCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BoneTissue"/>
+        <Class IRI="#Tissue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Brain"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CAFs"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CD11b+CD11c+DC"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CD11b+Macrophages/monocytes"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CD11c+DC"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CD31+Endothelial"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CD34-positive_CD38-negative_HematopoieticStemCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CD4+TCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CD45-"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CD8-positive_Alpha-betaTcell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CELSeq2"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CITESeq"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CaenorhabditisElegans"/>
+        <Class IRI="#Animals"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CallithrixJacchus"/>
+        <Class IRI="#Animals"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CardiacArrest"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cataract(disease)"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CaudateLobe"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CellLine"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CellType"/>
+        <Class IRI="#Tissue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChanZuckerbergBiohub"/>
+        <Class IRI="#Collection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Colitis(disease)"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Collection"/>
+        <Class IRI="#Project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Colon"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CordBloodHematopoieticStemCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cortex"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CortexOfKidney"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Covid-19"/>
+        <Class IRI="#Collection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CryopreservationInLiquidNitrogen(deadTissue)"/>
+        <Class IRI="#Preservation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CryopreservationOfLiveCellsInLiquidNitrogen"/>
+        <Class IRI="#Preservation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CryopreservationOther"/>
+        <Class IRI="#Preservation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DanioRerio"/>
+        <Class IRI="#Animals"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Decidua"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DefinitiveEndoderm"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DendriticCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DepressiveDisorder"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DevelopmentalStage"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disease"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diverticulitis"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Donors"/>
+        <Class IRI="#Project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Downloads"/>
+        <Class IRI="#Project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DroNcSeq"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DropSeq"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DrosophilaMelanogaster"/>
+        <Class IRI="#Animals"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EffectorMemoryCD8-positive_Alpha-betaTCell_TerminallyDifferentiated"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Embryo"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmbryonicFibroblast"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EndStageRenalFailure"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Endoderm"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EndodermalCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EndothelialCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnterococcusFaecalisInfection"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnvironmentalStress"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Epcam+"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EpithelialCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EpithelialCellOfEsophagus"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Esophagus"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EsophagusMucosa"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EssentialHypertension"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExperimentalFactors"/>
+        <Class IRI="#Project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Eye"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#False"/>
+        <Class IRI="#PairedEnd"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fibroblast"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Format"/>
+        <Class IRI="#Downloads"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoveaCentralis"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fresh"/>
+        <Class IRI="#Preservation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fungi"/>
+        <Class IRI="#Kingdom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GallusGallus"/>
+        <Class IRI="#Animals"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GastroesophagealRefluxDisease"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Genotype"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GrowthCondition"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HLAG+"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Heart"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HematopoieticSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HemolyticUremicSyndrome"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HereditaryHemochromatosis"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HiatusHernia(disease)"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HomoSapiens"/>
+        <Class IRI="#Animals"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumanCellAtlas"/>
+        <Class IRI="#Collection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hyperlipidemia(disease)"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hypertension"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HypothermicPreservationMediaAt2-8C"/>
+        <Class IRI="#Preservation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IlluminaHiSeq2000"/>
+        <Class IRI="#Instrument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IlluminaHiSeq2500"/>
+        <Class IRI="#Instrument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IlluminaHiSeq4000"/>
+        <Class IRI="#Instrument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IlluminaHiSeqX"/>
+        <Class IRI="#Instrument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IlluminaHiseq2500"/>
+        <Class IRI="#Instrument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IlluminaNextSeq500"/>
+        <Class IRI="#Instrument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IlluminaNovaSeq6000"/>
+        <Class IRI="#Instrument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImmuneSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InhibitoryInterneuron"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InnateLymphoidCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Instrument"/>
+        <Class IRI="#Method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IrritableBowelSyndrome"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IsletOfLangerhans"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Kidney"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KidneyCancer"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#KidneyCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Kingdom"/>
+        <Class IRI="#Project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LaminaPropriaOfMucosaOfColon"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LargeIntestine"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeftLateralBasalBronchopulmonarySegment"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Leukocyte"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Library"/>
+        <Class IRI="#Method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Live"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Liver"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowerLobeOfLeftLung"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowerLobeOfRightLung"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lung"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LungParenchyma"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LymeDisease"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LymphNode"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MalariaCellAtlas"/>
+        <Class IRI="#Collection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MammaryGland"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Matrix"/>
+        <Class IRI="#Type"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediastinalLymphNode"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediastinalLymphNode2"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Melanoma(disease)"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Metadata"/>
+        <Class IRI="#Type"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Method"/>
+        <Class IRI="#Project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Monocyte"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MononuclearCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MusMusculus"/>
+        <Class IRI="#Animals"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Muscle"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyeloidCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyofibroblastCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NaturalKillerCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NeuralCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Neuron"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonAlcoholicFattyLiverDisease"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Normal"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NormalisedFilteredCountMatrix"/>
+        <Class IRI="#Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObstructiveSleepApneaSyndrome"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organ"/>
+        <Class IRI="#OrganismPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrganPart"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrganismPart"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrofaciodigitalSyndromeVIII"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OsteoarthritisHip"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PairedEnd"/>
+        <Class IRI="#Method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pancreas"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PancreaticPPCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParietalEndoderm"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PericardialEffusion(disease)"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PeripheralBloodMononuclearCell"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PeripheralBloodMononuclearCell2"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Phenotype"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Placenta"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Plants"/>
+        <Class IRI="#Kingdom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlasmaCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlasmodiumBerghei"/>
+        <Class IRI="#Protists"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlasmodiumFalciparum"/>
+        <Class IRI="#Protists"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Preservation"/>
+        <Class IRI="#Method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PresumptiveGut"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProstateCancer"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Protists"/>
+        <Class IRI="#Kingdom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Protocol"/>
+        <Class IRI="#Method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PureAutonomicFailure"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RattusNorvegicus"/>
+        <Class IRI="#Animals"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RawFilteredCountMatrix"/>
+        <Class IRI="#Matrix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RenalMedulla"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RenalPelvis"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Replicate"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResponseToTreatment"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Retina"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RetinalNeuralLayer"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReversibleCerebralVasoconstrictionSyndrome"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SaccharomycesCerevisiae"/>
+        <Class IRI="#Fungi"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SchistosomaMansoni"/>
+        <Class IRI="#Animals"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SeqWell"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Size"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkinEpidermis"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkinOfBody"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartSeq"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartSeq2"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spleen"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Splenocyte"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stimulus"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StrokeDisorder"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StromalCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SyndromicDyslipidemia"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#System"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TCell"/>
+        <Class IRI="#CellType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thymus"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Time"/>
+        <Class IRI="#ExperimentalFactors"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tissue"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tongue"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trachea"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#True"/>
+        <Class IRI="#PairedEnd"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tumor"/>
+        <Class IRI="#Organ"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Type"/>
+        <Class IRI="#Downloads"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Type2DiabetesMellitus"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UlcerativeColitis(disease)"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UmbilicalCordBlood"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Unspecified"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ureter"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VenousBlood"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VentricularTachycardia"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisceralEndoderm"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#YolkSacEndoderm"/>
+        <Class IRI="#OrganPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bai"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bam"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#csv"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#csv.gz"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#docx"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fastq"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fastq.gz"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#inDrop"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#matrix"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#npy"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#npz"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#optimus_v1.3.1"/>
+        <Class IRI="#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#optimus_v1.3.2"/>
+        <Class IRI="#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#optimus_v1.3.3"/>
+        <Class IRI="#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#optimus_v1.3.5"/>
+        <Class IRI="#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pdf"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#results"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sciRNASeq"/>
+        <Class IRI="#Library"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smartseq2_v2.3.0"/>
+        <Class IRI="#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smartseq2_v2.4.0"/>
+        <Class IRI="#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#txt"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#unknown"/>
+        <Class IRI="#Format"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#10Xv2sequencing"/>
+        <Class IRI="#10xv3sequencing"/>
+        <Class IRI="#CELSeq2"/>
+        <Class IRI="#CITESeq"/>
+        <Class IRI="#DroNcSeq"/>
+        <Class IRI="#DropSeq"/>
+        <Class IRI="#SeqWell"/>
+        <Class IRI="#SmartSeq2"/>
+        <Class IRI="#Unspecified"/>
+        <Class IRI="#inDrop"/>
+        <Class IRI="#sciRNASeq"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AcousticNeuroma"/>
+        <Class IRI="#AcquiredAneurysmalSubarachnoidHemorrhage"/>
+        <Class IRI="#AcuteKidneyTubularNecrosis"/>
+        <Class IRI="#AdrenalCortexAdenoma"/>
+        <Class IRI="#AnxietyDisorder"/>
+        <Class IRI="#Arthritis"/>
+        <Class IRI="#AsymptomaticDengue"/>
+        <Class IRI="#BenignProstaticHyperplasia(disease)"/>
+        <Class IRI="#CardiacArrest"/>
+        <Class IRI="#Cataract(disease)"/>
+        <Class IRI="#Colitis(disease)"/>
+        <Class IRI="#DepressiveDisorder"/>
+        <Class IRI="#Diverticulitis"/>
+        <Class IRI="#EndStageRenalFailure"/>
+        <Class IRI="#EnterococcusFaecalisInfection"/>
+        <Class IRI="#EssentialHypertension"/>
+        <Class IRI="#GastroesophagealRefluxDisease"/>
+        <Class IRI="#HemolyticUremicSyndrome"/>
+        <Class IRI="#HereditaryHemochromatosis"/>
+        <Class IRI="#HiatusHernia(disease)"/>
+        <Class IRI="#Hyperlipidemia(disease)"/>
+        <Class IRI="#Hypertension"/>
+        <Class IRI="#IrritableBowelSyndrome"/>
+        <Class IRI="#KidneyCancer"/>
+        <Class IRI="#LymeDisease"/>
+        <Class IRI="#Melanoma(disease)"/>
+        <Class IRI="#NonAlcoholicFattyLiverDisease"/>
+        <Class IRI="#Normal"/>
+        <Class IRI="#ObstructiveSleepApneaSyndrome"/>
+        <Class IRI="#OrofaciodigitalSyndromeVIII"/>
+        <Class IRI="#OsteoarthritisHip"/>
+        <Class IRI="#PericardialEffusion(disease)"/>
+        <Class IRI="#ProstateCancer"/>
+        <Class IRI="#PureAutonomicFailure"/>
+        <Class IRI="#ReversibleCerebralVasoconstrictionSyndrome"/>
+        <Class IRI="#StrokeDisorder"/>
+        <Class IRI="#SyndromicDyslipidemia"/>
+        <Class IRI="#Type2DiabetesMellitus"/>
+        <Class IRI="#UlcerativeColitis(disease)"/>
+        <Class IRI="#VentricularTachycardia"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AdiposeTissue"/>
+        <Class IRI="#Bladder"/>
+        <Class IRI="#Blood"/>
+        <Class IRI="#BoneTissue"/>
+        <Class IRI="#Brain"/>
+        <Class IRI="#Colon"/>
+        <Class IRI="#Decidua"/>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#Embryo"/>
+        <Class IRI="#Endoderm"/>
+        <Class IRI="#Esophagus"/>
+        <Class IRI="#Eye"/>
+        <Class IRI="#Heart"/>
+        <Class IRI="#HematopoieticSystem"/>
+        <Class IRI="#ImmuneSystem"/>
+        <Class IRI="#Kidney"/>
+        <Class IRI="#LargeIntestine"/>
+        <Class IRI="#Liver"/>
+        <Class IRI="#Lung"/>
+        <Class IRI="#LymphNode"/>
+        <Class IRI="#MammaryGland"/>
+        <Class IRI="#MediastinalLymphNode"/>
+        <Class IRI="#Muscle"/>
+        <Class IRI="#Pancreas"/>
+        <Class IRI="#Placenta"/>
+        <Class IRI="#PresumptiveGut"/>
+        <Class IRI="#SkinOfBody"/>
+        <Class IRI="#Spleen"/>
+        <Class IRI="#Thymus"/>
+        <Class IRI="#Tongue"/>
+        <Class IRI="#Trachea"/>
+        <Class IRI="#Tumor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Animals"/>
+        <Class IRI="#Fungi"/>
+        <Class IRI="#Plants"/>
+        <Class IRI="#Protists"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AnophelesGambiae"/>
+        <Class IRI="#CaenorhabditisElegans"/>
+        <Class IRI="#CallithrixJacchus"/>
+        <Class IRI="#RattusNorvegicus"/>
+        <Class IRI="#SchistosomaMansoni"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BCell"/>
+        <Class IRI="#BoneMarrowHematopoieticCell"/>
+        <Class IRI="#CAFs"/>
+        <Class IRI="#CD11b+CD11c+DC"/>
+        <Class IRI="#CD11b+Macrophages/monocytes"/>
+        <Class IRI="#CD11c+DC"/>
+        <Class IRI="#CD31+Endothelial"/>
+        <Class IRI="#CD34-positive_CD38-negative_HematopoieticStemCell"/>
+        <Class IRI="#CD4+TCell"/>
+        <Class IRI="#CD45-"/>
+        <Class IRI="#CD8-positive_Alpha-betaTcell"/>
+        <Class IRI="#CordBloodHematopoieticStemCell"/>
+        <Class IRI="#DendriticCell"/>
+        <Class IRI="#EffectorMemoryCD8-positive_Alpha-betaTCell_TerminallyDifferentiated"/>
+        <Class IRI="#EmbryonicFibroblast"/>
+        <Class IRI="#EndodermalCell"/>
+        <Class IRI="#EndothelialCell"/>
+        <Class IRI="#Epcam+"/>
+        <Class IRI="#EpithelialCell"/>
+        <Class IRI="#EpithelialCellOfEsophagus"/>
+        <Class IRI="#Fibroblast"/>
+        <Class IRI="#HLAG+"/>
+        <Class IRI="#InhibitoryInterneuron"/>
+        <Class IRI="#InnateLymphoidCell"/>
+        <Class IRI="#KidneyCell"/>
+        <Class IRI="#Leukocyte"/>
+        <Class IRI="#Live"/>
+        <Class IRI="#Monocyte"/>
+        <Class IRI="#MononuclearCell"/>
+        <Class IRI="#MyeloidCell"/>
+        <Class IRI="#MyofibroblastCell"/>
+        <Class IRI="#NaturalKillerCell"/>
+        <Class IRI="#NeuralCell"/>
+        <Class IRI="#Neuron"/>
+        <Class IRI="#PancreaticPPCell"/>
+        <Class IRI="#PeripheralBloodMononuclearCell2"/>
+        <Class IRI="#PlasmaCell"/>
+        <Class IRI="#Splenocyte"/>
+        <Class IRI="#StromalCell"/>
+        <Class IRI="#TCell"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Blastocyst"/>
+        <Class IRI="#BoneMarrow"/>
+        <Class IRI="#CaudateLobe"/>
+        <Class IRI="#Cortex"/>
+        <Class IRI="#CortexOfKidney"/>
+        <Class IRI="#DefinitiveEndoderm"/>
+        <Class IRI="#EsophagusMucosa"/>
+        <Class IRI="#FoveaCentralis"/>
+        <Class IRI="#IsletOfLangerhans"/>
+        <Class IRI="#LaminaPropriaOfMucosaOfColon"/>
+        <Class IRI="#LeftLateralBasalBronchopulmonarySegment"/>
+        <Class IRI="#LowerLobeOfLeftLung"/>
+        <Class IRI="#LowerLobeOfRightLung"/>
+        <Class IRI="#LungParenchyma"/>
+        <Class IRI="#MediastinalLymphNode2"/>
+        <Class IRI="#ParietalEndoderm"/>
+        <Class IRI="#PeripheralBloodMononuclearCell"/>
+        <Class IRI="#RenalMedulla"/>
+        <Class IRI="#RenalPelvis"/>
+        <Class IRI="#Retina"/>
+        <Class IRI="#RetinalNeuralLayer"/>
+        <Class IRI="#SkinEpidermis"/>
+        <Class IRI="#UmbilicalCordBlood"/>
+        <Class IRI="#Ureter"/>
+        <Class IRI="#VenousBlood"/>
+        <Class IRI="#VisceralEndoderm"/>
+        <Class IRI="#YolkSacEndoderm"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CellLine"/>
+        <Class IRI="#CellType"/>
+        <Class IRI="#DevelopmentalStage"/>
+        <Class IRI="#EnvironmentalStress"/>
+        <Class IRI="#Genotype"/>
+        <Class IRI="#GrowthCondition"/>
+        <Class IRI="#OrganismPart"/>
+        <Class IRI="#Phenotype"/>
+        <Class IRI="#Replicate"/>
+        <Class IRI="#ResponseToTreatment"/>
+        <Class IRI="#Stimulus"/>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#Time"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChanZuckerbergBiohub"/>
+        <Class IRI="#Covid-19"/>
+        <Class IRI="#HumanCellAtlas"/>
+        <Class IRI="#MalariaCellAtlas"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CryopreservationInLiquidNitrogen(deadTissue)"/>
+        <Class IRI="#CryopreservationOfLiveCellsInLiquidNitrogen"/>
+        <Class IRI="#CryopreservationOther"/>
+        <Class IRI="#Fresh"/>
+        <Class IRI="#HypothermicPreservationMediaAt2-8C"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DanioRerio"/>
+        <Class IRI="#DrosophilaMelanogaster"/>
+        <Class IRI="#GallusGallus"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Downloads"/>
+        <Class IRI="#Format"/>
+        <Class IRI="#Size"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#False"/>
+        <Class IRI="#True"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HomoSapiens"/>
+        <Class IRI="#MusMusculus"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IlluminaHiSeq2000"/>
+        <Class IRI="#IlluminaHiSeq2500"/>
+        <Class IRI="#IlluminaHiSeq4000"/>
+        <Class IRI="#IlluminaHiSeqX"/>
+        <Class IRI="#IlluminaHiseq2500"/>
+        <Class IRI="#IlluminaNextSeq500"/>
+        <Class IRI="#IlluminaNovaSeq6000"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Instrument"/>
+        <Class IRI="#Library"/>
+        <Class IRI="#PairedEnd"/>
+        <Class IRI="#Preservation"/>
+        <Class IRI="#Protocol"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Matrix"/>
+        <Class IRI="#Metadata"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NormalisedFilteredCountMatrix"/>
+        <Class IRI="#RawFilteredCountMatrix"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PlasmodiumBerghei"/>
+        <Class IRI="#PlasmodiumFalciparum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#bai"/>
+        <Class IRI="#bam"/>
+        <Class IRI="#csv"/>
+        <Class IRI="#csv.gz"/>
+        <Class IRI="#docx"/>
+        <Class IRI="#fastq"/>
+        <Class IRI="#fastq.gz"/>
+        <Class IRI="#matrix"/>
+        <Class IRI="#npy"/>
+        <Class IRI="#npz"/>
+        <Class IRI="#pdf"/>
+        <Class IRI="#results"/>
+        <Class IRI="#txt"/>
+        <Class IRI="#unknown"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#optimus_v1.3.1"/>
+        <Class IRI="#optimus_v1.3.2"/>
+        <Class IRI="#optimus_v1.3.3"/>
+        <Class IRI="#optimus_v1.3.5"/>
+        <Class IRI="#smartseq2_v2.3.0"/>
+        <Class IRI="#smartseq2_v2.4.0"/>
+    </DisjointClasses>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#belongsToKingdom"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasInstrumentOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasLibraryOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasPreservationOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasProtocolOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPartOfOrgan"/>
+    </FunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasInstrumentOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasLibraryOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasPreservationOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasProtocolOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isPartOfOrgan"/>
+    </AsymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsToKingdom"/>
+        <Class IRI="#Donors"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#Downloads"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInstrumentOf"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLibraryOf"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPreservationOf"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProtocolOf"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfCollection"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfOrgan"/>
+        <Class IRI="#OrganPart"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfTissue"/>
+        <Class IRI="#CellType"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToKingdom"/>
+        <Class IRI="#Animals"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToKingdom"/>
+        <Class IRI="#Fungi"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToKingdom"/>
+        <Class IRI="#Plants"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToKingdom"/>
+        <Class IRI="#Protists"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#bai"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#bam"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#csv"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#csv.gz"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#docx"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#fastq"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#fastq.gz"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#matrix"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#npy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#npz"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#pdf"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#results"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#txt"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFileFormatOf"/>
+        <Class IRI="#unknown"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInstrumentOf"/>
+        <Class IRI="#Instrument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLibraryOf"/>
+        <Class IRI="#Library"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPreservationOf"/>
+        <Class IRI="#Preservation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProtocolOf"/>
+        <Class IRI="#Protocol"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfCollection"/>
+        <Class IRI="#Collection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfOrgan"/>
+        <Class IRI="#Organ"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfTissue"/>
+        <Class IRI="#Tissue"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasAgeOf"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasBiologicalSexOf"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasCellsCountsOf"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasDonorsCountsOf"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasFileSizeOf"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasLoadDateOf"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAgeOf"/>
+        <Class IRI="#Donors"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasBiologicalSexOf"/>
+        <Class IRI="#Donors"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCellsCountsOf"/>
+        <Class IRI="#Project"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDonorsCountsOf"/>
+        <Class IRI="#Project"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFileSizeOf"/>
+        <Class IRI="#Downloads"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLoadDateOf"/>
+        <Class IRI="#Project"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAgeOf"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasBiologicalSexOf"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCellsCountsOf"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDonorsCountsOf"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFileSizeOf"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLoadDateOf"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

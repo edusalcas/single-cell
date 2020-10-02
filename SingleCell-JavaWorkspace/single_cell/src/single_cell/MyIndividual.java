@@ -75,7 +75,7 @@ public class MyIndividual {
 			try {
 				List<Object> list = jsonIndividual.getJSONObject("Classes").getJSONArray(className).toList();
 				for (Object ontClass : list) {
-					model.createIndividual(id, MyModel.PREDICATE_CLASS, (String) ontClass);
+					model.addClassToIndividual(id, MyModel.PREDICATE_CLASS, ontClass);
 				}
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -89,28 +89,15 @@ public class MyIndividual {
 			try {
 				Object propertieValueObject = objectProperties.get(propertyName);
 				
-				if (propertieValueObject instanceof String) {
-					
-				} else if (propertieValueObject instanceof Long) {
-					model.createIndividual(id, propertyName, (Long) propertieValueObject);
-				} else if (propertieValueObject instanceof Integer) {
-					model.createIndividual(id, propertyName, (Integer) propertieValueObject);
-				} else if (propertieValueObject instanceof Boolean) {
-					model.createIndividual(id, propertyName, (Boolean) propertieValueObject);
-				} else if (propertieValueObject instanceof JSONArray) {
+				if (propertieValueObject instanceof JSONArray) {
 					List<Object> list = objectProperties.getJSONArray(propertyName).toList();
-					for (Object propertyValue : list) {
-						if (propertyValue instanceof String)
-							model.createIndividual(id, propertyName, (String) propertyValue);
-						else if (propertyValue instanceof Integer)
-							model.createIndividual(id, propertyName, (Integer) propertyValue);
-						else if (propertyValue instanceof Long)
-							model.createIndividual(id, propertyName, (Long) propertyValue);
-					    else if (propertyValue instanceof Boolean)
-					    	model.createIndividual(id, propertyName, (Boolean) propertyValue);
-					}
-				} else {
 					
+					for (Object propertyValue : list) {
+						if (propertyValue instanceof Object)
+							model.addObjectPropertyToIndividual(id, propertyName, propertyValue);
+					}
+				} else if (propertieValueObject instanceof Object){
+					model.addObjectPropertyToIndividual(id, propertyName, propertieValueObject);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -125,30 +112,15 @@ public class MyIndividual {
 			try {
 				Object propertieValueObject = dataProperties.get(propertyName);
 				
-				if (propertieValueObject instanceof String) {
-					
-				} else if (propertieValueObject instanceof Long) {
-					model.createIndividual(id, propertyName, (Long) propertieValueObject);
-				} else if (propertieValueObject instanceof Integer) {
-					model.createIndividual(id, propertyName, (Integer) propertieValueObject);
-				} else if (propertieValueObject instanceof Boolean) {
-					model.createIndividual(id, propertyName, (Boolean) propertieValueObject);
-				} else if (propertieValueObject instanceof JSONArray) {
+				if (propertieValueObject instanceof JSONArray) {
 					List<Object> list = dataProperties.getJSONArray(propertyName).toList();
-					for (Object propertyValue : list) {
-						if (propertyValue instanceof String)
-							model.createIndividual(id, propertyName, (String) propertyValue);
-						else if (propertyValue instanceof Integer)
-							model.createIndividual(id, propertyName, (Integer) propertyValue);
-						else if (propertyValue instanceof Long)
-							model.createIndividual(id, propertyName, (Long) propertyValue);
-					    else if (propertyValue instanceof Boolean)
-					    	model.createIndividual(id, propertyName, (Boolean) propertyValue);
-					    else if (propertyValue instanceof Map)
-					    	model.createIndividual(id, propertyName, (Map) propertyValue);
-					}
-				} else {
 					
+					for (Object propertyValue : list) {
+						if (propertyValue instanceof Object)
+							model.addDataPropertyToIndividual(id, propertyName, propertyValue);
+					}
+				} else if (propertieValueObject instanceof Object){
+					model.addDataPropertyToIndividual(id, propertyName, propertieValueObject);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -32,4 +32,5 @@
     <fullyQualifiedTypeName name="org.json.JSONObject"/>
     <fullyQualifiedTypeName name="org.json.JSONArray"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="org.apache.jena.ontology.ObjectProperty"/>
 </qualifiedTypeNameHistroy>

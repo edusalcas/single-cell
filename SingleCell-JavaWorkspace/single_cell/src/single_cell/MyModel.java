@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.Map;
 
 import org.apache.jena.ontology.Individual;
+import org.apache.jena.ontology.ObjectProperty;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
@@ -23,7 +24,8 @@ public class MyModel {
 	private FileOutputStream outputStream;
 
 	private HashMap<String, OntClass> classMap;
-	private HashMap<String, Property> propertyMap;
+	private HashMap<String, Property> dataPropertyMap;
+	private HashMap<String, ObjectProperty> objectPropertyMap;
 	private HashMap<String, Individual> individualMap;
 
 	public static final String PREDICATE_CLASS = "Type";
@@ -49,41 +51,37 @@ public class MyModel {
 	};
 	
 	public static final String[] OBJECT_PROPERTIES = new String[] {
-			"hasAccessIdIn",
-			"hasAnalysisProtocolOf",
+			"belongsToKingdom",
+			"hasAnalysisProtocol",
 			"hasCellLineType",
-			"hasDiseaseStatusOf",
-			"hasFileTypeOf",
-			"hasInstrumentOf",
-			"hasLibraryOf",
-			"hasModelOrganOf",
-			"hasOrganOf",
-			"hasOrganPartOf",
-			"hasPreservationOf",
-			"hasSampleTypeOf",
-			"hasSelectedCellTypeOf",
-			"isComposedOf",
+			"hasDiseaseStatus",
+			"hasFileType",
+			"hasGenusSpecie",
+			"hasInstrument",
+			"hasLibrary",
+			"hasModelOrgan",
+			"hasOrgan",
+			"hasOrganPart",
+			"hasPreservation",
+			"hasSampleType",
+			"hasSelectedCellType",
 			"isPartOfCollection",
 			"isPartOfProject",
 			"isPartOfRepository"
 	};
 	
 	public static final String[] DATA_PROPERTIES = new String[] {
-			"hasAccessId",
-			"hasAgeOf",
-			"hasAgeRangeOf",
-			"hasAgeUnitOf",
-			"hasBiologicalSexOf",
-			"hasCellCountsEstimatesOf",
-			"hasDonorCountOf",
-			"hasProjectTitle",
+			"hasAge",
+			"hasAgeRange",
+			"hasAgeUnit",
+			"hasBiologicalSex",
+			"hasLaboratory",
 			"hasProjectShortName",
-			"hasSizeOf",
-			"hasTotalCellsOf",
+			"hasProjectTitle",
+			"hasTotalCellCounts",
 			"hasTotalDonorCounts",
-			"hasTotalSizeOf",
-			"isPairedEnd",
-			"isPartOfLaboratory"
+			"hasTotalSize",
+			"isPairedEnd"
 	};
 	
 	private void initializeInputStream(String inputFileName) {
@@ -114,7 +112,8 @@ public class MyModel {
 		model.read(inputStream, "RDF/XML");
 
 		classMap = new HashMap<>();
-		propertyMap = new HashMap<>();
+		dataPropertyMap = new HashMap<>();
+		objectPropertyMap = new HashMap<>();
 		individualMap = new HashMap<>();
 		
 		classMap.put(null, null);
@@ -133,66 +132,64 @@ public class MyModel {
 			ontClass = model.getOntClass(NS + className);
 			classMap.put(className, ontClass);
 
-			if (ontClass == null) {
+			if (ontClass == null)
 				System.err.println("Warning: Class " + className + " is not in the ontology model.");
-			}
 			
 		}
 		return ontClass;
 	}
 
-	public Property getProperty(String propertyName) {
-		Property property = propertyMap.get(propertyName);
+	public Property getDataProperty(String propertyName) {
+		Property property = dataPropertyMap.get(propertyName);
 
-		if (property == null) {
-			try {
+		if (!dataPropertyMap.containsKey(propertyName)) {
 				property = model.getProperty(NS + propertyName);
-				propertyMap.put(propertyName, property);
-			} catch (Exception e) {
-				System.err.println("Warning: Property " + propertyName + " is not in the ontology model.");
-			}
+				dataPropertyMap.put(propertyName, property);
+				
+				if (property == null) 
+					System.err.println("Warning: Data property " + propertyName + " is not in the ontology model.");
 		}
 		return property;
 	}
+	
+	public ObjectProperty getObjectProperty(String propertyName) {
+		ObjectProperty property = objectPropertyMap.get(propertyName);
 
-	public void createIndividual(String subject, String predicate, String object) {
-		if (predicate == PREDICATE_CLASS) {
-			OntClass ontClass = getOntClass(object);
-			Individual individual = model.createIndividual(NS + subject, ontClass);
-			if (!individualMap.containsKey(subject))
-				individualMap.put(subject, individual);
-		} else {
-			Property property = getProperty(predicate);
-			Individual ind = individualMap.get(subject);
-			ind.addProperty(property, object);
+		if (!objectPropertyMap.containsKey(propertyName)) {
+			property = model.getObjectProperty(NS + propertyName);
+			objectPropertyMap.put(propertyName, property);
+			
+			if (property == null) 
+				System.err.println("Warning: Object property " + propertyName + " is not in the ontology model.");
 		}
+		return property;
+	}
+	
+	public void addClassToIndividual(String subject, String predicate, Object object) {
+		OntClass ontClass = getOntClass(object.toString());
+		Individual individual = model.createIndividual(NS + subject, ontClass);
+		if (!individualMap.containsKey(subject))
+			individualMap.put(subject, individual);
+	}
+	
+	public void addDataPropertyToIndividual(String subject, String predicate, Object object) {
+		if (object.toString().compareTo("null") == 0)
+			object = "unspecified";
+
+		Property property = getDataProperty(predicate);
+		Individual individual = individualMap.get(subject);
+		model.add(individual, property, object.toString());
+	}
+	
+	public void addObjectPropertyToIndividual(String subject, String predicate, Object object) {
+		if (object.toString().compareTo("null") == 0)
+			object = "unspecified";
 		
+		ObjectProperty property = getObjectProperty(predicate);
+		Individual individual = individualMap.get(subject);
+		model.add(individual, property, object.toString());
 	}
 	
-	public void createIndividual(String subject, String predicate, Long object) {
-		Property property = getProperty(predicate);
-		Individual ind = individualMap.get(subject);
-		ind.addProperty(property, object.toString());		
-	}
-	
-	public void createIndividual(String subject, String predicate, Boolean object) {
-		Property property = getProperty(predicate);
-		Individual ind = individualMap.get(subject);
-		ind.addProperty(property, object.toString());		
-	}
-
-	public void createIndividual(String subject, String predicate, Integer object) {
-		Property property = getProperty(predicate);
-		Individual ind = individualMap.get(subject);
-		ind.addProperty(property, object.toString());		
-	}
-	
-	public void createIndividual(String subject, String predicate, Map object) {
-		Property property = getProperty(predicate);
-		Individual ind = individualMap.get(subject);
-		ind.addProperty(property, object.toString());		
-	}
-
 	public Model getModel() {
 		return model;
 	}

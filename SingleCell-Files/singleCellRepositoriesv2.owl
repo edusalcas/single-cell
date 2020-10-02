@@ -21,18 +21,18 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAccessIdIn -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#belongsToKingdom -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAccessIdIn">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Accession"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#belongsToKingdom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GenusSpecies"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Kingdom"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAnalysisProtocolOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAnalysisProtocol -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAnalysisProtocolOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAnalysisProtocol">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AnalysisProtocol"/>
     </owl:ObjectProperty>
@@ -48,102 +48,101 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasDiseaseStatusOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasDiseaseStatus -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasDiseaseStatusOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasDiseaseStatus">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Disease"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasFileTypeOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasFileType -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasFileTypeOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasFileType">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Format"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasInstrumentOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasGenusSpecie -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasInstrumentOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasGenusSpecie">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GenusSpecies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasInstrument -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasInstrument">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#InstrumentModel"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasLibraryOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasLibrary -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasLibraryOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasLibrary">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Library"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasModelOrganOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasModelOrgan -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasModelOrganOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasModelOrgan">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasOrganOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasOrgan -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasOrganOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasOrgan">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasOrganPartOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasOrganPart -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasOrganPartOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasOrganPart">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OrganPart"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasPreservationOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasPreservation -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasPreservationOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasPreservation">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasSampleTypeOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasSampleType -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasSampleTypeOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasSampleType">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleType"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasSelectedCellTypeOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasSelectedCellType -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasSelectedCellTypeOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasSelectedCellType">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellType"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#isComposedOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#isComposedOf">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#isPartOfProject"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:ObjectProperty>
     
 
@@ -188,66 +187,41 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAccessId -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAge -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAccessId">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAgeOf -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAgeOf">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAge">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAgeRangeOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAgeRange -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAgeRangeOf">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAgeRange">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAgeUnitOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAgeUnit -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAgeUnitOf">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAgeUnit">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasBiologicalSexOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasBiologicalSex -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasBiologicalSexOf">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasBiologicalSex">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasCellCountsEstimatesOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasLaboratory -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasCellCountsEstimatesOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasDonorCountOf -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasDonorCountOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasProjecTitle -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasProjecTitle">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasLaboratory">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:DatatypeProperty>
     
@@ -262,19 +236,19 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasSizeOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasProjectTitle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasSizeOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#File"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasProjectTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasTotalCellsOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasTotalCellCounts -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasTotalCellsOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasTotalCellCounts">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:DatatypeProperty>
     
 
@@ -282,15 +256,15 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasTotalDonorCounts -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasTotalDonorCounts">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasTotalSizeOf -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasTotalSize -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasTotalSizeOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasTotalSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:DatatypeProperty>
     
 
@@ -298,15 +272,6 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#isPairedEnd -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#isPairedEnd">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#isPartOfLaboratory -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#isPartOfLaboratory">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:DatatypeProperty>
     
@@ -320,14 +285,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Accession -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Accession">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
-    </owl:Class>
     
 
 
@@ -358,7 +315,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AdiposeTissue -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AdiposeTissue">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tissue"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
     </owl:Class>
     
 
@@ -409,14 +366,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ArabidopsisThaliana">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GenusSpecies"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Plants"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ArrayExpressAccessions -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ArrayExpressAccessions">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Accession"/>
     </owl:Class>
     
 
@@ -496,7 +445,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#BoneTissue -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#BoneTissue">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tissue"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
     </owl:Class>
     
 
@@ -618,7 +567,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellType -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellType">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tissue"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:Class>
     
 
@@ -1009,14 +958,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GEOSeriesAccessions -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GEOSeriesAccessions">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Accession"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GallusGallus -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GallusGallus">
@@ -1069,7 +1010,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HematopoieticSystem -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HematopoieticSystem">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#System"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
     </owl:Class>
     
 
@@ -1141,22 +1082,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#INSDCProjectAccessions -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#INSDCProjectAccessions">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Accession"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#INSDCStudyAccessions -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#INSDCStudyAccessions">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Accession"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#IlluminaHiSeq2000 -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#IlluminaHiSeq2000">
@@ -1216,7 +1141,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ImmuneSystem -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ImmuneSystem">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#System"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
     </owl:Class>
     
 
@@ -1636,7 +1561,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OrganPart -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OrganPart">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
     </owl:Class>
     
 
@@ -2142,14 +2067,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tissue -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tissue">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tongue -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tongue">
@@ -2481,21 +2398,6 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Accession"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Collection"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Disease"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ExperimentalFactors"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#File"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GenusSpecies"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Kingdom"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Method"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleType"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AcousticNeuroma"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AcquiredAneurysmalSubarachnoidHemorrhage"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AcuteKidneyTubularNecrosis"/>
@@ -2610,15 +2512,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RattusNorvegicus"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SaccharomycesCerevisiae"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SchistosomaMansoni"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ArrayExpressAccessions"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GEOSeriesAccessions"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#INSDCProjectAccessions"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#INSDCStudyAccessions"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>

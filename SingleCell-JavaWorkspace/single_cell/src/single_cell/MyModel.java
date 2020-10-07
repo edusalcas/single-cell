@@ -29,59 +29,39 @@ public class MyModel {
 	private HashMap<String, Individual> individualMap;
 
 	public static final String PREDICATE_CLASS = "Type";
+	public static final String SAMPLE_CLASS = "Sample";
 
-	public static final String[] CLASSES = new String[] {
-			"Accesion",
-			"Collection",
-			"Disease",
-			"Experimental",
-			"FileFormat",
-			"FileType",
-			"GenusSpecies",
-			"Kingdom",
-			"AnalysisProtocol",
-			"InstrumentModel",
-			"Library",
-			"Preservation",
-			"Organ",
-			"OrganPart",
-			"CellType",
-			// "Repository",
-			"SampleType"
-	};
 	
 	public static final String[] OBJECT_PROPERTIES = new String[] {
-			"belongsToKingdom",
-			"hasAnalysisProtocol",
-			"hasCellLineType",
-			"hasDiseaseStatus",
-			"hasFileType",
-			"hasGenusSpecie",
-			"hasInstrument",
-			"hasLibrary",
-			"hasModelOrgan",
-			"hasOrgan",
-			"hasOrganPart",
-			"hasPreservation",
-			"hasSampleType",
-			"hasSelectedCellType",
-			"isPartOfCollection",
-			"isPartOfProject",
-			"isPartOfRepository"
+			"SR.hasAnalysisProtocol",
+			"SR.hasCellLineType",
+			"SR.hasDiseaseStatus",
+			"SR.hasGenusSpecie",
+			"SR.hasInstrument",
+			"SR.hasLibrary",
+			"SR.hasObjectOfStudy",
+			"SR.hasPreservation",
+			"SR.hasSampleType",
+			"SR.hasSelectedCellType"
 	};
 	
 	public static final String[] DATA_PROPERTIES = new String[] {
-			"hasAge",
-			"hasAgeRange",
 			"hasAgeUnit",
 			"hasBiologicalSex",
+			"hasFileFormat",
+			"hasFileType",
 			"hasLaboratory",
+			"hasMaxAge",
+			"hasMinAge",
+			"hasModelOrgan",
 			"hasProjectShortName",
 			"hasProjectTitle",
 			"hasTotalCellCounts",
 			"hasTotalDonorCounts",
 			"hasTotalSize",
-			"isPairedEnd"
+			"isPairedEnd",
+			"isPartOfCollection",
+			"isPartOfRepository",
 	};
 	
 	private void initializeInputStream(String inputFileName) {
@@ -165,6 +145,26 @@ public class MyModel {
 		return property;
 	}
 	
+	public Individual getIndividual(String individualName) {
+		Individual individual = individualMap.get(individualName);
+
+		if (!individualMap.containsKey(individualName)) {
+			individual = model.getIndividual(NS + individualName);
+			individualMap.put(individualName, individual);
+			
+			if (individual == null) 
+				System.err.println("Warning: Individual " + individualName + " is not in the ontology model.");
+		}
+		return individual;
+	}
+	
+	public void createIndividual(String id) {
+		OntClass sampleClass = getOntClass(SAMPLE_CLASS);
+		Individual individual = model.createIndividual(NS + id, sampleClass);
+		
+		individualMap.put(id, individual);
+	}
+	
 	public void addClassToIndividual(String subject, String predicate, Object object) {
 		OntClass ontClass = getOntClass(object.toString());
 		Individual individual = model.createIndividual(NS + subject, ontClass);
@@ -172,28 +172,37 @@ public class MyModel {
 			individualMap.put(subject, individual);
 	}
 	
+	public void addObjectPropertyToIndividual(String subject, String predicate, Object object) {
+		if (object.toString().compareTo("null") == 0)
+			return;
+		
+		ObjectProperty property = getObjectProperty(predicate);
+		Individual individual = individualMap.get(subject);
+		Individual objectIndividual = getIndividual(object.toString());
+		
+		if (objectIndividual == null)
+			return;
+		
+		model.add(individual, property, objectIndividual);
+	}
+	
+	
 	public void addDataPropertyToIndividual(String subject, String predicate, Object object) {
 		if (object.toString().compareTo("null") == 0)
 			object = "unspecified";
 
 		Property property = getDataProperty(predicate);
 		Individual individual = individualMap.get(subject);
-		model.add(individual, property, object.toString());
-	}
-	
-	public void addObjectPropertyToIndividual(String subject, String predicate, Object object) {
-		if (object.toString().compareTo("null") == 0)
-			object = "unspecified";
 		
-		ObjectProperty property = getObjectProperty(predicate);
-		Individual individual = individualMap.get(subject);
-		model.add(individual, property, object.toString());
+		if (object instanceof String)
+			model.add(individual, property, object.toString());
+		else if(object instanceof Integer)
+			model.addLiteral(individual, property, (int) object);
+
 	}
 	
 	public Model getModel() {
 		return model;
 	}
-
-
 
 }

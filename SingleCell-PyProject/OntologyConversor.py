@@ -13,15 +13,21 @@ mappingDic = {
     'Non-AlcoholicFattyLiverDisease': 'NonAlcoholicFattyLiverDisease',
     'Hemolytic-UremicSyndrome': 'HemolyticUremicSyndrome',
     'Osteoarthritis,Hip': 'OsteoarthritisHip',
+    'IlluminaHiseq2500': 'IlluminaHiSeq2500',
     'Smart-Seq2': 'Smart-seq2',
+    'Smart-Seq': 'Smart-seq',
     'Sci-RNA-Seq': 'Sci-RNA-seq',
     'MARS-Seq': 'MARS-seq',
     'CEL-Seq2': 'CEL-seq2',
     'CITE-Seq': 'CITE-seq',
-    'CD8-Positive,Alpha-BetaTCell': 'CD8-positive_Alpha-betaTcell',
+    'DroNc-Seq': 'DroNc-seq',
+    'Drop-Seq': 'Drop-seq',
+    'Seq-Well': 'Seq-well',
+    'TCell': 'Tcell',
+    'CD8-Positive,Alpha-BetaTCell': 'CD8-positive_Alpha-betaTCell',
     'CD11B+CD11C+DC': 'CD11b+CD11c+DC',
     'CD11C+DC': 'CD11c+DC',
-    'CD11B+Macrophages/Monocytes': 'CD11b+Macrophages/monocytes',
+    'CD11B+Macrophages/Monocytes': 'CD11b+Macrophages/Monocytes',
     'CD34-Positive,CD38-NegativeHematopoieticStemCell': 'CD34-positive_CD38-negative_HematopoieticStemCell',
     'EffectorMemoryCD8-Positive,Alpha-BetaTCell,TerminallyDifferentiated': 'EffectorMemoryCD8-positive_Alpha-betaTCell_TerminallyDifferentiated',
     '10XV2Sequencing': '10Xv2Sequencing',
@@ -30,8 +36,7 @@ mappingDic = {
     "10X3'V2Sequencing": "10X3'v2Sequencing",
     "10X3'V3Sequencing": "10x3'v3Sequencing",
     "10X5'V2Sequencing": "10X5'v2Sequencing",
-    # 'DNALibraryConstruction': '',
-    # 'CDNALibraryConstruction': '',
+    'CDNALibraryConstruction': 'cDNALibraryConstruction',
     'BladderOrgan': 'Bladder',
     'MuscleOrgan': 'Muscle',
     'Cryopreservation,Other': 'CryopreservationOther',
@@ -42,6 +47,7 @@ mappingDic = {
     'Optimus_V1.3.5': 'Optimus_v1.3.5',
     'Smartseq2_V2.3.0': 'Smartseq2_v2.3.0',
     'Smartseq2_V2.4.0': 'Smartseq2_v2.4.0',
+    'StemCell-Derived': 'StemCell-derived',
 }
 
 
@@ -75,56 +81,35 @@ def hca2ont(text):
 def init_individual():
     individual = {
         "ID": None,
-        "Classes": {
-            "Accesion": None,
-            "Collection": None,
-            "Disease": None,
-            "Experimental": None,
-            "FileFormat": None,
-            "FileType": None,
-            "GenusSpecies": None,
-            "Kingdom": None,
-            "AnalysisProtocol": None,
-            "InstrumentModel": None,
-            "Library": None,
-            "Preservation": None,
-            "Organ": None,
-            "OrganPart": None,
-            "CellType": None,
-            "Repository": None,
-            "SampleType": None,
-        },
         "ObjectProperties": {
-            "belongsToKingdom": None,
-            "hasAnalysisProtocol": None,
-            "hasCellLineType": None,
-            "hasDiseaseStatus": None,
-            "hasFileType": None,
-            "hasGenusSpecie": None,
-            "hasInstrument": None,
-            "hasLibrary": None,
-            "hasModelOrgan": None,
-            "hasOrgan": None,
-            "hasOrganPart": None,
-            "hasPreservation": None,
-            "hasSampleType": None,
-            "hasSelectedCellType": None,
-            "isPartOfCollection": None,
-            "isPartOfProject": None,
-            "isPartOfRepository": None,
+            "SR.hasAnalysisProtocol": None,
+            "SR.hasCellLineType": None,
+            "SR.hasDiseaseStatus": None,
+            "SR.hasGenusSpecie": None,
+            "SR.hasInstrument": None,
+            "SR.hasLibrary": None,
+            "SR.hasObjectOfStudy": None,
+            "SR.hasPreservation": None,
+            "SR.hasSampleType": None,
+            "SR.hasSelectedCellType": None,
         },
         "DataProperties": {
-            "hasAge": None,
-            "hasAgeRange": None,
             "hasAgeUnit": None,
             "hasBiologicalSex": None,
+            "hasFileFormat": None,
+            "hasFileType": None,
             "hasLaboratory": None,
+            "hasMaxAge": None,
+            "hasMinAge": None,
+            "hasModelOrgan": False,
             "hasProjectShortName": None,
             "hasProjectTitle": None,
             "hasTotalCellCounts": None,
             "hasTotalDonorCounts": None,
             "hasTotalSize": None,
             "isPairedEnd": None,
+            "isPartOfCollection": None,
+            "isPartOfRepository": None,
         }
     }
 
@@ -139,8 +124,8 @@ def init_individual():
 def format_HCD(individual_hcd):
     individual = init_individual()
 
-    individual['Classes']['Collection'] = ["HumanCellAtlas"]
-    individual['ObjectProperties']['isPartOfRepository'] = "HumanCellAtlas"
+    individual['DataProperties']['isPartOfCollection'] = "HumanCellAtlas"
+    individual['DataProperties']['isPartOfRepository'] = "HumanCellAtlas"
 
     # Cell Lines
     individual = format_HCD_cell_lines(individual, individual_hcd)
@@ -183,9 +168,8 @@ def format_HCD_cell_lines(individual, individual_hcd):
     cell_line_type = individual_hcd['cellLines'][0]['cellLineType']
     model_organ = individual_hcd['cellLines'][0]['modelOrgan']
 
-    individual['Classes']['SampleType'] = [hca2ont(cell_line_type)]
-    individual['ObjectProperties']['hasCellLineType'] = hca2ont(cell_line_type)
-    individual['ObjectProperties']['hasModelOrgan'] = hca2ont(model_organ)
+    individual['ObjectProperties']['SR.hasCellLineType'] = hca2ont(cell_line_type)
+    individual['DataProperties']['hasModelOrgan'] = (model_organ is not None)
 
     return individual
 
@@ -199,12 +183,8 @@ def format_HCD_cell_suspensions(individual, individual_hcd):
     selected_cell_type = individual_hcd['cellSuspensions'][0]['selectedCellType']
     total_cells = individual_hcd['cellSuspensions'][0]['totalCells']
 
-    individual['Classes']['Organ'] = hca2ont(organ)
-    individual['ObjectProperties']['hasOrgan'] = hca2ont(organ)
-    individual['Classes']['OrganPart'] = hca2ont(organ_part)
-    individual['ObjectProperties']['hasOrganPart'] = hca2ont(organ_part)
-    individual['Classes']['CellType'] = hca2ont(selected_cell_type)
-    individual['ObjectProperties']['hasSelectedCellType'] = hca2ont(selected_cell_type)
+    individual['ObjectProperties']['SR.hasObjectOfStudy'] = hca2ont(organ_part) if organ_part[0] is not None else hca2ont(organ)
+    individual['ObjectProperties']['SR.hasSelectedCellType'] = hca2ont(selected_cell_type)
 
     individual['DataProperties']['hasTotalCellCounts'] = total_cells
 
@@ -219,24 +199,22 @@ def format_HCD_donor_organism(individual, individual_hcd):
     disease = individual_hcd['donorOrganisms'][0]['disease']
     donor_count = individual_hcd['donorOrganisms'][0]['donorCount']
     genus_species = individual_hcd['donorOrganisms'][0]['genusSpecies']
-    organism_age = individual_hcd['donorOrganisms'][0]['organismAge']
-    organism_age_range = individual_hcd['donorOrganisms'][0]['organismAgeRange']
+    organism_age = individual_hcd['donorOrganisms'][0]['organismAge'][0]
     organism_age_unit = individual_hcd['donorOrganisms'][0]['organismAgeUnit']
 
-    individual['DataProperties']['hasBiologicalSex'] = hca2ont(biological_sex)
-    individual['Classes']['Disease'] = hca2ont(disease)
-    individual['Classes']['GenusSpecies'] = hca2ont(genus_species)
+    individual['DataProperties']['hasBiologicalSex'] = biological_sex
+    individual['ObjectProperties']['SR.hasDiseaseStatus'] = hca2ont(disease)
+    individual['ObjectProperties']['SR.hasGenusSpecie'] = hca2ont(genus_species)
 
-    if '-' in organism_age:
-        individual['DataProperties']['hasAgeRange'] = organism_age
+    if organism_age is not None and '-' in organism_age:
+        individual['DataProperties']['hasMinAge'] = organism_age.split('-')[0]
+        individual['DataProperties']['hasMaxAge'] = organism_age.split('-')[1]
     else:
-        individual['DataProperties']['hasAge'] = organism_age
-        individual['DataProperties']['hasAgeRange'] = organism_age_range
-        individual['DataProperties']['hasAgeUnit'] = hca2ont(organism_age_unit)
+        individual['DataProperties']['hasMinAge'] = organism_age
+        individual['DataProperties']['hasMaxAge'] = organism_age
 
-    # individual['DataProperties']['hasAge'] = organism_age
-    # individual['DataProperties']['hasAgeRange'] = organism_age_range
-    # individual['DataProperties']['hasAgeUnit'] = hca2ont(organism_age_unit)
+    individual['DataProperties']['hasAgeUnit'] = organism_age_unit
+    individual['DataProperties']['hasTotalDonorCounts'] = donor_count
 
     return individual
 
@@ -255,8 +233,7 @@ def format_HCD_file_type_summaries(individual, individual_hcd):
         count.append(individual_hcd['fileTypeSummaries'][i]['count'])
         total_size.append(individual_hcd['fileTypeSummaries'][i]['totalSize'])
 
-    individual['Classes']['FileFormat'] = file_type
-    individual['ObjectProperties']['hasFileType'] = file_type
+    individual['DataProperties']['hasFileFormat'] = file_type
     individual['DataProperties']['hasTotalSize'] = sum(total_size)
 
     return individual
@@ -268,7 +245,7 @@ def format_HCD_organoids(individual, individual_hcd):
 
     model_organ = individual_hcd['organoids'][0]['modelOrgan']
 
-    individual['ObjectProperties']['hasModelOrgan'] = hca2ont(model_organ)
+    individual['ObjectProperties']['hasModelOrgan'] = (model_organ is not None)
 
     return individual
 
@@ -297,13 +274,10 @@ def format_HCD_protocols(individual, individual_hcd):
     paired_end = individual_hcd['protocols'][0]['pairedEnd']
     workflow = individual_hcd['protocols'][0]['workflow']
 
-    individual['Classes']['InstrumentModel'] = hca2ont(instrument_manufacturer_model)
-    individual['ObjectProperties']['hasInstrument'] = hca2ont(instrument_manufacturer_model)
-    individual['Classes']['Library'] = hca2ont(library_construction_approach)
-    individual['ObjectProperties']['hasLibrary'] = hca2ont(library_construction_approach)
+    individual['ObjectProperties']['SR.hasInstrument'] = hca2ont(instrument_manufacturer_model)
+    individual['ObjectProperties']['SR.hasLibrary'] = hca2ont(library_construction_approach)
     individual['DataProperties']['isPairedEnd'] = paired_end
-    individual['Classes']['AnalysisProtocol'] = hca2ont(workflow)
-    individual['ObjectProperties']['hasAnalysisProtocol'] = hca2ont(workflow)
+    individual['ObjectProperties']['SR.hasAnalysisProtocol'] = hca2ont(workflow)
 
     return individual
 
@@ -314,13 +288,12 @@ def format_HCD_samples(individual, individual_hcd):
 
     sample_entity_type = individual_hcd['samples'][0]['sampleEntityType']
 
-    individual['Classes']['SampleType'] = [hca2ont(sample_entity_type)]
-    individual['ObjectProperties']['hasSampleType'] = hca2ont(sample_entity_type)
+    individual['ObjectProperties']['SR.hasSampleType'] = hca2ont(sample_entity_type)
 
     try:
         preservation_method = individual_hcd['samples'][0]['preservationMethod']
-        individual['Classes']['Preservation'] = hca2ont(preservation_method)
-        individual['ObjectProperties']['hasPreservation'] = hca2ont(preservation_method)
+
+        individual['ObjectProperties']['SR.hasPreservation'] = hca2ont(preservation_method)
 
         return individual
     except:
@@ -337,11 +310,7 @@ def format_HCD_specimens(individual, individual_hcd):
     preservation_method = individual_hcd['specimens'][0]['preservationMethod']
 
     individual['ID'] = individual_id
-    individual['Classes']['Organ'] = hca2ont(organ)
-    individual['ObjectProperties']['hasOrgan'] = hca2ont(organ)
-    individual['Classes']['OrganPart'] = hca2ont(organ_part)
-    individual['ObjectProperties']['hasOrganPart'] = hca2ont(organ_part)
-    individual['Classes']['Preservation'] = hca2ont(preservation_method)
-    individual['ObjectProperties']['hasPreservation'] = hca2ont(preservation_method)
+    individual['ObjectProperties']['SR.hasObjectOfStudy'] = hca2ont(organ_part) if organ_part[0] is not None else hca2ont(organ)
+    individual['ObjectProperties']['SR.hasPreservation'] = hca2ont(preservation_method)
 
     return individual

@@ -20,8 +20,6 @@
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="single_cell.MyModel"/>
     <fullyQualifiedTypeName name="java.util.Hashtable"/>
-    <fullyQualifiedTypeName name="org.apache.jena.ontology.OntClass"/>
-    <fullyQualifiedTypeName name="org.apache.jena.ontology.Individual"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Property"/>
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.RDFNode"/>
@@ -33,4 +31,6 @@
     <fullyQualifiedTypeName name="org.json.JSONArray"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="org.apache.jena.ontology.ObjectProperty"/>
+    <fullyQualifiedTypeName name="org.apache.jena.ontology.OntClass"/>
+    <fullyQualifiedTypeName name="org.apache.jena.ontology.Individual"/>
 </qualifiedTypeNameHistroy>

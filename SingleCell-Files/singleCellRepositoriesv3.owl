@@ -906,7 +906,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cryopreservation -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cryopreservation">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PreservationType"/>
     </owl:Class>
     
 
@@ -978,6 +978,12 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DiseaseStatus -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DiseaseStatus"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DonorDevelopmentalStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DonorDevelopmentalStage"/>
     
 
 
@@ -1088,7 +1094,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Fresh -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Fresh">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PreservationType"/>
     </owl:Class>
     
 
@@ -1214,7 +1220,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Hypothermic -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Hypothermic">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PreservationType"/>
     </owl:Class>
     
 
@@ -1632,6 +1638,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PreservationType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PreservationType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ProfessionalAntigenPresentingCell -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ProfessionalAntigenPresentingCell">
@@ -1651,6 +1665,14 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleStage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
+    </owl:Class>
     
 
 
@@ -1873,6 +1895,14 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AdrenalsGlands">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#EndocrineGland"/>
         <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#EndocrineSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Adult -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Adult">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DonorDevelopmentalStage"/>
     </owl:NamedIndividual>
     
 
@@ -2214,6 +2244,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CryopreservationOther -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CryopreservationOther">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cryopreservation"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DNALibraryConstruction -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DNALibraryConstruction">
@@ -2227,6 +2265,14 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DanioRerio">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specie"/>
         <singleCellRepositories:OR.belongsToKingdom rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Animals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Dead -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Dead">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleStage"/>
     </owl:NamedIndividual>
     
 
@@ -2308,10 +2354,18 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#EffectorMemoryCD8-postive_Alpha-betaTCell_TerminallyDifferentiated -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#EffectorMemoryCD8-positive_Alpha-betaTCell_TerminallyDifferentiated -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#EffectorMemoryCD8-postive_Alpha-betaTCell_TerminallyDifferentiated">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#EffectorMemoryCD8-positive_Alpha-betaTCell_TerminallyDifferentiated">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tcell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Embryo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Embryo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DonorDevelopmentalStage"/>
     </owl:NamedIndividual>
     
 
@@ -2503,20 +2557,20 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Hemochromatosis -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Hemochromatosis">
-        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DiaseaseOfMetabolism"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GeneticDisease"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HemolyticUremicSyndrome -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HemolyticUremicSyndrome">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DiseaseOfAnatomicalEntity"/>
         <singleCellRepositories:OR.hasAffected rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Kidney"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HereditaryHemochromatosis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HereditaryHemochromatosis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DiaseaseOfMetabolism"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GeneticDisease"/>
     </owl:NamedIndividual>
     
 
@@ -2598,17 +2652,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#IlluminaHiSeqX -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#IlluminaHiSeq4000 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#IlluminaHiSeqX">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#IlluminaHiSeq4000">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HiSeq"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#IlluminaHiseq4000 -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#IlluminaHiSeqX -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#IlluminaHiseq4000">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#IlluminaHiSeqX">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HiSeq"/>
     </owl:NamedIndividual>
     
@@ -2777,6 +2831,14 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MotileCell"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NucleateCell"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SomaticCell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Live -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Live">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleStage"/>
     </owl:NamedIndividual>
     
 
@@ -3108,9 +3170,18 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PheripheralBloodMononuclearCell -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PericardialEffusion -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PheripheralBloodMononuclearCell">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PericardialEffusion">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DiseaseOfAnatomicalEntity"/>
+        <singleCellRepositories:OR.hasAffected rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Heart"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PeripheralBloodMononuclearCell -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PeripheralBloodMononuclearCell">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CirculatingCell"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MononuclearCell"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MotileCell"/>
@@ -3423,9 +3494,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimens -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimens">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleType"/>
     </owl:NamedIndividual>
     
@@ -3575,6 +3646,14 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Trachea">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
         <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RespiratorySystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tumor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tumor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCell"/>
     </owl:NamedIndividual>
     
 
@@ -3782,9 +3861,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cancer-associatedFibroblast(CAF) -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cancer-associatedFibroblasts(CAFs) -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cancer-associatedFibroblast(CAF)">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cancer-associatedFibroblasts(CAFs)">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCell"/>
     </owl:NamedIndividual>
     

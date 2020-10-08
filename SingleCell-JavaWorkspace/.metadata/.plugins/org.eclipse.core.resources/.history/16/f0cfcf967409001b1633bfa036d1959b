@@ -103,7 +103,6 @@ public class QueryTest {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:DiseaseStatus ;" +
-					"    a:OR.hasAffected a:Skin" +
 				"}";
 		
 		// Execute query

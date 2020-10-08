@@ -5,7 +5,7 @@ import org.apache.jena.query.*;
 public class QueryTest {
 
 	public static void main(String[] args) {
-		String inputFileName = "../../SingleCell-Files/out_repositoriev3.owl";
+		String inputFileName = "../../SingleCell-Files/out_repositorie2.owl";
 
 		String NS = "http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#";
 		String rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
@@ -66,14 +66,13 @@ public class QueryTest {
 		
 		String queryStringTest1 = "PREFIX a: <" + NS + ">" +
 				"PREFIX rdf: <" + rdf + ">" +
-				"SELECT ?id ?cellType ?disease \n" +
+				"SELECT ?id \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Sample ;" +
-					"    a:SR.hasGenusSpecie a:HomoSapiens ;" +
-					"    a:SR.hasLibrary a:Smart-seq2 ;" +
-					"    a:SR.hasSelectedCellType ?cellType ;" +
-					"    a:SR.hasDiseaseStatus ?disease ;" +
+					"    a:SR.hasGenusSpecie a:HomoSapiens ." +
+//					"    a:SR.hasSelectedCellType a:PeripheralBloodMononuclearCell ;" +
+//					"    a:SR.hasLibrary a:Smart-seq2 ." +
 				"}";
 		
 		// Query "expresión de genes de single cell de humano, en adultos mayores de 40 años, en la región cerebral del cortex, 
@@ -82,15 +81,14 @@ public class QueryTest {
 		String queryStringTest2 = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?id ?minAge ?maxAge ?object \n" +
-				"WHERE" +
+				"SELECT ?id ?age " +
+				"WHERE " +
 				"{" +
-					"?id rdf:type a:Sample ;" +
-					"    a:SR.hasGenusSpecie a:HomoSapiens ;" +
-					"    a:SR.hasDiseaseStatus a:ProstateCancer ;" +
-					"    a:hasMinAge ?minAge ;" +
-					"    a:hasMaxAge ?maxAge ;" +
-					"    a:SR.hasObjectOfStudy ?object ;" +
+					"?id rdf:type a:HomoSapiens ;" +
+					"    a:hasAgeOf ?age ;" +
+					"    rdf:type a:Cortex ;" +
+					"    rdf:type a:LymeDisease ." +
+					"FILTER(xsd:integer(?age) > 60)" +
 				"}";
 				
 		
@@ -98,23 +96,22 @@ public class QueryTest {
 		
 		String queryStringTest3 = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?id \n" +
-				"WHERE" +
+				"SELECT ?id " +
+				"WHERE " +
 				"{" +
-					"?id rdf:type a:DiseaseStatus ;" +
-					"    a:OR.hasAffected a:Skin" +
+					"?id rdf:type a:HomoSapiens ;" +
+					"    rdf:type a:Neuron ." +
 				"}";
 		
 		// Execute query
-		Query query = QueryFactory.create(queryStringTest3);
+		Query query = QueryFactory.create(queryStringTest1);
 		try (QueryExecution qexec = QueryExecutionFactory.create(query, model.getModel())) {
 			ResultSet results = qexec.execSelect();
 			int i = 0;
 			for (; results.hasNext();i++) {
 				QuerySolution soln = results.nextSolution();
 				
-				System.out.println("Match: " + soln.toString().replaceAll(NS, ""));
+				System.out.println("Match: " + soln.toString());
 			}
 			System.out.println(i + " results.");
 		}

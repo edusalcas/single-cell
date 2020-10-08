@@ -82,15 +82,14 @@ public class QueryTest {
 		String queryStringTest2 = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?id ?minAge ?maxAge ?object \n" +
+				"SELECT ?id ?minAge ?maxAge \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Sample ;" +
 					"    a:SR.hasGenusSpecie a:HomoSapiens ;" +
-					"    a:SR.hasDiseaseStatus a:ProstateCancer ;" +
+					"    a:SR.hasDiseaseStatus a:Melanoma ;" +
 					"    a:hasMinAge ?minAge ;" +
 					"    a:hasMaxAge ?maxAge ;" +
-					"    a:SR.hasObjectOfStudy ?object ;" +
 				"}";
 				
 		
@@ -98,16 +97,15 @@ public class QueryTest {
 		
 		String queryStringTest3 = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?id \n" +
-				"WHERE" +
+				"SELECT ?id " +
+				"WHERE " +
 				"{" +
-					"?id rdf:type a:DiseaseStatus ;" +
-					"    a:OR.hasAffected a:Skin" +
+					"?id rdf:type a:HomoSapiens ;" +
+					"    rdf:type a:Neuron ." +
 				"}";
 		
 		// Execute query
-		Query query = QueryFactory.create(queryStringTest3);
+		Query query = QueryFactory.create(queryStringTest1);
 		try (QueryExecution qexec = QueryExecutionFactory.create(query, model.getModel())) {
 			ResultSet results = qexec.execSelect();
 			int i = 0;

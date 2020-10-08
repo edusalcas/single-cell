@@ -103,11 +103,10 @@ public class QueryTest {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:DiseaseStatus ;" +
-					"    a:OR.hasAffected a:Skin" +
 				"}";
 		
 		// Execute query
-		Query query = QueryFactory.create(queryStringTest3);
+		Query query = QueryFactory.create(queryStringTest2);
 		try (QueryExecution qexec = QueryExecutionFactory.create(query, model.getModel())) {
 			ResultSet results = qexec.execSelect();
 			int i = 0;

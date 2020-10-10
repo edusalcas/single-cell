@@ -191,32 +191,166 @@
                 <owl:oneOf>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>m</rdf:first>
+                        <rdf:first>d</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>month</rdf:first>
+                                <rdf:first>day</rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first>w</rdf:first>
+                                        <rdf:first>m</rdf:first>
                                         <rdf:rest>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first>week</rdf:first>
+                                                <rdf:first>month</rdf:first>
                                                 <rdf:rest>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first>y</rdf:first>
+                                                        <rdf:first>w</rdf:first>
                                                         <rdf:rest>
                                                             <rdf:Description>
                                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                <rdf:first>year</rdf:first>
-                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                <rdf:first>week</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>y</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>year</rdf:first>
+                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
                                                             </rdf:Description>
                                                         </rdf:rest>
                                                     </rdf:Description>
                                                 </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAvailableDownloadsFormat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAvailableDownloadsFormat">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>bai</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>bam</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>csv</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>csv.gz</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>docx</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>fastq</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>fastq.gz</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>npy</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first>npz</rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first>pdf</rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                        <rdf:first>txt</rdf:first>
+                                                                                                        <rdf:rest>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                <rdf:first>unknown</rdf:first>
+                                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:rest>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAvailableDownloadsType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasAvailableDownloadsType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>matrix</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>metadata</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>none</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>results</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                             </rdf:Description>
                                         </rdf:rest>
                                     </rdf:Description>
@@ -283,11 +417,11 @@
                 <owl:oneOf>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>developmental stage</rdf:first>
+                        <rdf:first>developmentalStage</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>environmental stress</rdf:first>
+                                <rdf:first>environmentalStress</rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -341,140 +475,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasFileFormat -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasFileFormat">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>bai</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>bam</rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first>csv</rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first>csv.gz</rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first>docx</rdf:first>
-                                                        <rdf:rest>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                <rdf:first>fastq</rdf:first>
-                                                                <rdf:rest>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                        <rdf:first>fastq.gz</rdf:first>
-                                                                        <rdf:rest>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                                <rdf:first>matrix</rdf:first>
-                                                                                <rdf:rest>
-                                                                                    <rdf:Description>
-                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                                        <rdf:first>npy</rdf:first>
-                                                                                        <rdf:rest>
-                                                                                            <rdf:Description>
-                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                                                <rdf:first>npz</rdf:first>
-                                                                                                <rdf:rest>
-                                                                                                    <rdf:Description>
-                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                                                        <rdf:first>pdf</rdf:first>
-                                                                                                        <rdf:rest>
-                                                                                                            <rdf:Description>
-                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                                                                <rdf:first>results</rdf:first>
-                                                                                                                <rdf:rest>
-                                                                                                                    <rdf:Description>
-                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                                                                        <rdf:first>txt</rdf:first>
-                                                                                                                        <rdf:rest>
-                                                                                                                            <rdf:Description>
-                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                                                                                <rdf:first>unknown</rdf:first>
-                                                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                                                                                            </rdf:Description>
-                                                                                                                        </rdf:rest>
-                                                                                                                    </rdf:Description>
-                                                                                                                </rdf:rest>
-                                                                                                            </rdf:Description>
-                                                                                                        </rdf:rest>
-                                                                                                    </rdf:Description>
-                                                                                                </rdf:rest>
-                                                                                            </rdf:Description>
-                                                                                        </rdf:rest>
-                                                                                    </rdf:Description>
-                                                                                </rdf:rest>
-                                                                            </rdf:Description>
-                                                                        </rdf:rest>
-                                                                    </rdf:Description>
-                                                                </rdf:rest>
-                                                            </rdf:Description>
-                                                        </rdf:rest>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasFileType -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasFileType">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>both</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>matrix</rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first>metadata</rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first>none</rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasLaboratory -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasLaboratory">
@@ -488,23 +488,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasMaxAge">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
 
@@ -513,23 +497,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasMinAge">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
 
@@ -538,23 +506,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#hasModelOrgan">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>false</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>true</rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
@@ -608,7 +560,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#isPairedEnd">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Sample"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
@@ -622,7 +574,7 @@
                 <owl:oneOf>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>Chan Zuckerberg Biohub</rdf:first>
+                        <rdf:first>ChanZuckerbergBiohub</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -630,11 +582,11 @@
                                 <rdf:rest>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first>Human Cell Atlas</rdf:first>
+                                        <rdf:first>HumanCellAtlas</rdf:first>
                                         <rdf:rest>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first>Malaria Cell Atlas</rdf:first>
+                                                <rdf:first>MalariaCellAtlas</rdf:first>
                                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                             </rdf:Description>
                                         </rdf:rest>
@@ -659,7 +611,7 @@
                 <owl:oneOf>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>Human Cell Atlas</rdf:first>
+                        <rdf:first>HumanCellAtlas</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -667,11 +619,11 @@
                                 <rdf:rest>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first>Single Cell Expression Atlas</rdf:first>
+                                        <rdf:first>SingleCellExpressionAtlas</rdf:first>
                                         <rdf:rest>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first>Single Cell Portal</rdf:first>
+                                                <rdf:first>SingleCellPortal</rdf:first>
                                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                             </rdf:Description>
                                         </rdf:rest>
@@ -698,10 +650,27 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCell -->
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCells -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCell">
+    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCells">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCellsGrouped -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCellsGrouped">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCells"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCellsIsolated"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCellsIsolated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCellsIsolated">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCells"/>
     </owl:Class>
     
 
@@ -824,18 +793,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellInVitro -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellInVitro">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellType"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellLines -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellLines">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellInVitro"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellsInVitro"/>
     </owl:Class>
     
 
@@ -843,6 +804,14 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellType -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellsInVitro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellsInVitro">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellType"/>
+    </owl:Class>
     
 
 
@@ -3653,7 +3622,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tumor -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tumor">
-        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCell"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCellsGrouped"/>
     </owl:NamedIndividual>
     
 
@@ -3679,6 +3648,14 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#UmbilicalCordBlood">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ConnectiveTissue"/>
         <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CardiovascularSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Unspecified -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Unspecified">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PreservationType"/>
     </owl:NamedIndividual>
     
 
@@ -3864,7 +3841,7 @@
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cancer-associatedFibroblasts(CAFs) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cancer-associatedFibroblasts(CAFs)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCell"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCellsIsolated"/>
     </owl:NamedIndividual>
     
 
@@ -3896,8 +3873,8 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCell"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellInVitro"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AbnormalCells"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellsInVitro"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NativeCells"/>
         </owl:members>
     </rdf:Description>

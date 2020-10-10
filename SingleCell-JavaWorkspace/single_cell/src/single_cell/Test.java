@@ -44,6 +44,10 @@ public class Test {
 				
 		hitsArray.forEach((hit) -> {new MyIndividual((JSONObject) hit, model).addToModel();});
 
+		// Check if model is valid
+		if (!model.validateModel())
+			;
+		
 		// Save the model with the instances
 		model.saveModel(outputFileName);
 

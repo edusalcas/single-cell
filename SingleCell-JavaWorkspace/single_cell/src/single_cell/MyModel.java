@@ -3,7 +3,10 @@ package single_cell;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.ObjectProperty;
@@ -13,6 +16,8 @@ import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
+import org.apache.jena.reasoner.ValidityReport;
+import org.apache.jena.reasoner.ValidityReport.Report;
 
 public class MyModel {
 	private OntModel model;
@@ -28,6 +33,7 @@ public class MyModel {
 	public static final String PREDICATE_CLASS = "Type";
 	public static final String SAMPLE_CLASS = "Sample";
 
+	private final String validateLogFileName = "../../SingleCell-Files/validateLog.txt";
 	
 	public static final String[] OBJECT_PROPERTIES = new String[] {
 			"SR.hasAnalysisProtocol",
@@ -45,8 +51,8 @@ public class MyModel {
 	public static final String[] DATA_PROPERTIES = new String[] {
 			"hasAgeUnit",
 			"hasBiologicalSex",
-			"hasFileFormat",
-			"hasFileType",
+			"hasAvailableDownloadsFormat",
+			"hasAvailableDownloadsType",
 			"hasLaboratory",
 			"hasMaxAge",
 			"hasMinAge",
@@ -195,7 +201,46 @@ public class MyModel {
 			model.add(individual, property, object.toString());
 		else if(object instanceof Integer)
 			model.addLiteral(individual, property, (int) object);
+		else if(object instanceof Boolean)
+			model.addLiteral(individual, property, (boolean) object);
 
+	}
+	
+	public boolean validateModel() {
+		FileWriter writer = null;
+		
+		try {
+			writer = new FileWriter(validateLogFileName);
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		System.out.println("Validating model...");
+		
+		ValidityReport validity = model.validate();
+		
+		if (validity.isValid()) {
+			System.out.println("Model validated without errors.");
+			return true;
+		}
+		
+		System.out.println("Conflicts have occured during validation:");
+		
+		for (Iterator<Report> i = validity.getReports(); i.hasNext();) {
+			ValidityReport.Report report = (ValidityReport.Report) i.next();
+			
+			try {
+				writer.write(report.toString());
+			} catch (IOException e) {
+				e.printStackTrace();
+				return false;
+			}
+			
+			System.out.println(report);
+		}
+		
+		return false;
 	}
 	
 	public Model getModel() {

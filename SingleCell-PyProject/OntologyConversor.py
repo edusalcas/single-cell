@@ -98,18 +98,18 @@ def init_individual():
         "DataProperties": {
             "hasAgeUnit": None,
             "hasBiologicalSex": None,
-            "hasFileFormat": None,
-            "hasFileType": None,
+            "hasAvailableDownloadsFormat": None,
+            "hasAvailableDownloadsType":None,
             "hasLaboratory": None,
-            "hasMaxAge": None,
-            "hasMinAge": None,
+            "hasMaxAge": -1,
+            "hasMinAge": -1,
             "hasModelOrgan": False,
             "hasProjectShortName": None,
             "hasProjectTitle": None,
-            "hasTotalCellCounts": None,
-            "hasTotalDonorCounts": None,
-            "hasTotalSize": None,
-            "isPairedEnd": None,
+            "hasTotalCellCounts": 0,
+            "hasTotalDonorCounts": 0,
+            "hasTotalSize": 0,
+            "isPairedEnd": False,
             "isPartOfCollection": None,
             "isPartOfRepository": None,
         }
@@ -138,14 +138,14 @@ def format_HCD(individual_hcd):
     # Donor Organism
     individual = format_HCD_donor_organism(individual, individual_hcd)
 
+    # Projects
+    individual = format_HCD_projects(individual, individual_hcd)
+
     # File Type Summaries
     individual = format_HCD_file_type_summaries(individual, individual_hcd)
 
     # Organoids
     individual = format_HCD_organoids(individual, individual_hcd)
-
-    # Projects
-    individual = format_HCD_projects(individual, individual_hcd)
 
     # Protocols
     individual = format_HCD_protocols(individual, individual_hcd)
@@ -209,45 +209,15 @@ def format_HCD_donor_organism(individual, individual_hcd):
     individual['ObjectProperties']['SR.hasGenusSpecie'] = hca2ont(genus_species)
 
     if organism_age is not None and '-' in organism_age:
-        individual['DataProperties']['hasMinAge'] = organism_age.split('-')[0]
-        individual['DataProperties']['hasMaxAge'] = organism_age.split('-')[1]
+        individual['DataProperties']['hasMinAge'] = int(organism_age.split('-')[0])
+        individual['DataProperties']['hasMaxAge'] = int(organism_age.split('-')[1])
     else:
-        individual['DataProperties']['hasMinAge'] = organism_age
-        individual['DataProperties']['hasMaxAge'] = organism_age
+        individual['DataProperties']['hasMinAge'] = int(float(organism_age)) if organism_age is not None else -1
+        individual['DataProperties']['hasMaxAge'] = int(float(organism_age)) if organism_age is not None else -1
+
 
     individual['DataProperties']['hasAgeUnit'] = organism_age_unit
     individual['DataProperties']['hasTotalDonorCounts'] = donor_count
-
-    return individual
-
-
-def format_HCD_file_type_summaries(individual, individual_hcd):
-    if not individual_hcd['fileTypeSummaries']:
-        return individual
-
-    # It is possible that one individual has multiple files
-    file_type = []
-    count = []
-    total_size = []
-
-    for i in range(len(individual_hcd['fileTypeSummaries'])):
-        file_type.append(individual_hcd['fileTypeSummaries'][i]['fileType'])
-        count.append(individual_hcd['fileTypeSummaries'][i]['count'])
-        total_size.append(individual_hcd['fileTypeSummaries'][i]['totalSize'])
-
-    individual['DataProperties']['hasFileFormat'] = file_type
-    individual['DataProperties']['hasTotalSize'] = sum(total_size)
-
-    return individual
-
-
-def format_HCD_organoids(individual, individual_hcd):
-    if not individual_hcd['organoids']:
-        return individual
-
-    model_organ = individual_hcd['organoids'][0]['modelOrgan']
-
-    individual['ObjectProperties']['hasModelOrgan'] = (model_organ is not None)
 
     return individual
 
@@ -263,6 +233,47 @@ def format_HCD_projects(individual, individual_hcd):
     individual['DataProperties']['hasLaboratory'] = hca2ont(laboratory)
     individual['DataProperties']['hasProjectShortName'] = project_shortname
     individual['DataProperties']['hasProjectTitle'] = project_title
+
+    return individual
+
+
+def format_HCD_file_type_summaries(individual, individual_hcd):
+    if not individual_hcd['fileTypeSummaries']:
+        return individual
+
+    # It is possible that one individual has multiple files
+    file_type = ['metadata']
+    file_format = []
+    count = []
+    total_size = []
+
+    for i in range(len(individual_hcd['fileTypeSummaries'])):
+        type = individual_hcd['fileTypeSummaries'][i]['fileType']
+
+        if type == 'matrix' and individual['DataProperties']['hasProjectTitle'] != "Systematic comparative analysis of single cell RNA-sequencing methods":
+            file_type.append(type)
+        elif type == 'results':
+            file_type.append(type)
+        else:
+            file_format.append(type)
+
+        count.append(individual_hcd['fileTypeSummaries'][i]['count'])
+        total_size.append(individual_hcd['fileTypeSummaries'][i]['totalSize'])
+
+    individual['DataProperties']['hasAvailableDownloadsFormat'] = file_format
+    individual['DataProperties']['hasAvailableDownloadsType'] = file_type
+    individual['DataProperties']['hasTotalSize'] = sum(total_size)
+
+    return individual
+
+
+def format_HCD_organoids(individual, individual_hcd):
+    if not individual_hcd['organoids']:
+        return individual
+
+    model_organ = individual_hcd['organoids'][0]['modelOrgan']
+
+    individual['ObjectProperties']['hasModelOrgan'] = (model_organ is not None)
 
     return individual
 

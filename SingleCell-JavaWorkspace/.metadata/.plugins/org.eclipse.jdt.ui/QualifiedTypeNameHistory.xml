@@ -33,4 +33,8 @@
     <fullyQualifiedTypeName name="org.apache.jena.ontology.ObjectProperty"/>
     <fullyQualifiedTypeName name="org.apache.jena.ontology.OntClass"/>
     <fullyQualifiedTypeName name="org.apache.jena.ontology.Individual"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="org.apache.jena.reasoner.ValidityReport"/>
+    <fullyQualifiedTypeName name="org.apache.jena.reasoner.ValidityReport.Report"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
 </qualifiedTypeNameHistroy>

@@ -106,9 +106,8 @@ def init_individual():
             "hasModelOrgan": False,
             "hasProjectShortName": None,
             "hasProjectTitle": None,
-            "hasTotalCellCounts": 0,
-            "hasTotalDonorCounts": 0,
-            "hasTotalSize": 0,
+            "hasTotalCellCounts": -1,
+            "hasTotalSizeOfFiles": -1,
             "isPairedEnd": False,
             "isPartOfCollection": None,
             "isPartOfRepository": None,
@@ -262,7 +261,7 @@ def format_HCD_file_type_summaries(individual, individual_hcd):
 
     individual['DataProperties']['hasAvailableDownloadsFormat'] = file_format
     individual['DataProperties']['hasAvailableDownloadsType'] = file_type
-    individual['DataProperties']['hasTotalSize'] = sum(total_size)
+    individual['DataProperties']['hasTotalSizeOfFiles'] = sum(total_size) / pow(2, 20)
 
     return individual
 

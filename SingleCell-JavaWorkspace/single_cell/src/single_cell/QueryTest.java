@@ -62,8 +62,7 @@ public class QueryTest {
 					"    rdf:type ?organ ." +
 				"}";
 		
-		// Query "datos ATAC-seq de single cell de ratón, en sangre periférica"
-		
+		// Que enfermedad tienen y que tipo de celula tienen los individuos que son persona y han usado la librería Smart-seq2
 		String queryStringTest1 = "PREFIX a: <" + NS + ">" +
 				"PREFIX rdf: <" + rdf + ">" +
 				"SELECT ?id ?cellType ?disease \n" +
@@ -76,9 +75,7 @@ public class QueryTest {
 					"    a:SR.hasDiseaseStatus ?disease ;" +
 				"}";
 		
-		// Query "expresión de genes de single cell de humano, en adultos mayores de 40 años, en la región cerebral del cortex, 
-		// y con enfermedad de Parkinson"
-		
+		// La edad y el objeto de estudio de las personas con cancer de próstata
 		String queryStringTest2 = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
@@ -94,8 +91,7 @@ public class QueryTest {
 				"}";
 				
 		
-		// Query "expresión de genes de neuronas excitatorias de nivel 6 en humanos"
-		
+		// Enfermedades que afectan a la piel
 		String queryStringTest3 = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
@@ -106,8 +102,49 @@ public class QueryTest {
 					"    a:OR.hasAffected a:Skin" +
 				"}";
 		
+		// Todos los individuos que tengan una enfermedad del tipo "DiseaseOfAnatomicalEntity" (inferencia)
+		String queryStringTest4 = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ?id ?specie ?disease \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Sample ;" +
+					"    a:SR.hasGenusSpecie ?specie ;" +
+					"    a:SR.hasDiseaseStatus ?disease ." +
+					"?disease rdf:type a:DiseaseOfAnatomicalEntity ." +
+				"}";
+		
+		// Cuenta los individuos que son mujeres y tienen 50 años o más
+		String queryStringTest5 = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT (COUNT(*) as ?total) \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Sample ;" +
+					"    a:SR.hasGenusSpecie a:HomoSapiens ;" +
+					"    a:hasBiologicalSex ?sex ;" +
+					"    a:hasMinAge ?minAge ." +
+					"FILTER (?minAge >= 50) ." +
+					"FILTER (?sex = \"female\") ." +
+				"}";
+		
+		// Muestra todos los proyectos y cuantos samples tiene cada uno
+		String queryStringTest6 = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ?project (COUNT(*) as ?total) \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Sample ;" +
+					"    a:hasProjectShortName ?project ." +
+				"}" +
+				"GROUP BY ?project";
+				
+		
 		// Execute query
-		Query query = QueryFactory.create(queryStringTest3);
+		Query query = QueryFactory.create(queryStringTest6);
 		try (QueryExecution qexec = QueryExecutionFactory.create(query, model.getModel())) {
 			ResultSet results = qexec.execSelect();
 			int i = 0;

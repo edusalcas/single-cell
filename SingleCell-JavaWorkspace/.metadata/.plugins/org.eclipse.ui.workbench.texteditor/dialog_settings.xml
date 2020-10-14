@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="C"/>
 			<item value="hasCell"/>
 			<item value="isC"/>
 			<item value="collections"/>

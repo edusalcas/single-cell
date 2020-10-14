@@ -62,56 +62,82 @@ public class QueryTest {
 					"    rdf:type ?organ ." +
 				"}";
 		
-		// Query "datos ATAC-seq de single cell de ratón, en sangre periférica"
-		
+		// Que enfermedad tienen y que tipo de celula tienen los individuos que son persona y han usado la librería Smart-seq2
 		String queryStringTest1 = "PREFIX a: <" + NS + ">" +
 				"PREFIX rdf: <" + rdf + ">" +
-				"SELECT ?id \n" +
+				"SELECT ?id ?cellType ?disease \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Sample ;" +
 					"    a:SR.hasGenusSpecie a:HomoSapiens ;" +
-					"    a:SR.hasSelectedCellType a:PeripheralBloodMononuclearCell ;" +
-					"    a:SR.hasLibrary a:Smart-seq2 ." +
+					"    a:SR.hasLibrary a:Smart-seq2 ;" +
+					"    a:SR.hasSelectedCellType ?cellType ;" +
+					"    a:SR.hasDiseaseStatus ?disease ;" +
 				"}";
 		
-		// Query "expresión de genes de single cell de humano, en adultos mayores de 40 años, en la región cerebral del cortex, 
-		// y con enfermedad de Parkinson"
-		
+		// La edad y el objeto de estudio de las personas con cancer de próstata
 		String queryStringTest2 = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?id ?age " +
-				"WHERE " +
+				"SELECT ?id ?minAge ?maxAge ?object \n" +
+				"WHERE" +
 				"{" +
-					"?id rdf:type a:HomoSapiens ;" +
-					"    a:hasAgeOf ?age ;" +
-					"    rdf:type a:Cortex ;" +
-					"    rdf:type a:LymeDisease ." +
-					"FILTER(xsd:integer(?age) > 60)" +
+					"?id rdf:type a:Sample ;" +
+					"    a:SR.hasGenusSpecie a:HomoSapiens ;" +
+					"    a:SR.hasDiseaseStatus a:ProstateCancer ;" +
+					"    a:hasMinAge ?minAge ;" +
+					"    a:hasMaxAge ?maxAge ;" +
+					"    a:SR.hasObjectOfStudy ?object ;" +
 				"}";
 				
 		
-		// Query "expresión de genes de neuronas excitatorias de nivel 6 en humanos"
-		
+		// Enfermedades que afectan a la piel
 		String queryStringTest3 = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
-				"SELECT ?id " +
-				"WHERE " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ?id \n" +
+				"WHERE" +
 				"{" +
-					"?id rdf:type a:HomoSapiens ;" +
-					"    rdf:type a:Neuron ." +
+					"?id rdf:type a:DiseaseStatus ;" +
+					"    a:OR.hasAffected a:Skin" +
+				"}";
+		
+		// Todos los individuos que tengan una enfermedad del tipo "DiseaseOfAnatomicalEntity" (inferencia)
+		String queryStringTest4 = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ?id ?specie ?disease \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Sample ;" +
+					"    a:SR.hasGenusSpecie ?specie ;" +
+					"    a:SR.hasDiseaseStatus ?disease ." +
+					"?disease rdf:type a:DiseaseOfAnatomicalEntity ." +
+				"}";
+		
+		// Cuenta los individuos que son personas con sexo femenino y tienen más de 50 años
+		String queryStringTest5 = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT (COUNT(*) as ?total) \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Sample ;" +
+					"    a:SR.hasGenusSpecie a:HomoSapiens ;" +
+					"    a:hasBiologicalSex female ;" +
+					"    a:hasMinAge ?minAge ." +
+					"FILTER (?minAge > 50)" + 
 				"}";
 		
 		// Execute query
-		Query query = QueryFactory.create(queryStringTest1);
+		Query query = QueryFactory.create(queryStringTest5);
 		try (QueryExecution qexec = QueryExecutionFactory.create(query, model.getModel())) {
 			ResultSet results = qexec.execSelect();
 			int i = 0;
 			for (; results.hasNext();i++) {
 				QuerySolution soln = results.nextSolution();
 				
-				System.out.println("Match: " + soln.toString());
+				System.out.println("Match: " + soln.toString().replaceAll(NS, ""));
 			}
 			System.out.println(i + " results.");
 		}

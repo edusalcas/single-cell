@@ -119,7 +119,7 @@ class OntologyConversorHCA (OntologyConversorAbstract):
         model_organ = individual_hcd['cellLines'][0]['modelOrgan']
 
         individual['ObjectProperties']['SR.hasCellLineType'] = self.parse_word(cell_line_type)
-        individual['DataProperties']['hasModelOrgan'] = (model_organ is not None)
+        individual['ObjectProperties']['SR.hasModelOrgan'] = self.parse_word(model_organ)
 
         return individual
 
@@ -154,7 +154,7 @@ class OntologyConversorHCA (OntologyConversorAbstract):
 
         individual['DataProperties']['hasBiologicalSex'] = biological_sex
         individual['ObjectProperties']['SR.hasDiseaseStatus'] = self.parse_word(disease)
-        individual['ObjectProperties']['SR.hasGenusSpecie'] = self.parse_word(genus_species)
+        individual['ObjectProperties']['SR.belongsToSpecie'] = self.parse_word(genus_species)
 
         if organism_age is not None and '-' in organism_age:
             individual['DataProperties']['hasMinAge'] = int(organism_age.split('-')[0])
@@ -245,7 +245,7 @@ class OntologyConversorHCA (OntologyConversorAbstract):
 
         sample_entity_type = individual_hcd['samples'][0]['sampleEntityType']
 
-        individual['ObjectProperties']['SR.hasSampleType'] = self.parse_word(sample_entity_type)
+        individual['ObjectProperties']['SR.isSampleType'] = self.parse_word(sample_entity_type)
 
         try:
             preservation_method = individual_hcd['samples'][0]['preservationMethod']
@@ -265,7 +265,7 @@ class OntologyConversorHCA (OntologyConversorAbstract):
         organ_part = individual_hcd['specimens'][0]['organPart']
         preservation_method = individual_hcd['specimens'][0]['preservationMethod']
 
-        individual['DataProperties']['hasId'] = individual_id
+        individual['DataProperties']['hasSampleID'] = individual_id
         individual['ObjectProperties']['SR.hasObjectOfStudy'] = self.parse_word(organ_part) if organ_part[
                                                                                                    0] is not None else self.parse_word(
             organ)

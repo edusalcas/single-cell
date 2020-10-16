@@ -134,17 +134,27 @@ public class QueryTest {
 		String queryStringTest6 = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?project (COUNT(*) as ?total) \n" +
+				"SELECT (COUNT(*) as ?total) \n" +
 				"WHERE" +
 				"{" +
-					"?id rdf:type a:Sample ;" +
-					"    a:hasProjectShortName ?project ." +
+					"?id rdf:type a:Specimen ." +
+				"}";				
+		
+		// Muestra todos los proyectos y cuantos samples tiene cada uno
+		String queryStringTest7 = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ?id ?sample_id \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Specimen ;" +
+					"    a:SR.isSampleType a:CellLines ;" +
+					"    a:hasSampleID ?sample_id ." +
 				"}" +
-				"GROUP BY ?project";
-				
+				"ORDER BY ?sample_id";
 		
 		// Execute query
-		Query query = QueryFactory.create(queryStringTest6);
+		Query query = QueryFactory.create(queryStringTest7);
 		try (QueryExecution qexec = QueryExecutionFactory.create(query, model.getModel())) {
 			ResultSet results = qexec.execSelect();
 			int i = 0;

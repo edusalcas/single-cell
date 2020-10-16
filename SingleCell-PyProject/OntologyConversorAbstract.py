@@ -5,12 +5,13 @@ def init_individual():
     individual = {
         "ID": None,
         "ObjectProperties": {
+            "SR.belongsToSpecie": None,
             "SR.hasAnalysisProtocol": None,
             "SR.hasCellLineType": None,
             "SR.hasDiseaseStatus": None,
-            "SR.hasGenusSpecie": None,
             "SR.hasInstrument": None,
             "SR.hasLibrary": None,
+            "SR.hasModelOrgan": None,
             "SR.hasObjectOfStudy": None,
             "SR.hasPreservation": None,
             "SR.hasSampleType": None,
@@ -18,21 +19,20 @@ def init_individual():
         },
         "DataProperties": {
             "hasAgeUnit": None,
-            "hasBiologicalSex": None,
             "hasAvailableDownloadsFormat": None,
             "hasAvailableDownloadsType":None,
+            "hasBiologicalSex": None,
             "hasLaboratory": None,
             "hasMaxAge": -1,
             "hasMinAge": -1,
-            "hasModelOrgan": False,
             "hasProjectShortName": None,
             "hasProjectTitle": None,
+            "hasSampleID": None,
             "hasTotalCellCounts": -1,
             "hasTotalSizeOfFiles": -1,
             "isPairedEnd": False,
             "isPartOfCollection": None,
             "isPartOfRepository": None,
-            "hasId": None,
         }
     }
 

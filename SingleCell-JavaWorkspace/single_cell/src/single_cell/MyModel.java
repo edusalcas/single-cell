@@ -12,12 +12,14 @@ import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.ObjectProperty;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
-import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.reasoner.ValidityReport;
 import org.apache.jena.reasoner.ValidityReport.Report;
+
+import openllet.jena.PelletReasonerFactory;
+ 
 
 public class MyModel {
 	private OntModel model;
@@ -31,34 +33,35 @@ public class MyModel {
 	private HashMap<String, Individual> individualMap;
 
 	public static final String PREDICATE_CLASS = "Type";
-	public static final String SAMPLE_CLASS = "Sample";
+	public static final String SAMPLE_CLASS = "Specimen";
 
 	private final String validateLogFileName = "../../SingleCell-Files/validateLog.txt";
 	
 	public static final String[] OBJECT_PROPERTIES = new String[] {
+			"SR.belongsToSpecie",
 			"SR.hasAnalysisProtocol",
 			"SR.hasCellLineType",
 			"SR.hasDiseaseStatus",
-			"SR.hasGenusSpecie",
 			"SR.hasInstrument",
 			"SR.hasLibrary",
+			"SR.hasModelOrgan",
 			"SR.hasObjectOfStudy",
 			"SR.hasPreservation",
 			"SR.hasSampleType",
-			"SR.hasSelectedCellType"
+			"SR.hasSelectedCellType",
 	};
 	
 	public static final String[] DATA_PROPERTIES = new String[] {
 			"hasAgeUnit",
-			"hasBiologicalSex",
 			"hasAvailableDownloadsFormat",
 			"hasAvailableDownloadsType",
+			"hasBiologicalSex",
 			"hasLaboratory",
 			"hasMaxAge",
 			"hasMinAge",
-			"hasModelOrgan",
 			"hasProjectShortName",
 			"hasProjectTitle",
+			"hasSampleID",
 			"hasTotalCellCounts",
 			"hasTotalSizeOfFiles",
 			"isPairedEnd",
@@ -88,8 +91,7 @@ public class MyModel {
 		this.NS = NS;
 
 		initializeInputStream(inputFileName);
-
-		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM_RULE_INF);
+		model = ModelFactory.createOntologyModel(PelletReasonerFactory.THE_SPEC);
 
 		model.read(inputStream, "RDF/XML");
 
@@ -207,6 +209,7 @@ public class MyModel {
 
 	}
 	
+	@SuppressWarnings("resource")
 	public boolean validateModel() {
 		FileWriter writer = null;
 		
@@ -217,8 +220,8 @@ public class MyModel {
 			return false;
 		}
 		
-		System.out.println("Validating model...");
-		
+		System.out.println("Validating model with " + model.getReasoner().getClass().getSimpleName() + "...");
+				
 		ValidityReport validity = model.validate();
 		
 		if (validity.isValid()) {

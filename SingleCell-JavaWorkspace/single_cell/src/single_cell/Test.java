@@ -46,7 +46,7 @@ public class Test {
 
 		// Check if model is valid
 		if (!model.validateModel())
-			;
+			return;
 		
 		// Save the model with the instances
 		model.saveModel(outputFileName);

@@ -245,7 +245,7 @@ class OntologyConversorHCA (OntologyConversorAbstract):
 
         sample_entity_type = individual_hcd['samples'][0]['sampleEntityType']
 
-        individual['ObjectProperties']['SR.isSampleType'] = self.parse_word(sample_entity_type)
+        individual['ObjectProperties']['SR.hasSampleType'] = self.parse_word(sample_entity_type)
 
         try:
             preservation_method = individual_hcd['samples'][0]['preservationMethod']

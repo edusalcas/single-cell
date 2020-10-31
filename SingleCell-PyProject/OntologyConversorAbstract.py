@@ -12,7 +12,7 @@ def init_individual():
             "SR.hasInstrument": None,
             "SR.hasLibrary": None,
             "SR.hasModelOrgan": None,
-            "SR.hasObjectOfStudy": None,
+            "SR.hasObjectOfStudy": [],
             "SR.hasPreservation": None,
             "SR.hasSampleType": None,
             "SR.hasSelectedCellType": None,

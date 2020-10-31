@@ -88,6 +88,21 @@ public class QueryAlicia {
 		// Execute query
 		executeQuery(NS, model, queryStringNumLabs);
 		
+		queryStringNumLabs = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT DISTINCT ?project ?lab \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Specimen ;" +
+					"    a:hasProjectTitle ?project ;" +
+					"    a:hasLaboratory ?lab ." +
+				"} " +
+				"ORDER BY ?project";
+		
+		// Execute query
+		executeQuery(NS, model, queryStringNumLabs);
+		
 		// -----------------------------
 		// 1.3. Número de especímenes
 		// -----------------------------
@@ -121,7 +136,7 @@ public class QueryAlicia {
 		String queryStringNumCells = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (SUM(?numCells) as ?numberOfCells) \n" +
+				"SELECT (SUM(?numCells)/1000000 as ?numberOfCells) \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
@@ -144,12 +159,12 @@ public class QueryAlicia {
 		String queryStringTotalSize = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (SUM(?size)/1024 as ?totalSize) \n" +
+				"SELECT (SUM(?size)/(1024 * 1024) as ?totalSize) \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
 					"    a:hasTotalSizeOfFiles ?size ." +
-					"FILTER (?size != -1)" +
+					"FILTER (?size != -1) " +
 				"}";
 		
 		// Execute query
@@ -191,7 +206,7 @@ public class QueryAlicia {
 		String queryStringNumCellsPerObject = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?object (IF(SUM(?numCells) = 0, \"unspecified\", SUM(?numCells)) AS ?numTotalCells) \n" +
+				"SELECT ?object (IF(SUM(?numCells) = 0, \"unspecified\", SUM(?numCells) / 1000) AS ?numTotalCells) \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
@@ -199,7 +214,8 @@ public class QueryAlicia {
 					"    a:hasTotalCellCounts ?numCells ." +
 					"FILTER (?numCells != -1)" +
 				"}" +
-				"GROUP BY ?object";
+				"GROUP BY ?object " +
+				"ORDER BY ?object";
 		
 		// Execute query
 		executeQuery(NS, model, queryStringNumCellsPerObject);
@@ -216,7 +232,7 @@ public class QueryAlicia {
 		String queryStringNumCellsPerProject = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?project (SUM(?numCells) as ?numberOfCells) \n" +
+				"SELECT ?project (SUM(?numCells)/1000 as ?numberOfCells) \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
@@ -253,49 +269,6 @@ public class QueryAlicia {
 		// -----------------------------
 		// 2.1. Para conocer el repositorio
 		// -----------------------------
-		
-		// -----------------------------
-		// 2.1.1 ¿Cuál es el laboratorio que más proyectos tiene y cuál es su principal órgano estudiado?
-		// -----------------------------
-		System.out.println();
-		System.out.println("------------------------");
-		System.out.println("2.1.1. ¿Cuál es el laboratorio que más proyectos tiene y cuál es su principal órgano estudiado?");
-		System.out.println("------------------------");
-		System.out.println();
-		
-		String queryStringMaxLab = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?lab (COUNT(DISTINCT ?project) as ?numberOfProyects) \n" +
-				"WHERE" +
-				"{" +
-					"?id rdf:type a:Specimen ;" +
-					"    a:hasLaboratory ?lab ;" +
-					"    a:hasProjectTitle ?project ." +
-				"}" +
-				"GROUP BY ?lab \n" +
-				"ORDER BY DESC(?numberOfProyects) \n" +
-				"LIMIT 1";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringMaxLab);
-		
-		String queryStringMaxLabOrgan = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?organ (COUNT(*) as ?numberOfOccurrences) \n" +
-				"WHERE" +
-				"{" +
-					"?id rdf:type a:Specimen ;" +
-					"    a:hasLaboratory \"HumanCellAtlasDataCoordinationPlatform\" ;" +
-					"    a:SR.hasObjectOfStudy ?organ ." +
-				"}" +
-				"GROUP BY ?organ \n" +
-				"ORDER BY DESC(?numberOfOccurrences) \n" +
-				"LIMIT 1";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringMaxLabOrgan);
 		
 		// -----------------------------
 		// 2.1.2 ¿Cuál es el instrumento, el tipo de librería y el protocolo de análisis más utilizados en este repositorio?
@@ -431,32 +404,6 @@ public class QueryAlicia {
 		executeQuery(NS, model, queryStringCellLines);
 		
 		// -----------------------------
-		// 2.1.5. ¿Cuál es el órgano para el cual tenemos un mayor número de enfermedades estudiadas?
-		// -----------------------------
-		System.out.println();
-		System.out.println("------------------------");
-		System.out.println("2.1.5. ¿Cuál es el órgano para el cual tenemos un mayor número de enfermedades estudiadas?");
-		System.out.println("------------------------");
-		System.out.println();
-		
-		String queryStringDiseasesPerOrgan = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?organ (COUNT( DISTINCT ?disease ) as ?numberOfDiseases) \n" +
-				"WHERE" +
-				"{" +
-					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasObjectOfStudy ?organ ;" +
-					"    a:SR.hasDiseaseStatus ?disease ." +
-				"}" +
-				"GROUP BY ?organ \n" +
-				"ORDER BY DESC(?numberOfDiseases) \n" +
-				"LIMIT 1";
-		
-		// Execute query
-		// executeQuery(NS, model, queryStringDiseasesPerOrgan);
-		
-		// -----------------------------
 		// 2.1.6. ¿Cuál es el proyecto que tiene un mayor número de especímenes asociado? ¿y el mayor número de cell counts?
 		// -----------------------------
 		System.out.println();
@@ -514,7 +461,7 @@ public class QueryAlicia {
 		String queryStringBloodCellType = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT DISTINCT ?sampleId ?cellType \n" +
+				"SELECT DISTINCT ?cellType \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
@@ -538,12 +485,12 @@ public class QueryAlicia {
 		String queryStringImmuneSystemCellType = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT DISTINCT ?sampleId ?cellType \n" +
+				"SELECT DISTINCT ?cellType \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
 					"    a:hasSampleID ?sampleId ;"+
-					"    a:SR.hasModelOrgan a:ImmuneSystem ;" +
+					"    a:SR.hasObjectOfStudy a:ImmuneSystem ;" +
 					"    a:SR.hasSelectedCellType ?cellType ." +
 				"}";
 		
@@ -572,7 +519,7 @@ public class QueryAlicia {
 					"} " +
 					"{" +
 						"?id2 rdf:type a:Specimen ;" +
-						"     a:SR.hasModelOrgan a:ImmuneSystem ;" +
+						"     a:SR.hasObjectOfStudy a:ImmuneSystem ;" +
 						"     a:SR.hasSelectedCellType ?cellType ." +
 					"}" +
 				"}";
@@ -832,30 +779,44 @@ public class QueryAlicia {
 		System.out.println("------------------------");
 		System.out.println();
 		
-		String queryStringSpecimensPerType= "PREFIX a: <" + NS + "> " +
+		String queryStringSpecimensWith3Types= "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?type (COUNT(*) AS ?numSpecimens) \n" +
+				"SELECT (COUNT(*) AS ?numSpecimens) \n" +
 				"WHERE \n" +
 				"{ " +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasAvailableDownloadsType ?type ." +
-				"} " +
-				"GROUP BY ?type";
-		
+					"    a:hasAvailableDownloadsType \"matrix\" ;" +
+					"    a:hasAvailableDownloadsType \"results\" ;" +
+					"    a:hasAvailableDownloadsType \"metadata\" ." +
+				"}";		
 		// Execute query
-		executeQuery(NS, model, queryStringSpecimensPerType);
+		executeQuery(NS, model, queryStringSpecimensWith3Types);
 		
 		// -----------------------------
-		// 3.2.6. ¿Cuál son los objectos de estudio?
+		// 3.2.6. ¿Cuál son los objetos de estudio?
 		// -----------------------------
 		System.out.println();
 		System.out.println("------------------------");
-		System.out.println("3.2.6. ¿Cuál son los objectos de estudio?");
+		System.out.println("3.2.6. ¿Cuál son los objetos de estudio?");
 		System.out.println("------------------------");
 		System.out.println();
 		
-		System.out.println("No entiendo la pregunta");
+		String queryStringObjectsWith3Types= "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ?object (COUNT(*) AS ?numSpecimens) \n" +
+				"WHERE \n" +
+				"{ " +
+					"?id rdf:type a:Specimen ;" +
+					"    a:hasAvailableDownloadsType \"matrix\" ;" +
+					"    a:hasAvailableDownloadsType \"results\" ;" +
+					"    a:hasAvailableDownloadsType \"metadata\" ;" +
+					"    a:SR.hasObjectOfStudy ?object ." +
+				"} " +
+				"GROUP BY ?object";		
+		// Execute query
+		executeQuery(NS, model, queryStringObjectsWith3Types);
 		
 		// -----------------------------
 		// 3.2.7. ¿De qué enfermedades tenemos disponible datos de single-cell donde el "órgano" afectado sea el corazón o, directamente, el sistema circulatorio? ¿Cuáles son estas 
@@ -992,6 +953,75 @@ public class QueryAlicia {
 		
 		// Execute query
 		executeQuery(NS, model, queryStringSystemsWithMetabolicOrHereditary);
+		
+		// -----------------------------
+		// 3.2.11. ¿Cuál es el laboratorio que más proyectos tiene y cuál es su principal órgano estudiado?
+		// -----------------------------
+		System.out.println();
+		System.out.println("------------------------");
+		System.out.println("3.2.11. ¿Cuál es el laboratorio que más proyectos tiene y cuál es su principal órgano estudiado?");
+		System.out.println("------------------------");
+		System.out.println();
+		
+		String queryStringMaxLab = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ?lab (COUNT(DISTINCT ?project) as ?numberOfProyects) \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Specimen ;" +
+					"    a:hasLaboratory ?lab ;" +
+					"    a:hasProjectTitle ?project ." +
+				"}" +
+				"GROUP BY ?lab \n" +
+				"ORDER BY DESC(?numberOfProyects) \n" +
+				"LIMIT 1";
+		
+		// Execute query
+		executeQuery(NS, model, queryStringMaxLab);
+		
+		String queryStringMaxLabOrgan = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ?organ (COUNT(*) as ?numberOfOccurrences) \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Specimen ;" +
+					"    a:hasLaboratory \"HumanCellAtlasDataCoordinationPlatform\" ;" +
+					"    a:SR.hasObjectOfStudy ?organ ." +
+				"}" +
+				"GROUP BY ?organ \n" +
+				"ORDER BY DESC(?numberOfOccurrences) \n" +
+				"LIMIT 1";
+		
+		// Execute query
+		executeQuery(NS, model, queryStringMaxLabOrgan);
+		
+		// -----------------------------
+		// 3.2.12. ¿Cuál es el órgano para el cual tenemos un mayor número de enfermedades estudiadas?
+		// -----------------------------
+		System.out.println();
+		System.out.println("------------------------");
+		System.out.println("3.2.12. ¿Cuál es el órgano para el cual tenemos un mayor número de enfermedades estudiadas?");
+		System.out.println("------------------------");
+		System.out.println();
+		
+		String queryStringDiseasesPerOrgan = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ?organ (COUNT( DISTINCT ?disease ) as ?numberOfDiseases) \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Specimen ;" +
+					"    a:SR.hasObjectOfStudy ?organ ;" +
+					"    a:SR.hasDiseaseStatus ?disease ." +
+				"}" +
+				"GROUP BY ?organ \n" +
+				"ORDER BY DESC(?numberOfDiseases) \n" +
+				"LIMIT 1";
+		
+		// Execute query
+		executeQuery(NS, model, queryStringDiseasesPerOrgan);
 	}
 
 }

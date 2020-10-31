@@ -132,11 +132,9 @@ class OntologyConversorHCA (OntologyConversorAbstract):
         selected_cell_type = individual_hcd['cellSuspensions'][0]['selectedCellType']
         total_cells = individual_hcd['cellSuspensions'][0]['totalCells']
 
-        individual['ObjectProperties']['SR.hasObjectOfStudy'] = self.parse_word(organ_part) if organ_part[
-                                                                                                   0] is not None else self.parse_word(
-            organ)
-        individual['ObjectProperties']['SR.hasSelectedCellType'] = self.parse_word(selected_cell_type)
+        individual['ObjectProperties']['SR.hasObjectOfStudy'] = self.parse_word(organ_part) + self.parse_word(organ)
 
+        individual['ObjectProperties']['SR.hasSelectedCellType'] = self.parse_word(selected_cell_type)
         individual['DataProperties']['hasTotalCellCounts'] = total_cells
 
         return individual
@@ -266,9 +264,8 @@ class OntologyConversorHCA (OntologyConversorAbstract):
         preservation_method = individual_hcd['specimens'][0]['preservationMethod']
 
         individual['DataProperties']['hasSampleID'] = individual_id
-        individual['ObjectProperties']['SR.hasObjectOfStudy'] = self.parse_word(organ_part) if organ_part[
-                                                                                                   0] is not None else self.parse_word(
-            organ)
+        individual['ObjectProperties']['SR.hasObjectOfStudy'] = self.parse_word(organ_part) + self.parse_word(organ)
+
         individual['ObjectProperties']['SR.hasPreservation'] = self.parse_word(preservation_method)
 
         return individual

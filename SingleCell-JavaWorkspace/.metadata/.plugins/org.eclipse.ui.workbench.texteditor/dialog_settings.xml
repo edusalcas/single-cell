@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="blood_from_donor_D5"/>
 			<item value="pancreas"/>
 			<item value="day"/>
 			<item value="Leukocite"/>
@@ -22,7 +23,6 @@
 			<item value="C"/>
 			<item value="hasCell"/>
 			<item value="isC"/>
-			<item value="collections"/>
 		</list>
 		<list key="replacehistory">
 		</list>

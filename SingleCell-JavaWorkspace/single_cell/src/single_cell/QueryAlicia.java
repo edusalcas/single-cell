@@ -232,7 +232,7 @@ public class QueryAlicia {
 		String queryStringNumCellsPerProject = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?project (SUM(?numCells)/1000 as ?numberOfCells) \n" +
+				"SELECT ?project (IF(SUM(?numCells) = 0, \"unspecified\", SUM(?numCells) / 1000) AS ?numTotalCells) \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
@@ -831,19 +831,17 @@ public class QueryAlicia {
 		String queryStringDiseaseHeart= "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT DISTINCT ?diseaseStatus \n" +
+				"SELECT DISTINCT ?disease \n" +
 				"WHERE \n" +
 				"{ " +
 					"{ " +
-						"?id rdf:type a:Specimen ;" +
-						"    a:SR.hasObjectOfStudy a:Heart ;" +
-						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
+						"?disease rdf:type a:DiseaseStatus ;" +
+						"         a:OR.hasAffected a:Heart ." +
 					"} " +
 					"UNION " +
 					"{ " +
-						"?id rdf:type a:Specimen ;" +
-						"    a:SR.hasObjectOfStudy a:CardiovascularSystem ;" +
-						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
+						"?disease rdf:type a:Specimen ;" +
+						"         a:OR.hasAffected a:CardiovascularSystem ." +
 					"} " +
 				"}";		
 		// Execute query
@@ -894,25 +892,23 @@ public class QueryAlicia {
 		String queryStringOrgansWithMetabolicOrHereditary = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT DISTINCT ?diseaseStatus ?object \n" +
+				"SELECT DISTINCT ?diseaseStatus ?organ \n" +
 				"WHERE \n" +
 				"{ " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
-						"    a:SR.hasObjectOfStudy ?object ;" +
 						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
-						"?diseaseStatus rdf:type a:DiseaseOfMetabolism ." +
-						"?object rdf:type a:Organ ." +
+						"?diseaseStatus rdf:type a:DiseaseOfMetabolism ;" +
+						"               a:OR.hasAffected ?organ ." +
 					"} " +
 					"UNION " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
-						"    a:SR.hasObjectOfStudy ?object ;" +
 						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
-						"?diseaseStatus rdf:type a:GeneticDisease ." +
-						"?object rdf:type a:Organ ." +
+						"?diseaseStatus rdf:type a:GeneticDisease ;" +
+						"               a:OR.hasAffected ?organ ." +
 					"} " +
-				"}";		
+				"}";
 		
 		// Execute query
 		executeQuery(NS, model, queryStringOrgansWithMetabolicOrHereditary);
@@ -934,20 +930,18 @@ public class QueryAlicia {
 				"{ " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
-						"    a:SR.hasObjectOfStudy ?object ;" +
 						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
-						"?diseaseStatus rdf:type a:DiseaseOfMetabolism ." +
-						"?object rdf:type a:Organ ;" +
-						"        a:OR.isPartOfSystem ?system ." +
+						"?diseaseStatus rdf:type a:DiseaseOfMetabolism ;" +
+						"               a:OR.hasAffected ?organ ." +
+						"?organ a:OR.isPartOfSystem ?system ." +
 					"} " +
 					"UNION " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
-						"    a:SR.hasObjectOfStudy ?object ;" +
 						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
-						"?diseaseStatus rdf:type a:GeneticDisease ." +
-						"?object rdf:type a:Organ ;" +
-						"        a:OR.isPartOfSystem ?system ." +
+						"?diseaseStatus rdf:type a:GeneticDisease ;" +
+						"               a:OR.hasAffected ?organ ." +
+						"?organ a:OR.isPartOfSystem ?system ." +
 					"} " +
 				"}";		
 		
@@ -1012,9 +1006,8 @@ public class QueryAlicia {
 				"SELECT ?organ (COUNT( DISTINCT ?disease ) as ?numberOfDiseases) \n" +
 				"WHERE" +
 				"{" +
-					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasObjectOfStudy ?organ ;" +
-					"    a:SR.hasDiseaseStatus ?disease ." +
+					"?organ rdf:type a:Organ ;" +
+					"    a:OR.isAffectedInDisease ?disease ." +
 				"}" +
 				"GROUP BY ?organ \n" +
 				"ORDER BY DESC(?numberOfDiseases) \n" +

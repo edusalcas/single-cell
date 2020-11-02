@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.Resource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -46,7 +47,7 @@ public class MyIndividual {
 		if (className == null)
 			return;
 
-		OntClass classModel = model.getOntClass(className);
+		Resource classModel = model.getOntClass(className);
 
 		if (classModel == null)
 			return;

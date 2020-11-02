@@ -21,9 +21,7 @@
     <fullyQualifiedTypeName name="single_cell.MyModel"/>
     <fullyQualifiedTypeName name="java.util.Hashtable"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Property"/>
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.RDFNode"/>
-    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Resource"/>
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Literal"/>
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Model"/>
     <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
@@ -37,7 +35,6 @@
     <fullyQualifiedTypeName name="org.apache.jena.reasoner.ValidityReport"/>
     <fullyQualifiedTypeName name="org.apache.jena.reasoner.ValidityReport.Report"/>
     <fullyQualifiedTypeName name="java.io.FileWriter"/>
-    <fullyQualifiedTypeName name="org.apache.jena.reasoner.ReasonerFactory"/>
     <fullyQualifiedTypeName name="org.apache.jena.reasoner.ReasonerRegistry"/>
     <fullyQualifiedTypeName name="com.clarkparsia.protege.plugin.pellet.PelletReasonerFactory"/>
     <fullyQualifiedTypeName name="com.clarkparsia.protege.plugin.incremental.PelletIncrementalReasonerFactory"/>
@@ -48,4 +45,10 @@
     <fullyQualifiedTypeName name="org.semanticweb.owlapi.model.IRI"/>
     <fullyQualifiedTypeName name="openllet.owlapi.PelletReasonerFactory"/>
     <fullyQualifiedTypeName name="openllet.jena.PelletReasonerFactory"/>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.InfModel"/>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Property"/>
+    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Resource"/>
+    <fullyQualifiedTypeName name="org.apache.jena.reasoner.Reasoner"/>
+    <fullyQualifiedTypeName name="org.apache.jena.reasoner.ReasonerFactory"/>
+    <fullyQualifiedTypeName name="org.apache.jena.vocabulary.ReasonerVocabulary"/>
 </qualifiedTypeNameHistroy>

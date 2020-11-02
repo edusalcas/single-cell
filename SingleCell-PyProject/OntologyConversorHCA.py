@@ -61,7 +61,7 @@ class OntologyConversorHCA (OntologyConversorAbstract):
 
         return mapping_dict
 
-    def format_concrete(self, raw_individual):
+    def format_concrete_individual(self, raw_individual):
         individual = self.individual
 
         individual['DataProperties']['isPartOfCollection'] = "HumanCellAtlas"
@@ -95,6 +95,13 @@ class OntologyConversorHCA (OntologyConversorAbstract):
         individual = self.__format_HCD_specimens(individual, raw_individual)
 
         self.individual = individual
+
+    def format_concrete_project(self, raw_project):
+        project = self.project
+
+        # TODO parsear las partes del proyecto
+
+        self.project = project
 
     def parse_concrete(self, word):
         aux = list(word.title())

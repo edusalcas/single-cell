@@ -1,0 +1,200 @@
+{
+      "protocols": [
+        {
+          "libraryConstructionApproach": [
+            "inDrop",
+            null
+          ],
+          "instrumentManufacturerModel": [
+            "Illumina HiSeq 2500",
+            null
+          ],
+          "pairedEnd": [
+            true,
+            null
+          ],
+          "workflow": [
+            null
+          ],
+          "assayType": [
+            null
+          ]
+        }
+      ],
+      "entryId": "f86f1ab4-1fbb-4510-ae35-3ffd752d4dfc",
+      "projects": [
+        {
+          "projectTitle": "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure",
+          "projectShortname": "HumanMousePancreas",
+          "laboratory": [
+            "Center for the Science of Therapeutics",
+            "Department of Immunology, Faculty of Medicine",
+            "Department of Stem Cell and Regenerative Biology",
+            "Department of Systems Biology",
+            "Faculty of Biology",
+            "Human Cell Atlas Data Coordination Platform"
+          ],
+          "arrayExpressAccessions": [
+            "E-GEOD-84133"
+          ],
+          "geoSeriesAccessions": [
+            "GSE84133"
+          ],
+          "insdcProjectAccessions": [
+            "SRP078321"
+          ],
+          "insdcStudyAccessions": [
+            "PRJNA328774"
+          ],
+          "supplementaryLinks": [
+            null
+          ]
+        }
+      ],
+      "samples": [
+        {
+          "sampleEntityType": [
+            "specimens"
+          ],
+          "effectiveOrgan": [
+            "pancreas"
+          ],
+          "preservationMethod": [
+            null
+          ],
+          "organ": [
+            "pancreas"
+          ],
+          "organPart": [
+            null
+          ],
+          "disease": [
+            null
+          ],
+          "id": [
+            "H1_pancreas",
+            "H2_pancreas",
+            "H3_pancreas",
+            "H4_pancreas",
+            "M_C57BL/6_pancreas",
+            "M_ICR_pancreas"
+          ],
+          "source": [
+            "specimen_from_organism"
+          ]
+        }
+      ],
+      "specimens": [
+        {
+          "id": [
+            "H1_pancreas",
+            "H2_pancreas",
+            "H3_pancreas",
+            "H4_pancreas",
+            "M_C57BL/6_pancreas",
+            "M_ICR_pancreas"
+          ],
+          "organ": [
+            "pancreas"
+          ],
+          "organPart": [
+            null
+          ],
+          "disease": [
+            null
+          ],
+          "preservationMethod": [
+            null
+          ],
+          "source": [
+            "specimen_from_organism"
+          ]
+        }
+      ],
+      "cellLines": [],
+      "donorOrganisms": [
+        {
+          "id": [
+            "H1",
+            "H2",
+            "H3",
+            "H4",
+            "M_C57BL/6_1",
+            "M_C57BL/6_2",
+            "M_C57BL/6_3",
+            "M_C57BL/6_4",
+            "M_C57BL/6_5",
+            "M_ICR_1",
+            "M_ICR_2",
+            "M_ICR_3",
+            "M_ICR_4",
+            "M_ICR_5"
+          ],
+          "donorCount": 14,
+          "genusSpecies": [
+            "Homo sapiens",
+            "Mus musculus"
+          ],
+          "organismAge": [
+            "17",
+            "38",
+            "51",
+            "59",
+            null
+          ],
+          "organismAgeUnit": [
+            "year",
+            null
+          ],
+          "organismAgeRange": [
+            {
+              "gte": 536112000,
+              "lte": 536112000
+            },
+            {
+              "gte": 1198368000,
+              "lte": 1198368000
+            },
+            {
+              "gte": 1608336000,
+              "lte": 1608336000
+            },
+            {
+              "gte": 1860624000,
+              "lte": 1860624000
+            }
+          ],
+          "biologicalSex": [
+            "female",
+            "male",
+            "unknown"
+          ],
+          "disease": [
+            "normal",
+            "type 2 diabetes mellitus"
+          ]
+        }
+      ],
+      "organoids": [],
+      "cellSuspensions": [
+        {
+          "organ": [
+            "pancreas"
+          ],
+          "organPart": [
+            null
+          ],
+          "selectedCellType": [
+            "pancreatic PP cell"
+          ],
+          "totalCells": 12404
+        }
+      ],
+      "fileTypeSummaries": [
+        {
+          "fileType": "fastq.gz",
+          "count": 38,
+          "totalSize": 418064570672
+        }
+      ]
+}

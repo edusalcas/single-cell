@@ -39,20 +39,35 @@ def init_individual():
     return individual
 
 
+def init_project():
+    project = {}
+    return project
+
+
 class OntologyConversorAbstract (ABC):
 
     def __init__(self):
         self.individual = None
+        self.project = None
         self.mapping_dict = self.init_map()
+
         super().__init__()
 
     def format_individual(self, raw_individual, individual_id):
         self.individual = init_individual()
-        self.format_concrete(raw_individual)
+        self.format_concrete_individual(raw_individual)
 
         self.individual["ID"] = individual_id
 
         return self.individual
+
+    def format_project(self, raw_project, project_id):
+        self.project = init_project()
+        self.format_concrete_project(raw_project)
+
+        self.project['ID'] = project_id
+
+        return self.project
 
     def parse_word(self, word):
         # If word is None, return None
@@ -78,7 +93,11 @@ class OntologyConversorAbstract (ABC):
         pass
 
     @abstractmethod
-    def format_concrete(self, raw_individual):
+    def format_concrete_individual(self, raw_individual):
+        pass
+
+    @abstractmethod
+    def format_concrete_project(self, raw_project):
         pass
 
     @abstractmethod

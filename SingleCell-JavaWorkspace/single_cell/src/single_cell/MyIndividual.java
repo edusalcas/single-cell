@@ -1,22 +1,16 @@
 package single_cell;
 
 import java.util.List;
-import java.util.Map;
 
-import org.apache.jena.ontology.Individual;
-import org.apache.jena.ontology.OntClass;
-import org.apache.jena.rdf.model.Property;
-import org.apache.jena.rdf.model.Resource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class MyIndividual {
+public abstract class MyIndividual {
 
 	private String id;
 	
 	private JSONObject jsonIndividual;
 	
-	private Individual individual;
 	private MyModel model;
 
 	private String readStringFromJson(JSONObject jsonObject, String field) {
@@ -29,30 +23,6 @@ public class MyIndividual {
 		}
 
 		return string;
-	}
-
-	private Integer readIntegerFromJson(JSONObject jsonObject, String field) {
-		Integer integer = null;
-
-		try {
-			integer = jsonObject.getInt(field);
-		} catch (Exception e) {
-			return null;
-		}
-
-		return integer;
-	}
-
-	private void addClassToInd(String className) {
-		if (className == null)
-			return;
-
-		Resource classModel = model.getOntClass(className);
-
-		if (classModel == null)
-			return;
-
-		individual.addOntClass(classModel);
 	}
 
 	public MyIndividual(JSONObject jsonIndividual, MyModel model) {
@@ -75,7 +45,7 @@ public class MyIndividual {
 		
 		JSONObject objectProperties = jsonIndividual.getJSONObject("ObjectProperties");
 		// Add object properties
-		for (String propertyName : MyModel.OBJECT_PROPERTIES) {
+		for (String propertyName : getObjectProperties()) {
 			try {
 				Object propertieValueObject = objectProperties.get(propertyName);
 				
@@ -98,7 +68,7 @@ public class MyIndividual {
 		
 		JSONObject dataProperties = jsonIndividual.getJSONObject("DataProperties");
 		// Add data properties
-		for (String propertyName : MyModel.DATA_PROPERTIES) {
+		for (String propertyName : getDataProperties()) {
 			try {
 				Object propertieValueObject = dataProperties.get(propertyName);
 				
@@ -119,10 +89,13 @@ public class MyIndividual {
 
 		}
 				
-		// System.out.println("Individual " + id + " added to model.");
-
 		return true;
 	}
+	
+	protected abstract String[] getObjectProperties();
+	
+	protected abstract String[] getDataProperties();
+	
 
 
 }

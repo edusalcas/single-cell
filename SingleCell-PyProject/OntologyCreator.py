@@ -1,7 +1,7 @@
 from OntologyConversorHCA import OntologyConversorHCA
 
-SAMPLE_ID_PREFIX = "SAMPLE_"
-PROJECT_ID_PREFIX = "PROJECT_"
+SAMPLE_ID_PREFIX = "SAMPLE_ID_"
+PROJECT_ID_PREFIX = "PROJECT_ID_"
 
 
 class OntologyCreator:
@@ -10,19 +10,20 @@ class OntologyCreator:
         self.hca_conversor = OntologyConversorHCA()
         self.sample_id_counter = 0
         self.project_id_counter = 0
-        self.individuals = []
+        self.samples = []
         self.projects = []
+
         super().__init__()
 
-    def create_hca_individual(self, raw_individual):
-        individual_id = SAMPLE_ID_PREFIX + str(self.sample_id_counter)
+    def create_hca_sample(self, raw_sample):
+        sample_id = SAMPLE_ID_PREFIX + str(self.sample_id_counter)
 
-        individual = self.hca_conversor.format_individual(raw_individual, individual_id)
-        self.individuals.append(individual)
+        sample = self.hca_conversor.format_sample(raw_sample, sample_id)
+        self.samples.append(sample)
 
         self.sample_id_counter = self.sample_id_counter + 1
 
-        return individual
+        return sample.get_dict()
 
     def create_hca_project(self, raw_project):
         project_id = SAMPLE_ID_PREFIX + str(self.project_id_counter)

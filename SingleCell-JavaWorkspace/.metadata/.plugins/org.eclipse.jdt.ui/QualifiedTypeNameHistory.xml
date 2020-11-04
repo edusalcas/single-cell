@@ -18,7 +18,6 @@
     <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
     <fullyQualifiedTypeName name="org.apache.jena.ontology.OntModel"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
-    <fullyQualifiedTypeName name="single_cell.MyModel"/>
     <fullyQualifiedTypeName name="java.util.Hashtable"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.RDFNode"/>
@@ -51,4 +50,7 @@
     <fullyQualifiedTypeName name="org.apache.jena.reasoner.Reasoner"/>
     <fullyQualifiedTypeName name="org.apache.jena.reasoner.ReasonerFactory"/>
     <fullyQualifiedTypeName name="org.apache.jena.vocabulary.ReasonerVocabulary"/>
+    <fullyQualifiedTypeName name="org.apache.commons.lang3.ArrayUtils"/>
+    <fullyQualifiedTypeName name="single_cell.MyModel"/>
+    <fullyQualifiedTypeName name="single_cell.MySpecimen"/>
 </qualifiedTypeNameHistroy>

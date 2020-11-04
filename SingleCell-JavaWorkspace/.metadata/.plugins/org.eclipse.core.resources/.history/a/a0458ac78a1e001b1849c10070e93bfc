@@ -1,0 +1,17 @@
+package single_cell;
+
+public class MySpecimen extends MyIndividual {
+
+	@Override
+	protected String[] getObjectProperties() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected String[] getDataProperties() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

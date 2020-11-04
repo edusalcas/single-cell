@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.ObjectProperty;
 import org.apache.jena.ontology.OntClass;
@@ -41,36 +42,41 @@ public class MyModel {
 	private final String validateLogFileName = "../../SingleCell-Files/validateLog.txt";
 	
 	public static final String[] OBJECT_PROPERTIES = new String[] {
-			"SR.belongsToSpecie",
-			"SR.hasAnalysisProtocol",
-			"SR.hasCellLineType",
-			"SR.hasDiseaseStatus",
-			"SR.hasInstrument",
-			"SR.hasLibrary",
-			"SR.hasModelOrgan",
-			"SR.hasObjectOfStudy",
-			"SR.hasPreservation",
-			"SR.hasSampleType",
-			"SR.hasSelectedCellType",
+			"SPR.belongsToSpecie",
+			"SPR.hasAnalysisProtocol",
+			"SPR.hasCellLineType",
+			"SPR.hasDiseaseStatus",
+			"SPR.hasInstrument",
+			"SPR.hasLibrary",
+			"SPR.hasModelOrgan",
+			"SPR.hasObjectOfStudy",
+			"SPR.hasPreservation",
+			"SPR.hasSampleType",
+			"SPR.hasSelectedCellType",
 	};
 	
-	public static final String[] DATA_PROPERTIES = new String[] {
-			"hasAgeUnit",
-			"hasAvailableDownloadsFormat",
-			"hasAvailableDownloadsType",
-			"hasBiologicalSex",
-			"hasLaboratory",
-			"hasMaxAge",
-			"hasMinAge",
-			"hasProjectShortName",
-			"hasProjectTitle",
-			"hasSampleID",
-			"hasTotalCellCounts",
-			"hasTotalSizeOfFiles",
-			"isPairedEnd",
-			"isPartOfCollection",
-			"isPartOfRepository",
+	public static final String[] SPR_DATA_PROPERTIES = new String[] {
+			"SPR.hasAgeUnit",
+			"SPR.hasAvailableDownloadsFormat",
+			"SPR.hasAvailableDownloadsType",
+			"SPR.hasBiologicalSex",
+			"SPR.hasLaboratory",
+			"SPR.hasMaxAge",
+			"SPR.hasMinAge",
+			"SPR.hasProjectShortName",
+			"SPR.hasProjectTitle",
+			"SPR.hasTotalCellCount",
+			"SPR.hasTotalSizeOfFiles",
+			"SPR.isPairedEnd",
+			"SPR.isPartOfCollection",
+			"SPR.isPartOfRepository",
 	};
+	
+	public static final String[] SR_DATA_PROPERTIES = new String[] {
+			"SR.hasSpecimenID"
+	};
+	
+	public static final String[] SPECIMEN_DATA_PROPERTIES = ArrayUtils.addAll(SPR_DATA_PROPERTIES, SR_DATA_PROPERTIES);
 	
 	private void initializeInputStream(String inputFileName) {
 		try {
@@ -92,7 +98,7 @@ public class MyModel {
 
 	public MyModel(String NS, String inputFileName) {
 		this.NS = NS;
-
+		
 		initializeInputStream(inputFileName);
 		model = ModelFactory.createOntologyModel(PelletReasonerFactory.THE_SPEC);
 		model.getReasoner().setParameter(ReasonerVocabulary.PROPsetRDFSLevel, ReasonerVocabulary.RDFS_FULL);

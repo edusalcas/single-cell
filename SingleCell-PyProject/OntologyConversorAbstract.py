@@ -1,71 +1,23 @@
 from abc import ABC, abstractmethod
-
-
-def init_individual():
-    individual = {
-        "ID": None,
-        "ObjectProperties": {
-            "SR.belongsToSpecie": None,
-            "SR.hasAnalysisProtocol": None,
-            "SR.hasCellLineType": None,
-            "SR.hasDiseaseStatus": None,
-            "SR.hasInstrument": None,
-            "SR.hasLibrary": None,
-            "SR.hasModelOrgan": None,
-            "SR.hasObjectOfStudy": [],
-            "SR.hasPreservation": None,
-            "SR.hasSampleType": None,
-            "SR.hasSelectedCellType": None,
-        },
-        "DataProperties": {
-            "hasAgeUnit": None,
-            "hasAvailableDownloadsFormat": None,
-            "hasAvailableDownloadsType":None,
-            "hasBiologicalSex": None,
-            "hasLaboratory": None,
-            "hasMaxAge": -1,
-            "hasMinAge": -1,
-            "hasProjectShortName": None,
-            "hasProjectTitle": None,
-            "hasSampleID": None,
-            "hasTotalCellCounts": -1,
-            "hasTotalSizeOfFiles": -1,
-            "isPairedEnd": False,
-            "isPartOfCollection": None,
-            "isPartOfRepository": None,
-        }
-    }
-
-    return individual
-
-
-def init_project():
-    project = {}
-    return project
+from Project import Project
 
 
 class OntologyConversorAbstract (ABC):
 
     def __init__(self):
-        self.individual = None
+        self.sample = None
         self.project = None
         self.mapping_dict = self.init_map()
 
         super().__init__()
 
-    def format_individual(self, raw_individual, individual_id):
-        self.individual = init_individual()
-        self.format_concrete_individual(raw_individual)
+    def format_sample(self, raw_sample, sample_id):
+        self.format_concrete_individual(raw_sample, sample_id)
 
-        self.individual["ID"] = individual_id
-
-        return self.individual
+        return self.sample
 
     def format_project(self, raw_project, project_id):
-        self.project = init_project()
-        self.format_concrete_project(raw_project)
-
-        self.project['ID'] = project_id
+        self.format_concrete_project(raw_project, project_id)
 
         return self.project
 
@@ -88,18 +40,23 @@ class OntologyConversorAbstract (ABC):
         except KeyError:
             return word_parsed
 
+    ####################################################
+    #region Abstract methods
     @abstractmethod
     def init_map(self):
         pass
 
     @abstractmethod
-    def format_concrete_individual(self, raw_individual):
+    def format_concrete_individual(self, raw_sample, sample_id):
         pass
 
     @abstractmethod
-    def format_concrete_project(self, raw_project):
+    def format_concrete_project(self, raw_project, project_id):
         pass
 
     @abstractmethod
     def parse_concrete(self, word):
         pass
+
+    #endregion
+    ####################################################

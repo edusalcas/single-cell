@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="getIndividual"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="sampleId"/>
+			<item value="sample"/>
 			<item value="getIndividual"/>
 			<item value="get"/>
 			<item value="addClassToInd"/>
@@ -21,8 +23,6 @@
 			<item value="AS"/>
 			<item value="Count"/>
 			<item value="inter"/>
-			<item value="I"/>
-			<item value="imm"/>
 		</list>
 		<list key="replacehistory">
 		</list>

@@ -42,11 +42,11 @@ public class Test {
 		JSONObject fullJson = new JSONObject(rawJson);
 		JSONArray hitsArray = fullJson.getJSONArray("hits");
 				
-		hitsArray.forEach((hit) -> {new MyIndividual((JSONObject) hit, model).addToModel();});
+		hitsArray.forEach((hit) -> {new MySpecimen((JSONObject) hit, model).addToModel();});
 
 		// Check if model is valid
 		if (!model.validateModel())
-			return;
+			;
 		
 		// Save the model with the instances
 		model.saveModel(outputFileName);

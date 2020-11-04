@@ -60,7 +60,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasProjectTitle ?proyect ." +
+					"    a:SPR.hasProjectTitle ?proyect ." +
 				"}";
 		
 		// Execute query
@@ -82,7 +82,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasLaboratory ?lab ." +
+					"    a:SPR.hasLaboratory ?lab ." +
 				"}";
 		
 		// Execute query
@@ -95,8 +95,8 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasProjectTitle ?project ;" +
-					"    a:hasLaboratory ?lab ." +
+					"    a:SPR.hasProjectTitle ?project ;" +
+					"    a:SPR.hasLaboratory ?lab ." +
 				"} " +
 				"ORDER BY ?project";
 		
@@ -140,7 +140,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasTotalCellCounts ?numCells ." +
+					"    a:SPR.hasTotalCellCounts ?numCells ." +
 					"FILTER (?numCells != -1)" +
 				"}";
 		
@@ -163,7 +163,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasTotalSizeOfFiles ?size ." +
+					"    a:SPR.hasTotalSizeOfFiles ?size ." +
 					"FILTER (?size != -1) " +
 				"}";
 		
@@ -186,7 +186,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasObjectOfStudy ?object ." +
+					"    a:SPR.hasObjectOfStudy ?object ." +
 					"?object rdf:type a:Organ ." +
 				"}" +
 				"ORDER BY ?object";
@@ -210,8 +210,8 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasObjectOfStudy ?object ;" +
-					"    a:hasTotalCellCounts ?numCells ." +
+					"    a:SPR.hasObjectOfStudy ?object ;" +
+					"    a:SPR.hasTotalCellCounts ?numCells ." +
 					"FILTER (?numCells != -1)" +
 				"}" +
 				"GROUP BY ?object " +
@@ -236,8 +236,8 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasProjectTitle ?project ;" +
-					"    a:hasTotalCellCounts ?numCells ." +
+					"    a:SPR.hasProjectTitle ?project ;" +
+					"    a:SPR.hasTotalCellCounts ?numCells ." +
 					"FILTER (?numCells != -1) " +
 				"}" +
 				"GROUP BY ?project " +
@@ -286,7 +286,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasInstrument ?instrument ." +
+					"    a:SPR.hasInstrument ?instrument ." +
 				"}" +
 				"GROUP BY ?instrument \n" +
 				"ORDER BY DESC(?numberOfOccurrences) \n" +
@@ -302,7 +302,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasLibrary ?library ." +
+					"    a:SPR.hasLibrary ?library ." +
 				"}" +
 				"GROUP BY ?library \n" +
 				"ORDER BY DESC(?numberOfOccurrences) \n" +
@@ -318,7 +318,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasAnalysisProtocol ?protocol ." +
+					"    a:SPR.hasAnalysisProtocol ?protocol ." +
 				"}" +
 				"GROUP BY ?protocol \n" +
 				"ORDER BY DESC(?numberOfOccurrences) \n" +
@@ -343,7 +343,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasModelOrgan ?model ." +
+					"    a:SPR.hasModelOrgan ?model ." +
 				"}";
 		
 		// Execute query
@@ -381,7 +381,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasCellLineType ?cellLine ." +
+					"    a:SPR.hasCellLineType ?cellLine ." +
 				"}";
 		
 		// Execute query
@@ -396,7 +396,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasCellLineType ?cellLine ." +
+					"    a:SPR.hasCellLineType ?cellLine ." +
 				"}" +
 				"GROUP BY ?cellLine";
 		
@@ -419,7 +419,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasProjectShortName ?project ." +
+					"    a:SPR.hasProjectShortName ?project ." +
 				"}" +
 				"GROUP BY ?project \n" +
 				"ORDER BY DESC(?numberOfSpecimens) \n" +
@@ -435,8 +435,8 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasProjectShortName ?project ;" +
-					"    a:hasTotalCellCounts ?cells ." +
+					"    a:SPR.hasProjectShortName ?project ;" +
+					"    a:SPR.hasTotalCellCounts ?cells ." +
 				"}" +
 				"GROUP BY ?project \n" +
 				"ORDER BY DESC(?numberOfCells) \n" +
@@ -465,9 +465,9 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasSampleID ?sampleId ;"+
-					"    a:SR.hasObjectOfStudy a:Blood ;" +
-					"    a:SR.hasSelectedCellType ?cellType ." +
+					"    a:SR.hasSpecimenID ?specimenID ;"+
+					"    a:SPR.hasObjectOfStudy a:Blood ;" +
+					"    a:SPR.hasSelectedCellType ?cellType ." +
 				"}";
 		
 		// Execute query
@@ -489,9 +489,9 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasSampleID ?sampleId ;"+
-					"    a:SR.hasObjectOfStudy a:ImmuneSystem ;" +
-					"    a:SR.hasSelectedCellType ?cellType ." +
+					"    a:SR.hasSpecimenID ?specimenID ;"+
+					"    a:SPR.hasObjectOfStudy a:ImmuneSystem ;" +
+					"    a:SPR.hasSelectedCellType ?cellType ." +
 				"}";
 		
 		// Execute query
@@ -514,13 +514,13 @@ public class QueryAlicia {
 				"{ " +
 					"{ " +
 						"?id1 rdf:type a:Specimen ;" +
-						"     a:SR.hasObjectOfStudy a:Blood ;" +
-						"     a:SR.hasSelectedCellType ?cellType ." +
+						"     a:SPR.hasObjectOfStudy a:Blood ;" +
+						"     a:SPR.hasSelectedCellType ?cellType ." +
 					"} " +
 					"{" +
 						"?id2 rdf:type a:Specimen ;" +
-						"     a:SR.hasObjectOfStudy a:ImmuneSystem ;" +
-						"     a:SR.hasSelectedCellType ?cellType ." +
+						"     a:SPR.hasObjectOfStudy a:ImmuneSystem ;" +
+						"     a:SPR.hasSelectedCellType ?cellType ." +
 					"}" +
 				"}";
 		
@@ -543,9 +543,9 @@ public class QueryAlicia {
 				"WHERE " +
 				"{ " +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.belongsToSpecie a:HomoSapiens ;" +
-					"    a:SR.hasObjectOfStudy a:Embryo ;" +
-					"    a:SR.hasDiseaseStatus ?disease ." +
+					"    a:SPR.belongsToSpecie a:HomoSapiens ;" +
+					"    a:SPR.hasObjectOfStudy a:Embryo ;" +
+					"    a:SPR.hasDiseaseStatus ?disease ." +
 				"}";
 		
 		// Execute query
@@ -567,9 +567,9 @@ public class QueryAlicia {
 				"WHERE " +
 				"{ " +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.belongsToSpecie a:MusMusculus ;" +
-					"    a:SR.hasObjectOfStudy a:Embryo ;" +
-					"    a:SR.hasDiseaseStatus ?disease ." +
+					"    a:SPR.belongsToSpecie a:MusMusculus ;" +
+					"    a:SPR.hasObjectOfStudy a:Embryo ;" +
+					"    a:SPR.hasDiseaseStatus ?disease ." +
 				"}";
 		
 		// Execute query
@@ -592,13 +592,13 @@ public class QueryAlicia {
 				"{ " +
 				"{ " +
 					"?id1 rdf:type a:Specimen ;" +
-					"     a:SR.hasObjectOfStudy a:Decidua ;" +
-					"     a:SR.hasSelectedCellType ?cellType ." +
+					"     a:SPR.hasObjectOfStudy a:Decidua ;" +
+					"     a:SPR.hasSelectedCellType ?cellType ." +
 				"} " +
 				"{" +
 					"?id2 rdf:type a:Specimen ;" +
-					"     a:SR.hasObjectOfStudy a:Placenta ;" +
-					"     a:SR.hasSelectedCellType ?cellType ." +
+					"     a:SPR.hasObjectOfStudy a:Placenta ;" +
+					"     a:SPR.hasSelectedCellType ?cellType ." +
 				"}" +
 				"}";
 		
@@ -693,7 +693,7 @@ public class QueryAlicia {
 				"WHERE " +
 				"{ " +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SR.hasSelectedCellType ?cellType ." +
+					"    a:SPR.hasSelectedCellType ?cellType ." +
 					"?cellType rdf:type a:Leukocyte ." +
 				"}";
 		
@@ -737,7 +737,7 @@ public class QueryAlicia {
 				"WHERE " +
 				"{ " +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasAgeUnit ?unit ." +
+					"    a:SPR.hasAgeUnit ?unit ." +
 					"FILTER (?unit = \"d\" || ?unit = \"day\")" +
 				"}";
 		
@@ -762,8 +762,8 @@ public class QueryAlicia {
 				"WHERE \n" +
 				"{ " +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasAgeUnit ?unit ;" +
-					"    a:SR.hasSampleType ?sampleType ." +
+					"    a:SPR.hasAgeUnit ?unit ;" +
+					"    a:SPR.hasSampleType ?sampleType ." +
 					"FILTER (?unit = \"d\" || ?unit = \"day\") " +
 				"}";
 		
@@ -786,9 +786,9 @@ public class QueryAlicia {
 				"WHERE \n" +
 				"{ " +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasAvailableDownloadsType \"matrix\" ;" +
-					"    a:hasAvailableDownloadsType \"results\" ;" +
-					"    a:hasAvailableDownloadsType \"metadata\" ." +
+					"    a:SPR.hasAvailableDownloadsType \"matrix\" ;" +
+					"    a:SPR.hasAvailableDownloadsType \"results\" ;" +
+					"    a:SPR.hasAvailableDownloadsType \"metadata\" ." +
 				"}";		
 		// Execute query
 		executeQuery(NS, model, queryStringSpecimensWith3Types);
@@ -809,10 +809,10 @@ public class QueryAlicia {
 				"WHERE \n" +
 				"{ " +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasAvailableDownloadsType \"matrix\" ;" +
-					"    a:hasAvailableDownloadsType \"results\" ;" +
-					"    a:hasAvailableDownloadsType \"metadata\" ;" +
-					"    a:SR.hasObjectOfStudy ?object ." +
+					"    a:SPR.hasAvailableDownloadsType \"matrix\" ;" +
+					"    a:SPR.hasAvailableDownloadsType \"results\" ;" +
+					"    a:SPR.hasAvailableDownloadsType \"metadata\" ;" +
+					"    a:SPR.hasObjectOfStudy ?object ." +
 				"} " +
 				"GROUP BY ?object";		
 		// Execute query
@@ -864,15 +864,15 @@ public class QueryAlicia {
 				"{ " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
-						"    a:hasProjectShortName ?proyect ;" +
-						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
+						"    a:SPR.hasProjectShortName ?proyect ;" +
+						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
 						"?diseaseStatus rdf:type a:DiseaseOfMetabolism ." +
 					"} " +
 					"UNION " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
-						"    a:hasProjectShortName ?proyect ;" +
-						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
+						"    a:SPR.hasProjectShortName ?proyect ;" +
+						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
 						"?diseaseStatus rdf:type a:GeneticDisease ." +
 					"} " +
 				"}";		
@@ -897,14 +897,14 @@ public class QueryAlicia {
 				"{ " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
-						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
+						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
 						"?diseaseStatus rdf:type a:DiseaseOfMetabolism ;" +
 						"               a:OR.hasAffected ?organ ." +
 					"} " +
 					"UNION " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
-						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
+						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
 						"?diseaseStatus rdf:type a:GeneticDisease ;" +
 						"               a:OR.hasAffected ?organ ." +
 					"} " +
@@ -930,7 +930,7 @@ public class QueryAlicia {
 				"{ " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
-						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
+						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
 						"?diseaseStatus rdf:type a:DiseaseOfMetabolism ;" +
 						"               a:OR.hasAffected ?organ ." +
 						"?organ a:OR.isPartOfSystem ?system ." +
@@ -938,7 +938,7 @@ public class QueryAlicia {
 					"UNION " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
-						"    a:SR.hasDiseaseStatus ?diseaseStatus ." +
+						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
 						"?diseaseStatus rdf:type a:GeneticDisease ;" +
 						"               a:OR.hasAffected ?organ ." +
 						"?organ a:OR.isPartOfSystem ?system ." +
@@ -964,8 +964,8 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasLaboratory ?lab ;" +
-					"    a:hasProjectTitle ?project ." +
+					"    a:SPR.hasLaboratory ?lab ;" +
+					"    a:SPR.hasProjectTitle ?project ." +
 				"}" +
 				"GROUP BY ?lab \n" +
 				"ORDER BY DESC(?numberOfProyects) \n" +
@@ -981,8 +981,8 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:hasLaboratory \"HumanCellAtlasDataCoordinationPlatform\" ;" +
-					"    a:SR.hasObjectOfStudy ?organ ." +
+					"    a:SPR.hasLaboratory \"HumanCellAtlasDataCoordinationPlatform\" ;" +
+					"    a:SPR.hasObjectOfStudy ?organ ." +
 				"}" +
 				"GROUP BY ?organ \n" +
 				"ORDER BY DESC(?numberOfOccurrences) \n" +

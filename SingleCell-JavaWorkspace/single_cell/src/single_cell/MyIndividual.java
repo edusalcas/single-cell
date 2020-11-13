@@ -41,8 +41,8 @@ public abstract class MyIndividual {
 	
 	public Boolean addToModel() {
 		
-		model.createIndividual(id);
-		
+		createIndividual(id);
+				
 		JSONObject objectProperties = jsonIndividual.getJSONObject("ObjectProperties");
 		// Add object properties
 		for (String propertyName : getObjectProperties()) {
@@ -88,14 +88,52 @@ public abstract class MyIndividual {
 			}
 
 		}
+		
+		JSONObject anotationProperties = getJsonIndividual().getJSONObject("AnnotationProperties");
+		// Add data properties
+		for (String propertyName : getAnnotationProperties()) {
+			try {
+				Object propertieValueObject = anotationProperties.get(propertyName);
 				
+				if (propertieValueObject instanceof JSONArray) {
+					List<Object> list = anotationProperties.getJSONArray(propertyName).toList();
+					
+					for (Object propertyValue : list) {
+						if (propertyValue instanceof Object)
+							getModel().addAnotationPropertyToIndividual(getId(), propertyName, propertyValue);
+					}
+				} else if (propertieValueObject instanceof Object){
+					getModel().addAnotationPropertyToIndividual(getId(), propertyName, propertieValueObject);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.exit(1);
+			}
+
+		}
+		
 		return true;
 	}
 	
+
+	protected abstract String[] getAnnotationProperties();
+
+	public MyModel getModel() {
+		return model;
+	}
+	
+	public JSONObject getJsonIndividual() {
+		return jsonIndividual;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	protected abstract void createIndividual(String id);
+
 	protected abstract String[] getObjectProperties();
 	
 	protected abstract String[] getDataProperties();
-	
-
 
 }

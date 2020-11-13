@@ -140,7 +140,7 @@ public class QueryAlicia {
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SPR.hasTotalCellCounts ?numCells ." +
+					"    a:SPR.hasTotalCellCount ?numCells ." +
 					"FILTER (?numCells != -1)" +
 				"}";
 		

@@ -34,21 +34,23 @@ public class MyModel {
 	private HashMap<String, Resource> classMap;
 	private HashMap<String, Property> dataPropertyMap;
 	private HashMap<String, Property> objectPropertyMap;
+	private HashMap<String, Property> anotationPropertyMap;
 	private HashMap<String, Resource> individualMap;
 
 	public static final String PREDICATE_CLASS = "Type";
-	public static final String SAMPLE_CLASS = "Specimen";
+	public static final String SPECIMEN_CLASS = "Specimen";
+	public static final String PROJECT_CLASS = "Project";
 
 	private final String validateLogFileName = "../../SingleCell-Files/validateLog.txt";
 	
 	public static final String[] OBJECT_PROPERTIES = new String[] {
-			"SPR.belongsToSpecie",
+			"SPR.hasSpecie",
 			"SPR.hasAnalysisProtocol",
 			"SPR.hasCellLineType",
 			"SPR.hasDiseaseStatus",
 			"SPR.hasInstrument",
 			"SPR.hasLibrary",
-			"SPR.hasModelOrgan",
+			"SPR.hasModel",
 			"SPR.hasObjectOfStudy",
 			"SPR.hasPreservation",
 			"SPR.hasSampleType",
@@ -57,26 +59,56 @@ public class MyModel {
 	
 	public static final String[] SPR_DATA_PROPERTIES = new String[] {
 			"SPR.hasAgeUnit",
-			"SPR.hasAvailableDownloadsFormat",
-			"SPR.hasAvailableDownloadsType",
 			"SPR.hasBiologicalSex",
-			"SPR.hasLaboratory",
 			"SPR.hasMaxAge",
 			"SPR.hasMinAge",
-			"SPR.hasProjectShortName",
-			"SPR.hasProjectTitle",
 			"SPR.hasTotalCellCount",
-			"SPR.hasTotalSizeOfFiles",
+			"SPR.hasTotalSizeOfFilesInMB",
 			"SPR.isPairedEnd",
-			"SPR.isPartOfCollection",
-			"SPR.isPartOfRepository",
 	};
 	
 	public static final String[] SR_DATA_PROPERTIES = new String[] {
-			"SR.hasSpecimenID"
+			"SR.hasFileFormat",
+	};
+	
+	public static final String[] PR_DATA_PROPERTIES = new String[] {
+			"PR.hasAvailableDownloadsMatrixFormat",
+			"PR.hasAvailableDownloadsMetadataFormat",
+			"PR.hasAvailableDownloadsType",
+			"PR.hasDonorCount",
+			"PR.hasExperimentalFactor",
 	};
 	
 	public static final String[] SPECIMEN_DATA_PROPERTIES = ArrayUtils.addAll(SPR_DATA_PROPERTIES, SR_DATA_PROPERTIES);
+	public static final String[] PROJECT_DATA_PROPERTIES = ArrayUtils.addAll(SPR_DATA_PROPERTIES, PR_DATA_PROPERTIES);
+	
+	public static final String[] SPR_ANOTATION_PROPERTIES = new String[] {
+			"SPR.hasLaboratory",
+			"SPR.hasProjectShortName",
+			"SPR.hasProjectTitle",
+			"SPR.isPartOfCollection",
+			"SPR.isPartOfRepository"
+	};
+	
+	public static final String[] PR_ANNOTATION_PROPERTIES = new String[] {
+			"PR.hasArrayExpressID",
+			"PR.hasDescription",
+			"PR.hasGEOseriesID",
+			"PR.hasINSDCprojectID",
+			"PR.hasINSDCstudyID",
+			"PR.hasInstitution",
+			"PR.hasProjectID",
+			"PR.hasPublicationLink",
+			"PR.hasPublicationTitle",
+			"PR.hasSumpplementaryLink"
+	};
+	
+	public static final String[] SR_ANNOTATION_PROPERTIES = new String[] {
+			"SR.hasSpecimenID"
+	};
+	
+	public static final String[] SPECIMEN_ANNOTATION_PROPERTIES = ArrayUtils.addAll(SPR_ANOTATION_PROPERTIES, SR_ANNOTATION_PROPERTIES);
+	public static final String[] PROJECT_ANNOTATION_PROPERTIES = ArrayUtils.addAll(SPR_ANOTATION_PROPERTIES, PR_ANNOTATION_PROPERTIES);
 	
 	private void initializeInputStream(String inputFileName) {
 		try {
@@ -108,6 +140,7 @@ public class MyModel {
 		classMap = new HashMap<>();
 		dataPropertyMap = new HashMap<>();
 		objectPropertyMap = new HashMap<>();
+		anotationPropertyMap = new HashMap<>();
 		individualMap = new HashMap<>();
 		
 		classMap.put(null, null);
@@ -163,6 +196,19 @@ public class MyModel {
 		return property;
 	}
 	
+	private Property getAnotationProperty(String propertyName) {
+		Property property = anotationPropertyMap.get(propertyName);
+
+		if (!anotationPropertyMap.containsKey(propertyName)) {
+			property = model.getProperty(NS + propertyName);
+			anotationPropertyMap.put(propertyName, property);
+			
+			if (property == null) 
+				System.err.println("Warning: Anotation property " + propertyName + " is not in the ontology model.");
+		}
+		return property;
+	}
+	
 	public Resource getIndividual(String individualName) {
 		Resource individual = individualMap.get(individualName);
 
@@ -176,19 +222,19 @@ public class MyModel {
 		return individual;
 	}
 	
-	public void createIndividual(String id) {
-		Resource sampleClass = getOntClass(SAMPLE_CLASS);
-		Resource individual = model.createResource(NS + id, sampleClass);
+	public void createSpecimen(String id) {
+		Resource specimenClass = getOntClass(SPECIMEN_CLASS);
+		Resource individual = model.createResource(NS + id, specimenClass);
 		
 		individualMap.put(id, individual);
 	}
 	
-//	public void addClassToIndividual(String subject, String predicate, Object object) {
-//		Resource ontClass = getOntClass(object.toString());
-//		Individual individual = model.add(NS + subject, ontClass);
-//		if (!individualMap.containsKey(subject))
-//			individualMap.put(subject, individual);
-//	}
+	public void createProject(String id) {
+		Resource projectClass = getOntClass(PROJECT_CLASS);
+		Resource individual = model.createResource(NS + id, projectClass);
+		
+		individualMap.put(id, individual);
+	}
 	
 	public void addObjectPropertyToIndividual(String subject, String predicate, Object object) {
 		if (object.toString().compareTo("null") == 0)
@@ -207,7 +253,7 @@ public class MyModel {
 	
 	public void addDataPropertyToIndividual(String subject, String predicate, Object object) {
 		if (object.toString().compareTo("null") == 0)
-			object = "unspecified";
+			return;
 
 		Property property = getDataProperty(predicate);
 		Resource individual = individualMap.get(subject);
@@ -223,6 +269,25 @@ public class MyModel {
 
 	}
 	
+	public void addAnotationPropertyToIndividual(String subject, String predicate, Object object) {
+		if (object.toString().compareTo("null") == 0)
+			object = "unspecified";
+
+		Property property = getAnotationProperty(predicate);
+		Resource individual = individualMap.get(subject);
+		
+		if (object instanceof String)
+			model.add(individual, property, object.toString());
+		else if (object instanceof Double)
+			model.addLiteral(individual, property, (double) object);
+		else if (object instanceof Integer)
+			model.addLiteral(individual, property, (int) object);
+		else if (object instanceof Boolean)
+			model.addLiteral(individual, property, (boolean) object);
+		
+	}
+
+
 	@SuppressWarnings("resource")
 	public boolean validateModel() {
 		FileWriter writer = null;
@@ -263,5 +328,6 @@ public class MyModel {
 	public Model getModel() {
 		return model;
 	}
+
 
 }

@@ -1,0 +1,169 @@
+{
+    "protocols": [
+      {
+        "libraryConstructionApproach": [
+          "CITE-seq",
+          null
+        ],
+        "instrumentManufacturerModel": [
+          "Illumina Hiseq 2500",
+          null
+        ],
+        "pairedEnd": [
+          false,
+          null
+        ],
+        "workflow": [
+          null
+        ],
+        "assayType": [
+          null
+        ]
+      }
+    ],
+    "entryId": "f81efc03-9f56-4354-aabb-6ce819c3d414",
+    "projects": [
+      {
+        "projectTitle": "Cell hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics",
+        "projectShortname": "Multiplexed scRNA-seq with barcoded antibodies",
+        "laboratory": [
+          "Human Cell Atlas Data Coordination Platform",
+          "Satija Lab",
+          "Technology Development and Innovation"
+        ],
+        "arrayExpressAccessions": [
+          null
+        ],
+        "geoSeriesAccessions": [
+          null
+        ],
+        "insdcProjectAccessions": [
+          null
+        ],
+        "insdcStudyAccessions": [
+          null
+        ],
+        "supplementaryLinks": [
+          null
+        ]
+      }
+    ],
+    "samples": [
+      {
+        "sampleEntityType": [
+          "specimens"
+        ],
+        "effectiveOrgan": [
+          "blood"
+        ],
+        "disease": [
+          null
+        ],
+        "organ": [
+          "blood"
+        ],
+        "source": [
+          "specimen_from_organism"
+        ],
+        "id": [
+          "Specimen_PBMC1",
+          "Specimen_PBMC2",
+          "Specimen_PBMC3",
+          "Specimen_PBMC4",
+          "Specimen_PBMC5",
+          "Specimen_PBMC6",
+          "Specimen_PBMC7",
+          "Specimen_PBMC8"
+        ],
+        "organPart": [
+          null
+        ],
+        "preservationMethod": [
+          null
+        ]
+      }
+    ],
+    "specimens": [
+      {
+        "id": [
+          "Specimen_PBMC1",
+          "Specimen_PBMC2",
+          "Specimen_PBMC3",
+          "Specimen_PBMC4",
+          "Specimen_PBMC5",
+          "Specimen_PBMC6",
+          "Specimen_PBMC7",
+          "Specimen_PBMC8"
+        ],
+        "organ": [
+          "blood"
+        ],
+        "organPart": [
+          null
+        ],
+        "disease": [
+          null
+        ],
+        "preservationMethod": [
+          null
+        ],
+        "source": [
+          "specimen_from_organism"
+        ]
+      }
+    ],
+    "cellLines": [],
+    "donorOrganisms": [
+      {
+        "id": [
+          "Donor_PBMC1",
+          "Donor_PBMC2",
+          "Donor_PBMC3",
+          "Donor_PBMC4",
+          "Donor_PBMC5",
+          "Donor_PBMC6",
+          "Donor_PBMC7",
+          "Donor_PBMC8"
+        ],
+        "donorCount": 8,
+        "genusSpecies": [
+          "Homo sapiens"
+        ],
+        "organismAge": [
+          null
+        ],
+        "organismAgeUnit": [
+          null
+        ],
+        "organismAgeRange": null,
+        "biologicalSex": [
+          "unknown"
+        ],
+        "disease": [
+          "normal"
+        ]
+      }
+    ],
+    "organoids": [],
+    "cellSuspensions": [
+      {
+        "organ": [
+          "blood"
+        ],
+        "organPart": [
+          null
+        ],
+        "selectedCellType": [
+          "peripheral blood mononuclear cell"
+        ],
+        "totalCells": 20000
+      }
+    ],
+    "fileTypeSummaries": [
+      {
+        "fileType": "fastq.gz",
+        "count": 6,
+        "totalSize": 83729759795
+      }
+    ]
+  }

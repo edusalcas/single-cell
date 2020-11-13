@@ -18,8 +18,6 @@ class Individual:
         self.cell_type = None
 
         self.age_unit = None
-        self.downloads_format = None
-        self.downloads_type = None
         self.biological_sex = None
         self.laboratory = None
         self.max_age = -1
@@ -38,13 +36,13 @@ class Individual:
         individual_dict = {
             "ID": self.ID,
             "ObjectProperties": {
-                "SPR.belongsToSpecie": self.specie,
+                "SPR.hasSpecie": self.specie,
                 "SPR.hasAnalysisProtocol": self.analysis_protocol,
                 "SPR.hasCellLineType": self.cell_line_type,
                 "SPR.hasDiseaseStatus": self.disease,
                 "SPR.hasInstrument": self.instrument,
                 "SPR.hasLibrary": self.library,
-                "SPR.hasModelOrgan": self.model_organ,
+                "SPR.hasModel": self.model_organ,
                 "SPR.hasObjectOfStudy": self.object_of_study,
                 "SPR.hasPreservation": self.preservation,
                 "SPR.hasSampleType": self.sample_type,
@@ -52,17 +50,17 @@ class Individual:
             },
             "DataProperties": {
                 "SPR.hasAgeUnit": self.age_unit,
-                "SPR.hasAvailableDownloadsFormat": self.downloads_format,
-                "SPR.hasAvailableDownloadsType":self.downloads_type,
                 "SPR.hasBiologicalSex": self.biological_sex,
-                "SPR.hasLaboratory": self.laboratory,
                 "SPR.hasMaxAge": self.max_age,
                 "SPR.hasMinAge": self.min_age,
+                "SPR.hasTotalCellCount": self.total_cell_counts,
+                "SPR.hasTotalSizeOfFilesInMB": self.total_size_of_files,
+                "SPR.isPairedEnd": self.paired_end,
+            },
+            "AnnotationProperties": {
+                "SPR.hasLaboratory": self.laboratory,
                 "SPR.hasProjectShortName": self.project_short_name,
                 "SPR.hasProjectTitle": self.project_title,
-                "SPR.hasTotalCellCount": self.total_cell_counts,
-                "SPR.hasTotalSizeOfFiles": self.total_size_of_files,
-                "SPR.isPairedEnd": self.paired_end,
                 "SPR.isPartOfCollection": self.part_of_collection,
                 "SPR.isPartOfRepository": self.part_of_repository
             }

@@ -18,4 +18,14 @@ public class MySpecimen extends MyIndividual {
 		return MyModel.SPECIMEN_DATA_PROPERTIES;
 	}
 
+	@Override
+	protected String[] getAnnotationProperties() {
+		return MyModel.SPECIMEN_ANNOTATION_PROPERTIES;
+	}
+	
+	@Override
+	protected void createIndividual(String id) {
+		getModel().createSpecimen(id);
+	}
+
 }

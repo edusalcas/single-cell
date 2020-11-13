@@ -1,11 +1,12 @@
 from OntologyConversorAbstract import OntologyConversorAbstract
-from Sample import Sample
+from Project import Project
+from Specimen import Specimen
 
 
 class OntologyConversorHCA(OntologyConversorAbstract):
 
     ####################################################
-    #region Define super class abstract methods
+    # region Define super class abstract methods
 
     def init_map(self):
         mapping_dict = {
@@ -61,45 +62,76 @@ class OntologyConversorHCA(OntologyConversorAbstract):
 
         return mapping_dict
 
-    def format_concrete_individual(self, raw_sample, sample_id):
-        sample = Sample(sample_id)
+    def format_concrete_specimen(self, raw_specimen, specimen_id):
+        specimen = Specimen(specimen_id)
 
-        sample.part_of_collection = "HumanCellAtlas"
-        sample.part_of_repository = "HumanCellAtlas"
+        specimen.part_of_collection = "HumanCellAtlas"
+        specimen.part_of_repository = "HumanCellAtlas"
 
         # Cell Lines
-        sample = self.__format_HCD_cell_lines(sample, raw_sample)
+        specimen = self.__format_HCD_cell_lines(specimen, raw_specimen)
 
         # Cell Suspensions
-        sample = self.__format_HCD_cell_suspensions(sample, raw_sample)
+        specimen = self.__format_HCD_cell_suspensions(specimen, raw_specimen)
 
         # Donor Organism
-        sample = self.__format_HCD_donor_organism(sample, raw_sample)
+        specimen = self.__format_HCD_donor_organism(specimen, raw_specimen)
 
         # Projects
-        sample = self.__format_HCD_projects(sample, raw_sample)
+        specimen = self.__format_HCD_projects(specimen, raw_specimen)
 
         # File Type Summaries
-        sample = self.__format_HCD_file_type_summaries(sample, raw_sample)
+        specimen = self.__format_HCD_file_type_summaries(specimen, raw_specimen)
 
         # Organoids
-        sample = self.__format_HCD_organoids(sample, raw_sample)
+        specimen = self.__format_HCD_organoids(specimen, raw_specimen)
 
         # Protocols
-        sample = self.__format_HCD_protocols(sample, raw_sample)
+        specimen = self.__format_HCD_protocols(specimen, raw_specimen)
 
         # Samples
-        sample = self.__format_HCD_samples(sample, raw_sample)
+        specimen = self.__format_HCD_samples(specimen, raw_specimen)
 
         # Specimens
-        sample = self.__format_HCD_specimens(sample, raw_sample)
+        specimen = self.__format_HCD_specimens_SR(specimen, raw_specimen)
 
-        self.sample = sample
+        self.specimen = specimen
 
-    def format_concrete_project(self, raw_project):
-        project = self.project
+    def format_concrete_project(self, raw_project, project_id):
 
-        # TODO parsear las partes del proyecto
+        project = Project(project_id)
+
+        project.part_of_collection = "HumanCellAtlas"
+        project.part_of_repository = "HumanCellAtlas"
+
+        # Cell Lines
+        project = self.__format_HCD_cell_lines(project, raw_project)
+
+        # Protocols
+        project = self.__format_HCD_protocols(project, raw_project)
+
+        # Projects
+        project = self.__format_HCD_projects_PR(project, raw_project)
+
+        # Samples
+        project = self.__format_HCD_samples(project, raw_project)
+
+        # Specimens
+        project = self.__format_HCD_specimens(project, raw_project)
+
+        # Donor Organism
+        project = self.__format_HCD_donor_organism_PR(project, raw_project)
+
+        # Organoids
+        project = self.__format_HCD_organoids(project, raw_project)
+
+        # Cell Suspensions
+        project = self.__format_HCD_cell_suspensions(project, raw_project)
+
+        # File Type Summaries
+        project = self.__format_HCD_file_type_summaries_PR(project, raw_project)
+
+        project.project_id = raw_project["entryId"]
 
         self.project = project
 
@@ -114,170 +146,270 @@ class OntologyConversorHCA(OntologyConversorAbstract):
 
         return aux
 
-    #endregion
+    # endregion
     ####################################################
 
     ####################################################
-    # region format_concrete_individual function auxiliar parts
+    # region individual function auxiliar parts
 
-    def __format_HCD_cell_lines(self, sample, sample_hca):
-        if not sample_hca['cellLines']:
-            return sample
+    def __format_HCD_cell_lines(self, individual, individual_hca):
+        if not individual_hca['cellLines']:
+            return individual
 
-        cell_line_type = sample_hca['cellLines'][0]['cellLineType']
-        model_organ = sample_hca['cellLines'][0]['modelOrgan']
+        cell_line_type = individual_hca['cellLines'][0]['cellLineType']
+        model_organ = individual_hca['cellLines'][0]['modelOrgan']
 
-        sample.cell_line_type = self.parse_word(cell_line_type)
-        sample.model_organ = self.parse_word(model_organ)
+        individual.cell_line_type = self.parse_word(cell_line_type)
+        individual.model_organ = self.parse_word(model_organ)
 
-        return sample
+        return individual
 
-    def __format_HCD_cell_suspensions(self, sample, sample_hca):
-        if not sample_hca['cellSuspensions']:
-            return sample
+    def __format_HCD_cell_suspensions(self, individual, individual_hca):
+        if not individual_hca['cellSuspensions']:
+            return individual
 
-        organ = sample_hca['cellSuspensions'][0]['organ']
-        organ_part = sample_hca['cellSuspensions'][0]['organPart']
-        selected_cell_type = sample_hca['cellSuspensions'][0]['selectedCellType']
-        total_cells = sample_hca['cellSuspensions'][0]['totalCells']
+        selected_cell_type = []
+        total_cells = 0
 
-        sample.object_of_study = self.parse_word(organ_part) + self.parse_word(organ)
+        for cellSuspension in individual_hca['cellSuspensions']:
+            selected_cell_type += cellSuspension['selectedCellType']
+            total_cells += cellSuspension['totalCells']
 
-        sample.cell_type = self.parse_word(selected_cell_type)
-        sample.total_cell_counts = total_cells
+        if total_cells == 0:
+            total_cells = -1
 
-        return sample
+        individual.cell_type = self.parse_word(selected_cell_type)
+        individual.total_cell_counts = total_cells
 
-    def __format_HCD_donor_organism(self, sample, sample_hca):
-        if not sample_hca['donorOrganisms']:
-            return sample
+        return individual
 
-        biological_sex = sample_hca['donorOrganisms'][0]['biologicalSex']
-        disease = sample_hca['donorOrganisms'][0]['disease']
-        genus_species = sample_hca['donorOrganisms'][0]['genusSpecies']
-        organism_age = sample_hca['donorOrganisms'][0]['organismAge'][0]
-        organism_age_unit = sample_hca['donorOrganisms'][0]['organismAgeUnit']
+    def __format_HCD_donor_organism(self, individual, individual_hca):
+        if not individual_hca['donorOrganisms']:
+            return individual
 
-        sample.biological_sex = biological_sex
-        sample.disease = self.parse_word(disease)
-        sample.specie = self.parse_word(genus_species)
+        biological_sex = individual_hca['donorOrganisms'][0]['biologicalSex']
+        disease = individual_hca['donorOrganisms'][0]['disease']
+        genus_species = individual_hca['donorOrganisms'][0]['genusSpecies']
+        organism_age = individual_hca['donorOrganisms'][0]['organismAge'][0]
+        organism_age_unit = individual_hca['donorOrganisms'][0]['organismAgeUnit']
+
+        individual.biological_sex = biological_sex
+        individual.disease = self.parse_word(disease)
+        individual.specie = self.parse_word(genus_species)
 
         if organism_age is not None and '-' in organism_age:
-            sample.min_age = int(organism_age.split('-')[0])
-            sample.max_age = int(organism_age.split('-')[1])
+            individual.min_age = int(organism_age.split('-')[0])
+            individual.max_age = int(organism_age.split('-')[1])
         else:
-            sample.min_age = int(float(organism_age)) if organism_age is not None else -1
-            sample.max_age = int(float(organism_age)) if organism_age is not None else -1
+            individual.min_age = int(float(organism_age)) if organism_age is not None else -1
+            individual.max_age = int(float(organism_age)) if organism_age is not None else -1
 
-        sample.age_unit = organism_age_unit
+        individual.age_unit = organism_age_unit
 
-        return sample
+        return individual
 
-    def __format_HCD_projects(self, sample, sample_hca):
-        if not sample_hca['projects']:
-            return sample
+    def __format_HCD_projects(self, individual, individual_hca):
+        if not individual_hca['projects']:
+            return individual
 
-        laboratory = sample_hca['projects'][0]['laboratory']
-        project_shortname = sample_hca['projects'][0]['projectShortname']
-        project_title = sample_hca['projects'][0]['projectTitle']
+        laboratory = individual_hca['projects'][0]['laboratory']
+        project_shortname = individual_hca['projects'][0]['projectShortname']
+        project_title = individual_hca['projects'][0]['projectTitle']
 
-        sample.laboratory = self.parse_word(laboratory)
-        sample.project_short_name = project_shortname
-        sample.project_title = project_title
+        individual.laboratory = self.parse_word(laboratory)
+        individual.project_short_name = project_shortname
+        individual.project_title = project_title
 
-        return sample
+        return individual
 
-    def __format_HCD_file_type_summaries(self, sample, sample_hca):
-        if not sample_hca['fileTypeSummaries']:
-            return sample
+    def __format_HCD_organoids(self, individual, individual_hca):
+        if not individual_hca['organoids']:
+            return individual
 
-        # It is possible that one individual has multiple files
-        file_type = ['metadata']
-        file_format = []
-        count = []
-        total_size = []
+        model_organ = individual_hca['organoids'][0]['modelOrgan']
 
-        for i in range(len(sample_hca['fileTypeSummaries'])):
-            ind_type = sample_hca['fileTypeSummaries'][i]['fileType']
+        individual.model_organ = self.parse_word(model_organ)
 
-            if ind_type == 'matrix' and sample.project_title != "Systematic comparative " \
-                                                                                           "analysis of single cell " \
-                                                                                           "RNA-sequencing methods":
-                file_type.append(ind_type)
-            elif ind_type == 'results':
-                file_type.append(ind_type)
-            else:
-                file_format.append(ind_type)
+        return individual
 
-            count.append(sample_hca['fileTypeSummaries'][i]['count'])
-            total_size.append(sample_hca['fileTypeSummaries'][i]['totalSize'])
+    def __format_HCD_protocols(self, individual, individual_hca):
+        if not individual_hca['protocols']:
+            return individual
 
-        sample.downloads_format = file_format
-        sample.downloads_type = file_type
-        sample.total_size_of_files = sum(total_size) / pow(2, 20) # We save it in MB
+        instrument_manufacturer_model = individual_hca['protocols'][0]['instrumentManufacturerModel']
+        library_construction_approach = individual_hca['protocols'][0]['libraryConstructionApproach']
+        paired_end = individual_hca['protocols'][0]['pairedEnd']
+        workflow = individual_hca['protocols'][0]['workflow']
 
-        return sample
+        individual.instrument = self.parse_word(instrument_manufacturer_model)
+        individual.library = self.parse_word(library_construction_approach)
+        individual.paired_end = paired_end
+        individual.analysis_protocol = self.parse_word(workflow)
 
-    def __format_HCD_organoids(self, sample, sample_hca):
-        if not sample_hca['organoids']:
-            return sample
+        return individual
 
-        model_organ = sample_hca['organoids'][0]['modelOrgan']
+    def __format_HCD_samples(self, individual, individual_hca):
+        if not individual_hca['samples']:
+            return individual
 
-        sample.model_organ = self.parse_word(model_organ)
+        sample_entity_type = individual_hca['samples'][0]['sampleEntityType']
 
-        return sample
-
-    def __format_HCD_protocols(self, sample, sample_hca):
-        if not sample_hca['protocols']:
-            return sample
-
-        instrument_manufacturer_model = sample_hca['protocols'][0]['instrumentManufacturerModel']
-        library_construction_approach = sample_hca['protocols'][0]['libraryConstructionApproach']
-        paired_end = sample_hca['protocols'][0]['pairedEnd']
-        workflow = sample_hca['protocols'][0]['workflow']
-
-        sample.instrument = self.parse_word(instrument_manufacturer_model)
-        sample.library = self.parse_word(library_construction_approach)
-        sample.paired_end = paired_end
-        sample.analysis_protocol = self.parse_word(workflow)
-
-        return sample
-
-    def __format_HCD_samples(self, sample, sample_hca):
-        if not sample_hca['samples']:
-            return sample
-
-        sample_entity_type = sample_hca['samples'][0]['sampleEntityType']
-
-        sample.sample_type = self.parse_word(sample_entity_type)
+        individual.sample_type = self.parse_word(sample_entity_type)
 
         try:
-            preservation_method = sample_hca['samples'][0]['preservationMethod']
+            preservation_method = individual_hca['samples'][0]['preservationMethod']
 
-            sample.preservation = self.parse_word(preservation_method)
+            individual.preservation = self.parse_word(preservation_method)
 
-            return sample
+            return individual
         except:
-            return sample
+            return individual
 
-    def __format_HCD_specimens(self, sample, sample_hca):
-        if not sample_hca['specimens']:
-            return sample
+    def __format_HCD_specimens(self, individual, individual_hca):
+        if not individual_hca['specimens']:
+            return individual
 
-        sample_id = sample_hca['specimens'][0]['id'][0]
-        organ = sample_hca['specimens'][0]['organ']
-        organ_part = sample_hca['specimens'][0]['organPart']
-        preservation_method = sample_hca['specimens'][0]['preservationMethod']
+        organ = individual_hca['specimens'][0]['organ']
+        organ_part = individual_hca['specimens'][0]['organPart']
+        preservation_method = individual_hca['specimens'][0]['preservationMethod']
 
-        sample.specimen_ID = sample_id
-        sample.object_of_study = self.parse_word(organ_part) + self.parse_word(organ)
+        individual.object_of_study = self.parse_word(organ_part) + self.parse_word(organ)
 
-        sample.preservation = self.parse_word(preservation_method)
+        individual.preservation = self.parse_word(preservation_method)
 
-        return sample
+        return individual
+
+    def __format_HCD_file_type_summaries(self, individual, individual_hca):
+        if not individual_hca['fileTypeSummaries']:
+            return individual
+
+        # It is possible that one individual has multiple files
+        file_format = []
+        # count = []
+        total_size = []
+
+        for i in range(len(individual_hca['fileTypeSummaries'])):
+            ind_type = individual_hca['fileTypeSummaries'][i]['fileType']
+
+            if ind_type != "matrix" and ind_type != "results":
+                file_format.append(ind_type)
+
+            # count.append(individual_hca['fileTypeSummaries'][i]['count'])
+            total_size.append(individual_hca['fileTypeSummaries'][i]['totalSize'])
+
+        individual.file_format = file_format
+        individual.total_size_of_files = sum(total_size) / pow(2, 20)  # We save it in MB
+
+        return individual
 
     # endregion
     ####################################################
 
-    
+    ####################################################
+    #region specimen function auxiliar parts
+
+    def __format_HCD_specimens_SR(self, specimen, specimen_hca):
+        if not specimen_hca['specimens']:
+            return specimen
+
+        specimen = self.__format_HCD_specimens(specimen, specimen_hca)
+
+        sample_id = specimen_hca['specimens'][0]['id'][0]
+
+        specimen.specimen_ID = sample_id
+
+        return specimen
+    #endregion
+    ####################################################
+
+    ####################################################
+    #region project function auxiliar parts
+
+    def __format_HCD_donor_organism_PR(self, project, project_hca):
+        if not project_hca['donorOrganisms']:
+            return project
+
+        project = self.__format_HCD_donor_organism(project, project_hca)
+
+        donor_count = project_hca['donorOrganisms'][0]['donorCount']
+
+        project.donor_count = donor_count
+
+        return project
+
+    def __format_HCD_projects_PR(self, project, project_hca):
+        if not project_hca['projects']:
+            return project
+
+        project_title = project_hca['projects'][0]['projectTitle']
+        project_shortname = project_hca['projects'][0]['projectShortname']
+        laboratory = project_hca['projects'][0]['laboratory']
+        project_description = project_hca['projects'][0]['projectDescription']
+
+        institutions = []
+        for contributor in project_hca['projects'][0]['contributors']:
+            institutions.append(contributor["institution"])
+
+        publication_titles = []
+        publication_links = []
+        for publication in project_hca['projects'][0]['publications']:
+            publication_titles.append(publication['publicationTitle'])
+            publication_links.append(publication['publicationUrl'])
+
+        array_express = project_hca['projects'][0]['arrayExpressAccessions']
+        geo_series = project_hca['projects'][0]['geoSeriesAccessions']
+        insdc_project = project_hca['projects'][0]['insdcProjectAccessions']
+        insdc_study = project_hca['projects'][0]['insdcStudyAccessions']
+        supplementary_links = project_hca['projects'][0]['supplementaryLinks']
+
+        project.project_title = project_title
+        project.project_short_name = project_shortname
+        project.laboratory = self.parse_word(laboratory)
+        project.project_description = project_description
+        project.institutions = self.parse_word(institutions)
+        project.publication_title = publication_titles
+        project.publication_link = publication_links
+
+        project.array_express_id = array_express
+        project.geo_series_id = geo_series
+        project.insdc_project_id = insdc_project
+        project.insdc_study_id = insdc_study
+        project.sumpplementary_link = supplementary_links
+
+        return project
+
+
+    def __format_HCD_file_type_summaries_PR(self, individual, individual_hca):
+        if not individual_hca['fileTypeSummaries']:
+            return individual
+
+        # It is possible that one individual has multiple files
+        file_type = ['metadata']
+        count = []
+        total_size = []
+
+        for i in range(len(individual_hca['fileTypeSummaries'])):
+            ind_type = individual_hca['fileTypeSummaries'][i]['fileType']
+
+            if ind_type == 'matrix' and individual.project_title != "Systematic comparative " \
+                                                                "analysis of single cell " \
+                                                                "RNA-sequencing methods":
+                file_type.append(ind_type)
+            elif ind_type == 'results':
+                file_type.append(ind_type)
+
+            count.append(individual_hca['fileTypeSummaries'][i]['count'])
+            total_size.append(individual_hca['fileTypeSummaries'][i]['totalSize'])
+
+        if 'matrix' in file_type:
+            individual.downloads_matrix_format = ['loom', 'mtx', 'csv']
+
+        individual.downloads_metadata_format = ['tsv']
+        individual.downloads_type = file_type
+        individual.total_size_of_files = sum(total_size) / pow(2, 20)  # We save it in MB
+
+        return individual
+
+    #endregion
+    ####################################################
+

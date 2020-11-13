@@ -3,32 +3,45 @@ from Individual import Individual
 
 class Project(Individual):
 
-    def __init__(self):
+    def __init__(self, project_id):
+        self.project_description = None
+
+        self.project_id = None
         self.array_express_id = None
         self.donor_count = None
         self.experimental_factor = None
         self.geo_series_id = None
         self.insdc_project_id = None
         self.insdc_study_id = None
-        self.institution = None
-        self.publication = None
+        self.institution = []
+        self.publication_title = None
+        self.publication_link = None
         self.sumpplementary_link = None
+        self.downloads_matrix_format = None
+        self.downloads_metadata_format = None
+        self.downloads_type = None
 
-        super().__init__()
+        super().__init__(project_id)
 
     def get_dict(self):
         project_dict = super().get_dict()
 
-        project_dict["DataProperties"]["PR.hasArrayExpressID"] = self.array_express_id
         project_dict["DataProperties"]["PR.hasDonorCount"] = self.donor_count
         project_dict["DataProperties"]["PR.hasExperimentalFactor"] = self.experimental_factor
-        project_dict["DataProperties"]["PR.hasGEOseriesID"] = self.geo_series_id
-        project_dict["DataProperties"]["PR.hasINSDCprojectID"] = self.insdc_project_id
-        project_dict["DataProperties"]["PR.hasINSDCstudyID"] = self.insdc_study_id
-        project_dict["DataProperties"]["PR.hasInstitution"] = self.institution
-        project_dict["DataProperties"]["PR.hasPublication"] = self.publication
-        project_dict["DataProperties"]["PR.hasSumpplementaryLink"] = self.sumpplementary_link
+        project_dict["DataProperties"]["PR.hasAvailableDownloadsMatrixFormat"] = self.downloads_matrix_format
+        project_dict["DataProperties"]["PR.hasAvailableDownloadsMetadataFormat"] = self.downloads_metadata_format
+        project_dict["DataProperties"]["PR.hasAvailableDownloadsType"] = self.downloads_type
 
+        project_dict["AnnotationProperties"]["PR.hasArrayExpressID"] = self.array_express_id
+        project_dict["AnnotationProperties"]["PR.hasDescription"] = self.project_description
+        project_dict["AnnotationProperties"]["PR.hasGEOseriesID"] = self.geo_series_id
+        project_dict["AnnotationProperties"]["PR.hasINSDCprojectID"] = self.insdc_project_id
+        project_dict["AnnotationProperties"]["PR.hasINSDCstudyID"] = self.insdc_study_id
+        project_dict["AnnotationProperties"]["PR.hasInstitution"] = self.institution
+        project_dict["AnnotationProperties"]["PR.hasProjectID"] = self.project_id
+        project_dict["AnnotationProperties"]["PR.hasPublicationLink"] = self.publication_link
+        project_dict["AnnotationProperties"]["PR.hasPublicationTitle"] = self.publication_title
+        project_dict["AnnotationProperties"]["PR.hasSumpplementaryLink"] = self.sumpplementary_link
 
         return project_dict
 

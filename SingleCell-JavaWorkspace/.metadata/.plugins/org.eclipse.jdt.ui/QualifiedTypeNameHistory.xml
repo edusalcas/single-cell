@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.ModelFactory"/>
     <fullyQualifiedTypeName name="org.apache.jena.ontology.OntModelSpec"/>
     <fullyQualifiedTypeName name="org.apache.jena.util.FileManager"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="org.apache.jena.util.iterator.ExtendedIterator"/>
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Statement"/>
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.ResourceFactory"/>
@@ -25,7 +24,6 @@
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Model"/>
     <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
     <fullyQualifiedTypeName name="org.json.JSONObject"/>
-    <fullyQualifiedTypeName name="org.json.JSONArray"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="org.apache.jena.ontology.ObjectProperty"/>
     <fullyQualifiedTypeName name="org.apache.jena.ontology.OntClass"/>
@@ -51,6 +49,12 @@
     <fullyQualifiedTypeName name="org.apache.jena.reasoner.ReasonerFactory"/>
     <fullyQualifiedTypeName name="org.apache.jena.vocabulary.ReasonerVocabulary"/>
     <fullyQualifiedTypeName name="org.apache.commons.lang3.ArrayUtils"/>
-    <fullyQualifiedTypeName name="single_cell.MyModel"/>
     <fullyQualifiedTypeName name="single_cell.MySpecimen"/>
+    <fullyQualifiedTypeName name="single_cell.MyIndividual"/>
+    <fullyQualifiedTypeName name="single_cell.MyProject"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="org.json.JSONArray"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="single_cell.MyModel"/>
 </qualifiedTypeNameHistroy>

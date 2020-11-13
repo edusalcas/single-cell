@@ -27,8 +27,8 @@ public class Test {
 	public static void main(String[] args) {
 		
 		// Declare variables and input/output streams
-		String inputFileName = "../../SingleCell-Files/singleCellRepositoriesv3.owl";
-		String outputFileName = "../../SingleCell-Files/out_repositoriev3.owl";
+		String inputFileName = "../../SingleCell-Files/singleCellRepositoriesv4.owl";
+		String outputFileName = "../../SingleCell-Files/out_repositoriev4.owl";
 		String hitsFileName = "../../SingleCell-Files/hits_processed.json";
 		
 		String NS = "http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#";
@@ -38,11 +38,15 @@ public class Test {
 		// Read samples to introduce into the model as instances
 		String rawJson = readJSON2String(hitsFileName);
 		
-		// Parse JSON to obtain the hits
+		// Parse JSON to obtain the specimens and the projects
 		JSONObject fullJson = new JSONObject(rawJson);
-		JSONArray hitsArray = fullJson.getJSONArray("hits");
+		JSONArray specimensArray = fullJson.getJSONArray("specimens");
+		JSONArray projectsArray = fullJson.getJSONArray("projects");
 				
-		hitsArray.forEach((hit) -> {new MySpecimen((JSONObject) hit, model).addToModel();});
+		System.out.println("Adding specimens to model...");
+		specimensArray.forEach((hit) -> {new MySpecimen((JSONObject) hit, model).addToModel();});
+		System.out.println("Adding projects to model...");
+		projectsArray.forEach((hit) -> {new MyProject((JSONObject) hit, model).addToModel();});
 
 		// Check if model is valid
 		if (!model.validateModel())

@@ -5,16 +5,16 @@ from Project import Project
 class OntologyConversorAbstract (ABC):
 
     def __init__(self):
-        self.sample = None
+        self.specimen = None
         self.project = None
         self.mapping_dict = self.init_map()
 
         super().__init__()
 
-    def format_sample(self, raw_sample, sample_id):
-        self.format_concrete_individual(raw_sample, sample_id)
+    def format_specimen(self, raw_specimen, specimen_id):
+        self.format_concrete_specimen(raw_specimen, specimen_id)
 
-        return self.sample
+        return self.specimen
 
     def format_project(self, raw_project, project_id):
         self.format_concrete_project(raw_project, project_id)
@@ -47,7 +47,7 @@ class OntologyConversorAbstract (ABC):
         pass
 
     @abstractmethod
-    def format_concrete_individual(self, raw_sample, sample_id):
+    def format_concrete_specimen(self, raw_specimen, specimen_id):
         pass
 
     @abstractmethod

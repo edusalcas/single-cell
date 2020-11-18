@@ -273,8 +273,8 @@ class OntologyConversorHCA(OntologyConversorAbstract):
         organ_part = individual_hca['specimens'][0]['organPart']
         preservation_method = individual_hca['specimens'][0]['preservationMethod']
 
-        individual.object_of_study = self.parse_word(organ_part) + self.parse_word(organ)
-
+        individual.organism_part = self.parse_word(organ)
+        individual.biopsy_site = self.parse_word(organ_part)
         individual.preservation = self.parse_word(preservation_method)
 
         return individual
@@ -346,9 +346,9 @@ class OntologyConversorHCA(OntologyConversorAbstract):
         laboratory = project_hca['projects'][0]['laboratory']
         project_description = project_hca['projects'][0]['projectDescription']
 
-        institutions = []
+        institutions = set()
         for contributor in project_hca['projects'][0]['contributors']:
-            institutions.append(contributor["institution"])
+            institutions.add(contributor["institution"])
 
         publication_titles = []
         publication_links = []
@@ -366,7 +366,7 @@ class OntologyConversorHCA(OntologyConversorAbstract):
         project.project_short_name = project_shortname
         project.laboratory = self.parse_word(laboratory)
         project.project_description = project_description
-        project.institutions = self.parse_word(institutions)
+        project.institutions = list(institutions)
         project.publication_title = publication_titles
         project.publication_link = publication_links
 
@@ -385,6 +385,7 @@ class OntologyConversorHCA(OntologyConversorAbstract):
 
         # It is possible that one individual has multiple files
         file_type = ['metadata']
+        file_format = ['tsv']
         count = []
         total_size = []
 
@@ -402,9 +403,9 @@ class OntologyConversorHCA(OntologyConversorAbstract):
             total_size.append(individual_hca['fileTypeSummaries'][i]['totalSize'])
 
         if 'matrix' in file_type:
-            individual.downloads_matrix_format = ['loom', 'mtx', 'csv']
+            file_format = file_format + ['loom', 'mtx', 'csv']
 
-        individual.downloads_metadata_format = ['tsv']
+        individual.downloads_format = file_format
         individual.downloads_type = file_type
         individual.total_size_of_files = sum(total_size) / pow(2, 20)  # We save it in MB
 

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="unspec"/>
+		<item key="selection" value="PR.hasINS"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="PR.hasIns"/>
+			<item value="institution"/>
 			<item value="unspec"/>
 			<item value="createSpecimen"/>
 			<item value="SPECIMEN_CLASS"/>
@@ -21,8 +23,6 @@
 			<item value="addClass"/>
 			<item value="addclass"/>
 			<item value="blood_from_donor_D5"/>
-			<item value="pancreas"/>
-			<item value="day"/>
 		</list>
 		<list key="replacehistory">
 		</list>

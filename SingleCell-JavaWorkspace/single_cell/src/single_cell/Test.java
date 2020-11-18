@@ -29,7 +29,7 @@ public class Test {
 		// Declare variables and input/output streams
 		String inputFileName = "../../SingleCell-Files/singleCellRepositoriesv4.owl";
 		String outputFileName = "../../SingleCell-Files/out_repositoriev4.owl";
-		String hitsFileName = "../../SingleCell-Files/hits_processed.json";
+		String hitsFileName = "../../SingleCell-Files/processed_data/HCA_processed.json";
 		
 		String NS = "http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#";
 

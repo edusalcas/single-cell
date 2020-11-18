@@ -5,23 +5,26 @@ class Individual:
     def __init__(self, ID):
         self.ID = ID
 
-        self.specie = None
         self.analysis_protocol = None
+        self.biopsy_site = None
         self.cell_line_type = None
         self.disease = None
         self.instrument = None
+        self.kingdom = None
         self.library = None
         self.model_organ = None
-        self.object_of_study = []
+        self.organism_part = None
         self.preservation = None
         self.sample_type = None
         self.cell_type = None
+        self.specie = None
 
         self.age_unit = None
         self.biological_sex = None
         self.laboratory = None
         self.max_age = -1
         self.min_age = -1
+        self.phenotype = None
         self.project_short_name = None
         self.project_title = None
         self.total_cell_counts = -1
@@ -36,23 +39,26 @@ class Individual:
         individual_dict = {
             "ID": self.ID,
             "ObjectProperties": {
-                "SPR.hasSpecie": self.specie,
                 "SPR.hasAnalysisProtocol": self.analysis_protocol,
+                "SPR.hasBiopsySite": self.biopsy_site,
                 "SPR.hasCellLineType": self.cell_line_type,
                 "SPR.hasDiseaseStatus": self.disease,
                 "SPR.hasInstrument": self.instrument,
+                "SPR.hasKingdom": self.kingdom,
                 "SPR.hasLibrary": self.library,
                 "SPR.hasModel": self.model_organ,
-                "SPR.hasObjectOfStudy": self.object_of_study,
+                "SPR.hasOrganismPart": self.organism_part,
                 "SPR.hasPreservation": self.preservation,
                 "SPR.hasSampleType": self.sample_type,
-                "SPR.hasSelectedCellType": self.cell_type
+                "SPR.hasSelectedCellType": self.cell_type,
+                "SPR.hasSpecie": self.specie,
             },
             "DataProperties": {
                 "SPR.hasAgeUnit": self.age_unit,
                 "SPR.hasBiologicalSex": self.biological_sex,
                 "SPR.hasMaxAge": self.max_age,
                 "SPR.hasMinAge": self.min_age,
+                "SPR.hasPhenotype": self.phenotype,
                 "SPR.hasTotalCellCount": self.total_cell_counts,
                 "SPR.hasTotalSizeOfFilesInMB": self.total_size_of_files,
                 "SPR.isPairedEnd": self.paired_end,

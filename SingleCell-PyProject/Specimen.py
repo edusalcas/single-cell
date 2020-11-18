@@ -12,8 +12,7 @@ class Specimen(Individual):
     def get_dict(self):
         specimen_dict = super().get_dict()
 
-        specimen_dict["DataProperties"]["SR.hasFileFormat"] = self.file_format
-
+        specimen_dict["AnnotationProperties"]["SR.hasFileFormat"] = self.file_format
         specimen_dict["AnnotationProperties"]["SR.hasSpecimenID"] = self.specimen_ID
 
         return specimen_dict

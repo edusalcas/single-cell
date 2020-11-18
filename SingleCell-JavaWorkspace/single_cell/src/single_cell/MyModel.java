@@ -44,17 +44,19 @@ public class MyModel {
 	private final String validateLogFileName = "../../SingleCell-Files/validateLog.txt";
 	
 	public static final String[] OBJECT_PROPERTIES = new String[] {
-			"SPR.hasSpecie",
 			"SPR.hasAnalysisProtocol",
+			"SPR.hasBiopsySite",
 			"SPR.hasCellLineType",
 			"SPR.hasDiseaseStatus",
 			"SPR.hasInstrument",
+			"SPR.hasKingdom",
 			"SPR.hasLibrary",
 			"SPR.hasModel",
-			"SPR.hasObjectOfStudy",
+			"SPR.hasOrganismPart",
 			"SPR.hasPreservation",
 			"SPR.hasSampleType",
 			"SPR.hasSelectedCellType",
+			"SPR.hasSpecie",
 	};
 	
 	public static final String[] SPR_DATA_PROPERTIES = new String[] {
@@ -62,21 +64,21 @@ public class MyModel {
 			"SPR.hasBiologicalSex",
 			"SPR.hasMaxAge",
 			"SPR.hasMinAge",
+			"SPR.hasPhenotype",
 			"SPR.hasTotalCellCount",
 			"SPR.hasTotalSizeOfFilesInMB",
 			"SPR.isPairedEnd",
 	};
 	
 	public static final String[] SR_DATA_PROPERTIES = new String[] {
-			"SR.hasFileFormat",
+
 	};
 	
 	public static final String[] PR_DATA_PROPERTIES = new String[] {
-			"PR.hasAvailableDownloadsMatrixFormat",
-			"PR.hasAvailableDownloadsMetadataFormat",
 			"PR.hasAvailableDownloadsType",
 			"PR.hasDonorCount",
 			"PR.hasExperimentalFactor",
+			"PR.hasSpecimenCount",
 	};
 	
 	public static final String[] SPECIMEN_DATA_PROPERTIES = ArrayUtils.addAll(SPR_DATA_PROPERTIES, SR_DATA_PROPERTIES);
@@ -92,18 +94,22 @@ public class MyModel {
 	
 	public static final String[] PR_ANNOTATION_PROPERTIES = new String[] {
 			"PR.hasArrayExpressID",
+			"PR.hasAvailableDownloadsFormat",
 			"PR.hasDescription",
 			"PR.hasGEOseriesID",
 			"PR.hasINSDCprojectID",
 			"PR.hasINSDCstudyID",
 			"PR.hasInstitution",
+			"PR.hasLoadDate",
 			"PR.hasProjectID",
 			"PR.hasPublicationLink",
 			"PR.hasPublicationTitle",
-			"PR.hasSumpplementaryLink"
+			"PR.hasSumpplementaryLink",
+			"PR.hasUpdateDate"
 	};
 	
 	public static final String[] SR_ANNOTATION_PROPERTIES = new String[] {
+			"SR.hasFileFormat",
 			"SR.hasSpecimenID"
 	};
 	

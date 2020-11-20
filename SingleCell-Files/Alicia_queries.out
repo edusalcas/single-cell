@@ -9,114 +9,114 @@
 1.2. Número de laboratorios
 ------------------------
 
-( ?numberOfLabs = 79 )
-( ?project = "1.3 Million Brain Cells from E18 Mice" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "CenterForTheScienceOfTherapeutics" )
-( ?project = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "DepartmentOfImmunology,FacultyOfMedicine" )
-( ?project = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "DepartmentOfStemCellAndRegenerativeBiology" )
-( ?project = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "DepartmentOfSystemsBiology" )
-( ?project = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "FacultyOfBiology" )
-( ?project = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "A single-cell reference map of transcriptional states for human blood and tissue T cell activation" ) ( ?lab = "FarberLab;ColumbiaCenterForTranslationalImmunology" )
-( ?project = "A single-cell reference map of transcriptional states for human blood and tissue T cell activation" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "A single-cell reference map of transcriptional states for human blood and tissue T cell activation" ) ( ?lab = "SimsLab;DepartmentOfSystemsBiology" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "CellularReprogrammingUnit" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "ClinicalGeneticsUnit" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "DepartmentOfChemistryAndBiotechnology" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "Garvan‐WeizmannCentreForCellularGenomics" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "InstituteForMolecularBioscience" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "JohnCurtinSchoolOfMedicalResearch" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "LionsEyeDonationServices" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "NationalInstituteForAging" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "SaveSightInstitute" )
-( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "StemCellsAndRegenerativeMedicineSection,NIHRGreatOrmondStreetHospitalBiomedicalResearchCentre" )
-( ?project = "Assessing the relevance of organoids to model inter-individual variation" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Bone marrow plasma cells from hip replacement surgeries" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Bone marrow plasma cells from hip replacement surgeries" ) ( ?lab = "Prof.IdoAmit" )
-( ?project = "Cell hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Cell hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics" ) ( ?lab = "SatijaLab" )
-( ?project = "Cell hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics" ) ( ?lab = "TechnologyDevelopmentAndInnovation" )
-( ?project = "Census of Immune Cells" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Census of Immune Cells" ) ( ?lab = "RegevLab" )
-( ?project = "Comparison, calibration, and benchmarking of high-throughput single cell RNA-Seq techniques for unbiased cell-type classification" ) ( ?lab = "Basu" )
-( ?project = "Comparison, calibration, and benchmarking of high-throughput single cell RNA-Seq techniques for unbiased cell-type classification" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Comparison, calibration, and benchmarking of high-throughput single cell RNA-Seq techniques for unbiased cell-type classification" ) ( ?lab = "Pott" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Adeyi" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Bader" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Fish" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Ghanekar" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Grant" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Greig" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Keller" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "MacParland" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "McGilvray" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Sapisochin" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Selzner" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Wilson" )
-( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Winegarden" )
-( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "CGaP" )
-( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "CambridgeBiorepositoryForTranslationalMedicine" )
-( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "HumanCellAtlas(MikeStubbington)" )
-( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "HumanCellAtlas(SarahTeichmann)" )
-( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "HumanCellAtlasUK" )
-( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "MolecularImmunityUnit,DepartmentOfMedicine" )
-( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "OliverStegleGroup" )
-( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "RebeccaFitzgerald" )
-( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "SarahTeichmannLab" )
-( ?project = "Melanoma infiltration of stromal and immune cells" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Melanoma infiltration of stromal and immune cells" ) ( ?lab = "InstituteOfCellularMedicine" )
-( ?project = "Melanoma infiltration of stromal and immune cells" ) ( ?lab = "MRCCancerUnit" )
-( ?project = "Melanoma infiltration of stromal and immune cells" ) ( ?lab = "SarahTeichmann" )
-( ?project = "Precursors of human CD4+ cytotoxic T lymphocytes identified by single-cell transcriptome analysis" ) ( ?lab = "DivisionOfVaccineDiscovery" )
-( ?project = "Precursors of human CD4+ cytotoxic T lymphocytes identified by single-cell transcriptome analysis" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Precursors of human CD4+ cytotoxic T lymphocytes identified by single-cell transcriptome analysis" ) ( ?lab = "MolecularAtlas" )
-( ?project = "Profiling of CD34+ cells from human bone marrow to understand hematopoiesis" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Profiling of CD34+ cells from human bone marrow to understand hematopoiesis" ) ( ?lab = "Pe'Er" )
-( ?project = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?lab = "ArrayExpress" )
-( ?project = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?lab = "CentreForTrophoblastResearch" )
-( ?project = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?lab = "InstituteOfCellularMedicine" )
-( ?project = "Single Cell Transcriptomics of a Human Kidney Allograft Biopsy Defines a Diverse Inflammatory Response" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Single Cell Transcriptomics of a Human Kidney Allograft Biopsy Defines a Diverse Inflammatory Response" ) ( ?lab = "TheHumphreys'Lab" )
-( ?project = "Single cell profiling of human induced dendritic cells generated by direct reprogramming of embryonic fibroblasts" ) ( ?lab = "CenterForNeurobiologyAndBrainRestoration" )
-( ?project = "Single cell profiling of human induced dendritic cells generated by direct reprogramming of embryonic fibroblasts" ) ( ?lab = "DepartmentOfLaboratoryMedicine" )
-( ?project = "Single cell profiling of human induced dendritic cells generated by direct reprogramming of embryonic fibroblasts" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Single cell transcriptome analysis of human pancreas reveals transcriptional signatures of aging and somatic mutation patterns." ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Single cell transcriptome analysis of human pancreas reveals transcriptional signatures of aging and somatic mutation patterns." ) ( ?lab = "MolecularAtlas" )
-( ?project = "Single-cell RNA-seq analysis  throughout a 125-day differentiation protocol that converted H1 human embryonic stem cells to a variety of ventrally-derived cell types." ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Single-cell RNA-seq analysis  throughout a 125-day differentiation protocol that converted H1 human embryonic stem cells to a variety of ventrally-derived cell types." ) ( ?lab = "MolecularAtlas" )
-( ?project = "Single-cell RNA-seq analysis of human pancreas from healthy individuals and type 2 diabetes patients" ) ( ?lab = "DepartmentOfCellAndMolecularBiology(CMB)" )
-( ?project = "Single-cell RNA-seq analysis of human pancreas from healthy individuals and type 2 diabetes patients" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Single-cell RNA-seq analysis of human pancreas from healthy individuals and type 2 diabetes patients" ) ( ?lab = "MolecularAtlas" )
-( ?project = "Spatio-temporal immune zonation of the human kidney" ) ( ?lab = "BehjatiLab" )
-( ?project = "Spatio-temporal immune zonation of the human kidney" ) ( ?lab = "ClatworthyLab" )
-( ?project = "Spatio-temporal immune zonation of the human kidney" ) ( ?lab = "HaniffaLab" )
-( ?project = "Spatio-temporal immune zonation of the human kidney" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Spatio-temporal immune zonation of the human kidney" ) ( ?lab = "TeichmannLab" )
-( ?project = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "KennedyInstituteOfRheumatology" )
-( ?project = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "MRCHumanImmunologyUnit,MRCWeatherallInstituteOfMolecularMedicine" )
-( ?project = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "TranslationalDevelopment" )
-( ?project = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "WeatherallInstituteOfMolecularMedicine" )
-( ?project = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "WellcomeTrustCentreForHumanGenetics" )
-( ?project = "Systematic comparative analysis of single cell RNA-sequencing methods" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "Systematic comparative analysis of single cell RNA-sequencing methods" ) ( ?lab = "KlarmanCellObservatory" )
-( ?project = "Systematic comparative analysis of single cell RNA-sequencing methods" ) ( ?lab = "McGovernInstituteForBrainResearch" )
-( ?project = "Tabula Muris: Transcriptomic characterization of 20 organs and tissues from Mus musculus at single cell resolution" ) ( ?lab = "Quake" )
-( ?project = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?lab = "DepartmentOfMedicine,DivisionOfNephrology" )
-( ?project = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?lab = "DepartmentOfMedicine,DivisionOfRenalMedicine" )
-( ?project = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?lab = "DepartmentOfPathology,BrighamAndWomen’SHospital" )
-( ?project = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?lab = "DepartmentOfPathologyAndImmunology" )
-( ?project = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "The emergent landscape of the mouse gut endoderm at single-cell resolution" ) ( ?lab = "ComputationalAndSystemsBiologyProgram" )
-( ?project = "The emergent landscape of the mouse gut endoderm at single-cell resolution" ) ( ?lab = "DevelopmentalBiologyProgram" )
-( ?project = "The emergent landscape of the mouse gut endoderm at single-cell resolution" ) ( ?lab = "HumanCellAtlasDataCoordinationPlatform" )
-( ?project = "The emergent landscape of the mouse gut endoderm at single-cell resolution" ) ( ?lab = "MedicalGenetics" )
-( ?project = "Transcriptomic classification of human retinal cell types with single-nuclei RNA-seq." ) ( ?lab = "DepartmentOfOphthalmologyAndVisualSciences" )
-( ?project = "Transcriptomic classification of human retinal cell types with single-nuclei RNA-seq." ) ( ?lab = "HumanGenomeSequencingCenter,DepartmentOfMolecularAndHumanGenetics," )
+( ?numberOfLabs = 80 )
+( ?title = "1.3 Million Brain Cells from E18 Mice" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "Center for the Science of Therapeutics" )
+( ?title = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "Department of Immunology, Faculty of Medicine" )
+( ?title = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "Department of Stem Cell and Regenerative Biology" )
+( ?title = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "Department of Systems Biology" )
+( ?title = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "Faculty of Biology" )
+( ?title = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "A single-cell reference map of transcriptional states for human blood and tissue T cell activation" ) ( ?lab = "Farber Lab; Columbia Center for Translational Immunology" )
+( ?title = "A single-cell reference map of transcriptional states for human blood and tissue T cell activation" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "A single-cell reference map of transcriptional states for human blood and tissue T cell activation" ) ( ?lab = "Sims Lab; Department of Systems Biology" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "Cellular Reprogramming Unit" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "Clinical Genetics Unit" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "Department of Chemistry and Biotechnology" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "Garvan‐Weizmann Centre for Cellular Genomics" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "Institute for Molecular Bioscience" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "John Curtin School of Medical Research" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "Lions Eye Donation Services" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "National Institute for Aging" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "Save Sight Institute" )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?lab = "Stem Cells and Regenerative Medicine Section, NIHR Great Ormond Street Hospital Biomedical Research Centre" )
+( ?title = "Assessing the relevance of organoids to model inter-individual variation" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Bone marrow plasma cells from hip replacement surgeries" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Bone marrow plasma cells from hip replacement surgeries" ) ( ?lab = "Prof. Ido Amit" )
+( ?title = "Cell hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Cell hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics" ) ( ?lab = "Satija Lab" )
+( ?title = "Cell hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics" ) ( ?lab = "Technology Development and Innovation" )
+( ?title = "Census of Immune Cells" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Census of Immune Cells" ) ( ?lab = "Regev Lab" )
+( ?title = "Comparison, calibration, and benchmarking of high-throughput single cell RNA-Seq techniques for unbiased cell-type classification" ) ( ?lab = "Basu" )
+( ?title = "Comparison, calibration, and benchmarking of high-throughput single cell RNA-Seq techniques for unbiased cell-type classification" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Comparison, calibration, and benchmarking of high-throughput single cell RNA-Seq techniques for unbiased cell-type classification" ) ( ?lab = "Pott" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Adeyi" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Bader" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Fish" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Ghanekar" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Grant" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Greig" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Keller" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "MacParland" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "McGilvray" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Sapisochin" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Selzner" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Wilson" )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?lab = "Winegarden" )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "CGaP" )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "Cambridge Biorepository for Translational Medicine" )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "Human Cell Atlas (Mike Stubbington)" )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "Human Cell Atlas (Sarah Teichmann)" )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "Human Cell Atlas UK" )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "Molecular Immunity Unit, Department of Medicine" )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "Oliver Stegle Group" )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "Rebecca Fitzgerald" )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?lab = "Sarah Teichmann Lab" )
+( ?title = "Melanoma infiltration of stromal and immune cells" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Melanoma infiltration of stromal and immune cells" ) ( ?lab = "Institute of Cellular Medicine" )
+( ?title = "Melanoma infiltration of stromal and immune cells" ) ( ?lab = "MRC Cancer Unit" )
+( ?title = "Melanoma infiltration of stromal and immune cells" ) ( ?lab = "Sarah Teichmann" )
+( ?title = "Precursors of human CD4+ cytotoxic T lymphocytes identified by single-cell transcriptome analysis" ) ( ?lab = "Division of Vaccine Discovery" )
+( ?title = "Precursors of human CD4+ cytotoxic T lymphocytes identified by single-cell transcriptome analysis" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Precursors of human CD4+ cytotoxic T lymphocytes identified by single-cell transcriptome analysis" ) ( ?lab = "Molecular Atlas" )
+( ?title = "Profiling of CD34+ cells from human bone marrow to understand hematopoiesis" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Profiling of CD34+ cells from human bone marrow to understand hematopoiesis" ) ( ?lab = "Pe'er" )
+( ?title = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?lab = "ArrayExpress" )
+( ?title = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?lab = "Centre for Trophoblast Research" )
+( ?title = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?lab = "Institute of Cellular Medicine" )
+( ?title = "Single Cell Transcriptomics of a Human Kidney Allograft Biopsy Defines a Diverse Inflammatory Response" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Single Cell Transcriptomics of a Human Kidney Allograft Biopsy Defines a Diverse Inflammatory Response" ) ( ?lab = "The Humphreys' Lab" )
+( ?title = "Single cell profiling of human induced dendritic cells generated by direct reprogramming of embryonic fibroblasts" ) ( ?lab = "Center for Neurobiology and Brain Restoration" )
+( ?title = "Single cell profiling of human induced dendritic cells generated by direct reprogramming of embryonic fibroblasts" ) ( ?lab = "Department of Laboratory Medicine" )
+( ?title = "Single cell profiling of human induced dendritic cells generated by direct reprogramming of embryonic fibroblasts" ) ( ?lab = "Human Cell Atlas Data coordination Platform" )
+( ?title = "Single cell transcriptome analysis of human pancreas reveals transcriptional signatures of aging and somatic mutation patterns." ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Single cell transcriptome analysis of human pancreas reveals transcriptional signatures of aging and somatic mutation patterns." ) ( ?lab = "Molecular Atlas" )
+( ?title = "Single-cell RNA-seq analysis  throughout a 125-day differentiation protocol that converted H1 human embryonic stem cells to a variety of ventrally-derived cell types." ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Single-cell RNA-seq analysis  throughout a 125-day differentiation protocol that converted H1 human embryonic stem cells to a variety of ventrally-derived cell types." ) ( ?lab = "Molecular Atlas" )
+( ?title = "Single-cell RNA-seq analysis of human pancreas from healthy individuals and type 2 diabetes patients" ) ( ?lab = "Department of Cell and Molecular Biology (CMB)" )
+( ?title = "Single-cell RNA-seq analysis of human pancreas from healthy individuals and type 2 diabetes patients" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Single-cell RNA-seq analysis of human pancreas from healthy individuals and type 2 diabetes patients" ) ( ?lab = "Molecular Atlas" )
+( ?title = "Spatio-temporal immune zonation of the human kidney" ) ( ?lab = "Behjati Lab" )
+( ?title = "Spatio-temporal immune zonation of the human kidney" ) ( ?lab = "Clatworthy Lab" )
+( ?title = "Spatio-temporal immune zonation of the human kidney" ) ( ?lab = "Haniffa Lab" )
+( ?title = "Spatio-temporal immune zonation of the human kidney" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Spatio-temporal immune zonation of the human kidney" ) ( ?lab = "Teichmann Lab" )
+( ?title = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "Kennedy Institute of Rheumatology" )
+( ?title = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "MRC Human Immunology Unit, MRC Weatherall Institute of Molecular Medicine" )
+( ?title = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "Translational Development" )
+( ?title = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "Weatherall Institute of Molecular Medicine" )
+( ?title = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?lab = "Wellcome Trust Centre for Human Genetics" )
+( ?title = "Systematic comparative analysis of single cell RNA-sequencing methods" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "Systematic comparative analysis of single cell RNA-sequencing methods" ) ( ?lab = "Klarman Cell Observatory" )
+( ?title = "Systematic comparative analysis of single cell RNA-sequencing methods" ) ( ?lab = "McGovern Institute for Brain Research" )
+( ?title = "Tabula Muris: Transcriptomic characterization of 20 organs and tissues from Mus musculus at single cell resolution" ) ( ?lab = "Quake" )
+( ?title = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?lab = "Department of Medicine, Division of Nephrology" )
+( ?title = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?lab = "Department of Medicine, Division of Renal Medicine" )
+( ?title = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?lab = "Department of Pathology and Immunology" )
+( ?title = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?lab = "Department of Pathology, Brigham and Women’s Hospital" )
+( ?title = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "The emergent landscape of the mouse gut endoderm at single-cell resolution" ) ( ?lab = "Computational and Systems Biology Program" )
+( ?title = "The emergent landscape of the mouse gut endoderm at single-cell resolution" ) ( ?lab = "Developmental Biology Program" )
+( ?title = "The emergent landscape of the mouse gut endoderm at single-cell resolution" ) ( ?lab = "Human Cell Atlas Data Coordination Platform" )
+( ?title = "The emergent landscape of the mouse gut endoderm at single-cell resolution" ) ( ?lab = "Medical Genetics" )
+( ?title = "Transcriptomic classification of human retinal cell types with single-nuclei RNA-seq." ) ( ?lab = "Department of Ophthalmology and Visual Sciences" )
+( ?title = "Transcriptomic classification of human retinal cell types with single-nuclei RNA-seq." ) ( ?lab = "Human Genome Sequencing Center, Department of Molecular and Human Genetics," )
 
 ------------------------
 1.3. Número de especímenes
@@ -124,23 +124,86 @@
 
 ( ?numberOfSpecimens = 800 )
 
+( ?project = "1.3 Million Brain Cells from E18 Mice" ) ( ?numberOfSpecimens = 2 )
+( ?project = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?numberOfSpecimens = 6 )
+( ?project = "A single-cell molecular map of mouse gastrulation and early organogenesis" ) ( ?numberOfSpecimens = 26 )
+( ?project = "A single-cell reference map of transcriptional states for human blood and tissue T cell activation" ) ( ?numberOfSpecimens = 16 )
+( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?numberOfSpecimens = 3 )
+( ?project = "Assessing the relevance of organoids to model inter-individual variation" ) ( ?numberOfSpecimens = 12 )
+( ?project = "Bone marrow plasma cells from hip replacement surgeries" ) ( ?numberOfSpecimens = 12 )
+( ?project = "Cell hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics" ) ( ?numberOfSpecimens = 8 )
+( ?project = "Census of Immune Cells" ) ( ?numberOfSpecimens = 127 )
+( ?project = "Comparison, calibration, and benchmarking of high-throughput single cell RNA-Seq techniques for unbiased cell-type classification" ) ( ?numberOfSpecimens = 9 )
+( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?numberOfSpecimens = 5 )
+( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?numberOfSpecimens = 147 )
+( ?project = "Melanoma infiltration of stromal and immune cells" ) ( ?numberOfSpecimens = 54 )
+( ?project = "Precursors of human CD4+ cytotoxic T lymphocytes identified by single-cell transcriptome analysis" ) ( ?numberOfSpecimens = 28 )
+( ?project = "Profiling of CD34+ cells from human bone marrow to understand hematopoiesis" ) ( ?numberOfSpecimens = 3 )
+( ?project = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?numberOfSpecimens = 22 )
+( ?project = "Single Cell Transcriptomics of a Human Kidney Allograft Biopsy Defines a Diverse Inflammatory Response" ) ( ?numberOfSpecimens = 1 )
+( ?project = "Single cell profiling of human induced dendritic cells generated by direct reprogramming of embryonic fibroblasts" ) ( ?numberOfSpecimens = 3 )
+( ?project = "Single cell transcriptome analysis of human pancreas reveals transcriptional signatures of aging and somatic mutation patterns." ) ( ?numberOfSpecimens = 8 )
+( ?project = "Single-cell RNA-seq analysis  throughout a 125-day differentiation protocol that converted H1 human embryonic stem cells to a variety of ventrally-derived cell types." ) ( ?numberOfSpecimens = 4 )
+( ?project = "Single-cell RNA-seq analysis of human pancreas from healthy individuals and type 2 diabetes patients" ) ( ?numberOfSpecimens = 10 )
+( ?project = "Spatio-temporal immune zonation of the human kidney" ) ( ?numberOfSpecimens = 15 )
+( ?project = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?numberOfSpecimens = 19 )
+( ?project = "Systematic comparative analysis of single cell RNA-sequencing methods" ) ( ?numberOfSpecimens = 4 )
+( ?project = "Tabula Muris: Transcriptomic characterization of 20 organs and tissues from Mus musculus at single cell resolution" ) ( ?numberOfSpecimens = 222 )
+( ?project = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?numberOfSpecimens = 6 )
+( ?project = "The emergent landscape of the mouse gut endoderm at single-cell resolution" ) ( ?numberOfSpecimens = 21 )
+( ?project = "Transcriptomic classification of human retinal cell types with single-nuclei RNA-seq." ) ( ?numberOfSpecimens = 7 )
+
+( ?specimenCountProjects = 584 )
+
+( ?title = "1.3 Million Brain Cells from E18 Mice" ) ( ?specimenCountProjects = "2"^^xsd:int )
+( ?title = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?specimenCountProjects = "6"^^xsd:int )
+( ?title = "A single-cell molecular map of mouse gastrulation and early organogenesis" ) ( ?specimenCountProjects = "26"^^xsd:int )
+( ?title = "A single-cell reference map of transcriptional states for human blood and tissue T cell activation" ) ( ?specimenCountProjects = "16"^^xsd:int )
+( ?title = "A single-cell transcriptome atlas of the adult human retina" ) ( ?specimenCountProjects = "3"^^xsd:int )
+( ?title = "Assessing the relevance of organoids to model inter-individual variation" ) ( ?specimenCountProjects = "4"^^xsd:int )
+( ?title = "Bone marrow plasma cells from hip replacement surgeries" ) ( ?specimenCountProjects = "12"^^xsd:int )
+( ?title = "Cell hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics" ) ( ?specimenCountProjects = "8"^^xsd:int )
+( ?title = "Census of Immune Cells" ) ( ?specimenCountProjects = "100"^^xsd:int )
+( ?title = "Comparison, calibration, and benchmarking of high-throughput single cell RNA-Seq techniques for unbiased cell-type classification" ) ( ?specimenCountProjects = "2"^^xsd:int )
+( ?title = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?specimenCountProjects = "5"^^xsd:int )
+( ?title = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?specimenCountProjects = "100"^^xsd:int )
+( ?title = "Melanoma infiltration of stromal and immune cells" ) ( ?specimenCountProjects = "54"^^xsd:int )
+( ?title = "Precursors of human CD4+ cytotoxic T lymphocytes identified by single-cell transcriptome analysis" ) ( ?specimenCountProjects = "28"^^xsd:int )
+( ?title = "Profiling of CD34+ cells from human bone marrow to understand hematopoiesis" ) ( ?specimenCountProjects = "3"^^xsd:int )
+( ?title = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?specimenCountProjects = "22"^^xsd:int )
+( ?title = "Single Cell Transcriptomics of a Human Kidney Allograft Biopsy Defines a Diverse Inflammatory Response" ) ( ?specimenCountProjects = "1"^^xsd:int )
+( ?title = "Single cell profiling of human induced dendritic cells generated by direct reprogramming of embryonic fibroblasts" ) ( ?specimenCountProjects = "1"^^xsd:int )
+( ?title = "Single cell transcriptome analysis of human pancreas reveals transcriptional signatures of aging and somatic mutation patterns." ) ( ?specimenCountProjects = "8"^^xsd:int )
+( ?title = "Single-cell RNA-seq analysis  throughout a 125-day differentiation protocol that converted H1 human embryonic stem cells to a variety of ventrally-derived cell types." ) ( ?specimenCountProjects = "1"^^xsd:int )
+( ?title = "Single-cell RNA-seq analysis of human pancreas from healthy individuals and type 2 diabetes patients" ) ( ?specimenCountProjects = "10"^^xsd:int )
+( ?title = "Spatio-temporal immune zonation of the human kidney" ) ( ?specimenCountProjects = "15"^^xsd:int )
+( ?title = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?specimenCountProjects = "19"^^xsd:int )
+( ?title = "Systematic comparative analysis of single cell RNA-sequencing methods" ) ( ?specimenCountProjects = "4"^^xsd:int )
+( ?title = "Tabula Muris: Transcriptomic characterization of 20 organs and tissues from Mus musculus at single cell resolution" ) ( ?specimenCountProjects = "100"^^xsd:int )
+( ?title = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?specimenCountProjects = "6"^^xsd:int )
+( ?title = "The emergent landscape of the mouse gut endoderm at single-cell resolution" ) ( ?specimenCountProjects = "21"^^xsd:int )
+( ?title = "Transcriptomic classification of human retinal cell types with single-nuclei RNA-seq." ) ( ?specimenCountProjects = "7"^^xsd:int )
+
 ------------------------
 1.4. Número de células
 ------------------------
 
-( ?numberOfCells = 4.594979 )
+( ?numberOfCellsProject = 4.535231 )
+( ?numberOfCellsSpecimen = 4.594979 )
 
 ------------------------
 1.5. Tamaño total de ficheros
 ------------------------
 
-( ?totalSize = 31.087527180166035e0 )
+( ?totalSizeProjects = 30.186518642013652e0 )
+( ?totalSizeSpecimens = 31.087527180166035e0 )
 
 ------------------------
 1.6. Número de órganos
 ------------------------
 
-( ?numberOfOrgans = 22 )
+( ?numberOfOrgansProject = 20 )
+( ?numberOfOrgansSpecimen = 20 )
 
 ------------------------
 1.7. Número de células por objeto de estudio
@@ -148,62 +211,33 @@
 
 ( ?object = <AdiposeTissue> ) ( ?numTotalCells = 5.862 )
 ( ?object = <Bladder> ) ( ?numTotalCells = 1.638 )
-( ?object = <Blastocyst> ) ( ?numTotalCells = "unspecified" )
 ( ?object = <Blood> ) ( ?numTotalCells = 320.769 )
-( ?object = <BoneMarrow> ) ( ?numTotalCells = 1763.682 )
 ( ?object = <BoneTissue> ) ( ?numTotalCells = 5.355 )
 ( ?object = <Brain> ) ( ?numTotalCells = 1355.736 )
-( ?object = <CaudateLobe> ) ( ?numTotalCells = 30.0 )
 ( ?object = <Colon> ) ( ?numTotalCells = 16.893 )
-( ?object = <Cortex> ) ( ?numTotalCells = 1375.175 )
-( ?object = <CortexOfKidney> ) ( ?numTotalCells = 4.0 )
-( ?object = <Decidua> ) ( ?numTotalCells = "unspecified" )
-( ?object = <DefinitiveEndoderm> ) ( ?numTotalCells = 23.214 )
 ( ?object = <Diaphragm> ) ( ?numTotalCells = 0.951 )
 ( ?object = <Embryo> ) ( ?numTotalCells = 366.172 )
 ( ?object = <Endoderm> ) ( ?numTotalCells = 54.166 )
 ( ?object = <Esophagus> ) ( ?numTotalCells = 93.267 )
-( ?object = <EsophagusMucosa> ) ( ?numTotalCells = 93.267 )
 ( ?object = <Eye> ) ( ?numTotalCells = 274.8 )
-( ?object = <FoveaCentralis> ) ( ?numTotalCells = 117.3 )
 ( ?object = <Heart> ) ( ?numTotalCells = 7.115 )
 ( ?object = <HematopoieticSystem> ) ( ?numTotalCells = 1489.5 )
 ( ?object = <ImmuneSystem> ) ( ?numTotalCells = 274.182 )
-( ?object = <IsletOfLangerhans> ) ( ?numTotalCells = 6.058 )
 ( ?object = <Kidney> ) ( ?numTotalCells = 34.865 )
-( ?object = <LaminaPropriaOfMucosaOfColon> ) ( ?numTotalCells = 16.893 )
 ( ?object = <LargeIntestine> ) ( ?numTotalCells = 4.149 )
-( ?object = <LeftLateralBasalBronchopulmonarySegment> ) ( ?numTotalCells = "unspecified" )
 ( ?object = <Liver> ) ( ?numTotalCells = 30.981 )
-( ?object = <LowerLobeOfLeftLung> ) ( ?numTotalCells = 36.41 )
-( ?object = <LowerLobeOfRightLung> ) ( ?numTotalCells = 3.615 )
 ( ?object = <Lung> ) ( ?numTotalCells = 41.948 )
-( ?object = <LungParenchyma> ) ( ?numTotalCells = 40.025 )
 ( ?object = <LymphNode> ) ( ?numTotalCells = 3.274 )
 ( ?object = <MammaryGland> ) ( ?numTotalCells = 2.663 )
-( ?object = <MediastinalLymphNode> ) ( ?numTotalCells = "unspecified" )
 ( ?object = <Muscle> ) ( ?numTotalCells = 1.151 )
 ( ?object = <Pancreas> ) ( ?numTotalCells = 20.423 )
-( ?object = <ParietalEndoderm> ) ( ?numTotalCells = 15.476 )
-( ?object = <PeripheralBloodMononuclearCell> ) ( ?numTotalCells = 2.244 )
-( ?object = <Placenta> ) ( ?numTotalCells = "unspecified" )
 ( ?object = <PresumptiveGut> ) ( ?numTotalCells = 30.952 )
-( ?object = <RenalMedulla> ) ( ?numTotalCells = "unspecified" )
-( ?object = <RenalPelvis> ) ( ?numTotalCells = "unspecified" )
-( ?object = <Retina> ) ( ?numTotalCells = 113.5 )
-( ?object = <RetinalNeuralLayer> ) ( ?numTotalCells = 44.0 )
 ( ?object = <Skin> ) ( ?numTotalCells = 82.308 )
-( ?object = <SkinEpidermis> ) ( ?numTotalCells = 79.664 )
 ( ?object = <Spleen> ) ( ?numTotalCells = 68.271 )
 ( ?object = <Thymus> ) ( ?numTotalCells = 1.58 )
 ( ?object = <Tongue> ) ( ?numTotalCells = 1.432 )
 ( ?object = <Trachea> ) ( ?numTotalCells = 1.391 )
 ( ?object = <Tumor> ) ( ?numTotalCells = 3.185 )
-( ?object = <UmbilicalCordBlood> ) ( ?numTotalCells = 253.91 )
-( ?object = <Ureter> ) ( ?numTotalCells = "unspecified" )
-( ?object = <VenousBlood> ) ( ?numTotalCells = 44.615 )
-( ?object = <VisceralEndoderm> ) ( ?numTotalCells = 23.214 )
-( ?object = <YolkSacEndoderm> ) ( ?numTotalCells = 7.738 )
 
 ------------------------
 1.8. Número de células por proyecto
@@ -212,25 +246,19 @@
 ( ?project = "1.3 Million Brain Cells from E18 Mice" ) ( ?numTotalCells = 1330.0 )
 ( ?project = "A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Inter- and Intra-cell Population Structure" ) ( ?numTotalCells = 12.404 )
 ( ?project = "A single-cell molecular map of mouse gastrulation and early organogenesis" ) ( ?numTotalCells = 339.089 )
-( ?project = "A single-cell reference map of transcriptional states for human blood and tissue T cell activation" ) ( ?numTotalCells = "unspecified" )
 ( ?project = "A single-cell transcriptome atlas of the adult human retina" ) ( ?numTotalCells = 44.0 )
-( ?project = "Assessing the relevance of organoids to model inter-individual variation" ) ( ?numTotalCells = 79.664 )
+( ?project = "Assessing the relevance of organoids to model inter-individual variation" ) ( ?numTotalCells = 19.916 )
 ( ?project = "Bone marrow plasma cells from hip replacement surgeries" ) ( ?numTotalCells = 9.5 )
 ( ?project = "Cell hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics" ) ( ?numTotalCells = 20.0 )
 ( ?project = "Census of Immune Cells" ) ( ?numTotalCells = 528.092 )
-( ?project = "Comparison, calibration, and benchmarking of high-throughput single cell RNA-Seq techniques for unbiased cell-type classification" ) ( ?numTotalCells = "unspecified" )
 ( ?project = "Dissecting the human liver cellular landscape by single cell RNA-seq reveals novel intrahepatic monocyte/ macrophage populations" ) ( ?numTotalCells = 30.0 )
 ( ?project = "Ischaemic sensitivity of human tissue by single cell RNA seq" ) ( ?numTotalCells = 199.845 )
 ( ?project = "Melanoma infiltration of stromal and immune cells" ) ( ?numTotalCells = 6.639 )
 ( ?project = "Precursors of human CD4+ cytotoxic T lymphocytes identified by single-cell transcriptome analysis" ) ( ?numTotalCells = 2.244 )
 ( ?project = "Profiling of CD34+ cells from human bone marrow to understand hematopoiesis" ) ( ?numTotalCells = 1480.0 )
-( ?project = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?numTotalCells = "unspecified" )
 ( ?project = "Single Cell Transcriptomics of a Human Kidney Allograft Biopsy Defines a Diverse Inflammatory Response" ) ( ?numTotalCells = 4.0 )
-( ?project = "Single cell profiling of human induced dendritic cells generated by direct reprogramming of embryonic fibroblasts" ) ( ?numTotalCells = "unspecified" )
 ( ?project = "Single cell transcriptome analysis of human pancreas reveals transcriptional signatures of aging and somatic mutation patterns." ) ( ?numTotalCells = 2.544 )
-( ?project = "Single-cell RNA-seq analysis  throughout a 125-day differentiation protocol that converted H1 human embryonic stem cells to a variety of ventrally-derived cell types." ) ( ?numTotalCells = "unspecified" )
 ( ?project = "Single-cell RNA-seq analysis of human pancreas from healthy individuals and type 2 diabetes patients" ) ( ?numTotalCells = 3.514 )
-( ?project = "Spatio-temporal immune zonation of the human kidney" ) ( ?numTotalCells = "unspecified" )
 ( ?project = "Structural Remodeling of the Human Colonic Mesenchyme in Inflammatory Bowel Disease" ) ( ?numTotalCells = 16.893 )
 ( ?project = "Systematic comparative analysis of single cell RNA-sequencing methods" ) ( ?numTotalCells = 59.79 )
 ( ?project = "Tabula Muris: Transcriptomic characterization of 20 organs and tissues from Mus musculus at single cell resolution" ) ( ?numTotalCells = 53.76 )
@@ -239,7 +267,7 @@
 ( ?project = "Transcriptomic classification of human retinal cell types with single-nuclei RNA-seq." ) ( ?numTotalCells = 230.8 )
 
 ------------------------
-2.1.2. ¿Cuál es el instrumento, el tipo de librería y el protocolo de análisis más utilizados en este repositorio?
+2.1.1. ¿Cuál es el instrumento, el tipo de librería y el protocolo de análisis más utilizados en este repositorio?
 ------------------------
 
 ( ?instrument = <IlluminaNovaSeq6000> ) ( ?numberOfOccurrences = 250 )
@@ -247,59 +275,30 @@
 ( ?protocol = <Optimus_v1.3.2> ) ( ?numberOfOccurrences = 142 )
 
 ------------------------
-2.1.3. ¿De cuántos especímenes tenemos disponibles modelos de órganos y de qué órganos se trata?
+2.1.2. ¿De cuántos proyectos tenemos disponibles modelos de órganos y de qué órganos se trata?
 ------------------------
 
-( ?numberOfModels = 44 )
+( ?numberOfProjectsWithModels = 8 )
 
-( ?model = <ImmuneSystem> ) ( ?numberOfOccurrences = 3 )
-( ?model = <Heart> ) ( ?numberOfOccurrences = 7 )
-( ?model = <HematopoieticSystem> ) ( ?numberOfOccurrences = 3 )
-( ?model = <Blood> ) ( ?numberOfOccurrences = 9 )
-( ?model = <Brain> ) ( ?numberOfOccurrences = 4 )
-( ?model = <StemCell> ) ( ?numberOfOccurrences = 18 )
-
-------------------------
-2.1.4. ¿De cuántos especímenes tenemos disponibles datos de líneas celulares y para qué tipo de células?
-------------------------
-
-( ?numberOfSpecimensWithCellLine = 40 )
-
-( ?cellLine = <StemCell> ) ( ?numberOfOccurrences = 3 )
-( ?cellLine = <InducedPluripotent> ) ( ?numberOfOccurrences = 14 )
-( ?cellLine = <Primary> ) ( ?numberOfOccurrences = 12 )
-( ?cellLine = <StemCell-derived> ) ( ?numberOfOccurrences = 11 )
+( ?model = <ImmuneSystem> ) ( ?numberOfOccurrences = 1 )
+( ?model = <Heart> ) ( ?numberOfOccurrences = 1 )
+( ?model = <HematopoieticSystem> ) ( ?numberOfOccurrences = 1 )
+( ?model = <Blood> ) ( ?numberOfOccurrences = 1 )
+( ?model = <Brain> ) ( ?numberOfOccurrences = 2 )
+( ?model = <StemCell> ) ( ?numberOfOccurrences = 2 )
 
 ------------------------
-2.1.6. ¿Cuál es el proyecto que tiene un mayor número de especímenes asociado? ¿y el mayor número de cell counts?
+2.1.3. ¿De cuántos proyectos tenemos disponibles datos de líneas celulares?
 ------------------------
 
-( ?project = "Tabula Muris" ) ( ?numberOfSpecimens = 222 )
-( ?project = "Human Hematopoietic Profiling" ) ( ?numberOfCells = 1480000 )
+( ?numberOfProjectsWithCellLine = 7 )
 
 ------------------------
-2.2.1. Si me interesa como "órgano" de estudio blood, ¿de qué tipos celulares hay datos de single-cell disponibles en HCA?
+2.1.4. ¿Cuál es el proyecto que tiene un mayor número de donantes asociado? ¿y el mayor número de cell counts?
 ------------------------
 
-( ?cellType = <EffectorMemoryCD8-positive_Alpha-betaTCell_TerminallyDifferentiated> )
-( ?cellType = <MononuclearCell> )
-( ?cellType = <PeripheralBloodMononuclearCell> )
-( ?cellType = <CordBloodHematopoieticStemCell> )
-( ?cellType = <MyeloidCell> )
-( ?cellType = <NaturalKillerCell> )
-( ?cellType = <Tcell> )
-( ?cellType = <CD8-positive_Alpha-betaTCell> )
-
-------------------------
-2.2.2. Interés en el "órgano" immune system, ¿de qué tipos celulares hay datos de single-cell disponibles en HCA?
-------------------------
-
-( ?cellType = <BoneMarrowHematopoieticCell> )
-
-------------------------
-2.2.3. ¿Qué tipos celulares son coincidentes entre ambos órganos?
-------------------------
-
+( ?project = "A single-cell molecular map of mouse gastrulation and early organogenesis" ) ( ?donors = "63"^^xsd:int )
+( ?project = "Profiling of CD34+ cells from human bone marrow to understand hematopoiesis" ) ( ?cells = "1480000"^^xsd:int )
 
 ------------------------
 2.2.4. ¿Sobre qué enfermedades puedo encontrar datos de single-cell para embrión de Homo Sapiens?
@@ -320,7 +319,58 @@
 
 
 ------------------------
-3.1.1. Partes del riñón.
+3.1.1. Si me interesa como "órgano" de estudio blood, ¿de qué tipos celulares hay datos de single-cell disponibles en HCA?
+------------------------
+
+Busqueda a nivel de proyecto:
+( ?cellType = <Tcell> )
+( ?cellType = <Live> )
+( ?cellType = <MyeloidCell> )
+( ?cellType = <Epcam+> )
+( ?cellType = <Leukocyte> )
+( ?cellType = <HLAG+> )
+( ?cellType = <NaturalKillerCell> )
+( ?cellType = <CD45-> )
+( ?cellType = <PeripheralBloodMononuclearCell> )
+( ?cellType = <CordBloodHematopoieticStemCell> )
+( ?cellType = <BoneMarrowHematopoieticCell> )
+( ?cellType = <CD8-positive_Alpha-betaTCell> )
+( ?cellType = <EffectorMemoryCD8-positive_Alpha-betaTCell_TerminallyDifferentiated> )
+( ?cellType = <MononuclearCell> )
+
+Busqueda a nivel de espécimen:
+( ?cellType = <CordBloodHematopoieticStemCell> )
+( ?cellType = <PeripheralBloodMononuclearCell> )
+( ?cellType = <MyeloidCell> )
+( ?cellType = <NaturalKillerCell> )
+( ?cellType = <Tcell> )
+( ?cellType = <EffectorMemoryCD8-positive_Alpha-betaTCell_TerminallyDifferentiated> )
+( ?cellType = <CD8-positive_Alpha-betaTCell> )
+( ?cellType = <MononuclearCell> )
+
+------------------------
+3.1.2. Interés en el "órgano" immune system, ¿de qué tipos celulares hay datos de single-cell disponibles en HCA?
+------------------------
+
+Busqueda a nivel de proyecto:
+( ?cellType = <CordBloodHematopoieticStemCell> )
+( ?cellType = <BoneMarrowHematopoieticCell> )
+
+Busqueda a nivel de espécimen:
+( ?cellType = <BoneMarrowHematopoieticCell> )
+
+------------------------
+3.1.3. ¿Qué tipos celulares son coincidentes entre ambos órganos?
+------------------------
+
+Busqueda a nivel de proyecto:
+( ?cellType = <CordBloodHematopoieticStemCell> )
+( ?cellType = <BoneMarrowHematopoieticCell> )
+
+Busqueda a nivel de espécimen:
+
+------------------------
+3.2.1. Partes del riñón.
 ------------------------
 
 ( ?kidneyParts = <CortexOfKidney> )
@@ -328,57 +378,67 @@
 ( ?kidneyParts = <RenalPelvis> )
 
 ------------------------
-3.1.2. Partes del cerebro.
+3.2.2. Partes del cerebro.
 ------------------------
 
 ( ?brainParts = <Cortex> )
 
 ------------------------
-3.2.1. ¿De cuántos especímenes tendríamos disponibles datos de single-cell cuyo tipo celular pertenezca a la clase leukocytes?.
+3.3.1. ¿De qué tipos celulares tendríamos disponibles datos de single-cell cuyo tipo celular pertenezca a la clase leukocytes?.
 ------------------------
 
-( ?numSpecimens = 159 )
+( ?cellType = <PlasmaCell> )
+( ?cellType = <CD11c+DC> )
+( ?cellType = <CD8-positive_Alpha-betaTCell> )
+( ?cellType = <Splenocyte> )
+( ?cellType = <NaturalKillerCell> )
+( ?cellType = <Tcell> )
+( ?cellType = <BCell> )
+( ?cellType = <EffectorMemoryCD8-positive_Alpha-betaTCell_TerminallyDifferentiated> )
+( ?cellType = <Leukocyte> )
+( ?cellType = <CD11b+Macrophages/Monocytes> )
+( ?cellType = <PeripheralBloodMononuclearCell> )
+( ?cellType = <InnateLymphoidCell> )
+( ?cellType = <CD11b+CD11c+DC> )
+( ?cellType = <Monocyte> )
+( ?cellType = <CD4+TCell> )
 
 ------------------------
-3.2.2. ¿De qué especies tengo datos de single-cell que pertenezcan al reino Plants?
+3.3.2. ¿De qué especies tengo datos de single-cell que pertenezcan al reino Plants?
 ------------------------
 
 ( ?plantSpecie = <ArabidopsisThaliana> )
 
 ------------------------
-3.2.3. ¿De cuántos especímenes tenemos disponibles datos de single-cell cuyos donantes (especímenes, indistintamente) tengan la edad expresada en días?
+3.3.3. ¿De cuántos especímenes tenemos disponibles datos de single-cell cuyos donantes (especímenes, indistintamente) tengan la edad expresada en días?
 ------------------------
 
 ( ?specimensWithAgeInDays = 2 )
 
 ------------------------
-3.2.4. ¿De qué SampleType se trata?
+3.3.4. ¿De qué SampleType se trata?
 ------------------------
 
 ( ?sampleType = <Specimens> )
 
 ------------------------
-3.2.5. ¿De cuántos especímenes disponemos los metadatos, la matriz y los resultados?
+3.3.5. ¿De cuántos especímenes disponemos los metadatos, la matriz y los resultados?
 ------------------------
 
-( ?numSpecimens = 23 )
+( ?numProyects = 3 )
 
 ------------------------
-3.2.6. ¿Cuál son los objetos de estudio?
+3.3.6. ¿Cuál son las partes del organismo?
 ------------------------
 
-( ?object = <Decidua> ) ( ?numSpecimens = 5 )
-( ?object = <VenousBlood> ) ( ?numSpecimens = 2 )
-( ?object = <Embryo> ) ( ?numSpecimens = 4 )
-( ?object = <Brain> ) ( ?numSpecimens = 2 )
-( ?object = <Blood> ) ( ?numSpecimens = 4 )
-( ?object = <Blastocyst> ) ( ?numSpecimens = 4 )
-( ?object = <Cortex> ) ( ?numSpecimens = 2 )
-( ?object = <Pancreas> ) ( ?numSpecimens = 8 )
-( ?object = <IsletOfLangerhans> ) ( ?numSpecimens = 8 )
+( ?object = <Decidua> ) ( ?numProjects = 1 )
+( ?object = <Embryo> ) ( ?numProjects = 1 )
+( ?object = <Blood> ) ( ?numProjects = 1 )
+( ?object = <Pancreas> ) ( ?numProjects = 1 )
+( ?object = <Placenta> ) ( ?numProjects = 1 )
 
 ------------------------
-3.2.7. ¿De qué enfermedades tenemos disponible datos de single-cell donde el "órgano" afectado sea el corazón o, directamente, el sistema circulatorio? ¿Cuáles son estas enfermedades?
+3.3.7. ¿De qué enfermedades tenemos disponible datos de single-cell donde el "órgano" afectado sea el corazón o, directamente, el sistema circulatorio? ¿Cuáles son estas enfermedades?
 ------------------------
 
 ( ?disease = <PericardialEffusion> )
@@ -386,32 +446,38 @@
 ( ?disease = <VentricularTachycardia> )
 
 ------------------------
-3.2.8. ¿Qué proyectos tenemos donde los especímenes estén afectados por una enfermedad clasificada como metabólica y hereditaria?
+3.3.8. ¿Qué proyectos tenemos donde los especímenes estén afectados por una enfermedad clasificada como metabólica y hereditaria?
 ------------------------
 
-( ?proyect = "Diabetic Nephropathy snRNA-seq" ) ( ?diseaseStatus = <SyndromicDyslipidemia> )
-( ?proyect = "Diabetic Nephropathy snRNA-seq" ) ( ?diseaseStatus = <HereditaryHemochromatosis> )
-( ?proyect = "Fetal/Maternal Interface" ) ( ?diseaseStatus = <OrofaciodigitalSyndromeVIII> )
+( ?proyect = "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" ) ( ?diseaseStatus = <OrofaciodigitalSyndromeVIII> )
+( ?proyect = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?diseaseStatus = <HereditaryHemochromatosis> )
+( ?proyect = "The Single Cell Transcriptomic Landscape of Early Human Diabetic Nephropathy" ) ( ?diseaseStatus = <SyndromicDyslipidemia> )
 
 ------------------------
-3.2.9. ¿Qué órgano se encuentra afectado?
-------------------------
-
-
-------------------------
-3.2.10. ¿De qué sistema forma parte?
+3.3.9. ¿Qué órgano se encuentra afectado según nuestra ontología?
 ------------------------
 
 
 ------------------------
-3.2.11. ¿Cuál es el laboratorio que más proyectos tiene y cuál es su principal órgano estudiado?
+3.3.10. ¿De qué sistema forma parte?
 ------------------------
 
-( ?lab = "HumanCellAtlasDataCoordinationPlatform" ) ( ?numberOfProyects = 25 )
-( ?organ = <Blood> ) ( ?numberOfOccurrences = 121 )
 
 ------------------------
-3.2.12. ¿Cuál es el órgano para el cual tenemos un mayor número de enfermedades estudiadas?
+3.3.11. ¿Cuál es la institución que más proyectos tiene y cuál es su principal órgano estudiado?
 ------------------------
 
-( ?organ = <Kidney> ) ( ?numberOfDiseases = 4 )
+( ?institution = "EMBL-EBI" ) ( ?numberOfProyects = 13 )
+
+( ?organ = <Blood> ) ( ?numberOfProyects = 3 )
+
+------------------------
+3.3.12. ¿Cuál es el órgano para el cual tenemos un mayor número de enfermedades estudiadas?
+------------------------
+
+( ?organismPart = <Kidney> ) ( ?numberOfDiseases = 4 )
+
+( ?disease = <HemolyticUremicSyndrome> )
+( ?disease = <AcuteKidneyTubularNecrosis> )
+( ?disease = <EndStageRenalFailure> )
+( ?disease = <KidneyCancer> )

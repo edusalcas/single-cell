@@ -117,7 +117,7 @@ class OntologyConversorHCA(OntologyConversorAbstract):
         project = self.__format_HCD_samples(project, raw_project)
 
         # Specimens
-        project = self.__format_HCD_specimens(project, raw_project)
+        project = self.__format_HCD_specimens_PR(project, raw_project)
 
         # Donor Organism
         project = self.__format_HCD_donor_organism_PR(project, raw_project)
@@ -216,7 +216,7 @@ class OntologyConversorHCA(OntologyConversorAbstract):
         project_shortname = individual_hca['projects'][0]['projectShortname']
         project_title = individual_hca['projects'][0]['projectTitle']
 
-        individual.laboratory = self.parse_word(laboratory)
+        individual.laboratory = laboratory
         individual.project_short_name = project_shortname
         individual.project_title = project_title
 
@@ -265,20 +265,6 @@ class OntologyConversorHCA(OntologyConversorAbstract):
         except:
             return individual
 
-    def __format_HCD_specimens(self, individual, individual_hca):
-        if not individual_hca['specimens']:
-            return individual
-
-        organ = individual_hca['specimens'][0]['organ']
-        organ_part = individual_hca['specimens'][0]['organPart']
-        preservation_method = individual_hca['specimens'][0]['preservationMethod']
-
-        individual.organism_part = self.parse_word(organ)
-        individual.biopsy_site = self.parse_word(organ_part)
-        individual.preservation = self.parse_word(preservation_method)
-
-        return individual
-
     def __format_HCD_file_type_summaries(self, individual, individual_hca):
         if not individual_hca['fileTypeSummaries']:
             return individual
@@ -312,7 +298,7 @@ class OntologyConversorHCA(OntologyConversorAbstract):
         if not specimen_hca['specimens']:
             return specimen
 
-        specimen = self.__format_HCD_specimens(specimen, specimen_hca)
+        specimen = self.__format_HCD_specimens_PR(specimen, specimen_hca)
 
         sample_id = specimen_hca['specimens'][0]['id'][0]
 
@@ -364,7 +350,7 @@ class OntologyConversorHCA(OntologyConversorAbstract):
 
         project.project_title = project_title
         project.project_short_name = project_shortname
-        project.laboratory = self.parse_word(laboratory)
+        project.laboratory = laboratory
         project.project_description = project_description
         project.institutions = list(institutions)
         project.publication_title = publication_titles
@@ -377,7 +363,6 @@ class OntologyConversorHCA(OntologyConversorAbstract):
         project.sumpplementary_link = supplementary_links
 
         return project
-
 
     def __format_HCD_file_type_summaries_PR(self, individual, individual_hca):
         if not individual_hca['fileTypeSummaries']:
@@ -410,6 +395,22 @@ class OntologyConversorHCA(OntologyConversorAbstract):
         individual.total_size_of_files = sum(total_size) / pow(2, 20)  # We save it in MB
 
         return individual
+
+    def __format_HCD_specimens_PR(self, project, project_hca):
+        if not project_hca['specimens']:
+            return project
+
+        organ = project_hca['specimens'][0]['organ']
+        organ_part = project_hca['specimens'][0]['organPart']
+        num_specimens = len(project_hca['specimens'][0]['id'])
+        preservation_method = project_hca['specimens'][0]['preservationMethod']
+
+        project.organism_part = self.parse_word(organ)
+        project.biopsy_site = self.parse_word(organ_part)
+        project.specimen_count = num_specimens
+        project.preservation = self.parse_word(preservation_method)
+
+        return project
 
     #endregion
     ####################################################

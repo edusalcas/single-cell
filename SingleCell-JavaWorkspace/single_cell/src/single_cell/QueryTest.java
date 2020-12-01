@@ -27,21 +27,40 @@ public class QueryTest {
 		
 		MyModel model = new MyModel(NS, inputFileName);
 
-		String query = "PREFIX a: <" + NS + "> " +
+		// -----------------------------
+		// 2.2.3 ¿Qué tipos celulares se han seleccionado para estudiar la diabete de tipo 2? 
+		// -----------------------------
+		
+		System.out.println();
+		System.out.println("------------------------");
+		System.out.println("2.2.6. ¿Tenemos datos de single-cell disponibles para un tipo de célula que sea específico de decidua y placenta?");
+		System.out.println("------------------------");
+		System.out.println();
+		
+		String projectTitle = "Melanoma infiltration of stromal and immune cells";
+		
+		String queryString = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT DISTINCT ?organismPart ?disease \n" +
+				"SELECT (COUNT( * ) as ?numberOfSpecimens) \n" +
 				"WHERE" +
 				"{" +
-					"?id rdf:type a:Specimen ;" +
-					"    a:SPR.hasDiseaseStatus ?disease ;" +
-					"    a:SPR.hasOrganismPart ?organismPart ." +
-					"?organismPart a:OR.isAffectedInDisease ?disease ." +
+					"?specimen rdf:type a:Specimen ;" +
+					"          a:SPR.hasProjectTitle \"" + projectTitle + "\" ." +
 				"}";
 		
 		// Execute query
-		executeQuery(NS, model, query);
+		// executeQuery(NS, model, query);
 		
+		
+		Query query = QueryFactory.create(queryString);
+		try (QueryExecution qexec = QueryExecutionFactory.create(query, model.getModel())) {
+			ResultSet results = qexec.execSelect();
+			int i = 0;
+			
+			QuerySolution soln = results.nextSolution();	
+			
+			System.out.println(soln.getLiteral("?numberOfSpecimens").getInt());
+		}
 		
 	}
 }

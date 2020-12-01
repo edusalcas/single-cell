@@ -45,11 +45,81 @@ public class QueryAlicia {
 		 */
 		
 		// -----------------------------
-		// 1.1. Número de proyectos
+		// 1.1. Número de células
 		// -----------------------------
 		System.out.println();
 		System.out.println("------------------------");
-		System.out.println("1.1. Número de proyectos");
+		System.out.println("1.1. Número de células");
+		System.out.println("------------------------");
+		System.out.println();
+		
+		String queryStringNumCells = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT (SUM(?numCells)/1000000 as ?numberOfCellsProject) \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Project ;" +
+					"    a:SPR.hasTotalCellCount ?numCells ." +
+					"FILTER (?numCells != -1)" +
+				"}";
+		
+		// Execute query
+		executeQuery(NS, model, queryStringNumCells);
+		
+		// -----------------------------
+		// 1.2. Número de órganos
+		// -----------------------------
+		System.out.println();
+		System.out.println("------------------------");
+		System.out.println("1.2. Número de órganos");
+		System.out.println("------------------------");
+		System.out.println();
+		
+		String queryStringNumOrgans = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT (COUNT( DISTINCT ?organismPart ) as ?numberOfOrgansProject) \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Project ;" +
+					"    a:SPR.hasOrganismPart ?organismPart ." +
+					"?organismPart rdf:type a:Organ ." +
+				"}";
+		
+		// Execute query
+		executeQuery(NS, model, queryStringNumOrgans);
+		
+		// -----------------------------
+		// 1.3. Número de donantes
+		// -----------------------------
+		System.out.println();
+		System.out.println("------------------------");
+		System.out.println("1.3. Número de donantes");
+		System.out.println("------------------------");
+		System.out.println();
+		
+		String queryStringDonors = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ( SUM(?donorCount) AS ?totalDonorCount ) \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Project ;" +
+					"    a:PR.hasDonorCount ?donorCount ." +
+					"FILTER (?donorCount != -1) " +
+				"}" +
+				"ORDER BY ?project";
+		
+		// Execute query
+		executeQuery(NS, model, queryStringDonors);
+		
+		// -----------------------------
+		// 1.4. Número de proyectos
+		// -----------------------------
+		System.out.println();
+		System.out.println("------------------------");
+		System.out.println("1.4. Número de proyectos");
 		System.out.println("------------------------");
 		System.out.println();
 
@@ -66,18 +136,18 @@ public class QueryAlicia {
 		executeQuery(NS, model, queryStringNumProyects);
 		
 		// -----------------------------
-		// 1.2. Número de laboratorios
+		// 1.5. Número de laboratorios
 		// -----------------------------
 		System.out.println();
 		System.out.println("------------------------");
-		System.out.println("1.2. Número de laboratorios");
+		System.out.println("1.5. Número de laboratorios");
 		System.out.println("------------------------");
 		System.out.println();
 		
 		String queryStringNumLabs = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (COUNT( DISTINCT ?lab ) as ?numberOfLabs) \n" +
+				"SELECT (COUNT( DISTINCT ?lab) AS ?numOfLabs) \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Project ;" +
@@ -87,65 +157,21 @@ public class QueryAlicia {
 		// Execute query
 		executeQuery(NS, model, queryStringNumLabs);
 		
-		queryStringNumLabs = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT DISTINCT ?title ?lab \n" +
-				"WHERE" +
-				"{" +
-					"?id rdf:type a:Project ;" +
-					"	 a:SPR.hasProjectTitle ?title ;" +
-					"    a:SPR.hasLaboratory ?lab ." +
-				"} " +
-				"ORDER BY ?title";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringNumLabs);
-		
 		// -----------------------------
-		// 1.3. Número de especímenes
+		// 1.6. Número de especímenes
 		// -----------------------------
 		System.out.println();
 		System.out.println("------------------------");
-		System.out.println("1.3. Número de especímenes");
+		System.out.println("1.6. Número de especímenes");
 		System.out.println("------------------------");
+		System.out.println();
+		
 		System.out.println();
 		
 		String queryStringNumSpecimens = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (COUNT( * ) as ?numberOfSpecimens) \n" +
-				"WHERE" +
-				"{" +
-					"?specimen rdf:type a:Specimen ." +
-				"} ";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringNumSpecimens);
-		
-		System.out.println();
-		
-		queryStringNumSpecimens = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?project (COUNT( * ) as ?numberOfSpecimens) \n" +
-				"WHERE" +
-				"{" +
-					"?specimen rdf:type a:Specimen ;" +
-					"          a:SPR.hasProjectTitle ?project ." +
-				"} " +
-				"GROUP BY ?project "	+
-				"ORDER BY ?project";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringNumSpecimens);
-		
-		System.out.println();
-		
-		queryStringNumSpecimens = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (SUM(?specimenCount) AS ?specimenCountProjects) \n" +
+				"SELECT (SUM(?specimenCount) AS ?totalSpecimenCount) \n" +
 				"WHERE " +
 				"{" +
 					"?id rdf:type a:Project ;" +
@@ -173,44 +199,7 @@ public class QueryAlicia {
 		executeQuery(NS, model, queryStringNumSpecimens);
 		
 		// -----------------------------
-		// 1.4. Número de células
-		// -----------------------------
-		System.out.println();
-		System.out.println("------------------------");
-		System.out.println("1.4. Número de células");
-		System.out.println("------------------------");
-		System.out.println();
-		
-		String queryStringNumCells = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (SUM(?numCells)/1000000 as ?numberOfCellsProject) \n" +
-				"WHERE" +
-				"{" +
-					"?id rdf:type a:Project ;" +
-					"    a:SPR.hasTotalCellCount ?numCells ." +
-					"FILTER (?numCells != -1)" +
-				"}";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringNumCells);
-		
-		queryStringNumCells = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (SUM(?numCells)/1000000 as ?numberOfCellsSpecimen) \n" +
-				"WHERE" +
-				"{" +
-					"?id rdf:type a:Specimen ;" +
-					"    a:SPR.hasTotalCellCount ?numCells ." +
-					"FILTER (?numCells != -1)" +
-				"}";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringNumCells);
-		
-		// -----------------------------
-		// 1.5. Tamaño total de ficheros
+		// 1.7. Tamaño total de ficheros
 		// -----------------------------
 		System.out.println();
 		System.out.println("------------------------");
@@ -231,57 +220,6 @@ public class QueryAlicia {
 		
 		// Execute query
 		executeQuery(NS, model, queryStringTotalSize);
-		
-		queryStringTotalSize = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (SUM(?size)/(1024 * 1024) as ?totalSizeSpecimens) \n" +
-				"WHERE" +
-				"{" +
-					"?id rdf:type a:Specimen ;" +
-					"    a:SPR.hasTotalSizeOfFilesInMB ?size ." +
-					"FILTER (?size != -1) " +
-				"}";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringTotalSize);
-		
-		// -----------------------------
-		// 1.6. Número de órganos
-		// -----------------------------
-		System.out.println();
-		System.out.println("------------------------");
-		System.out.println("1.6. Número de órganos");
-		System.out.println("------------------------");
-		System.out.println();
-		
-		String queryStringNumOrgans = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (COUNT( DISTINCT ?organismPart ) as ?numberOfOrgansProject) \n" +
-				"WHERE" +
-				"{" +
-					"?id rdf:type a:Project ;" +
-					"    a:SPR.hasOrganismPart ?organismPart ." +
-					"?organismPart rdf:type a:Organ ." +
-				"}";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringNumOrgans);
-		
-		queryStringNumOrgans = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (COUNT( DISTINCT ?organismPart ) as ?numberOfOrgansSpecimen) \n" +
-				"WHERE" +
-				"{" +
-					"?id rdf:type a:Specimen ;" +
-					"    a:SPR.hasOrganismPart ?organismPart ." +
-					"?organismPart rdf:type a:Organ ." +
-				"}";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringNumOrgans);
 		
 		// -----------------------------
 		// 1.7. Número de células por objeto de estudio
@@ -310,18 +248,43 @@ public class QueryAlicia {
 		executeQuery(NS, model, queryStringNumCellsPerObject);
 		
 		// -----------------------------
-		// 1.8. Número de células por proyecto
+		// 1.8. Número de donantes por proyecto
 		// -----------------------------
 		System.out.println();
 		System.out.println("------------------------");
-		System.out.println("1.8. Número de células por proyecto");
+		System.out.println("1.8. Número de donantes por proyecto");
+		System.out.println("------------------------");
+		System.out.println();
+		
+		String queryStringDonorsPerProject = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT ?project ( IF( ?donorCount = 0, \"unspecified\", ?donorCount ) AS ?totalDonorCount ) \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Project ;" +
+					"    a:SPR.hasProjectTitle ?project ;" +
+					"    a:PR.hasDonorCount ?donorCount ." +
+					"FILTER (?donorCount != -1) " +
+				"}" +
+				"ORDER BY ?project";
+		
+		// Execute query
+		executeQuery(NS, model, queryStringDonorsPerProject);
+		
+		// -----------------------------
+		// 1.9. Número de células por proyecto
+		// -----------------------------
+		System.out.println();
+		System.out.println("------------------------");
+		System.out.println("1.9. Número de células por proyecto");
 		System.out.println("------------------------");
 		System.out.println();
 		
 		String queryStringNumCellsPerProject = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT ?project (IF(SUM(?numCells) = 0, \"unspecified\", SUM(?numCells) / 1000) AS ?numTotalCells) \n" +
+				"SELECT ?project ( IF( ?numCells = 0, \"unspecified\", ?numCells) AS ?numTotalCells) \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Project ;" +
@@ -329,7 +292,6 @@ public class QueryAlicia {
 					"    a:SPR.hasTotalCellCount ?numCells ." +
 					"FILTER (?numCells != -1) " +
 				"}" +
-				"GROUP BY ?project " +
 				"ORDER BY ?project";
 		
 		// Execute query
@@ -374,7 +336,7 @@ public class QueryAlicia {
 				"SELECT ?instrument (COUNT(*) as ?numberOfOccurrences) \n" +
 				"WHERE" +
 				"{" +
-					"?id rdf:type a:Specimen ;" +
+					"?id rdf:type a:Project ;" +
 					"    a:SPR.hasInstrument ?instrument ." +
 				"}" +
 				"GROUP BY ?instrument \n" +
@@ -390,7 +352,7 @@ public class QueryAlicia {
 				"SELECT ?library (COUNT(*) as ?numberOfOccurrences) \n" +
 				"WHERE" +
 				"{" +
-					"?id rdf:type a:Specimen ;" +
+					"?id rdf:type a:Project ;" +
 					"    a:SPR.hasLibrary ?library ." +
 				"}" +
 				"GROUP BY ?library \n" +
@@ -406,7 +368,7 @@ public class QueryAlicia {
 				"SELECT ?protocol (COUNT(*) as ?numberOfOccurrences) \n" +
 				"WHERE" +
 				"{" +
-					"?id rdf:type a:Specimen ;" +
+					"?id rdf:type a:Project ;" +
 					"    a:SPR.hasAnalysisProtocol ?protocol ." +
 				"}" +
 				"GROUP BY ?protocol \n" +
@@ -428,7 +390,7 @@ public class QueryAlicia {
 		String queryStringNumberOfModels = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT (COUNT( ?model ) as ?numberOfProjectsWithModels) \n" +
+				"SELECT (COUNT( DISTINCT ?id ) as ?numberOfProjectsWithModels) \n" +
 				"WHERE" +
 				"{" +
 					"?id rdf:type a:Project ;" +
@@ -520,86 +482,86 @@ public class QueryAlicia {
 		// -----------------------------
 		// 2.2. Como usuario que busca sobre un tema concreto
 		// -----------------------------
-		
-		// TODO Hacer tres consultas por diseñadas por mi
-		
+				
 		// -----------------------------
-		// 2.2.4. ¿Sobre qué enfermedades puedo encontrar datos de single-cell para embrión de Homo Sapiens?
+		// 2.2.1 Datos de single cell para hombres de más de 50 años que cuyo organo estudiado es el colon 
 		// -----------------------------
+		
 		System.out.println();
 		System.out.println("------------------------");
-		System.out.println("2.2.4. ¿Sobre qué enfermedades puedo encontrar datos de single-cell para embrión de Homo Sapiens?");
+		System.out.println("2.2.1. Datos de single cell para hombres de más de 50 años que cuyo organo estudiado es el colon");
 		System.out.println("------------------------");
 		System.out.println();
 		
-		String queryStringHomoSapiensEmbryoDiseases = "PREFIX a: <" + NS + "> " +
+		String queryStringColonMales = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT DISTINCT ?disease " +
-				"WHERE " +
-				"{ " +
+				"SELECT ?specimen_id \n" +
+				"WHERE" +
+				"{" +
 					"?id rdf:type a:Specimen ;" +
+					"    a:SR.hasSpecimenID ?specimen_id ;" +
 					"    a:SPR.hasSpecie a:HomoSapiens ;" +
-					"    a:SPR.hasOrganismPart a:Embryo ;" +
-					"    a:SPR.hasDiseaseStatus ?disease ." +
+					"    a:SPR.hasOrganismPart a:Colon ;" +
+					"    a:SPR.hasBiologicalSex \"male\" ;" +
+					"    a:SPR.hasAgeUnit ?unit ;" +
+					"    a:SPR.hasMinAge ?min_age ." +
+					"FILTER (?unit = \"y\" || ?unit = \"year\")" +
+					"FILTER ( ?min_age > 50 )" +
 				"}";
 		
 		// Execute query
-		executeQuery(NS, model, queryStringHomoSapiensEmbryoDiseases);
+		executeQuery(NS, model, queryStringColonMales);
+			
+		// -----------------------------
+		// 2.2.2 ¿Que partes del organismo estudian los proyectos de líneas celulares y que proyectos son? 
+		// -----------------------------
 		
-		// -----------------------------
-		// 2.2.5. ¿y Mus Musculus?
-		// -----------------------------
 		System.out.println();
 		System.out.println("------------------------");
-		System.out.println("2.2.5. ¿y Mus Musculus?");
+		System.out.println("2.2.2. ¿Que partes del organismo estudian los proyectos de líneas celulares? ");
 		System.out.println("------------------------");
 		System.out.println();
 		
-		String queryStringMusMusculusEmbryoDiseases = "PREFIX a: <" + NS + "> " +
+		String queryCellLinesOrgans = "PREFIX a: <" + NS + "> " +
 				"PREFIX rdf: <" + rdf + "> " +
 				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT DISTINCT ?disease " +
-				"WHERE " +
-				"{ " +
+				"SELECT ?project ?organism_part \n" +
+				"WHERE" +
+				"{" +
+					"?id rdf:type a:Project ;" +
+					"    a:SPR.hasProjectTitle ?project ;" +
+					"    a:SPR.hasOrganismPart ?organism_part ;" +
+					"    a:SPR.hasSampleType a:CellLines ." +
+				"}";
+		
+		// Execute query
+		executeQuery(NS, model, queryCellLinesOrgans);
+		
+		// -----------------------------
+		// 2.2.3 ¿Qué tipos celulares, y de que proyectos, se han seleccionado para estudiar la diabete de tipo 2? 
+		// -----------------------------
+		
+		System.out.println();
+		System.out.println("------------------------");
+		System.out.println("2.2.3. ¿Qué tipos celulares, y de que proyectos, se han seleccionado para estudiar la diabete de tipo 2?");
+		System.out.println("------------------------");
+		System.out.println();
+		
+		String queryStringDiabetesCellType = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT DISTINCT ?project ?cell_type \n" +
+				"WHERE" +
+				"{" +
 					"?id rdf:type a:Specimen ;" +
-					"    a:SPR.hasSpecie a:MusMusculus ;" +
-					"    a:SPR.hasOrganismPart a:Embryo ;" +
-					"    a:SPR.hasDiseaseStatus ?disease ." +
+					"    a:SPR.hasDiseaseStatus a:Type2DiabetesMellitus ;" +
+					"    a:SPR.hasProjectTitle ?project ;" +
+					"    a:SPR.hasSelectedCellType ?cell_type ." +
 				"}";
 		
 		// Execute query
-		executeQuery(NS, model, queryStringMusMusculusEmbryoDiseases);
-		
-		// -----------------------------
-		// 2.2.6. ¿Tenemos datos de single-cell disponibles para un tipo de célula que sea específico de decidua y placenta?
-		// -----------------------------
-		System.out.println();
-		System.out.println("------------------------");
-		System.out.println("2.2.6. ¿Tenemos datos de single-cell disponibles para un tipo de célula que sea específico de decidua y placenta?");
-		System.out.println("------------------------");
-		System.out.println();
-		
-		String queryStringCellTypeOnlyDeciduaPlacenta = "PREFIX a: <" + NS + "> " +
-				"PREFIX rdf: <" + rdf + "> " +
-				"PREFIX xsd: <" + xsd + "> " +
-				"SELECT DISTINCT ?disease " +
-				"WHERE " +
-				"{ " +
-					"{ " +
-						"?id1 rdf:type a:Specimen ;" +
-						"     a:SPR.hasOrganismPart a:Decidua ;" +
-						"     a:SPR.hasSelectedCellType ?cellType ." +
-					"} " +
-					"{" +
-						"?id2 rdf:type a:Specimen ;" +
-						"     a:SPR.hasOrganismPart a:Placenta ;" +
-						"     a:SPR.hasSelectedCellType ?cellType ." +
-					"}" +
-				"}";
-		
-		// Execute query
-		executeQuery(NS, model, queryStringCellTypeOnlyDeciduaPlacenta);
+		executeQuery(NS, model, queryStringDiabetesCellType);
 		
 		/* 3. Consultas que no podríamos hacer en HCA pero sí en nuestra ontología
 		 * 
@@ -1005,9 +967,8 @@ public class QueryAlicia {
 						"?id rdf:type a:Specimen ;" +
 						"    a:SPR.hasProjectTitle ?proyect ;" +
 						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
-						"?diseaseStatus rdf:type a:DiseaseOfMetabolism ." +
+						"?diseaseStatus rdf:type a:DiaseaseOfMetabolism ." +
 					"} " +
-					"UNION " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
 						"    a:SPR.hasProjectTitle ?proyect ;" +
@@ -1037,10 +998,9 @@ public class QueryAlicia {
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
 						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
-						"?diseaseStatus rdf:type a:DiseaseOfMetabolism ;" +
+						"?diseaseStatus rdf:type a:DiaseaseOfMetabolism ;" +
 						"               a:OR.hasAffected ?organ ." +
 					"} " +
-					"UNION " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
 						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
@@ -1070,11 +1030,10 @@ public class QueryAlicia {
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
 						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
-						"?diseaseStatus rdf:type a:DiseaseOfMetabolism ;" +
+						"?diseaseStatus rdf:type a:DiaseaseOfMetabolism ;" +
 						"               a:OR.hasAffected ?organ ." +
 						"?organ a:OR.isPartOfSystem ?system ." +
 					"} " +
-					"UNION " +
 					"{ " +
 						"?id rdf:type a:Specimen ;" +
 						"    a:SPR.hasDiseaseStatus ?diseaseStatus ." +
@@ -1175,6 +1134,42 @@ public class QueryAlicia {
 		
 		// Execute query
 		executeQuery(NS, model, queryStringDiseasesPerOrgan);
+		
+		// -----------------------------
+		// 3.3.13. ¿Tenemos datos de single-cell disponibles para un tipo de célula que sea específico de decidua y placenta?
+		// -----------------------------
+		System.out.println();
+		System.out.println("------------------------");
+		System.out.println("3.3.13. ¿Tenemos datos de single-cell disponibles para un tipo de célula que sea específico de decidua y placenta?");
+		System.out.println("------------------------");
+		System.out.println();
+		
+		String queryStringCellTypeOnlyDeciduaPlacenta = "PREFIX a: <" + NS + "> " +
+				"PREFIX rdf: <" + rdf + "> " +
+				"PREFIX xsd: <" + xsd + "> " +
+				"SELECT DISTINCT ?cellType " +
+				"WHERE " +
+				"{ " +
+					"{ " +
+						"?id1 rdf:type a:Specimen ;" +
+						"     a:SPR.hasOrganismPart a:Decidua ;" +
+						"     a:SPR.hasSelectedCellType ?cellType ." +
+					"} " +
+					"{" +
+						"?id2 rdf:type a:Specimen ;" +
+						"     a:SPR.hasOrganismPart a:Placenta ;" +
+						"     a:SPR.hasSelectedCellType ?cellType ." +
+					"}" +
+					"{" +
+						"?id rdf:type a:Specimen ;"	+
+						"    a:SPR.hasSelectedCellType ?cellType ;" +
+						"    a:SPR.hasOrganismPart ?organism_part ." +
+						"FILTER ( ?organism_part = a:Decidua || ?organism_part = a:Placenta )" +
+					"}" +
+				"}";
+		
+		// Execute query
+		executeQuery(NS, model, queryStringCellTypeOnlyDeciduaPlacenta);
 	}
 
 }

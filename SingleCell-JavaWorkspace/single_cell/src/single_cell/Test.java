@@ -29,24 +29,29 @@ public class Test {
 		// Declare variables and input/output streams
 		String inputFileName = "../../SingleCell-Files/singleCellRepositoriesv4.owl";
 		String outputFileName = "../../SingleCell-Files/out_repositoriev4.owl";
-		String hitsFileName = "../../SingleCell-Files/processed_data/HCA_processed.json";
+		String[] hitsFileNames = new String[]{
+				"../../SingleCell-Files/processed_data/HCA_processed.json",
+				"../../SingleCell-Files/processed_data/SCAE_processed.json"};
 		
 		String NS = "http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#";
 
 		MyModel model = new MyModel(NS, inputFileName);
 
-		// Read samples to introduce into the model as instances
-		String rawJson = readJSON2String(hitsFileName);
-		
-		// Parse JSON to obtain the specimens and the projects
-		JSONObject fullJson = new JSONObject(rawJson);
-		JSONArray specimensArray = fullJson.getJSONArray("specimens");
-		JSONArray projectsArray = fullJson.getJSONArray("projects");
-				
-		System.out.println("Adding specimens to model...");
-		specimensArray.forEach((hit) -> {new MySpecimen((JSONObject) hit, model).addToModel();});
-		System.out.println("Adding projects to model...");
-		projectsArray.forEach((hit) -> {new MyProject((JSONObject) hit, model).addToModel();});
+		for (String fileName : hitsFileNames) {
+			System.out.println("Adding to model " + fileName);
+			// Read samples to introduce into the model as instances
+			String rawJson = readJSON2String(fileName);
+			
+			// Parse JSON to obtain the specimens and the projects
+			JSONObject fullJson = new JSONObject(rawJson);
+			JSONArray specimensArray = fullJson.getJSONArray("specimens");
+			JSONArray projectsArray = fullJson.getJSONArray("projects");
+					
+			System.out.println("Adding specimens to model...");
+			specimensArray.forEach((specimen) -> {new MySpecimen((JSONObject) specimen, model).addToModel();});
+			System.out.println("Adding projects to model...");
+			projectsArray.forEach((project) -> {new MyProject((JSONObject) project, model).addToModel();});
+		}
 
 		// Check if model is valid
 		if (!model.validateModel())

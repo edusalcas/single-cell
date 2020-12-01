@@ -28,8 +28,8 @@ class Individual:
         self.project_short_name = None
         self.project_title = None
         self.total_cell_counts = -1
-        self.total_size_of_files = -1
-        self.paired_end = False
+        self.total_size_of_files = -1.0
+        self.paired_end = None
         self.part_of_collection = None
         self.part_of_repository = None
 

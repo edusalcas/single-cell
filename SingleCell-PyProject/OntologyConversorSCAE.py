@@ -22,12 +22,18 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
         project.kingdom = self.parse_word(raw_project['kingdom'])
         project.load_date = raw_project['loadDate']
         project.update_date = raw_project['lastUpdate']
-        # project. = raw_project['numberOfAssays']
-        # project. = raw_project['rawExperimentType']
+        project.total_cell_counts = raw_project['numberOfAssays']
         project.type = self.parse_word(raw_project['experimentType'])
-        project.technology_type = self.parse_word(raw_project['technologyType'])
-        project.experimental_factors = self.parse_word(raw_project['experimentalFactors'])
+        project.library = self.parse_word(raw_project['technologyType'])
+        project.experimental_factor = self.parse_word(raw_project['experimentalFactors'])
+
         project.part_of_collection = self.parse_word(raw_project['experimentProjects'])
+        project.sumpplementary_link = raw_project['supplementary_link']
+        project.publication_title = raw_project['publication_title']
+        project.publication_link = raw_project['publication_link']
+        project.array_express_id = raw_project['ArrayExpress_ID']
+        project.ena_id = raw_project['ENA_ID']
+
 
         self.project = project
 

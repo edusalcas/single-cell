@@ -94,6 +94,7 @@ public class MyModel {
 	
 	public static final String[] PR_ANNOTATION_PROPERTIES = new String[] {
 			"PR.hasArrayExpressID",
+			"PR.hasENAprojectID",
 			"PR.hasAvailableDownloadsFormat",
 			"PR.hasDescription",
 			"PR.hasGEOseriesID",

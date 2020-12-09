@@ -8,6 +8,7 @@ class Project(Individual):
 
         self.project_id = None
         self.array_express_id = None
+        self.ena_id = None
         self.donor_count = None
         self.experimental_factor = None
         self.geo_series_id = None
@@ -34,6 +35,7 @@ class Project(Individual):
         project_dict["DataProperties"]["PR.hasSpecimenCount"] = self.specimen_count
 
         project_dict["AnnotationProperties"]["PR.hasArrayExpressID"] = self.array_express_id
+        project_dict["AnnotationProperties"]["PR.hasENAprojectID"] = self.ena_id
         project_dict["AnnotationProperties"]["PR.hasAvailableDownloadsFormat"] = self.downloads_format
         project_dict["AnnotationProperties"]["PR.hasDescription"] = self.project_description
         project_dict["AnnotationProperties"]["PR.hasGEOseriesID"] = self.geo_series_id

@@ -31,7 +31,8 @@ public class Test {
 		String outputFileName = "../../SingleCell-Files/out_repositoriev5.owl";
 		String[] hitsFileNames = new String[]{
 				//"../../SingleCell-Files/processed_data/HCA_processed.json",
-				"../../SingleCell-Files/processed_data/SCAE_processed.json"};
+				"../../SingleCell-Files/processed_data/SCAE_processed.json"
+				};
 		
 		String NS = "http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#";
 

@@ -10,7 +10,6 @@ class Individual:
         self.cell_line_type = None
         self.disease = None
         self.instrument = None
-        self.kingdom = None
         self.library = None
         self.model_organ = None
         self.organism_part = None
@@ -18,6 +17,8 @@ class Individual:
         self.sample_type = None
         self.cell_type = None
         self.specie = None
+        self.sample_status = None
+        self.downloads_type = None
 
         self.age_unit = None
         self.biological_sex = None
@@ -42,9 +43,8 @@ class Individual:
                 "SPR.hasAnalysisProtocol": self.analysis_protocol,
                 "SPR.hasBiopsySite": self.biopsy_site,
                 "SPR.hasCellLineType": self.cell_line_type,
-                "SPR.hasDiseaseStatus": self.disease,
+                "SPR.hasDisease": self.disease,
                 "SPR.hasInstrument": self.instrument,
-                "SPR.hasKingdom": self.kingdom,
                 "SPR.hasLibrary": self.library,
                 "SPR.hasModel": self.model_organ,
                 "SPR.hasOrganismPart": self.organism_part,
@@ -52,10 +52,12 @@ class Individual:
                 "SPR.hasSampleType": self.sample_type,
                 "SPR.hasSelectedCellType": self.cell_type,
                 "SPR.hasSpecie": self.specie,
+                "SPR.hasSampleStatus": self.sample_status,
+                "SPR.hasDownloads": self.downloads_type,
             },
             "DataProperties": {
                 "SPR.hasAgeUnit": self.age_unit,
-                "SPR.hasBiologicalSex": self.biological_sex,
+                "SPR.hasSex": self.biological_sex,
                 "SPR.hasMaxAge": self.max_age,
                 "SPR.hasMinAge": self.min_age,
                 "SPR.hasPhenotype": self.phenotype,

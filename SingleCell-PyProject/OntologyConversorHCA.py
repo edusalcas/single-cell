@@ -58,6 +58,7 @@ class OntologyConversorHCA(OntologyConversorAbstract):
             'Smartseq2_V2.3.0': 'Smartseq2_v2.3.0',
             'Smartseq2_V2.4.0': 'Smartseq2_v2.4.0',
             'StemCell-Derived': 'StemCell-derived',
+            'Metadata': 'ExperimentDesign',
         }
 
         return mapping_dict
@@ -103,6 +104,9 @@ class OntologyConversorHCA(OntologyConversorAbstract):
 
         project.part_of_collection = "HumanCellAtlas"
         project.part_of_repository = "HumanCellAtlas"
+        project.project_id = raw_project["entryId"]
+
+        project.repository_link = "https://data.humancellatlas.org/explore/projects/" + project.project_id
 
         # Cell Lines
         project = self.__format_HCD_cell_lines(project, raw_project)
@@ -130,8 +134,6 @@ class OntologyConversorHCA(OntologyConversorAbstract):
 
         # File Type Summaries
         project = self.__format_HCD_file_type_summaries_PR(project, raw_project)
-
-        project.project_id = raw_project["entryId"]
 
         self.project = project
 
@@ -270,20 +272,15 @@ class OntologyConversorHCA(OntologyConversorAbstract):
             return individual
 
         # It is possible that one individual has multiple files
-        file_format = []
         # count = []
         total_size = []
 
         for i in range(len(individual_hca['fileTypeSummaries'])):
             ind_type = individual_hca['fileTypeSummaries'][i]['fileType']
 
-            if ind_type != "matrix" and ind_type != "results":
-                file_format.append(ind_type)
-
             # count.append(individual_hca['fileTypeSummaries'][i]['count'])
             total_size.append(individual_hca['fileTypeSummaries'][i]['totalSize'])
 
-        individual.file_format = file_format
         individual.total_size_of_files = sum(total_size) / pow(2, 20)  # We save it in MB
 
         return individual
@@ -292,7 +289,7 @@ class OntologyConversorHCA(OntologyConversorAbstract):
     ####################################################
 
     ####################################################
-    #region specimen function auxiliar parts
+    # region specimen function auxiliar parts
 
     def __format_HCD_specimens_SR(self, specimen, specimen_hca):
         if not specimen_hca['specimens']:
@@ -305,11 +302,12 @@ class OntologyConversorHCA(OntologyConversorAbstract):
         specimen.specimen_ID = sample_id
 
         return specimen
-    #endregion
+
+    # endregion
     ####################################################
 
     ####################################################
-    #region project function auxiliar parts
+    # region project function auxiliar parts
 
     def __format_HCD_donor_organism_PR(self, project, project_hca):
         if not project_hca['donorOrganisms']:
@@ -370,7 +368,6 @@ class OntologyConversorHCA(OntologyConversorAbstract):
 
         # It is possible that one individual has multiple files
         file_type = ['metadata']
-        file_format = ['tsv']
         count = []
         total_size = []
 
@@ -378,8 +375,8 @@ class OntologyConversorHCA(OntologyConversorAbstract):
             ind_type = individual_hca['fileTypeSummaries'][i]['fileType']
 
             if ind_type == 'matrix' and individual.project_title != "Systematic comparative " \
-                                                                "analysis of single cell " \
-                                                                "RNA-sequencing methods":
+                                                                    "analysis of single cell " \
+                                                                    "RNA-sequencing methods":
                 file_type.append(ind_type)
             elif ind_type == 'results':
                 file_type.append(ind_type)
@@ -387,11 +384,7 @@ class OntologyConversorHCA(OntologyConversorAbstract):
             count.append(individual_hca['fileTypeSummaries'][i]['count'])
             total_size.append(individual_hca['fileTypeSummaries'][i]['totalSize'])
 
-        if 'matrix' in file_type:
-            file_format = file_format + ['loom', 'mtx', 'csv']
-
-        individual.downloads_format = file_format
-        individual.downloads_type = file_type
+        individual.downloads_type = self.parse_word(file_type)
         individual.total_size_of_files = sum(total_size) / pow(2, 20)  # We save it in MB
 
         return individual
@@ -412,6 +405,5 @@ class OntologyConversorHCA(OntologyConversorAbstract):
 
         return project
 
-    #endregion
+    # endregion
     ####################################################
-

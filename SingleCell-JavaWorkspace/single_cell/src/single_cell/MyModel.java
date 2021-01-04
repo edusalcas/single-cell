@@ -18,6 +18,8 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.reasoner.ValidityReport;
 import org.apache.jena.reasoner.ValidityReport.Report;
 import org.apache.jena.vocabulary.ReasonerVocabulary;
@@ -47,9 +49,8 @@ public class MyModel {
 			"SPR.hasAnalysisProtocol",
 			"SPR.hasBiopsySite",
 			"SPR.hasCellLineType",
-			"SPR.hasDiseaseStatus",
+			"SPR.hasDisease",
 			"SPR.hasInstrument",
-			"SPR.hasKingdom",
 			"SPR.hasLibrary",
 			"SPR.hasModel",
 			"SPR.hasOrganismPart",
@@ -57,11 +58,13 @@ public class MyModel {
 			"SPR.hasSampleType",
 			"SPR.hasSelectedCellType",
 			"SPR.hasSpecie",
+			"SPR.hasSampleStatus",
+			"SPR.hasDownloads",
 	};
 	
 	public static final String[] SPR_DATA_PROPERTIES = new String[] {
 			"SPR.hasAgeUnit",
-			"SPR.hasBiologicalSex",
+			"SPR.hasSex",
 			"SPR.hasMaxAge",
 			"SPR.hasMinAge",
 			"SPR.hasPhenotype",
@@ -75,7 +78,6 @@ public class MyModel {
 	};
 	
 	public static final String[] PR_DATA_PROPERTIES = new String[] {
-			"PR.hasAvailableDownloadsType",
 			"PR.hasDonorCount",
 			"PR.hasExperimentalFactor",
 			"PR.hasSpecimenCount",
@@ -95,7 +97,6 @@ public class MyModel {
 	public static final String[] PR_ANNOTATION_PROPERTIES = new String[] {
 			"PR.hasArrayExpressID",
 			"PR.hasENAprojectID",
-			"PR.hasAvailableDownloadsFormat",
 			"PR.hasDescription",
 			"PR.hasGEOseriesID",
 			"PR.hasINSDCprojectID",
@@ -105,12 +106,12 @@ public class MyModel {
 			"PR.hasProjectID",
 			"PR.hasPublicationLink",
 			"PR.hasPublicationTitle",
-			"PR.hasSumpplementaryLink",
+			"PR.hasSupplementaryLink",
+			"PR.hasProjectRepositoryLink",
 			"PR.hasUpdateDate"
 	};
 	
 	public static final String[] SR_ANNOTATION_PROPERTIES = new String[] {
-			"SR.hasFileFormat",
 			"SR.hasSpecimenID"
 	};
 	
@@ -220,11 +221,14 @@ public class MyModel {
 		Resource individual = individualMap.get(individualName);
 
 		if (!individualMap.containsKey(individualName)) {
-			individual = model.getResource(NS + individualName);
-			individualMap.put(individualName, individual);
 			
-			if (individual == null) 
+			if (!model.containsResource(ResourceFactory.createResource(NS + individualName))) 
 				System.err.println("Warning: Individual " + individualName + " is not in the ontology model.");
+			
+			individual = model.getResource(NS + individualName);
+					
+			individualMap.put(individualName, individual);
+
 		}
 		return individual;
 	}

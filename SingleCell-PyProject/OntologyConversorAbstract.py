@@ -2,7 +2,21 @@ from abc import ABC, abstractmethod
 from Project import Project
 
 
-class OntologyConversorAbstract (ABC):
+def flat_list(items):
+    if type(items) is not list:
+        return items
+
+    items2 = []
+    for item in items:
+        if type(item) is list:
+            items2 = items2 + item
+        else:
+            items2 = items2 + [item]
+
+    return items2
+
+
+class OntologyConversorAbstract(ABC):
 
     def __init__(self):
         self.specimen = None
@@ -21,6 +35,16 @@ class OntologyConversorAbstract (ABC):
 
         return self.project
 
+    def map_word(self, word):
+        # If word is a list, apply map_word for each item
+        if type(word) is list:
+            return flat_list(list(map(self.map_word, word)))
+        try:
+            word_mapped = self.mapping_dict[word]
+            return flat_list(word_mapped)
+        except KeyError:
+            return word
+
     def parse_word(self, word):
         # If word is None, return None
         if word is None:
@@ -28,20 +52,16 @@ class OntologyConversorAbstract (ABC):
 
         # If text is a list, apply parse_word for each item
         if type(word) is list:
-            return list(map(self.parse_word, word))
+            return flat_list(list(map(self.parse_word, word)))
 
         # Parse word depending on the repository
         word_parsed = self.parse_concrete(word)
 
         # Map word if necessary
-        try:
-            word_mapped = self.mapping_dict[word_parsed]
-            return word_mapped
-        except KeyError:
-            return word_parsed
+        return flat_list(self.map_word(word_parsed))
 
     ####################################################
-    #region Abstract methods
+    # region Abstract methods
     @abstractmethod
     def init_map(self):
         pass
@@ -58,5 +78,5 @@ class OntologyConversorAbstract (ABC):
     def parse_concrete(self, word):
         pass
 
-    #endregion
+    # endregion
     ####################################################

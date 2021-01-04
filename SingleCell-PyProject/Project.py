@@ -18,25 +18,22 @@ class Project(Individual):
         self.load_date = None
         self.publication_title = None
         self.publication_link = None
-        self.sumpplementary_link = None
-        self.downloads_format = None
-        self.downloads_type = None
+        self.supplementary_link = None
         self.update_date = None
         self.specimen_count = None
+        self.repository_link = None
 
         super().__init__(project_id)
 
     def get_dict(self):
         project_dict = super().get_dict()
 
-        project_dict["DataProperties"]["PR.hasAvailableDownloadsType"] = self.downloads_type
         project_dict["DataProperties"]["PR.hasDonorCount"] = self.donor_count
         project_dict["DataProperties"]["PR.hasExperimentalFactor"] = self.experimental_factor
         project_dict["DataProperties"]["PR.hasSpecimenCount"] = self.specimen_count
 
         project_dict["AnnotationProperties"]["PR.hasArrayExpressID"] = self.array_express_id
         project_dict["AnnotationProperties"]["PR.hasENAprojectID"] = self.ena_id
-        project_dict["AnnotationProperties"]["PR.hasAvailableDownloadsFormat"] = self.downloads_format
         project_dict["AnnotationProperties"]["PR.hasDescription"] = self.project_description
         project_dict["AnnotationProperties"]["PR.hasGEOseriesID"] = self.geo_series_id
         project_dict["AnnotationProperties"]["PR.hasINSDCprojectID"] = self.insdc_project_id
@@ -46,7 +43,8 @@ class Project(Individual):
         project_dict["AnnotationProperties"]["PR.hasProjectID"] = self.project_id
         project_dict["AnnotationProperties"]["PR.hasPublicationLink"] = self.publication_link
         project_dict["AnnotationProperties"]["PR.hasPublicationTitle"] = self.publication_title
-        project_dict["AnnotationProperties"]["PR.hasSumpplementaryLink"] = self.sumpplementary_link
+        project_dict["AnnotationProperties"]["PR.hasSupplementaryLink"] = self.supplementary_link
+        project_dict["AnnotationProperties"]["PR.hasProjectRepositoryLink"] = self.repository_link
         project_dict["AnnotationProperties"]["PR.hasUpdateDate"] = self.update_date
 
         return project_dict
@@ -119,12 +117,12 @@ class Project(Individual):
         self.__publication = publication
 
     @property
-    def sumpplementary_link(self):
-        return self.__sumpplementary_link
+    def supplementary_link(self):
+        return self.__supplementary_link
 
-    @sumpplementary_link.setter
-    def sumpplementary_link(self, sumpplementary_link):
-        self.__sumpplementary_link = sumpplementary_link
+    @supplementary_link.setter
+    def supplementary_link(self, supplementary_link):
+        self.__supplementary_link = supplementary_link
 
     #endregion
     ####################################################

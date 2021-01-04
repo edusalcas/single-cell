@@ -5,14 +5,12 @@ class Specimen(Individual):
 
     def __init__(self, specimen_id):
         self.specimen_ID = None
-        self.file_format = None
 
         super().__init__(specimen_id)
 
     def get_dict(self):
         specimen_dict = super().get_dict()
 
-        specimen_dict["AnnotationProperties"]["SR.hasFileFormat"] = self.file_format
         specimen_dict["AnnotationProperties"]["SR.hasSpecimenID"] = self.specimen_ID
 
         return specimen_dict

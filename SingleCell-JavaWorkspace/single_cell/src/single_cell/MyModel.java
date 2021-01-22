@@ -56,7 +56,7 @@ public class MyModel {
 			"SPR.hasOrganismPart",
 			"SPR.hasPreservation",
 			"SPR.hasSampleType",
-			"SPR.hasSelectedCellType",
+			"SPR.hasCellType",
 			"SPR.hasSpecie",
 			"SPR.hasSampleStatus",
 			"SPR.hasDownloads",
@@ -69,7 +69,6 @@ public class MyModel {
 			"SPR.hasMinAge",
 			"SPR.hasPhenotype",
 			"SPR.hasTotalCellCount",
-			"SPR.hasTotalSizeOfFilesInMB",
 			"SPR.isPairedEnd",
 	};
 	
@@ -91,7 +90,8 @@ public class MyModel {
 			"SPR.hasProjectShortName",
 			"SPR.hasProjectTitle",
 			"SPR.isPartOfCollection",
-			"SPR.isPartOfRepository"
+			"SPR.isPartOfRepository",
+			"SPR.hasTotalSizeOfFilesInMB",
 	};
 	
 	public static final String[] PR_ANNOTATION_PROPERTIES = new String[] {

@@ -1,0 +1,68 @@
+###################################
+Query que muestra el número de células para cada organo
+###################################
+
+PREFIX a: <http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?object (IF(SUM(?numCells) = 0, "unspecified", SUM(?numCells) / 1000) AS ?numTotalCells)
+WHERE
+{
+	?id rdf:type a:Specimen ;
+	    a:SPR.hasOrganismPart ?object ;
+	    a:SPR.hasTotalCellCount ?numCells .
+	FILTER (?numCells != -1)
+}
+GROUP BY ?object
+ORDER BY ?object
+
+###################################
+Query que muestra el título de todos los proyectos
+###################################
+
+PREFIX a: <http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?title
+WHERE { 
+    ?project rdf:type a:Project .
+    ?project a:SPR.hasProjectTitle ?title .
+}
+
+###################################
+¿Qué proyectos tenemos donde los especímenes estén afectados por una enfermedad clasificada como metabólica y hereditaria?
+###################################
+
+PREFIX a: <http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?proyect ?diseaseStatus
+WHERE
+{
+	{
+		?id rdf:type a:Specimen ;
+		    a:SPR.hasProjectTitle ?proyect ;
+		    a:SPR.hasDiseaseStatus ?diseaseStatus .
+		?diseaseStatus rdf:type a:DiaseaseOfMetabolism .
+	}
+	{
+		?id rdf:type a:Specimen ;
+		    a:SPR.hasProjectTitle ?proyect ;
+		    a:SPR.hasDiseaseStatus ?diseaseStatus .
+		?diseaseStatus rdf:type a:GeneticDisease .
+	}
+}
+
+###################################
+¿De qué tipos celulares tendríamos disponibles datos de single-cell cuyo tipo celular pertenezca a la clase leukocytes?
+###################################
+
+PREFIX a: <http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?cellType 
+WHERE
+{
+	?id rdf:type a:Specimen ;
+	    a:SPR.hasSelectedCellType ?cellType .
+	?cellType rdf:type a:Leukocyte .
+}		

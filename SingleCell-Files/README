@@ -1,0 +1,35 @@
+PASO 1: Instalar Docker.
+
+	- Mac: https://docs.docker.com/docker-for-mac/install/
+	- Linux:  https://docs.docker.com/engine/install/ubuntu/
+	- Windows: https://docs.docker.com/docker-for-windows/install/
+
+PASO 2: Lanzar el contenedor con el servicio fuseki.
+
+	- Obtener la imagen: docker pull secoresearch/fuseki
+	- Lanzar el contenedor: docker run -d -p 3030:3030 --name fuseki -e ADMIN_PASSWORD=123 -e ENABLE_DATA_WRITE=true -e ENABLE_UPDATE=true -e ENABLE_UPLOAD=true secoresearch/fuseki
+
+PASO 3: Acceder al servicio.
+
+	- Desde un navegador acceder a la dirección web localhost:3030
+	- Iniciar sesión con 
+		usuario: admin 
+		password: 123
+
+PASO 4: Descargar los datos
+
+	- En el repositorio https://github.com/edusalcas/single-cell se encuentran todos los ficheros.
+	- En concreto, la última ontología completa es https://github.com/edusalcas/single-cell/blob/master/SingleCell-Files/out_repositoriev4.owl
+
+PASO 5: Añadir los datos a fuseki
+
+	- En la ventana actual nos vamos a "upload files". Aquí indicamos un nombre para el grafo donde vamos a añadir los datos, p.e. test, seleccionamos la ontología y la subimo.
+	- Desde la ventana principal se pueden realizar consultas vía sparql.
+
+PASO 6: Cerrar el servicio
+	
+	- Podemos parar el servicio con docker stop fuseki
+	- Podemos borrar el contenedor con docker rm fuseki.
+
+	NOTA: Borrar el contenedor eliminará los datos añadidos, a falta de ponerle persistencia al contenedor.
+

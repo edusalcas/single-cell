@@ -19,6 +19,7 @@ class Individual:
         self.specie = None
         self.sample_status = None
         self.downloads_type = None
+        self.metastatic_site = None
 
         self.age_unit = None
         self.biological_sex = None
@@ -50,10 +51,11 @@ class Individual:
                 "SPR.hasOrganismPart": self.organism_part,
                 "SPR.hasPreservation": self.preservation,
                 "SPR.hasSampleType": self.sample_type,
-                "SPR.hasSelectedCellType": self.cell_type,
+                "SPR.hasCellType": self.cell_type,
                 "SPR.hasSpecie": self.specie,
                 "SPR.hasSampleStatus": self.sample_status,
                 "SPR.hasDownloads": self.downloads_type,
+                "SPR.hasMetastaticSite": self.metastatic_site,
             },
             "DataProperties": {
                 "SPR.hasAgeUnit": self.age_unit,
@@ -62,7 +64,6 @@ class Individual:
                 "SPR.hasMinAge": self.min_age,
                 "SPR.hasPhenotype": self.phenotype,
                 "SPR.hasTotalCellCount": self.total_cell_counts,
-                "SPR.hasTotalSizeOfFilesInMB": self.total_size_of_files,
                 "SPR.isPairedEnd": self.paired_end,
             },
             "AnnotationProperties": {
@@ -70,7 +71,8 @@ class Individual:
                 "SPR.hasProjectShortName": self.project_short_name,
                 "SPR.hasProjectTitle": self.project_title,
                 "SPR.isPartOfCollection": self.part_of_collection,
-                "SPR.isPartOfRepository": self.part_of_repository
+                "SPR.isPartOfRepository": self.part_of_repository,
+                "SPR.hasTotalSizeOfFilesInMB": self.total_size_of_files,
             }
         }
 

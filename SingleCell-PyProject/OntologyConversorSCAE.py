@@ -2,6 +2,16 @@ from OntologyConversorAbstract import OntologyConversorAbstract
 from Project import Project
 
 
+def norm2control(disease):
+    if type(disease) is list:
+        return list(map(norm2control, disease))
+
+    if disease == 'Normal':
+        disease = "Control"
+
+    return disease
+
+
 class OntologyConversorSCAE(OntologyConversorAbstract):
 
     def init_map(self):
@@ -34,13 +44,33 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'SmoothMuscle,Peri-UrethralMesenchymeAndUrethralEpithelium': 'PeriUrethralMesenchyme',
             'VentralMedialGanglionicEminence': 'GanglionicEminence',
             'DorsalMedialGanglionicEminence': 'GanglionicEminence',
+            'Embryonic/LarvalLymphGland': 'LymphNode',
+            'PrimaryVisualArea,Layer1,Layer2/3AndLayer4': 'PrimaryVisualArea',
+            'PrimaryVisualArea,Layer6A': 'PrimaryVisualArea',
+            'PrimaryVisualCortex': 'PrimaryVisualArea',
+            'PrimaryVisualArea,Layer5AndLayer6': 'PrimaryVisualArea',
+            'PrimaryVisualArea,Layer1AndLayer2/3': 'PrimaryVisualArea',
+            'PrimaryVisualArea,Layer2/3': 'PrimaryVisualArea',
+            'PrimaryVisualArea,Layer4': 'PrimaryVisualArea',
+            'PrimaryVisualArea,Layer6B': 'PrimaryVisualArea',
+            'PrimaryVisualArea,Layer1': 'PrimaryVisualArea',
+            'PrimaryVisualArea,Layer6': 'PrimaryVisualArea',
+            'Cortical-LikeVentricle-Region1': 'CorticalLikeVentricle',
+            'Cortical-LikeVentricle-Region2': 'CorticalLikeVentricle',
+            'Cortical-LikeVentricle-Region3': 'CorticalLikeVentricle',
+            'Cortical-LikeVentricle-Region4': 'CorticalLikeVentricle',
+            'MetastasisToLymphNode': 'Metastasis',
+            'BrainWithoutOlfactoryBulb': 'Brain',
+            'NormalTissueAdjacentToTumour': 'NormalTissueAdjacentToTumor',
+            'MixedCervicalAndThoracicVertebrae': ['CervicalVertebrae', 'ThoracicVertebrae'],
+            'Fibroblasts': 'Fibroblast',
+            'Embryonic/LarvalHemolymph': 'Hemolymph',
+            'CardiacNon-MyocyteAndCardiomyocyte': ['CardiacNonMyocyte', 'Cardiomyocyte'],
             # Biopsy Site
             'Ascites': 'AsciticFluid',
             'LeftSupraclavicularLymphNode': 'LymphNode',
-            'NotApplicable': 'NotApplicableSamplingSite',
             'AlveolusOfLung': 'Alveolus',
             'PrimaryTumor': 'Tumor',
-            'NotApplicable': 'NotApplicableSamplingSite',
             'PeripheralRegionOfRetina': 'Retina',
             'ProximalSmallIntestine': 'SmallIntestine',
             'MiddleAirway': 'RespiratoryAirway',
@@ -55,7 +85,6 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'ProstateCarcinoma': 'ProstateCancer',
             'BreastCarcinoma': 'BreastCancer',
             'PancreaticNeoplasm': 'PancreaticCancer',
-            'ColorectalCancer': 'ColorrectalCancer',
             'LungAdenocarcinoma': 'LungCarcinoma',
             'BrainGlioblastoma': 'Glioblastoma',
             'HypocellularMyelodysplasticSyndrome': 'MyelodysplasticSyndrome',
@@ -69,7 +98,8 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'BCellAcuteLymphoblasticLeukemia': 'AcuteLymphoblasticLeukemia',
             'HepatitisCInfection': 'HepatitisC',
             # Cell Type
-            'OlfactoryProjectionNeuronInnervatingDA1,VA1DOrDC3Glomerulus': 'OlfatoryNeuronProjection',
+            'OlfactoryProjectionNeuronInnervatingDA1,VA1DOrDC3Glomerulus': 'OlfatoryProjectionNeuron',
+            'OlfactoryProjectionNeuron': 'OlfatoryProjectionNeuron',
             'NeutrophilAndMyeloidCell': ['Neutrophil', 'MyeloidCell'],
             'AdiposeTissueDerivedMesenchymalStemCell': 'MesenchymalStemCellOfAdipose',
             'MatureTCell': 'MatureTcell',
@@ -78,19 +108,18 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'EmbryonicNeuralBorderStemCell': 'EmbryonicStemCell',
             'Multi-LymphoidProgenitor': 'CommonLymphoidProgenitor',
             'PlantProtoplast': 'Protoplast',
-            'CD8-PositiveT-Lymphocytes': 'CD8+AlphaBetaTCell',
+            'CD8-PositiveT-Lymphocytes': 'CD8+AlphaBetaTcell',
             'CD8-Positive,Alpha-BetaTCell': 'CD8+AlphaBetaTcell',
             'MemoryBCell': 'MemoryBcell',
             'BCell': 'MemoryBcell',
-            'NotApplicable': 'NotApplicableCellType',
-            'MouseEmbryonicStemCell': 'EmbryonicSte mCell',
+            'MouseEmbryonicStemCell': 'EmbryonicStemCell',
             'HematopoieticStemCellAndThrombocyte': ['HematopoieticStemCell', 'Thrombocyte'],
             'Un-CryopreservedPeripheralBloodMononuclearCells(PBMCs)': 'PeripheralBloodMononuclearCell',
             'Lymphoid-PrimedMultipotentProgenitor': 'EarlyLymphoidProgenitor',
-            'MixOfStromalFibroblastsAndEpithelialTumourCells': ['Fibroblasts', 'EpithelialTumorCell'],
-            'GranulocyteMacrophageProgenitor': 'GranulocyteMonocyteProgenitor',
+            'MixOfStromalFibroblastsAndEpithelialTumourCells': ['Fibroblast', 'EpithelialTumorCell'],
+            'GranulocyteMacrophageProgenitor': 'GranulocyteMonocyteProgenitorCell',
             'Neuronal,GlialAndVascularCells': 'Neuron',
-            'Marrow-DerivedBCell': 'MarrowDerivedBCell',
+            'Marrow-DerivedBCell': 'MarrowDerivedBcell',
             'CD4-PositiveHelperTCell': 'CD4+HelperTcell',
             'HematopoieticStemCellAndHematopoieticMultipotentProgenitorCell': ['HematopoieticStemCell', 'HematopoieticMultipotentProgenitorCell'],
             'Pre-ConventionalDendriticCell': 'PreConventionalDendriticCell',
@@ -101,12 +130,26 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'CardiacNon-Myocyte': 'CardiacNonMyocyte',
             'TransitionalStageBCell': 'TransitionalStageBcell',
             'NaiveBCell': 'NaiveBcell',
-            'CD4-Positive,CD25-Positive,Alpha-BetaRegulatoryTCell': 'CD4+_CD25+AlphaBetaRegulatoryTcell',
+            'CD4-Positive,CD25-Positive,Alpha-BetaRegulatoryTCell': 'CD4+CD25+AlphaBetaRegulatoryTcell',
             'ExtraThymicAire-ExpressingCells': 'ExtraThymicAireExpressingCells',
+            'GranulocyteMonocyteProgenitor': 'GranulocyteMonocyteProgenitorCell',
+            'MarrowDerivedBCell': 'MarrowDerivedBcell',
+            'InvasiveFront': 'Front',
+            'Testis': 'Testes',
+            'PosteriorIliacCrest': 'IliacCrest',
             # Preservation
             'FreshSpecimen': 'Fresh',
             # Library
             'Smart-Seq': 'Smart-seq',
+            'Smart-Like': 'Smart-like',
+            '10Xv2': '10Xv2Sequencing',
+            'MixedPedalDigit3AndPedalDigit4': 'PedalDigit',
+            'Digit4': 'PedalDigit',
+            'Drop-Seq': 'Drop-seq',
+            'Smart-Seq2': 'Smart-seq2',
+            'Seq-Well': 'Seq-well',
+            '10X5Prime': '10X5v2Sequencing',
+            '10Xv3': '10xv3Sequencing',
             # Stage
             '2-CellStageEmbryo': '2CellStageEmbryo',
             '4-CellStageEmbryo': '4CellStageEmbryo',
@@ -179,16 +222,19 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             if key == 'organism':
                 project.specie = self.parse_word(sample_characteristics[key])
             elif key == 'age' or key == 'post conception age':
-                # TODO
-                continue
+                project.min_age, project.max_age, project.age_unit = self.__process_age(sample_characteristics[key])
             elif key == 'sex':
                 project.biological_sex = self.map_word(sample_characteristics[key])
             elif key == 'organism part':
                 project.organism_part = self.parse_word(sample_characteristics[key])
-            elif key == 'metastatic site' or key == 'sampling site' or key == 'biopsy site':
+            elif key == 'metastatic site':
+                project.metastatic_site = self.parse_word(sample_characteristics[key])
+            elif key == 'sampling site' or key == 'biopsy site':
                 project.biopsy_site = self.parse_word(sample_characteristics[key])
             elif key == 'disease':
-                project.disease = self.parse_word(sample_characteristics[key])
+                disease = self.parse_word(sample_characteristics[key])
+                disease = norm2control(disease)
+                project.disease = disease
             elif key == 'cell type':
                 project.cell_type = self.parse_word(sample_characteristics[key])
             elif key == 'biosource provider' or key == 'biomaterial_provi':
@@ -201,3 +247,48 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
                 continue
 
         return project
+
+    def __process_age(self, age):
+        if type(age) is list:
+            age_list = list(map(self.__process_age, age))
+            age_list = zip(*age_list)
+            age_list = list(map(list, age_list))
+            
+            if len(set(age_list[0])) > 1:
+                age_list[0] = [x for x in age_list[0] if x != -1]
+
+            return min(age_list[0]), max(age_list[1]), age_list[2]
+
+        min_age = -1
+        max_age = -1
+        age_unit = 'year'
+
+        for word in age.split(' '):
+
+            try:
+                # Parse numbers
+                age_number = int(word)
+                if min_age == -1:
+                    min_age = age_number
+                else:
+                    max_age = age_number
+            except ValueError:
+                # Parse strings
+                if word == 'gestational':
+                    age_unit = 'gestationalWeek'
+                if word == 'week' and age_unit != 'gestationalWeek':
+                    age_unit = word
+                if word == 'embryonic':
+                    age_unit = 'embryonicDay'
+                if word == 'day' and age_unit != 'embryonicDay':
+                    age_unit = 'day'
+                if word == 'hour' or word == 'month':
+                    age_unit = word
+                if word == 'applicable':
+                    age_unit = 'notApplicable'
+                if word == 'available':
+                    age_unit = 'notAvailable'
+        if max_age == -1:
+            max_age = min_age
+
+        return min_age, max_age, age_unit

@@ -74,9 +74,9 @@ public class MyProject extends MyIndividual{
 		String projectTitle = (String) jsonIndividual.getJSONObject("AnnotationProperties").get("SPR.hasProjectTitle");
 		
 		int specimenCount = getSpecimenCount(model, projectTitle);
-		int cellCount = getCellCount(model,projectTitle);
+		// int cellCount = getCellCount(model, projectTitle);
 		
-		// jsonIndividual.getJSONObject("DataProperties").put("PR.hasSpecimenCount", specimenCount);
+		jsonIndividual.getJSONObject("DataProperties").put("PR.hasSpecimenCount", specimenCount);
 		// jsonIndividual.getJSONObject("DataProperties").put("SPR.hasTotalCellCount", cellCount);
 
 	}

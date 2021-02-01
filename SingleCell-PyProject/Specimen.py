@@ -5,6 +5,7 @@ class Specimen(Individual):
 
     def __init__(self, specimen_id):
         self.specimen_ID = None
+        self.assay = None
 
         super().__init__(specimen_id)
 
@@ -12,6 +13,7 @@ class Specimen(Individual):
         specimen_dict = super().get_dict()
 
         specimen_dict["AnnotationProperties"]["SR.hasSpecimenID"] = self.specimen_ID
+        specimen_dict["AnnotationProperties"]["SR.hasAssayID"] = self.assay
 
         return specimen_dict
 

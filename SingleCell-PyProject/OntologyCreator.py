@@ -8,7 +8,7 @@ PROJECT_ID_PREFIX = "PROJECT_ID_"
 def format_id_number(number_id):
     number_str = str(number_id)
 
-    while len(number_str) < 3:
+    while len(number_str) < 4:
         number_str = '0' + number_str
 
     return number_str
@@ -45,6 +45,16 @@ class OntologyCreator:
         self.project_id_counter = self.project_id_counter + 1
 
         return project.get_dict()
+
+    def create_scea_specimen(self, raw_specimen):
+        specimen_id = SPECIMEN_ID_PREFIX + format_id_number(self.specimen_id_counter)
+
+        specimen = self.scae_conversor.format_specimen(raw_specimen, specimen_id)
+        self.specimens.append(specimen)
+
+        self.specimen_id_counter = self.specimen_id_counter + 1
+
+        return specimen.get_dict()
 
     def create_scae_project(self, raw_project):
         project_id = PROJECT_ID_PREFIX + format_id_number(self.project_id_counter)

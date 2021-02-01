@@ -27,10 +27,10 @@ public class Test {
 	public static void main(String[] args) {
 		
 		// Declare variables and input/output streams
-		String inputFileName = "../../SingleCell-Files/singleCellRepositoriesv5.owl";
-		String outputFileName = "../../SingleCell-Files/out_repositoriev5.owl";
+		String inputFileName = "../../SingleCell-Files/singleCellRepositoriesv6.owl";
+		String outputFileName = "../../SingleCell-Files/out_repositoriev6.owl";
 		String[] hitsFileNames = new String[]{
-				//"../../SingleCell-Files/processed_data/HCA_processed.json",
+				"../../SingleCell-Files/processed_data/HCA_processed.json",
 				"../../SingleCell-Files/processed_data/SCAE_processed.json"
 				};
 		
@@ -49,9 +49,18 @@ public class Test {
 			JSONArray projectsArray = fullJson.getJSONArray("projects");
 					
 			System.out.println("Adding specimens to model...");
-			specimensArray.forEach((specimen) -> {new MySpecimen((JSONObject) specimen, model).addToModel();});
+			specimensArray.forEach((specimen) -> {
+				MySpecimen mySpecimen = new MySpecimen((JSONObject) specimen, model);
+			//	System.out.println(mySpecimen.getId());
+				mySpecimen.addToModel();
+			});
+			
 			System.out.println("Adding projects to model...");
-			projectsArray.forEach((project) -> {new MyProject((JSONObject) project, model).addToModel();});
+			projectsArray.forEach((project) -> {
+				MyProject myProject = new MyProject((JSONObject) project, model);
+			//	System.out.println(myProject.getId());
+				myProject.addToModel();
+			});
 		}
 
 		// Check if model is valid

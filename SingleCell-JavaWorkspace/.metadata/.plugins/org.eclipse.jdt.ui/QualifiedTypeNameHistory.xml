@@ -44,9 +44,7 @@
     <fullyQualifiedTypeName name="org.apache.jena.reasoner.ReasonerFactory"/>
     <fullyQualifiedTypeName name="org.apache.jena.vocabulary.ReasonerVocabulary"/>
     <fullyQualifiedTypeName name="org.apache.commons.lang3.ArrayUtils"/>
-    <fullyQualifiedTypeName name="single_cell.MySpecimen"/>
     <fullyQualifiedTypeName name="single_cell.MyIndividual"/>
-    <fullyQualifiedTypeName name="single_cell.MyProject"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="org.json.JSONArray"/>
     <fullyQualifiedTypeName name="java.util.List"/>
@@ -58,4 +56,6 @@
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.ResourceFactory"/>
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Statement"/>
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Resource"/>
+    <fullyQualifiedTypeName name="single_cell.MySpecimen"/>
+    <fullyQualifiedTypeName name="single_cell.MyProject"/>
 </qualifiedTypeNameHistroy>

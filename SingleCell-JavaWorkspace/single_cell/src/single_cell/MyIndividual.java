@@ -90,7 +90,7 @@ public abstract class MyIndividual {
 		}
 		
 		JSONObject anotationProperties = getJsonIndividual().getJSONObject("AnnotationProperties");
-		// Add data properties
+		// Add anotation properties
 		for (String propertyName : getAnnotationProperties()) {
 			try {
 				Object propertieValueObject = anotationProperties.get(propertyName);

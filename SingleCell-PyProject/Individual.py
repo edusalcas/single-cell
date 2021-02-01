@@ -34,6 +34,17 @@ class Individual:
         self.paired_end = None
         self.part_of_collection = None
         self.part_of_repository = None
+        self.growth_condition = None
+
+        self.clustering_link = None
+        self.experiment_design_link = None
+        self.experiment_metadata_link = None
+        self.filtered_TPM_link = None
+        self.marker_genes_link = None
+        self.matrix_link = None
+        self.normalised_counts_link = None
+        self.raw_counts_link = None
+        self.result_link = None
 
         super().__init__()
 
@@ -50,7 +61,6 @@ class Individual:
                 "SPR.hasModel": self.model_organ,
                 "SPR.hasOrganismPart": self.organism_part,
                 "SPR.hasPreservation": self.preservation,
-                "SPR.hasSampleType": self.sample_type,
                 "SPR.hasCellType": self.cell_type,
                 "SPR.hasSpecie": self.specie,
                 "SPR.hasSampleStatus": self.sample_status,
@@ -65,6 +75,8 @@ class Individual:
                 "SPR.hasPhenotype": self.phenotype,
                 "SPR.hasTotalCellCount": self.total_cell_counts,
                 "SPR.isPairedEnd": self.paired_end,
+                "SPR.hasGrowthCondition": self.growth_condition,
+                "SPR.hasSampleType": self.sample_type,
             },
             "AnnotationProperties": {
                 "SPR.hasLaboratory": self.laboratory,
@@ -73,6 +85,15 @@ class Individual:
                 "SPR.isPartOfCollection": self.part_of_collection,
                 "SPR.isPartOfRepository": self.part_of_repository,
                 "SPR.hasTotalSizeOfFilesInMB": self.total_size_of_files,
+                "SPR.hasClusteringLink": self.clustering_link,
+                "SPR.hasExperimentDesignLink": self.experiment_design_link,
+                "SPR.hasExperimentMetadataLink": self.experiment_metadata_link,
+                "SPR.hasFilteredTPMLink": self.filtered_TPM_link,
+                "SPR.hasMarkerGenesLink": self.marker_genes_link,
+                "SPR.hasMatrixLink": self.matrix_link,
+                "SPR.hasNormalisedCountsLink": self.normalised_counts_link,
+                "SPR.hasRawCountsLink": self.raw_counts_link,
+                "SPR.hasResultsLink": self.result_link
             }
         }
 

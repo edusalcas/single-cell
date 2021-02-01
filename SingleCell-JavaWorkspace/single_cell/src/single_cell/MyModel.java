@@ -55,7 +55,6 @@ public class MyModel {
 			"SPR.hasModel",
 			"SPR.hasOrganismPart",
 			"SPR.hasPreservation",
-			"SPR.hasSampleType",
 			"SPR.hasCellType",
 			"SPR.hasSpecie",
 			"SPR.hasSampleStatus",
@@ -70,6 +69,8 @@ public class MyModel {
 			"SPR.hasPhenotype",
 			"SPR.hasTotalCellCount",
 			"SPR.isPairedEnd",
+			"SPR.hasGrowthCondition",
+			"SPR.hasSampleType",
 	};
 	
 	public static final String[] SR_DATA_PROPERTIES = new String[] {
@@ -92,6 +93,15 @@ public class MyModel {
 			"SPR.isPartOfCollection",
 			"SPR.isPartOfRepository",
 			"SPR.hasTotalSizeOfFilesInMB",
+			"SPR.hasClusteringLink",
+            "SPR.hasExperimentDesignLink",
+            "SPR.hasExperimentMetadataLink",
+            "SPR.hasFilteredTPMLink",
+            "SPR.hasMarkerGenesLink",
+            "SPR.hasMatrixLink",
+            "SPR.hasNormalisedCountsLink",
+            "SPR.hasRawCountsLink",
+            "SPR.hasResultsLink",
 	};
 	
 	public static final String[] PR_ANNOTATION_PROPERTIES = new String[] {
@@ -112,7 +122,8 @@ public class MyModel {
 	};
 	
 	public static final String[] SR_ANNOTATION_PROPERTIES = new String[] {
-			"SR.hasSpecimenID"
+			"SR.hasSpecimenID",
+			"SR.hasAssayID",
 	};
 	
 	public static final String[] SPECIMEN_ANNOTATION_PROPERTIES = ArrayUtils.addAll(SPR_ANOTATION_PROPERTIES, SR_ANNOTATION_PROPERTIES);
@@ -286,6 +297,8 @@ public class MyModel {
  
 		Property property = getAnotationProperty(predicate);
 		Resource individual = individualMap.get(subject);
+		
+		// System.out.println(object.toString());
 		
 		if (object instanceof String)
 			model.add(individual, property, object.toString());

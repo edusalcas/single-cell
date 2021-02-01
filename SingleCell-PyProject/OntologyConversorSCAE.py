@@ -1,5 +1,6 @@
 from OntologyConversorAbstract import OntologyConversorAbstract
 from Project import Project
+from Specimen import Specimen
 
 
 def norm2control(disease):
@@ -18,6 +19,7 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
         mapping_dict = {
             # Specie
             'PlasmodiumFalciparum3D7': 'PlasmodiumFalciparum',
+            'BudTip': 'Bud',
             # Downloads
             'ExperimentDesignFile(TSVFormat)': 'ExperimentDesign',
             'ExperimentMetadata(SDRFAndIDFFilesArchive)': 'ExperimentMetadata',
@@ -30,6 +32,7 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'male-to-female transsexual': 'trans',
             'not available': 'notAvailable',
             'mixed sex population': 'mixed',
+            'mixed (2 female, 1 male)': 'mixed',
             'not applicable': 'notApplicable',
             'mixed sex': 'mixed',
             # Organism Part
@@ -66,6 +69,22 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'Fibroblasts': 'Fibroblast',
             'Embryonic/LarvalHemolymph': 'Hemolymph',
             'CardiacNon-MyocyteAndCardiomyocyte': ['CardiacNonMyocyte', 'Cardiomyocyte'],
+            'AutopodRegion': 'Autopod',
+            'Non-SmallCellLungCarcinoma': 'LungCarcinoma',
+            'OlfactoryProjectionNeuronInnvervatingDC2Glomerulus': 'OlfatoryProjectionNeuron',
+            'OlfactoryProjectionNeuronInnervatingVM2Glomerulus': 'OlfatoryProjectionNeuron',
+            'ShortTermHematopoieticStemCell': 'HematopoieticStemCell',
+            'OuterCortexOfKidney': 'CortexOfKidney',
+            'RectalAdenocarcinoma': 'RectumAdenocarcinoma',
+            'MainBronchus': 'Bronchus',
+            'MouthFloor': 'OralCavity',
+            'GingivaOfLowerJaw': 'Gingiva',
+            'SupraglotticPartOfLarynx': 'Larynx',
+            'PosteriorPartOfTongue': 'Tongue',
+            'PrimaryVisualArea,Layer5': 'PrimaryVisualArea',
+            'SkinOfBody': 'Skin',
+            'DistalAirway': 'RespiratoryAirway',
+            'RectosigmoidJunction': 'RectoSigmoidJunction',
             # Biopsy Site
             'Ascites': 'AsciticFluid',
             'LeftSupraclavicularLymphNode': 'LymphNode',
@@ -97,6 +116,14 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'ObstructiveSleepApneaSyndrome': 'ObstructiveSleepApnea',
             'BCellAcuteLymphoblasticLeukemia': 'AcuteLymphoblasticLeukemia',
             'HepatitisCInfection': 'HepatitisC',
+            'SquamousCellLungCarcinoma': 'LungCarcinoma',
+            'LargeCellLungCarcinoma': 'LungCarcinoma',
+            'TumourEdge': 'Tumor',
+            'TumourMiddle(InBetweenCoreAndEdgeSample)': 'Tumor',
+            'TumourBorder': 'Tumor',
+            'LargeTumor(>5Mm)': 'Tumor',
+            'SmallTumor(<4Mm)': 'Tumor',
+            'WetMacularDegeneration': 'MacularDegeneration',
             # Cell Type
             'OlfactoryProjectionNeuronInnervatingDA1,VA1DOrDC3Glomerulus': 'OlfatoryProjectionNeuron',
             'OlfactoryProjectionNeuron': 'OlfatoryProjectionNeuron',
@@ -137,12 +164,17 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'InvasiveFront': 'Front',
             'Testis': 'Testes',
             'PosteriorIliacCrest': 'IliacCrest',
+            'Megakaryocyte-ErythroidProgenitorCell,CommonMyeloidProgenitorAndGranulocyteMonocyteProgenitorCell': ['MegakaryocyteErythroidProgenitorCell', 'CommonMyeloidProgenitor'],
+            'EffectorMemoryCD4-Positive,Alpha-BetaTCell': 'EffectorMemoryCD4+AlphaBetaTCell',
+            'CD4-Positive,Alpha-BetaMemoryTCell': 'CD4+AlphaBetaMemoryTCell',
+            'ClassicalMonocyte': 'Monocyte',
             # Preservation
             'FreshSpecimen': 'Fresh',
             # Library
             'Smart-Seq': 'Smart-seq',
             'Smart-Like': 'Smart-like',
             '10Xv2': '10Xv2Sequencing',
+            '10XV2': '10Xv2Sequencing',
             'MixedPedalDigit3AndPedalDigit4': 'PedalDigit',
             'Digit4': 'PedalDigit',
             'Drop-Seq': 'Drop-seq',
@@ -150,6 +182,7 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'Seq-Well': 'Seq-well',
             '10X5Prime': '10X5v2Sequencing',
             '10Xv3': '10xv3Sequencing',
+            '10XV3': '10xv3Sequencing',
             # Stage
             '2-CellStageEmbryo': '2CellStageEmbryo',
             '4-CellStageEmbryo': '4CellStageEmbryo',
@@ -160,7 +193,17 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
         return mapping_dict
 
     def format_concrete_specimen(self, raw_specimen, specimen_id):
-        pass
+        specimen = Specimen(specimen_id)
+        specimen.part_of_repository = "SingleCellExpresionAtlas"
+        specimen.project_title = raw_specimen['project_title']
+        specimen.part_of_collection = raw_specimen['experiment_projects']
+        specimen.total_cell_counts = raw_specimen['num_cells']
+        specimen.sample_type = raw_specimen['sample_type']
+        # specimen.assay = raw_specimen['cells']
+
+        specimen = self.__specimen_info_to_specimen(specimen, raw_specimen['specimen_info'])
+
+        self.specimen = specimen
 
     def format_concrete_project(self, raw_project, project_id):
 
@@ -177,6 +220,8 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
         project.type = self.parse_word(raw_project['experimentType'])
         project.library = self.parse_word(raw_project['technologyType'])
         project.experimental_factor = self.parse_word(raw_project['experimentalFactors'])
+        project.donor_count = raw_project['donors']
+        project.sample_type = raw_project['sample_type']
 
         project.part_of_collection = self.parse_word(raw_project['experimentProjects'])
         project.supplementary_link = raw_project['supplementary_link']
@@ -189,6 +234,8 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
         project = self.__project_info_to_project(project, raw_project['project_info'])
 
         project.downloads_type = self.parse_word(self.__get_download_types(raw_project))
+
+        project = self.__get_download_links(project.downloads_type, project)
 
         self.project = project
 
@@ -214,39 +261,99 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
 
         return list(types)
 
-    def __project_info_to_project(self, project, project_info):
-        sample_characteristics = project_info['sample_characteristics']
-        experimental_variables = project_info['experimental_variables']
 
-        for key in sample_characteristics:
+    def __get_download_links(self, download_types, project):
+        if 'ExperimentDesign' in download_types:
+            project.experiment_design_link = "https://www.ebi.ac.uk/gxa/sc/experiment/" + project.project_id + \
+                                             "/download?fileType=experiment-design&accessKey="
+        if 'ExperimentMetadata' in download_types:
+            project.experiment_metadata_link = "https://www.ebi.ac.uk/gxa/sc/experiment/" + project.project_id + \
+                                               "/download/zip?fileType=experiment-metadata&accessKey="
+        if 'Clustering' in download_types:
+            project.clustering_link = "https://www.ebi.ac.uk/gxa/sc/experiment/" + project.project_id +\
+                                      "/download?fileType=cluster&accessKey="
+        if 'FilteredTPMs' in download_types:
+            project.filtered_TPM_link = "https://www.ebi.ac.uk/gxa/sc/experiment/" + project.project_id +\
+                                        "/download/zip?fileType=quantification-filtered&accessKey="
+        if 'MarkerGenes' in download_types:
+            project.marker_genes_link = "https://www.ebi.ac.uk/gxa/sc/experiment/" + project.project_id +\
+                                        "/download/zip?fileType=marker-genes&accessKey="
+        if 'NormalisedCounts' in download_types:
+            project.normalised_counts_link = "https://www.ebi.ac.uk/gxa/sc/experiment/" + project.project_id +\
+                                             "/download/zip?fileType=normalised&accessKey="
+        if 'RawCounts' in download_types:
+            project.raw_counts_link = "https://www.ebi.ac.uk/gxa/sc/experiment/" + project.project_id +\
+                                      "/download/zip?fileType=quantification-raw&accessKey="
+
+        return project
+
+    def __project_info_to_project(self, project, project_info):
+        for key in project_info:
             if key == 'organism':
-                project.specie = self.parse_word(sample_characteristics[key])
+                project.specie = self.parse_word(project_info[key])
             elif key == 'age' or key == 'post conception age':
-                project.min_age, project.max_age, project.age_unit = self.__process_age(sample_characteristics[key])
+                project.min_age, project.max_age, project.age_unit = self.__process_age(project_info[key])
             elif key == 'sex':
-                project.biological_sex = self.map_word(sample_characteristics[key])
+                project.biological_sex = self.map_word(project_info[key])
             elif key == 'organism part':
-                project.organism_part = self.parse_word(sample_characteristics[key])
+                project.organism_part = self.parse_word(project_info[key])
             elif key == 'metastatic site':
-                project.metastatic_site = self.parse_word(sample_characteristics[key])
+                project.metastatic_site = self.parse_word(project_info[key])
             elif key == 'sampling site' or key == 'biopsy site':
-                project.biopsy_site = self.parse_word(sample_characteristics[key])
+                project.biopsy_site = self.parse_word(project_info[key])
             elif key == 'disease':
-                disease = self.parse_word(sample_characteristics[key])
+                disease = self.parse_word(project_info[key])
                 disease = norm2control(disease)
                 project.disease = disease
             elif key == 'cell type':
-                project.cell_type = self.parse_word(sample_characteristics[key])
+                project.cell_type = self.parse_word(project_info[key])
             elif key == 'biosource provider' or key == 'biomaterial_provi':
-                project.laboratory = sample_characteristics[key]
+                project.laboratory = project_info[key]
             elif key == 'specimen with known storage state':
-                project.preservation = self.parse_word(sample_characteristics[key])
+                project.preservation = self.parse_word(project_info[key])
             elif key == 'organismStatus':
-                project.sample_status = sample_characteristics[key]
+                project.sample_status = project_info[key]
+            elif key == 'growth condition':
+                project.growth_condition = project_info[key]
             else:
                 continue
 
         return project
+
+    def __specimen_info_to_specimen(self, specimen, specimen_info):
+        for key in specimen_info:
+            if key == 'individual':
+                specimen.specimen_ID = specimen_info[key]
+            elif key == 'organism':
+                specimen.specie = self.parse_word(specimen_info[key])
+            elif key == 'age' or key == 'post conception age':
+                specimen.min_age, specimen.max_age, specimen.age_unit = self.__process_age(specimen_info[key])
+            elif key == 'sex':
+                specimen.biological_sex = self.map_word(specimen_info[key])
+            elif key == 'organism part':
+                specimen.organism_part = self.parse_word(specimen_info[key])
+            elif key == 'metastatic site':
+                specimen.metastatic_site = self.parse_word(specimen_info[key])
+            elif key == 'sampling site' or key == 'biopsy site':
+                specimen.biopsy_site = self.parse_word(specimen_info[key])
+            elif key == 'disease':
+                disease = self.parse_word(specimen_info[key])
+                disease = norm2control(disease)
+                specimen.disease = disease
+            elif key == 'cell type':
+                specimen.cell_type = self.parse_word(specimen_info[key])
+            elif key == 'biosource provider' or key == 'biomaterial_provi':
+                specimen.laboratory = specimen_info[key]
+            elif key == 'specimen with known storage state':
+                specimen.preservation = self.parse_word(specimen_info[key])
+            elif key == 'organismStatus':
+                specimen.sample_status = specimen_info[key]
+            elif key == 'growth condition':
+                specimen.growth_condition = specimen_info[key]
+            else:
+                continue
+
+        return specimen
 
     def __process_age(self, age):
         if type(age) is list:

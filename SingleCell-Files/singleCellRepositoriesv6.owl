@@ -2368,6 +2368,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Bcell -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Bcell">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#LymphocyteOfBlineage"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MotileCell"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NucleateCell"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SomaticCell"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#BenignProstaticHyperplasia -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#BenignProstaticHyperplasia">
@@ -4015,6 +4026,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Live -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Live">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleStatus"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Liver -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Liver">
@@ -5627,6 +5646,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tcell -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tcell">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#LymphocyteOfTlineage"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MotileCell"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NucleateCell"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SomaticCell"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#TegumentarySystem -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#TegumentarySystem">
@@ -5952,6 +5982,15 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#cDNALibraryConstruction">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#LibraryConstruction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#presumptiveGut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#presumptiveGut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OrganPart"/>
+        <singleCellRepositories:OR.isPartOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Embryo"/>
     </owl:NamedIndividual>
     
 

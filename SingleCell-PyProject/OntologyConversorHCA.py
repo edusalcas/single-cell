@@ -32,7 +32,6 @@ class OntologyConversorHCA(OntologyConversorAbstract):
             'DroNc-Seq': 'DroNc-seq',
             'Drop-Seq': 'Drop-seq',
             'Seq-Well': 'Seq-well',
-            'TCell': 'MatureTcell',
             'CD8-Positive,Alpha-BetaTCell': 'CD8+AlphaBetaTcell',
             'CD11B+CD11C+DC': 'CD11b+CD11c+DC',
             'CD11C+DC': 'CD11c+DC',
@@ -61,11 +60,11 @@ class OntologyConversorHCA(OntologyConversorAbstract):
             'StemCell-Derived': 'StemCellDerived',
             'Metadata': 'ExperimentDesign',
             'Normal': 'Control',
-            'PresumptiveGut': 'Gut',
-            'Live': 'Liver',
             'ObstructiveSleepApneaSyndrome': 'ObstructiveSleepApnea',
-            'CD4+TCell': 'CD4+AlphaBetaMemoryTCell',
-            'BCell': 'NaiveBcell',
+            'CD4+TCell': 'Tcell',
+            'TCell': 'Tcell',
+            'BCell': 'Bcell',
+            'PresumptiveGut': 'presumptiveGut'
         }
 
         return mapping_dict

@@ -1,0 +1,42 @@
+---
+title: "Blood_Clustering"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Clustering with PCA
+
+### PCA with small matrix
+```{r}
+require(Matrix)
+matrix <- readMM('../SingleCell-Files/blood_downloads/E-MTAB-4850.aggregated_filtered_normalised_counts.mtx')
+matrix = as.matrix(matrix)
+```
+
+```{r}
+matrix.pca = prcomp(matrix, center = TRUE,scale. = TRUE)
+```
+
+```{r}
+library(ggfortify)
+autoplot(matrix.pca, alpha=0.25)
+```
+
+### PCA with large matrix
+```{r}
+require(Matrix)
+matrix <- readMM('../SingleCell-Files/blood_downloads/E-GEOD-139324.aggregated_filtered_normalised_counts.mtx')
+matrix = as.matrix(matrix)
+```
+
+```{r}
+matrix.pca = prcomp(matrix, center = TRUE,scale. = TRUE)
+```
+
+```{r}
+library(ggfortify)
+autoplot(matrix.pca, alpha=0.25)
+```

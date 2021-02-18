@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  fuseki:
+    image: secoresearch/fuseki
+    restart: always
+    environment:
+      ADMIN_PASSWORD: single-cell21.
+      ENABLE_DATA_WRITE: "true"
+      ENABLE_UPDATE: "true"
+      ENABLE_UPLOAD: "true"
+    ports:
+      - "3030:3030"

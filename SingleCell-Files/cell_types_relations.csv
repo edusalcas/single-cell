@@ -1,0 +1,103 @@
+subclass,subclass_URI,superclass,superclass_URI
+epithelial cell,http://purl.obolibrary.org/obo/CL_0000066,animal cell,http://purl.obolibrary.org/obo/CL_0000548
+protoplast,http://purl.obolibrary.org/obo/CL_0000371,experimentally modified cell in vitro,http://purl.obolibrary.org/obo/CL_0000578
+hemocyte,http://purl.obolibrary.org/obo/CL_0000387,phagocyte (sensu Nematoda and Protostomia),http://purl.obolibrary.org/obo/CL_0000519
+hemocyte,http://purl.obolibrary.org/obo/CL_0000387,animal cell,http://purl.obolibrary.org/obo/CL_0000548
+bone marrow cell,http://purl.obolibrary.org/obo/CL_0002092,bone cell,http://purl.obolibrary.org/obo/CL_0001035
+stem cell,http://purl.obolibrary.org/obo/CL_0000034,precursor cell,http://purl.obolibrary.org/obo/CL_0011115
+myoepithelial cell of mammary gland,http://purl.obolibrary.org/obo/CL_0002324,myoepithelial cell of lactiferous gland,http://purl.obolibrary.org/obo/CL_1000416
+luminal epithelial cell of mammary gland,http://purl.obolibrary.org/obo/CL_0002326,branched duct epithelial cell,http://purl.obolibrary.org/obo/CL_0000069
+luminal epithelial cell of mammary gland,http://purl.obolibrary.org/obo/CL_0002326,mammary gland epithelial cell,http://purl.obolibrary.org/obo/CL_0002327
+neuron,http://purl.obolibrary.org/obo/CL_0000540,neural cell,http://purl.obolibrary.org/obo/CL_0002319
+neuron,http://purl.obolibrary.org/obo/CL_0000540,electrically responsive cell,http://purl.obolibrary.org/obo/CL_0000393
+neuron,http://purl.obolibrary.org/obo/CL_0000540,electrically signaling cell,http://purl.obolibrary.org/obo/CL_0000404
+"olfactory projection neuron innervating DA1, VA1d or DC3 glomerulus",http://purl.obolibrary.org/obo/CL_0000127,macroglial cell,http://purl.obolibrary.org/obo/CL_0000126
+long term hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0002034,Kit and Sca1-positive hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0001008
+hematopoietic multipotent progenitor cell,http://purl.obolibrary.org/obo/CL_0000837,hematopoietic precursor cell,http://purl.obolibrary.org/obo/CL_0008001
+short term hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0002033,Kit and Sca1-positive hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0001008
+granulocyte macrophage progenitor,http://purl.obolibrary.org/obo/CL_0000557,myeloid cell,http://purl.obolibrary.org/obo/CL_0000763
+granulocyte macrophage progenitor,http://purl.obolibrary.org/obo/CL_0000557,CD7-negative lymphoid progenitor OR granulocyte monocyte progenitor,http://purl.obolibrary.org/obo/CL_0001012
+granulocyte macrophage progenitor,http://purl.obolibrary.org/obo/CL_0000557,progenitor cell,http://purl.obolibrary.org/obo/CL_0011026
+granulocyte macrophage progenitor,http://purl.obolibrary.org/obo/CL_0000557,bone marrow hematopoietic cell,http://purl.obolibrary.org/obo/CL_1001610
+lymphoid-primed multipotent progenitor,http://purl.obolibrary.org/obo/CL_0000936,progenitor cell,http://purl.obolibrary.org/obo/CL_0011026
+lymphoid-primed multipotent progenitor,http://purl.obolibrary.org/obo/CL_0000936,hematopoietic multipotent progenitor cell,http://purl.obolibrary.org/obo/CL_0000837
+thymic T cell,http://purl.obolibrary.org/obo/CL_0002419,T cell,http://purl.obolibrary.org/obo/CL_0000084
+mature T cell,http://purl.obolibrary.org/obo/CL_0000037,progenitor cell,http://purl.obolibrary.org/obo/CL_0011026
+mature T cell,http://purl.obolibrary.org/obo/CL_0000037,somatic stem cell,http://purl.obolibrary.org/obo/CL_0000723
+mature T cell,http://purl.obolibrary.org/obo/CL_0000037,hematopoietic precursor cell,http://purl.obolibrary.org/obo/CL_0008001
+spheroplast,http://purl.obolibrary.org/obo/CL_0000524,protoplast,http://purl.obolibrary.org/obo/CL_0000371
+microglial cell,http://purl.obolibrary.org/obo/CL_0000129,glial cell,http://purl.obolibrary.org/obo/CL_0000125
+microglial cell,http://purl.obolibrary.org/obo/CL_0000129,central nervous system macrophage,http://purl.obolibrary.org/obo/CL_0000878
+peripheral blood mononuclear cell,http://purl.obolibrary.org/obo/CL_2000001,circulating cell,http://purl.obolibrary.org/obo/CL_0000080
+peripheral blood mononuclear cell,http://purl.obolibrary.org/obo/CL_2000001,mononuclear cell,http://purl.obolibrary.org/obo/CL_0000842
+basophil mast progenitor cell,http://purl.obolibrary.org/obo/CL_0002028,myeloid cell,http://purl.obolibrary.org/obo/CL_0000763
+basophil mast progenitor cell,http://purl.obolibrary.org/obo/CL_0002028,granulocytopoietic cell,http://purl.obolibrary.org/obo/CL_0002191
+granulocyte monocyte progenitor cell,http://purl.obolibrary.org/obo/CL_0000557,myeloid cell,http://purl.obolibrary.org/obo/CL_0000763
+granulocyte monocyte progenitor cell,http://purl.obolibrary.org/obo/CL_0000557,CD7-negative lymphoid progenitor OR granulocyte monocyte progenitor,http://purl.obolibrary.org/obo/CL_0001012
+granulocyte monocyte progenitor cell,http://purl.obolibrary.org/obo/CL_0000557,progenitor cell,http://purl.obolibrary.org/obo/CL_0011026
+granulocyte monocyte progenitor cell,http://purl.obolibrary.org/obo/CL_0000557,bone marrow hematopoietic cell,http://purl.obolibrary.org/obo/CL_1001610
+neural crest cell,http://purl.obolibrary.org/obo/CL_0000333,motile cell,http://purl.obolibrary.org/obo/CL_0000219
+neural crest cell,http://purl.obolibrary.org/obo/CL_0000333,progenitor cell,http://purl.obolibrary.org/obo/CL_0011026
+neural crest cell,http://purl.obolibrary.org/obo/CL_0000333,neural crest cell,http://purl.obolibrary.org/obo/CL_0011012
+embryonic stem cell,http://purl.obolibrary.org/obo/CL_0002322,stem cell,http://purl.obolibrary.org/obo/CL_0000034
+embryonic stem cell,http://purl.obolibrary.org/obo/CL_0002322,embryonic cell (metazoa),http://purl.obolibrary.org/obo/CL_0002321
+plasma cell,http://purl.obolibrary.org/obo/CL_0000786,antibody secreting cell,http://purl.obolibrary.org/obo/CL_0000946
+CD4-positive helper T cell,http://purl.obolibrary.org/obo/CL_0000492,"CD4-positive, alpha-beta T cell",http://purl.obolibrary.org/obo/CL_0000624
+mesenchymal stem cell of the bone marrow,http://purl.obolibrary.org/obo/CL_0002540,bone marrow cell,http://purl.obolibrary.org/obo/CL_0002092
+mesenchymal stem cell of the bone marrow,http://purl.obolibrary.org/obo/CL_0002540,mesenchymal stem cell,http://purl.obolibrary.org/obo/CL_0000134
+intestinal epithelial cell,http://purl.obolibrary.org/obo/CL_0002563,epithelial cell of alimentary canal,http://purl.obolibrary.org/obo/CL_0002251
+hepatocyte,http://purl.obolibrary.org/obo/CL_0000182,epithelial cell,http://purl.obolibrary.org/obo/CL_0000066
+hepatocyte,http://purl.obolibrary.org/obo/CL_0000182,endopolyploid cell,http://purl.obolibrary.org/obo/CL_0000417
+hepatocyte,http://purl.obolibrary.org/obo/CL_0000182,somatic cell,http://purl.obolibrary.org/obo/CL_0002371
+leukocyte,http://purl.obolibrary.org/obo/CL_0000738,nucleate cell,http://purl.obolibrary.org/obo/CL_0002242
+leukocyte,http://purl.obolibrary.org/obo/CL_0000738,hematopoietic cell,http://purl.obolibrary.org/obo/CL_0000988
+leukocyte,http://purl.obolibrary.org/obo/CL_0000738,motile cell,http://purl.obolibrary.org/obo/CL_0000219
+keratinocyte,http://purl.obolibrary.org/obo/CL_0000312,epidermal cell,http://purl.obolibrary.org/obo/CL_0000362
+keratinocyte,http://purl.obolibrary.org/obo/CL_0000312,keratinizing barrier epithelial cell,http://purl.obolibrary.org/obo/CL_0000237
+oocyte,http://purl.obolibrary.org/obo/CL_0000023,female germ cell,http://purl.obolibrary.org/obo/CL_0000021
+oocyte,http://purl.obolibrary.org/obo/CL_0000023,animal cell,http://purl.obolibrary.org/obo/CL_0000548
+zygote,http://purl.obolibrary.org/obo/CL_0000365,early embryonic cell (metazoa),http://purl.obolibrary.org/obo/CL_0000007
+zygote,http://purl.obolibrary.org/obo/CL_0000365,zygote,http://purl.obolibrary.org/obo/CL_0010017
+totipotent stem cell,http://purl.obolibrary.org/obo/CL_0000052,somatic stem cell,http://purl.obolibrary.org/obo/CL_0000723
+morula cell,http://purl.obolibrary.org/obo/CL_0000360,early embryonic cell (metazoa),http://purl.obolibrary.org/obo/CL_0000007
+blastoderm cell,http://purl.obolibrary.org/obo/CL_0000353,early embryonic cell (metazoa),http://purl.obolibrary.org/obo/CL_0000007
+group 1 innate lymphoid cell,http://purl.obolibrary.org/obo/CL_0001067,innate lymphoid cell,http://purl.obolibrary.org/obo/CL_0001065
+natural killer cell,http://purl.obolibrary.org/obo/CL_0000623,group 1 innate lymphoid cell,http://purl.obolibrary.org/obo/CL_0001067
+group 2 innate lymphoid cell,http://purl.obolibrary.org/obo/CL_0001069,innate lymphoid cell,http://purl.obolibrary.org/obo/CL_0001065
+group 3 innate lymphoid cell,http://purl.obolibrary.org/obo/CL_0001071,innate lymphoid cell,http://purl.obolibrary.org/obo/CL_0001065
+mononuclear cell of bone marrow,http://purl.obolibrary.org/obo/CL_0010004,bone marrow hematopoietic cell,http://purl.obolibrary.org/obo/CL_1001610
+mononuclear cell of bone marrow,http://purl.obolibrary.org/obo/CL_0010004,mononuclear cell,http://purl.obolibrary.org/obo/CL_0000842
+islet of Langerhans,http://purl.obolibrary.org/obo/UBERON_0000006,cell cluster,http://purl.obolibrary.org/obo/UBERON_0034922
+islet of Langerhans,http://purl.obolibrary.org/obo/UBERON_0000006,endoderm-derived structure,http://purl.obolibrary.org/obo/UBERON_0004119
+hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0000037,progenitor cell,http://purl.obolibrary.org/obo/CL_0011026
+hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0000037,somatic stem cell,http://purl.obolibrary.org/obo/CL_0000723
+hematopoietic stem cell,http://purl.obolibrary.org/obo/CL_0000037,hematopoietic precursor cell,http://purl.obolibrary.org/obo/CL_0008001
+pre-conventional dendritic cell,http://purl.obolibrary.org/obo/CL_0002010,myeloid cell,http://purl.obolibrary.org/obo/CL_0000763
+pre-conventional dendritic cell,http://purl.obolibrary.org/obo/CL_0002010,hematopoietic lineage restricted progenitor cell,http://purl.obolibrary.org/obo/CL_0002031
+conventional dendritic cell,http://purl.obolibrary.org/obo/CL_0000451,professional antigen presenting cell,http://purl.obolibrary.org/obo/CL_0000145
+conventional dendritic cell,http://purl.obolibrary.org/obo/CL_0000451,mononuclear cell,http://purl.obolibrary.org/obo/CL_0000842
+embryonic cell,http://purl.obolibrary.org/obo/CL_0002321,animal cell,http://purl.obolibrary.org/obo/CL_0000548
+epiblast cell,http://purl.obolibrary.org/obo/CL_0000352,totipotent stem cell,http://purl.obolibrary.org/obo/CL_0000052
+retinal cell,http://purl.obolibrary.org/obo/CL_0009004,neural cell,http://purl.obolibrary.org/obo/CL_0002319
+stromal cell,http://purl.obolibrary.org/obo/CL_0000499,connective tissue cell,http://purl.obolibrary.org/obo/CL_0002320
+fibroblast,http://purl.obolibrary.org/obo/CL_0000057,connective tissue cell,http://purl.obolibrary.org/obo/CL_0002320
+hematopoietic cell,http://purl.obolibrary.org/obo/CL_0000988,somatic cell,http://purl.obolibrary.org/obo/CL_0002371
+hematopoietic cell,http://purl.obolibrary.org/obo/CL_0000988,animal cell,http://purl.obolibrary.org/obo/CL_0000548
+blood cell,http://purl.obolibrary.org/obo/CL_0000081,hematopoietic cell,http://purl.obolibrary.org/obo/CL_0000988
+T cell,http://purl.obolibrary.org/obo/CL_0000084,lymphocyte,http://purl.obolibrary.org/obo/CL_0000542
+"naive thymus-derived CD4-positive, alpha-beta T cell",http://purl.obolibrary.org/obo/CL_0000895,"CD4-positive, alpha-beta T cell",http://purl.obolibrary.org/obo/CL_0000624
+"naive thymus-derived CD4-positive, alpha-beta T cell",http://purl.obolibrary.org/obo/CL_0000895,naive T cell,http://purl.obolibrary.org/obo/CL_0000898
+retinal ganglion cell,http://purl.obolibrary.org/obo/CL_0000740,CNS neuron (sensu Vertebrata),http://purl.obolibrary.org/obo/CL_0000117
+retinal ganglion cell,http://purl.obolibrary.org/obo/CL_0000740,retinal cell,http://purl.obolibrary.org/obo/CL_0009004
+endothelial cell,http://purl.obolibrary.org/obo/CL_0000115,meso-epithelial cell,http://purl.obolibrary.org/obo/CL_0002078
+endothelial cell,http://purl.obolibrary.org/obo/CL_0000115,lining cell,http://purl.obolibrary.org/obo/CL_0000213
+memory B cell,http://purl.obolibrary.org/obo/CL_0000787,mature B cell,http://purl.obolibrary.org/obo/CL_0000785
+naive B cell,http://purl.obolibrary.org/obo/CL_0000788,mature B cell,http://purl.obolibrary.org/obo/CL_0000785
+plasmablast,http://purl.obolibrary.org/obo/CL_0000980,mature B cell,http://purl.obolibrary.org/obo/CL_0000785
+plasmablast,http://purl.obolibrary.org/obo/CL_0000980,antibody secreting cell,http://purl.obolibrary.org/obo/CL_0000946
+adipocyte,http://purl.obolibrary.org/obo/CL_0000136,stuff accumulating cell,http://purl.obolibrary.org/obo/CL_0000325
+adipocyte,http://purl.obolibrary.org/obo/CL_0000136,connective tissue cell,http://purl.obolibrary.org/obo/CL_0002320
+preadipocyte,http://purl.obolibrary.org/obo/CL_0002334,fibroblast,http://purl.obolibrary.org/obo/CL_0000057
+macrophage,http://purl.obolibrary.org/obo/CL_0000235,professional antigen presenting cell,http://purl.obolibrary.org/obo/CL_0000145
+macrophage,http://purl.obolibrary.org/obo/CL_0000235,myeloid leukocyte,http://purl.obolibrary.org/obo/CL_0000766
+macrophage,http://purl.obolibrary.org/obo/CL_0000235,phagocyte,http://purl.obolibrary.org/obo/CL_0000234

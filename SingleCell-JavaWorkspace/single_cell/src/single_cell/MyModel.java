@@ -296,9 +296,8 @@ public class MyModel {
 			return;
  
 		Property property = getAnotationProperty(predicate);
-		Resource individual = individualMap.get(subject);
 		
-		// System.out.println(object.toString());
+		Resource individual = getIndividual(subject);
 		
 		if (object instanceof String)
 			model.add(individual, property, object.toString());

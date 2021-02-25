@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.apache.jena.rdf.model.ModelFactory"/>
-    <fullyQualifiedTypeName name="org.apache.jena.ontology.OntModelSpec"/>
     <fullyQualifiedTypeName name="org.apache.jena.util.FileManager"/>
     <fullyQualifiedTypeName name="org.apache.jena.util.iterator.ExtendedIterator"/>
     <fullyQualifiedTypeName name="org.apache.jena.vocabulary.RDF"/>
@@ -47,7 +45,6 @@
     <fullyQualifiedTypeName name="single_cell.MyIndividual"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="org.json.JSONArray"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="single_cell.MyModel"/>
     <fullyQualifiedTypeName name="org.apache.jena.ontology.OntModel"/>
@@ -58,4 +55,9 @@
     <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Resource"/>
     <fullyQualifiedTypeName name="single_cell.MySpecimen"/>
     <fullyQualifiedTypeName name="single_cell.MyProject"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

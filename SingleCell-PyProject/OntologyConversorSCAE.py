@@ -168,6 +168,7 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'EffectorMemoryCD4-Positive,Alpha-BetaTCell': 'EffectorMemoryCD4+AlphaBetaTCell',
             'CD4-Positive,Alpha-BetaMemoryTCell': 'CD4+AlphaBetaMemoryTCell',
             'ClassicalMonocyte': 'Monocyte',
+            'TCell': 'Tcell',
             # Preservation
             'FreshSpecimen': 'Fresh',
             # Library

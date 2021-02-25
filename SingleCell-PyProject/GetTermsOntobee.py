@@ -14,8 +14,9 @@ def parse_name(name):
     return name
 
 
-def get_URI_from_name(term_name, ontology):
+def get_URI_from_name(term_name, ontology=""):
     seed_url = f"http://www.ontobee.org/search?ontology={ontology}&keywords={term_name}&submit=Search+terms"
+
     # User-Agent
     headers = {
         "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
@@ -35,11 +36,12 @@ def get_URI_from_name(term_name, ontology):
     return seed_URI
 
 
-def get_name_from_URI(URI, ontology='CL'):
+def get_name_from_URI(URI, ontology=""):
     if URI is None:
         return None
-    
+
     seed_url = f"http://www.ontobee.org/search?ontology={ontology}&keywords={URI}&submit=Search+terms"
+
     # User-Agent
     headers = {
         "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"

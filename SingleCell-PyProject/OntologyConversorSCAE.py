@@ -58,6 +58,9 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'PrimaryVisualArea,Layer6B': 'PrimaryVisualArea',
             'PrimaryVisualArea,Layer1': 'PrimaryVisualArea',
             'PrimaryVisualArea,Layer6': 'PrimaryVisualArea',
+            'Layer1': 'RetinalNeuralLayer',
+            'Layer2/3': 'RetinalNeuralLayer',
+            'Layer4': 'RetinalNeuralLayer',
             'Cortical-LikeVentricle-Region1': 'CorticalLikeVentricle',
             'Cortical-LikeVentricle-Region2': 'CorticalLikeVentricle',
             'Cortical-LikeVentricle-Region3': 'CorticalLikeVentricle',
@@ -97,6 +100,9 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'RightEye': 'Eye',
             'AdjacentToTumor': 'Tumor',
             'LaminaPropriaOfSmallIntestine': 'LaminaPropiaOfSmallIntestine',
+            'SmoothMuscle': 'SmoothMuscleTissue',
+            'PigmentedLayerOfRetina': 'PigmentedLayerOfRetinaAndOpticChoroid',
+            'OpticChoroid': 'PigmentedLayerOfRetinaAndOpticChoroid',
             # Disease
             'ChronicPhaseChronicMyeloidLeukemia': 'MyeloidLeukemia',
             'BronchioalveolarCarcinoma;Non-SmallCellLungCancer': 'BronchioalveolarCarcinoma',
@@ -124,6 +130,7 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'LargeTumor(>5Mm)': 'Tumor',
             'SmallTumor(<4Mm)': 'Tumor',
             'WetMacularDegeneration': 'MacularDegeneration',
+            'Non-SmallCellLungCancer': 'NonSmallCellLungCancer',
             # Cell Type
             'OlfactoryProjectionNeuronInnervatingDA1,VA1DOrDC3Glomerulus': 'OlfatoryProjectionNeuron',
             'OlfactoryProjectionNeuron': 'OlfatoryProjectionNeuron',
@@ -169,6 +176,9 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'CD4-Positive,Alpha-BetaMemoryTCell': 'CD4+AlphaBetaMemoryTCell',
             'ClassicalMonocyte': 'Monocyte',
             'TCell': 'Tcell',
+            'Glial': 'GlialCells',
+            'Megakaryocyte-ErythroidProgenitorCell': 'MegakaryocyteErythroidProgenitorCell',
+            'Neuronal': 'Neuron',
             # Preservation
             'FreshSpecimen': 'Fresh',
             # Library
@@ -189,7 +199,6 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             '4-CellStageEmbryo': '4CellStageEmbryo',
             '8-CellStageEmbryo': '8CellStageEmbryo',
             'MorulaCell': 'Morula',
-
         }
         return mapping_dict
 

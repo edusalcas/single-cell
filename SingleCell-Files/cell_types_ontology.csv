@@ -12,11 +12,15 @@ OlfatoryProjectionNeuron	http://purl.obolibrary.org/obo/FBbt_00007422
 OlfatoryProjectionNeuron	http://purl.obolibrary.org/obo/CL_0000127
 Astrocyte	http://purl.obolibrary.org/obo/CL_0000127
 Astrocyte	http://purl.obolibrary.org/obo/NCIT_C12477
+OlfatoryProjectionNeuron	
+OlfatoryProjectionNeuron	
 LongTermHematopoieticStemCell	http://purl.obolibrary.org/obo/CL_0002034
 HematopoieticMultipotentProgenitorCell	http://purl.obolibrary.org/obo/CL_0000837
 HematopoieticStemCell	http://purl.obolibrary.org/obo/CL_0002033
 GranulocyteMonocyteProgenitorCell	http://purl.obolibrary.org/obo/CL_0000557
 EarlyLymphoidProgenitor	http://purl.obolibrary.org/obo/CL_0000936
+CommonLymphoidProgenitor	
+['HematopoieticStemCell', 'Thrombocyte']	
 HematopoieticStemCell	http://purl.obolibrary.org/obo/CL_0000037
 HematopoieticStemCell	http://purl.obolibrary.org/obo/NCIT_C12551
 Thrombocyte	http://purl.obolibrary.org/obo/GO_0002574
@@ -24,13 +28,16 @@ Thrombocyte	http://purl.obolibrary.org/obo/CL_0000762
 Thrombocyte	http://purl.obolibrary.org/obo/NCIT_C12520
 ThymicTcell	http://purl.obolibrary.org/obo/CL_0002419
 MatureTcell	http://purl.obolibrary.org/obo/CL_0000037
+['Neutrophil', 'MyeloidCell']	
 Neutrophil	http://purl.obolibrary.org/obo/CL_0000775
 Neutrophil	http://purl.obolibrary.org/obo/NCIT_C12533
 MyeloidCell	http://purl.obolibrary.org/obo/CL_0000763
 MyeloidCell	http://purl.obolibrary.org/obo/NCIT_C12549
+MarrowDerivedBcell	
 Spheroplast	http://purl.obolibrary.org/obo/CL_0000524
 MicroglialCell	http://purl.obolibrary.org/obo/CL_0000129
 BasophilMastProgenitorCell	http://purl.obolibrary.org/obo/CL_0002028
+GranulocyteMonocyteProgenitorCell	http://purl.obolibrary.org/obo/CL_0000557
 NeuralCrestCell	http://purl.obolibrary.org/obo/CL_0000333
 EmbryonicStemCell	http://purl.obolibrary.org/obo/CL_0002322
 PlasmaCell	http://purl.obolibrary.org/obo/CL_0000786
@@ -38,17 +45,19 @@ CD4+HelperTcell	http://purl.obolibrary.org/obo/CL_0000492
 MesenchymalStemCellOfTheBoneMarrow	http://purl.obolibrary.org/obo/CL_0002540
 IntestinalEpithelialCell	http://purl.obolibrary.org/obo/CL_0002563
 Hepatocyte	http://purl.obolibrary.org/obo/CL_0000182
-Neuronal	http://purl.obolibrary.org/obo/CL_0000006
-Neuronal	http://purl.obolibrary.org/obo/MONDO_0000858
-Neuronal	http://purl.obolibrary.org/obo/UBERON_0000125
-Neuronal	http://purl.obolibrary.org/obo/NCIT_C61258
-Glial	http://purl.obolibrary.org/obo/CL_0000125
-Glial	http://purl.obolibrary.org/obo/MONDO_0016704
-Glial	http://purl.obolibrary.org/obo/UBERON_0000202
-Glial	http://purl.obolibrary.org/obo/NCIT_C12615
+Neuron	
+Neuron	http://purl.obolibrary.org/obo/CL_0000006
+Neuron	http://purl.obolibrary.org/obo/MONDO_0000858
+Neuron	http://purl.obolibrary.org/obo/UBERON_0000125
+Neuron	http://purl.obolibrary.org/obo/NCIT_C61258
+GlialCells	http://purl.obolibrary.org/obo/CL_0000125
+GlialCells	http://purl.obolibrary.org/obo/MONDO_0016704
+GlialCells	http://purl.obolibrary.org/obo/UBERON_0000202
+GlialCells	http://purl.obolibrary.org/obo/NCIT_C12615
 Leukocyte	http://purl.obolibrary.org/obo/CL_0000738
 Keratinocyte	http://purl.obolibrary.org/obo/CL_0000312
 PeripheralBloodMononuclearCell	http://purl.obolibrary.org/obo/CL_2000001
+PeripheralBloodMononuclearCell	
 Oocyte	http://purl.obolibrary.org/obo/CL_0000023
 Zygote	http://purl.obolibrary.org/obo/CL_0000365
 TotipotentStemCell	http://purl.obolibrary.org/obo/CL_0000052
@@ -61,7 +70,9 @@ Group3InnateLymphoidCell	http://purl.obolibrary.org/obo/CL_0001071
 InducedPluripotentStemCell	http://www.ebi.ac.uk/efo/EFO_0004905
 CirculatingTumorCell	http://purl.obolibrary.org/obo/NCIT_C63797
 MononuclearCellOfBoneMarrow	http://purl.obolibrary.org/obo/CL_0010004
-Megakaryocyte-ErythroidProgenitorCell	http://purl.obolibrary.org/obo/CL_0000050
+['HematopoieticStemCell', 'HematopoieticMultipotentProgenitorCell']	
+['MegakaryocyteErythroidProgenitorCell', 'CommonMyeloidProgenitor']	
+MegakaryocyteErythroidProgenitorCell	http://purl.obolibrary.org/obo/CL_0000050
 CommonMyeloidProgenitor	http://purl.obolibrary.org/obo/CL_0000049
 CommonMyeloidProgenitor	http://purl.obolibrary.org/obo/NCIT_C12552
 IsletOfLangerhans	http://purl.obolibrary.org/obo/UBERON_0000006
@@ -70,11 +81,13 @@ ConventionalDendriticCell	http://purl.obolibrary.org/obo/CL_0000451
 EmbryonicCell	http://purl.obolibrary.org/obo/CL_0002321
 Epiblast	http://purl.obolibrary.org/obo/CL_0000352
 RetinalCell	http://purl.obolibrary.org/obo/CL_0009004
+DormantHematopoieticStemCell	
 CD8+AlphaBetaTcell	http://www.ebi.ac.uk/efo/EFO_0004219
 CD8+AlphaBetaTcell	http://purl.obolibrary.org/obo/NCIT_C12542
 CD8+AlphaBetaTcell	http://purl.obolibrary.org/obo/OMIT_0018620
 NaiveThymusDerivedCD4+AlphaBetaTcell	http://purl.obolibrary.org/obo/CL_0000895
 EffectorMemoryCD4+AlphaBetaTCell	http://purl.obolibrary.org/obo/CL_0000905
+MixedCellTypes	
 BloodCell	http://purl.obolibrary.org/obo/CL_0000081
 NeuralCrestDerivedCell	http://purl.obolibrary.org/obo/NCIT_C48431
 MedullaryThymicEpithelialCells	http://purl.obolibrary.org/obo/CL_0002295
@@ -82,6 +95,7 @@ MesenchymalStemCellOfAdipose	http://purl.obolibrary.org/obo/CL_0002570
 CD8+AlphaBetaTcell	http://purl.obolibrary.org/obo/CL_0000625
 RetinalConeCell	http://purl.obolibrary.org/obo/CL_0000573
 RetinalGanglionCell	http://purl.obolibrary.org/obo/CL_0000740
+CardiacNonMyocyte	
 EndothelialCell	http://purl.obolibrary.org/obo/CL_0000115
 Fibroblast	http://purl.obolibrary.org/obo/CL_0000057
 MemoryBcell	http://purl.obolibrary.org/obo/CL_0000787
@@ -94,6 +108,8 @@ Preadipocyte	http://purl.obolibrary.org/obo/CL_0002334
 NotApplicable	http://purl.obolibrary.org/obo/GENEPIO_0001619
 PepticCell	http://purl.obolibrary.org/obo/CL_0000155
 StemCellOfGastricGland	http://purl.obolibrary.org/obo/CL_0002183
+InducedNeuralBorderStemCell	
+EmbryonicStemCell	
 Macrophage	http://purl.obolibrary.org/obo/CL_0000235
 FibroblastOfDermis	http://purl.obolibrary.org/obo/CL_0002551
 ReticularCell	http://purl.obolibrary.org/obo/CL_0000432
@@ -108,32 +124,50 @@ DopaminergicNeuron	http://purl.obolibrary.org/obo/CL_0000700
 DopaminergicNeuron	http://purl.obolibrary.org/obo/PLANA_0000482
 CD4+CD25+AlphaBetaRegulatoryTcell	http://purl.obolibrary.org/obo/CL_0000792
 CD4+AlphaBetaMemoryTCell	http://purl.obolibrary.org/obo/CL_0000897
+ExtraThymicAireExpressingCells	
 LungMacrophage	http://purl.obolibrary.org/obo/CL_1001603
 Monocyte	http://purl.obolibrary.org/obo/CL_0000860
+['Fibroblast', 'EpithelialTumorCell']	
+['CardiacNonMyocyte', 'Cardiomyocyte']	
 Cardiomyocyte	http://purl.obolibrary.org/obo/CL_0000746
 Cardiomyocyte	http://purl.obolibrary.org/obo/NCIT_C13002
-DendriticCell	http://purl.obolibrary.org/obo/CL_0000451
-Tcell	http://purl.obolibrary.org/obo/CL_0000084
-Epcam+	http://purl.obolibrary.org/obo/OMIT_0033324
-InhibitoryInterneuron	http://purl.obolibrary.org/obo/CL_0000498
-MyofibroblastCell	http://purl.obolibrary.org/obo/CL_0000186
-StromalCell	http://purl.obolibrary.org/obo/TAO_0009226
-Bcell	http://purl.obolibrary.org/obo/CL_0000236
-EffectorMemoryCD8+AlphaBetaTCellTerminallyDifferentiated	http://purl.obolibrary.org/obo/CL_0001062
-Monocyte	http://purl.obolibrary.org/obo/CL_0000576
-EndodermalCell	http://purl.obolibrary.org/obo/CL_0000223
-EpithelialCellOfEsophagus	http://purl.obolibrary.org/obo/CL_0002252
-NeuralCell	http://purl.obolibrary.org/obo/CL_0002319
-EmbryonicFibroblast	http://purl.obolibrary.org/obo/BTO_0004725
-Splenocyte	http://purl.obolibrary.org/obo/BTO_0001598
-PancreaticPPCell	http://purl.obolibrary.org/obo/CL_0002275
-Cancer-associatedFibroblasts(CAFs)	http://purl.obolibrary.org/obo/NCIT_C75412
-CordBloodHematopoieticStemCell	http://purl.obolibrary.org/obo/CL_2000095
-HLAG+	http://purl.obolibrary.org/obo/NCIT_C104317
-EpithelialCell	http://purl.obolibrary.org/obo/TADS_0000628
-BoneMarrowHematopoieticCell	http://purl.obolibrary.org/obo/CL_1001610
 KidneyCell	http://purl.obolibrary.org/obo/CL_1000497
-CD34+CD38-HematopoieticStemCell	http://purl.obolibrary.org/obo/CL_0001024
-InnateLymphoidCell	http://purl.obolibrary.org/obo/CL_0001065
+BoneMarrowHematopoieticCell	http://purl.obolibrary.org/obo/CL_1001610
+Monocyte	http://purl.obolibrary.org/obo/CL_0000576
+CD31+Endothelial	
+PeripheralBloodMononuclearCell	http://purl.obolibrary.org/obo/CL_2000001
+CD45-	
+NaturalKillerCell	http://purl.obolibrary.org/obo/CL_0000623
+CordBloodHematopoieticStemCell	http://purl.obolibrary.org/obo/CL_2000095
+MyofibroblastCell	http://purl.obolibrary.org/obo/CL_0000186
+EmbryonicFibroblast	http://purl.obolibrary.org/obo/BTO_0004725
+InhibitoryInterneuron	http://purl.obolibrary.org/obo/CL_0000498
+PancreaticPPCell	http://purl.obolibrary.org/obo/CL_0002275
+Splenocyte	http://purl.obolibrary.org/obo/BTO_0001598
+Epcam+	http://purl.obolibrary.org/obo/OMIT_0033324
 Live	http://www.ebi.ac.uk/swo/maturity/SWO_9000065
+EndodermalCell	http://purl.obolibrary.org/obo/CL_0000223
+Neuron	http://purl.obolibrary.org/obo/CL_0000540
+CD34+CD38-HematopoieticStemCell	http://purl.obolibrary.org/obo/CL_0001024
+MyeloidCell	http://purl.obolibrary.org/obo/CL_0000763
+EffectorMemoryCD8+AlphaBetaTCellTerminallyDifferentiated	http://purl.obolibrary.org/obo/CL_0001062
+EpithelialCellOfEsophagus	http://purl.obolibrary.org/obo/CL_0002252
 MononuclearCell	http://purl.obolibrary.org/obo/CL_0000842
+DendriticCell	http://purl.obolibrary.org/obo/CL_0000451
+Leukocyte	http://purl.obolibrary.org/obo/CL_0000738
+Cancer-associatedFibroblasts(CAFs)	http://purl.obolibrary.org/obo/NCIT_C75412
+EndothelialCell	http://purl.obolibrary.org/obo/CL_0000115
+HLAG+	http://purl.obolibrary.org/obo/NCIT_C104317
+StromalCell	http://purl.obolibrary.org/obo/TAO_0009226
+PlasmaCell	http://purl.obolibrary.org/obo/CL_0000786
+CD11b+Macrophages/Monocytes	
+InnateLymphoidCell	http://purl.obolibrary.org/obo/CL_0001065
+EpithelialCell	http://purl.obolibrary.org/obo/TADS_0000628
+CD8+AlphaBetaTcell	http://purl.obolibrary.org/obo/CL_0000625
+NeuralCell	http://purl.obolibrary.org/obo/CL_0002319
+CD11c+DC	
+Fibroblast	http://purl.obolibrary.org/obo/CL_0000057
+Tcell	http://purl.obolibrary.org/obo/CL_0000084
+Bcell	http://purl.obolibrary.org/obo/CL_0000236
+Tcell	
+CD11b+CD11c+DC	

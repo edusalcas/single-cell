@@ -34,11 +34,15 @@ public class AddURIs {
 			    while ((line = br.readLine()) != null) {
 			        String[] values = line.split("\t");
 			        
-			        String name = values[0];
-			        String URI = values[1];
-			        
-					// Add URI to each cell type
-			        model.addAnotationPropertyToIndividual(name, HAS_URI_RELATION, URI);
+			        try {
+				        String name = values[0];
+				        String URI = values[1];
+				        
+						// Add URI to each cell type
+				        model.addAnotationPropertyToIndividual(name, HAS_URI_RELATION, URI);
+					} catch (Exception e) {
+					}
+
 			    }
 			    
 			} catch (FileNotFoundException e) {

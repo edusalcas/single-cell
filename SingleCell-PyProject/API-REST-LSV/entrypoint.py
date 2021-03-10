@@ -11,10 +11,7 @@ app = create_app(settings_module)
 
 @app.route("/spec")
 def spec():
-    swag = swagger(app)
-    swag['info']['version'] = "1.0"
-    swag['info']['title'] = "Single-Cell API REST"
-    return jsonify(swag)
+    return jsonify(swagger(app))
 
 ### swagger specific ###
 SWAGGER_URL = '/swagger'

@@ -16,7 +16,7 @@ def get_projects():
     Get a list of projects using some parameters
     ---
     tags:
-      - users
+      - projects
     parameters:
       - in: body
         name: disease
@@ -51,4 +51,61 @@ def get_projects():
 
     projects = fuseki_con.get_projects(params)
 
-    return projects
+    return jsonify(projects)
+
+
+@projects_v1_0_bp.route("/project/metadata", methods=['GET'])
+def get_project_metadata():
+    """
+        Get a list of possible values for a metadata parameter
+        ---
+        tags:
+          - metadata
+        parameters:
+          - in: body
+            name: param
+            description: A metadata parameter ('disease', 'cell_type', 'organism_part' and 'sex' at the moment)
+            required: true
+
+        responses:
+          200:
+            description: List of values for metadata parameter
+    """
+    if not fuseki_con.conn_alive():
+        return jsonify({'Internal error': 'Internal server is dead'})
+
+    metadata_param = request.values.get('param')
+
+    if metadata_param is None:
+        return jsonify({'msg': 'param needed'})
+
+    metadata_list = fuseki_con.get_project_metadata(metadata_param)
+
+    return jsonify(metadata_list)
+
+
+@projects_v1_0_bp.route("/project/downloads", methods=['GET'])
+def get_project_downloads():
+    """
+        Get download links for a given project
+        ---
+        tags:
+          - downloads
+        parameters:
+          - in: body
+            name: project_ID
+            description: Project ID of a specific project
+            required: true
+
+        responses:
+          200:
+            description: List of download links of the project
+    """
+    project_ID = request.values.get('project_ID')
+
+    if project_ID is None:
+        return jsonify({'msg': 'project_ID needed'})
+
+    downloads = fuseki_con.get_project_downloads(project_ID)
+
+    return jsonify(downloads)

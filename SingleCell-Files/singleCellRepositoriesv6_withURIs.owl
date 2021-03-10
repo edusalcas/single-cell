@@ -146,11 +146,6 @@
       <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleType">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Method"/>
-    </rdfs:subClassOf>
-  </owl:Class>
   <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NeurologicDisease">
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Disease"/>
   </owl:Class>
@@ -247,7 +242,9 @@
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Disease"/>
   </owl:Class>
   <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AnalysisProtocol">
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Method"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Method"/>
+    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Library">
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Method"/>
@@ -265,9 +262,6 @@
     <rdfs:subClassOf>
       <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Monogenic"/>
     </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleStatus">
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Method"/>
   </owl:Class>
   <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#LymphocyteOfBlineage">
     <rdfs:subClassOf>
@@ -625,17 +619,6 @@
       </owl:Class>
     </rdfs:domain>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasSampleStatus">
-    <rdfs:range rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SampleStatus"/>
-    <rdfs:domain>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
-          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:domain>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasOrganismPart">
     <rdfs:domain>
       <owl:Class>
@@ -720,34 +703,6 @@
       </owl:Class>
     </rdfs:domain>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasCellLineType">
-    <rdfs:range>
-      <singleCellRepositories:SampleType rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellLines">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellsInVitro"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-      </singleCellRepositories:SampleType>
-    </rdfs:range>
-    <rdfs:domain>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
-          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:domain>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasMinAge">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:domain>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
-          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:domain>
-  </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasSampleType">
     <rdfs:range>
       <rdfs:Datatype>
@@ -778,6 +733,17 @@
       </owl:Class>
     </rdfs:domain>
   </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.belongsToWell">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasTotalCellCount">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     <rdfs:domain>
@@ -788,10 +754,6 @@
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PR.hasExperimentalFactor">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasSex">
     <rdfs:range>
@@ -853,7 +815,7 @@
       </owl:Class>
     </rdfs:domain>
   </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasGrowthCondition">
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasStimulus">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain>
       <owl:Class>
@@ -863,10 +825,6 @@
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PR.hasSpecimenCount">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasAgeUnit">
     <rdfs:range>
@@ -928,12 +886,138 @@
       </owl:Class>
     </rdfs:domain>
   </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasStrain">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PR.hasDonorCount">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
   </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasCellLine">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.belongsToPlate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.belongsToBatchGroup">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasMinAge">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PR.hasExperimentalFactor">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasOrganismStatus">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf>
+          <rdf:List>
+            <rdf:rest>
+              <rdf:List>
+                <rdf:rest>
+                  <rdf:List>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>normal</rdf:first>
+                  </rdf:List>
+                </rdf:rest>
+                <rdf:first>live</rdf:first>
+              </rdf:List>
+            </rdf:rest>
+            <rdf:first>dead</rdf:first>
+          </rdf:List>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasGrowthCondition">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PR.hasSpecimenCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasPhenotype">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasMaxAge">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+          <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasGenotype">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -1133,11 +1217,6 @@
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/NCIT_C48660</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:NamedIndividual>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OpticChoroid">
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/ZFA_0005229</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0001776</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0001898</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
   <singleCellRepositories:Smartseq2 rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Smartseq2_v2.4.0">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Smartseq2>
@@ -1208,6 +1287,22 @@
     <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_0001287</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:DevelopmentalStage>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <singleCellRepositories:Matrix rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Matrix">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Downloads"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+      </singleCellRepositories:Matrix>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Metadata"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preprocessing"/>
+      <singleCellRepositories:Results rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Results">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Downloads"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+      </singleCellRepositories:Results>
+    </owl:members>
+  </owl:AllDisjointClasses>
   <singleCellRepositories:Region rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tail">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Region>
@@ -1243,6 +1338,9 @@
         <singleCellRepositories:OR.hasOrganPart>
           <singleCellRepositories:OrganPart rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RetinalNeuralLayer">
             <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0003902</singleCellRepositories:OR.hasURI>
+            <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0005393</singleCellRepositories:OR.hasURI>
+            <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0035874</singleCellRepositories:OR.hasURI>
+            <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0005390</singleCellRepositories:OR.hasURI>
             <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NervousSystem"/>
             <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
           </singleCellRepositories:OrganPart>
@@ -1325,13 +1423,6 @@
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ConnectiveTissue"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:OrganPart>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#EndocrineGland"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ExocrineGland"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MixedGland"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <singleCellRepositories:Molecule rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Epcam+">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/OMIT_0033324</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -1363,6 +1454,18 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:OtherSequencing>
   <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasExperimentMetadataLink"/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Disease"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Downloads"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Kingdom"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Method"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OrganismPart"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specie"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
   <singleCellRepositories:Cavity rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Alveolus">
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RespiratorySystem"/>
     <singleCellRepositories:OR.isPartOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Lung"/>
@@ -1379,12 +1482,6 @@
     <singleCellRepositories:OR.isPartOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Eye"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:OrganPart>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Neuronal">
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/NCIT_C61258</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0000125</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0000858</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/CL_0000006</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
   <singleCellRepositories:SomaticCell rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RetinalConeCell">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/CL_0000573</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SensoryReceptorCell"/>
@@ -1439,12 +1536,6 @@
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#TegumentarySystem"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:ExocrineGland>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Glial">
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/NCIT_C12615</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0000202</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0016704</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/CL_0000125</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
   <singleCellRepositories:DiseaseOfAnatomicalEntity rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AcousticNeuroma">
     <singleCellRepositories:OR.hasAffected>
       <singleCellRepositories:NervousTissue rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AuditoryNerves">
@@ -1489,10 +1580,9 @@
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RespiratorySystem"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Cavity>
-  <singleCellRepositories:SampleStatus rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Live">
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Live">
     <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/swo/maturity/SWO_9000065</singleCellRepositories:OR.hasURI>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </singleCellRepositories:SampleStatus>
+  </owl:NamedIndividual>
   <singleCellRepositories:Organ rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Bladder">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0018707</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#UrinarySystem"/>
@@ -1527,13 +1617,6 @@
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/NCIT_C104317</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Molecule>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HiSeq"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NextSeq"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NovaSeq"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <singleCellRepositories:NonMamalialOrganismPart rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HeadKidney">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0007132</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/ZFA_0000669</singleCellRepositories:OR.hasURI>
@@ -1541,6 +1624,13 @@
   </singleCellRepositories:NonMamalialOrganismPart>
   <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SR.hasSpecimenID"/>
   <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PR.hasLoadDate"/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <singleCellRepositories:SomaticCell rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#InnateLymphoidCell"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#LymphocyteOfBlineage"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#LymphocyteOfTlineage"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
   <singleCellRepositories:Structure rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NeuralTube">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0003080</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -1552,6 +1642,18 @@
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DiseaseOfMetabolism"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:GeneticDisease>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DevelopmentalStage"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Disease"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Downloads"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Kingdom"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Method"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specie"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
   <singleCellRepositories:Organ rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Vagina">
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ReproductiveSystem"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -1619,10 +1721,9 @@
   <singleCellRepositories:Cancer rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#InTransitMetastasis">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Cancer>
-  <singleCellRepositories:SampleType rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimens">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </singleCellRepositories:SampleType>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimens"/>
   <singleCellRepositories:DiseaseOfAnatomicalEntity rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SmallIntestineNeuroendocrineTumor">
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/DOID_4434</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0002995</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_1001928</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasAffected rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GastrointestinalSystem"/>
@@ -1710,18 +1811,6 @@
     <singleCellRepositories:OR.hasAffected rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RespiratorySystem"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:DiseaseOfAnatomicalEntity>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Disease"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Downloads"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Kingdom"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Method"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OrganismPart"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specie"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <singleCellRepositories:Structure rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#InnerCellMass">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0000087</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.isPartOf>
@@ -1737,17 +1826,6 @@
     </singleCellRepositories:OR.isPartOf>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Structure>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cryopreservation"/>
-      <singleCellRepositories:Fresh rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Fresh">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-      </singleCellRepositories:Fresh>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Hypothermic"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <singleCellRepositories:Junction rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RectoSigmoidJunction">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0036214</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GastrointestinalSystem"/>
@@ -1793,11 +1871,6 @@
     </singleCellRepositories:OR.hasAffected>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:DiseaseOfAnatomicalEntity>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SmoothMuscle">
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/ZFA_0005274</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0001135</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_0000889</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
   <singleCellRepositories:SomaticCell rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NeuralCrestDerivedCell">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/NCIT_C48431</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -1820,9 +1893,10 @@
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cancer"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:DiseaseOfAnatomicalEntity>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#UrethralEpithelium">
+  <singleCellRepositories:EpithelialTissue rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#UrethralEpithelium">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0002325</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </singleCellRepositories:EpithelialTissue>
   <singleCellRepositories:NeurologicDisease rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ReversibleCerebralVasoconstrictionSyndrome">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:NeurologicDisease>
@@ -1980,6 +2054,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:DiseaseOfAnatomicalEntity>
   <singleCellRepositories:DiseaseOfAnatomicalEntity rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#BronchioalveolarCarcinoma">
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/DOID_0050870</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0000503</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasAffected rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RespiratorySystem"/>
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cancer"/>
@@ -1990,6 +2065,13 @@
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Monogenic"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Syndrome>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#EndocrineGland"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ExocrineGland"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MixedGland"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
   <singleCellRepositories:PrecursorCell rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#StemCellOfGastricGland">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/CL_0002183</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -2084,9 +2166,6 @@
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RespiratorySystem"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Organ>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Megakaryocyte-ErythroidProgenitorCell">
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/CL_0000050</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
   <singleCellRepositories:Specie rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RattusNorvegicus">
     <singleCellRepositories:OR.belongsToKingdom rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Animals"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -2210,10 +2289,6 @@
   </singleCellRepositories:SomaticCell>
   <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasNormalisedCountsLink"/>
   <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.isPartOfRepository"/>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Non-SmallCellLungCancer">
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0005233</singleCellRepositories:OR.hasURI>
-    <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_0003060</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
   <singleCellRepositories:DiseaseOfAnatomicalEntity rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Glioblastoma">
     <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_0000519</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasAffected rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NervousSystem"/>
@@ -2315,9 +2390,6 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:MuscularTissue>
   <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasProjectTitle"/>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Layer2/3">
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0035874</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
   <singleCellRepositories:DiseaseOfAnatomicalEntity rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CrohnsDisease">
     <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_0000384</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasAffected rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GastrointestinalSystem"/>
@@ -2328,6 +2400,9 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Fluid>
   <singleCellRepositories:MuscularTissue rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SmoothMuscleTissue">
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/ZFA_0005274</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0001135</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_0000889</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MusculoSkeletalSystem"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:MuscularTissue>
@@ -2341,14 +2416,20 @@
   <j.0:XSequencing rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#10X3v1Sequencing">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </j.0:XSequencing>
-  <singleCellRepositories:SampleType rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organoids">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </singleCellRepositories:SampleType>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organoids"/>
   <singleCellRepositories:OrganismPart rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#WholeOrganism">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/ZFA_0001094</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0000468</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:OrganismPart>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AnalysisProtocol"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#InstrumentModel"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Library"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
   <singleCellRepositories:Fluid rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Blood">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/NCRO_0000105</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/ZFA_0000007</singleCellRepositories:OR.hasURI>
@@ -2381,6 +2462,17 @@
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#EmbryonicCell"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:PrecursorCell>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Cryopreservation"/>
+      <singleCellRepositories:Fresh rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Fresh">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+      </singleCellRepositories:Fresh>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Hypothermic"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
   <singleCellRepositories:DiseaseOfMetabolism rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Type1DiabetesMellitus">
     <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_0001359</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasAffected rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ImmuneSystem"/>
@@ -2400,6 +2492,10 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:ConnectiveTissue>
   <singleCellRepositories:SomaticCell rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GlialCells">
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/NCIT_C12615</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0000202</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0016704</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/CL_0000125</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NeuralCell"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:SomaticCell>
@@ -2642,15 +2738,15 @@
     <singleCellRepositories:OR.isPartOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Lung"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:OrganPart>
-  <singleCellRepositories:SampleStatus rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Alive">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </singleCellRepositories:SampleStatus>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Alive"/>
   <singleCellRepositories:Structure rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Allantois">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0004340</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.isPartOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Embryo"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Structure>
   <singleCellRepositories:DiseaseOfAnatomicalEntity rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Fibrosis">
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/HP_0030760</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/DOID_10353</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0010912</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_0006890</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -2721,6 +2817,13 @@
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MusculoSkeletalSystem"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Muscle>
+  <singleCellRepositories:Cancer rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NonSmallCellLungCancer">
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/HP_0030358</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/DOID_3908</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0005233</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_0003060</singleCellRepositories:OR.hasURI>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </singleCellRepositories:Cancer>
   <singleCellRepositories:SomaticCell rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PeripheralBloodMononuclearCell">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/CL_2000001</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NucleateCell"/>
@@ -2759,9 +2862,7 @@
   <singleCellRepositories:OtherSequencing rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DroNc-seq">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:OtherSequencing>
-  <singleCellRepositories:SampleStatus rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PostMortem">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </singleCellRepositories:SampleStatus>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PostMortem"/>
   <singleCellRepositories:Organ rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Tonsil">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0002372</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ImmuneSystem"/>
@@ -2771,18 +2872,6 @@
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NervousSystem"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:EndocrineGland>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DevelopmentalStage"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Disease"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Downloads"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Kingdom"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Method"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specie"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasProjectShortName"/>
   <singleCellRepositories:Specie rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#DrosophilaMelanogaster">
     <singleCellRepositories:OR.belongsToKingdom rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Animals"/>
@@ -2883,9 +2972,6 @@
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#GastrointestinalSystem"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Organ>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Layer1">
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0005390</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
   <singleCellRepositories:Structure rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Bronchiole">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0002186</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RespiratorySystem"/>
@@ -2904,11 +2990,12 @@
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0004877</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:EmbrionicTissue>
-  <singleCellRepositories:SampleStatus rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Normal">
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Normal">
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/DOID_1572</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/PATO_0000461</singleCellRepositories:OR.hasURI>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </singleCellRepositories:SampleStatus>
+  </owl:NamedIndividual>
   <singleCellRepositories:SomaticCell rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MegakaryocyteErythroidProgenitorCell">
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/CL_0000050</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PrecursorCell"/>
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MyeloidCell"/>
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HematopoieticOligopotentProgenitorCell"/>
@@ -2925,19 +3012,15 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:OrganPart>
   <singleCellRepositories:SomaticCell rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Neuron">
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/NCIT_C61258</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0000125</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0000858</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/CL_0000006</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/CL_0000540</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NeuralCell"/>
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ElectricallyActiveCell"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:SomaticCell>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AnalysisProtocol"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#InstrumentModel"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Library"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preservation"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <singleCellRepositories:SomaticCell rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CommonLymphoidProgenitor">
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PrecursorCell"/>
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HematopoieticOligopotentProgenitorCell"/>
@@ -2949,6 +3032,7 @@
   </singleCellRepositories:ConnectiveTissue>
   <singleCellRepositories:DiseaseOfAnatomicalEntity rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#AcuteLymphoblasticLeukemia">
     <singleCellRepositories:OR.hasAffected rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HematopoieticSystem"/>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MP_0014050</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <singleCellRepositories:OR.hasAffected rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MusculoSkeletalSystem"/>
     <singleCellRepositories:OR.hasURI>http://www.ebi.ac.uk/efo/EFO_1001935</singleCellRepositories:OR.hasURI>
@@ -2977,9 +3061,6 @@
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#ConnectiveTissueCell"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:SomaticCell>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PigmentedLayerOfRetina">
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0001782</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
   <singleCellRepositories:ExocrineGland rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MammaryGland">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0001911</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -2991,9 +3072,6 @@
     <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#InnateLymphoidCell"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:SomaticCell>
-  <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Layer4">
-    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0005393</singleCellRepositories:OR.hasURI>
-  </rdf:Description>
   <singleCellRepositories:OrganPart rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#MiddleLobeOfRightLung">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0002174</singleCellRepositories:OR.hasURI>
     <singleCellRepositories:OR.isPartOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Lung"/>
@@ -3023,13 +3101,6 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:EmbrionicTissue>
   <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasMarkerGenesLink"/>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <singleCellRepositories:SomaticCell rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#InnateLymphoidCell"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#LymphocyteOfBlineage"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#LymphocyteOfTlineage"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <singleCellRepositories:Matrix rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RawCounts">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Matrix>
@@ -3128,11 +3199,13 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:OrganismPart>
   <singleCellRepositories:Layer rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PigmentedLayerOfRetinaAndOpticChoroid">
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/ZFA_0005229</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0001776</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/MONDO_0001898</singleCellRepositories:OR.hasURI>
+    <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0001782</singleCellRepositories:OR.hasURI>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </singleCellRepositories:Layer>
-  <singleCellRepositories:SampleStatus rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Dead">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </singleCellRepositories:SampleStatus>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Dead"/>
   <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#PR.hasINSDCstudyID"/>
   <singleCellRepositories:ConnectiveTissue rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#BoneTissue">
     <singleCellRepositories:OR.hasURI>http://purl.obolibrary.org/obo/UBERON_0002481</singleCellRepositories:OR.hasURI>
@@ -3245,18 +3318,9 @@
   </singleCellRepositories:DiseaseOfAnatomicalEntity>
   <owl:AllDisjointClasses>
     <owl:members rdf:parseType="Collection">
-      <singleCellRepositories:Matrix rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Matrix">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Downloads"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-      </singleCellRepositories:Matrix>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Metadata"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Preprocessing"/>
-      <singleCellRepositories:Results rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Results">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Downloads"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-      </singleCellRepositories:Results>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#HiSeq"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NextSeq"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#NovaSeq"/>
     </owl:members>
   </owl:AllDisjointClasses>
   <singleCellRepositories:Organ rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Thymus">
@@ -3350,4 +3414,8 @@
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Animal"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </singleCellRepositories:SomaticCell>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellLines">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellsInVitro"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </owl:NamedIndividual>
 </rdf:RDF>

@@ -5,8 +5,6 @@ from flask_restful import Api, Resource
 
 from ...db_conn import fuseki_con
 
-from ...common.error_handling import ObjectNotFound
-
 projects_v1_0_bp = Blueprint('projects_v1_0_bp', __name__)
 
 api = Api(projects_v1_0_bp)
@@ -20,15 +18,15 @@ def get_projects():
     tags:
       - projects
     parameters:
-      - in: body
+      - in: query
         name: disease
         description: A disease on which a project has worked
         type: string
-      - in: body
+      - in: query
         name: cell_type
         description: Cell type studied in a project
         type: string
-      - in: body
+      - in: query
         name: sex
         description: Sex of the specimen studied on a project
         type: string
@@ -59,20 +57,27 @@ def get_projects():
     return jsonify(projects)
 
 
-@projects_v1_0_bp.route("/project/metadata", methods=['GET'])
-def get_project_metadata():
+@projects_v1_0_bp.route("/project/metadata/<param>", methods=['GET'])
+def get_project_metadata(param):
     """
         Get a list of possible values for a metadata parameter
         ---
         tags:
           - metadata
         parameters:
-          - in: body
+          - in: path
             name: param
-            description: A metadata parameter ('disease', 'cell_type', 'organism_part' and 'sex' at the moment)
+            description: The metadata parameter of which you want to obtain the values
             required: true
-            type: string
-
+            type: array
+            items:
+                type: string
+                enum:
+                    - disease
+                    - cell_type
+                    - sex
+                default: disease
+            collectionFormat: multi
         responses:
           200:
             description: List of values for metadata parameter
@@ -80,25 +85,23 @@ def get_project_metadata():
     if not fuseki_con.conn_alive():
         return jsonify({'Internal error': 'Internal server is dead'})
 
-    metadata_param = request.values.get('param')
-
-    if metadata_param is None:
+    if param is None:
         return jsonify({'msg': 'param needed'})
 
-    metadata_list = fuseki_con.get_project_metadata(metadata_param)
+    metadata_list = fuseki_con.get_project_metadata(param)
 
     return jsonify(metadata_list)
 
 
-@projects_v1_0_bp.route("/project/downloads", methods=['GET'])
-def get_project_downloads():
+@projects_v1_0_bp.route("/project/downloads/<project_ID>", methods=['GET'])
+def get_project_downloads(project_ID):
     """
         Get download links for a given project
         ---
         tags:
           - downloads
         parameters:
-          - in: body
+          - in: path
             name: project_ID
             description: Project ID of a specific project
             required: true
@@ -108,7 +111,6 @@ def get_project_downloads():
           200:
             description: List of download links of the project
     """
-    project_ID = request.values.get('project_ID')
 
     if project_ID is None:
         return jsonify({'msg': 'project_ID needed'})
@@ -126,13 +128,36 @@ def get_percentile():
         tags:
           - percentiles
         parameters:
-          - in: body
+          - in: query
             name: filters
-            description: filters of the percentiles
+            description: Criteria to filter percentiles from the search results. Each filter consists of a facet name and an array of facet values. Supported facet names are gen_names, cell_types and project_IDs.
             required: true
-            type: json
             schema:
-                gen_names:
+                type: object
+                default: {}
+                properties:
+                    gen_names:
+                        type: array
+                        items:
+                            type:string
+                        collectionFormat: csv
+                    cell_types:
+                        type: array
+                        items:
+                            type:string
+                        collectionFormat: csv
+                    project_IDs:
+                        type: array
+                        items:
+                            type:string
+                        collectionFormat: csv
+                example:
+                    gen_names:
+                        - ENSG00000287846
+                        - ENSDARG00000034326
+                    cell_types:
+                        - memory B cell
+                        - blood cell
 
         responses:
           200:

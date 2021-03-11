@@ -1,11 +1,23 @@
 import requests
 import pandas as pd
-import json
+import whoosh.index as index
+import os
 
-server_name = 'http://194.4.103.244:3030'
+from whoosh.qparser import QueryParser
+
+server_name = 'http://localhost:3030'
 service_name = 'ds'
 request_url = server_name + '/' + service_name
 URI_prefix = 'http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#'
+
+
+def __intersection(list1, list2):
+    if not list1:
+        return list2
+    if not list2:
+        return list1
+
+    return list(set(list1) & set(list2))
 
 
 def conn_alive():
@@ -15,9 +27,13 @@ def conn_alive():
 
 
 def __fuseki_to_dict(response):
-    rows = []
     headers = response.json()["head"]["vars"]
     results = response.json()["results"]['bindings']
+
+    if not results:
+        return []
+
+    rows = []
 
     for result in results:
         result_dict = {}
@@ -133,8 +149,6 @@ def get_projects(params={}):
 
     projects = __fuseki_to_dict(response)
 
-    print(projects)
-
     return projects
 
 
@@ -214,3 +228,64 @@ def get_project_downloads(project_ID):
     downloads = __fuseki_to_dict(response)
 
     return downloads
+
+
+def get_percentile(gen_names=[], cell_types=[], project_IDs=[]):
+    ix = index.open_dir("../../SingleCell-Files/index")
+    qp = QueryParser("content", ix.schema)
+    genes_project_IDs = []
+    cell_types_project_IDs = []
+
+    # Search for projects with that meet the filter conditions (gen_names and cell_types)
+    for gen_name in gen_names:
+
+        q = qp.parse(gen_name)
+
+        with ix.searcher() as s:
+            results = s.search(q, limit=None)
+            for result in results:
+                genes_project_IDs.append(result['title'])
+
+    for cell_type in cell_types:
+
+        q = qp.parse(cell_type)
+
+        with ix.searcher() as s:
+            results = s.search(q, limit=None)
+            for result in results:
+                cell_types_project_IDs.append(result['title'])
+
+    percentile_project_IDs = __intersection(genes_project_IDs, cell_types_project_IDs)
+
+    percentile_projects = []
+    key_items = ['project_ID', 'gen_name'] + cell_types
+
+    if not percentile_project_IDs:
+        percentile_project_IDs = project_IDs
+
+    print(percentile_project_IDs)
+
+    # For each project parse the response
+    for percentile_project_ID in percentile_project_IDs:
+        # Filter with project ID
+        if project_IDs and percentile_project_ID not in project_IDs:
+            continue
+
+        # If project is not in the index
+        filename = f'../../SingleCell-Files/percentiles/{percentile_project_ID}.percentiles.csv'
+        if not os.path.isfile(filename):
+            continue
+
+        df = pd.read_csv(filename)
+
+        if gen_names:
+            df = df[df['gen_name'].isin(gen_names)]
+        for df_dict in df.to_dict('records'):
+            df_dict.update({'project_ID': percentile_project_ID})
+
+            if cell_types:
+                df_dict = {k: v for k, v in df_dict.items() if k in key_items}
+
+            percentile_projects.append(df_dict)
+
+    return percentile_projects

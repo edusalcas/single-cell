@@ -5,7 +5,7 @@ import os
 
 from whoosh.qparser import QueryParser
 
-server_name = 'http://194.4.103.244:3030'
+server_name = 'http://localhost:3030'
 service_name = 'ds'
 request_url = server_name + '/' + service_name
 URI_prefix = 'http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#'
@@ -27,9 +27,13 @@ def conn_alive():
 
 
 def __fuseki_to_dict(response):
-    rows = []
     headers = response.json()["head"]["vars"]
     results = response.json()["results"]['bindings']
+
+    if not results:
+        return []
+
+    rows = []
 
     for result in results:
         result_dict = {}

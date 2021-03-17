@@ -88,6 +88,8 @@ class OntologyConversorSCAE(OntologyConversorAbstract):
             'SkinOfBody': 'Skin',
             'DistalAirway': 'RespiratoryAirway',
             'RectosigmoidJunction': 'RectoSigmoidJunction',
+            'OlfactoryBulb': 'OlfatoryBulb',
+            'OlfactorySegmentOfNasalMucosa': 'OlfatoryBulb',
             # Biopsy Site
             'Ascites': 'AsciticFluid',
             'LeftSupraclavicularLymphNode': 'LymphNode',

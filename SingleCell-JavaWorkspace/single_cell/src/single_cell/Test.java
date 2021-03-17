@@ -27,7 +27,7 @@ public class Test {
 	public static void main(String[] args) {
 		
 		// Declare variables and input/output streams
-		String inputFileName = "../../SingleCell-Files/singleCellRepositoriesv6.owl";
+		String inputFileName = "../../SingleCell-Files/singleCellRepositoriesv6_withURIs.owl";
 		String outputFileName = "../../SingleCell-Files/out_repositoriev6.owl";
 		String[] hitsFileNames = new String[]{
 				"../../SingleCell-Files/processed_data/HCA_processed.json",

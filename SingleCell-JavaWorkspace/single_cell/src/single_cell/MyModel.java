@@ -71,6 +71,7 @@ public class MyModel {
 			"SPR.isPairedEnd",
 			"SPR.hasGrowthCondition",
 			"SPR.hasSampleType",
+			"SPR.hasNucleicAcidSource",
 	};
 	
 	public static final String[] SR_DATA_PROPERTIES = new String[] {

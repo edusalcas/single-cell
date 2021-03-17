@@ -686,6 +686,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasNucleicAcidSource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasNucleicAcidSource">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Project"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Specimen"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasOrganismStatus -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#SPR.hasOrganismStatus">
@@ -4841,6 +4857,16 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OlfatoryProjectionNeuron">
         <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#CellProjection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OlfatorySegmentOfNasalMucosa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OlfatorySegmentOfNasalMucosa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#Organ"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#OrganPart"/>
+        <singleCellRepositories:OR.isPartOfSystem rdf:resource="http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#RespiratorySystem"/>
     </owl:NamedIndividual>
     
 

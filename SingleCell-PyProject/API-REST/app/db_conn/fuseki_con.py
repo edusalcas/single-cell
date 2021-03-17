@@ -51,6 +51,15 @@ def __fuseki_to_dict(response):
 
     df = pd.DataFrame(rows)
 
+    if 'project_ID' not in df.columns:
+        df_dict = df.to_dict('list')
+
+        for key in df_dict:
+            l = list(set(df_dict[key]))
+            df_dict[key] = l[0] if len(l) == 1 else l
+
+        return df_dict
+
     projects = []
     for project_ID, data in df.groupby('project_ID'):
         project = {
@@ -88,11 +97,11 @@ def get_projects(params={}):
 
     for key, value in params.items():
         if key == 'disease':
-            where_content += " ?project a:SPR.hasDisease a:" + value + " ."
+            where_content += f" ?project a:SPR.hasDisease ?disease . ?subClasses rdfs:subClassOf* a:{value} . ?disease rdf:type ?subClasses ."
         elif key == 'cell_type':
-            where_content += " ?project a:SPR.hasCellType a:" + value + " ."
+            where_content += f" ?project a:SPR.hasCellType ?cellType . ?subClasses rdfs:subClassOf* a:{value} . ?cellType rdf:type ?subClasses ."
         elif key == 'organism_part':
-            where_content += " ?project a:SPR.hasOrganismPart \"" + value + "\" ."
+            where_content += f" ?project a:SPR.hasOrganismPart ?organismPart . ?subClasses rdfs:subClassOf* a:{value} . ?organismPart rdf:type ?subClasses ."
         elif key == 'sex':
             where_content += " ?project a:SPR.hasSex \"" + value + "\" ."
         else:
@@ -122,7 +131,8 @@ def get_projects(params={}):
     query = '''
         PREFIX a: <http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        SELECT 
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        SELECT DISTINCT
             ?project_ID
             ?projectTitle
             ?description
@@ -153,33 +163,36 @@ def get_projects(params={}):
 
 
 def get_project_metadata(metadata_param):
-    where_content = "?project rdf:type a:Project ."
+    where_content = ""
 
     if metadata_param == 'disease':
-        where_content += " ?project a:SPR.hasDisease ?x ."
+        where_content += "{ ?x rdfs:subClassOf* a:Disease . } UNION { ?y rdfs:subClassOf* a:Disease . ?x rdf:type ?y }"
     elif metadata_param == 'cell_type':
-        where_content += " ?project a:SPR.hasCellType ?x ."
+        where_content += "{ ?x rdfs:subClassOf* a:CellType . } UNION { ?y rdfs:subClassOf* a:CellType . ?x rdf:type ?y }"
     elif metadata_param == 'sex':
         where_content += " ?project a:SPR.hasSex ?x ."
+    elif metadata_param == 'repository':
+        where_content += " ?project a:SPR.isPartOfRepository ?x ."
     elif metadata_param == 'library':
-        where_content += " ?project a:SPR.hasLibrary ?x ."
-    elif metadata_param == 'organism_part':
-        where_content += " ?project a:SPR.hasOrganismPart ?x ."
+        where_content += "{ ?x rdfs:subClassOf* a:Library . } UNION { ?y rdfs:subClassOf* a:Library . ?x rdf:type ?y }"
+    elif metadata_param == 'organism_part' or metadata_param == "biopsy_site":
+        where_content += "{ ?x rdfs:subClassOf* a:OrganismPart . } UNION { ?y rdfs:subClassOf* a:OrganismPart . ?x rdf:type ?y }"
     elif metadata_param == 'specie':
-        where_content += " ?project a:SPR.hasSpecie ?x ."
+        where_content += "{ ?x rdfs:subClassOf* a:Specie . } UNION { ?y rdfs:subClassOf* a:Specie . ?x rdf:type ?y }"
     elif metadata_param == 'analysis_protocol':
-        where_content += " ?project a:SPR.hasAnalysisProtocol ?x ."
+        where_content += "{ ?x rdfs:subClassOf* a:AnalysisProtocol . } UNION { ?y rdfs:subClassOf* a:AnalysisProtocol . ?x rdf:type ?y }"
     elif metadata_param == 'instrument':
-        where_content += " ?project a:SPR.hasInstrument ?x ."
+        where_content += "{ ?x rdfs:subClassOf* a:InstrumentModel . } UNION { ?y rdfs:subClassOf* a:InstrumentModel . ?x rdf:type ?y }"
     else:
         return {'msg': 'Param key not valid'}
 
     query = '''
             PREFIX a: <http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             SELECT DISTINCT
                 ?x
-            WHERE { ''' + where_content + '}'
+            WHERE { ''' + where_content + '}' + "ORDER BY ?x"
 
     print(query)
 
@@ -276,16 +289,52 @@ def get_percentile(gen_names=[], cell_types=[], project_IDs=[]):
         if not os.path.isfile(filename):
             continue
 
+        # Read percentile file
         df = pd.read_csv(filename)
 
+        # Filter gene names
         if gen_names:
             df = df[df['gen_name'].isin(gen_names)]
+        print("project_info")
+        project_info = requests.get('http://localhost:5001/project/info/' + percentile_project_ID).json()
+        print(project_info)
+
+
+        # Loop over gen-project
         for df_dict in df.to_dict('records'):
             df_dict.update({'project_ID': percentile_project_ID})
 
             if cell_types:
                 df_dict = {k: v for k, v in df_dict.items() if k in key_items}
 
+            df_dict.update(project_info)
             percentile_projects.append(df_dict)
 
     return percentile_projects
+
+
+def get_project_info(project_ID):
+    query = '''
+        PREFIX a: <http://www.semanticweb.org/alicia/ontologies/2020/8/singleCellRepositories#>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT DISTINCT
+          ?disease
+          ?organismPart
+          ?projectLink
+        WHERE { 
+          ?project rdf:type a:Project . ''' + \
+        f'?project a:PR.hasProjectID "{project_ID}" .' + \
+            '''
+          ?project a:PR.hasProjectRepositoryLink ?projectLink
+          OPTIONAL { ?project a:SPR.hasOrganismPart ?organismPart . }
+          OPTIONAL { ?project a:SPR.hasDisease ?disease . }
+        }
+    '''
+
+    print(query)
+
+    response = requests.post(request_url, data={'query': query})
+    project_info = __fuseki_to_dict(response)
+
+    return project_info
+

@@ -57,6 +57,28 @@ def get_projects():
     return jsonify(projects)
 
 
+@projects_v1_0_bp.route("/project/info/<project_ID>", methods=['GET'])
+def get_project_info(project_ID):
+    """
+    Get the information of a concrete project
+    ---
+    tags:
+      - projects
+    parameters:
+      - in: path
+        name: project_ID
+        description: The ID of the project from which we want to get the information
+        required: true
+        type: string
+    responses:
+      200:
+        description: Information of the project associated with the project_ID
+    """
+
+    project_info = fuseki_con.get_project_info(project_ID)
+
+    return jsonify(project_info)
+
 @projects_v1_0_bp.route("/project/metadata/<param>", methods=['GET'])
 def get_project_metadata(param):
     """
@@ -75,7 +97,12 @@ def get_project_metadata(param):
                 enum:
                     - disease
                     - cell_type
-                    - sex
+                    - organism_part
+                    - analysis_protocol
+                    - repository
+                    - specie
+                    - library
+                    - biopsy_site
                 default: disease
             collectionFormat: multi
         responses:

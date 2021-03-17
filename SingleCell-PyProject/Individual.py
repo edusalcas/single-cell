@@ -20,6 +20,7 @@ class Individual:
         self.sample_status = None
         self.downloads_type = None
         self.metastatic_site = None
+        self.nucleic_acid = None
 
         self.age_unit = None
         self.biological_sex = None
@@ -77,6 +78,7 @@ class Individual:
                 "SPR.isPairedEnd": self.paired_end,
                 "SPR.hasGrowthCondition": self.growth_condition,
                 "SPR.hasSampleType": self.sample_type,
+                "SPR.hasNucleicAcidSource": self.nucleic_acid,
             },
             "AnnotationProperties": {
                 "SPR.hasLaboratory": self.laboratory,
